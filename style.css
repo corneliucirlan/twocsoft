@@ -1,0 +1,212 @@
+/*
+	Theme Name: TwoCSoft
+	Theme URI: http://www.TwoCSoft.com
+	Description: Custom theme created for this website
+	Author: TwoCSoft
+	Author URI: https://www.TwoCSoft.com
+	GitHub Theme URI: https://github.com/corneliucirlan/twocsoft
+	Version: 1.0
+	Tags: responsive, white, bootstrap
+*/
+
+html {
+	position: relative;
+	min-height: 100%;
+	background-color: #f0f0f0;
+}
+body {
+	margin-bottom: 60px;
+}
+
+@font-face {
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Oswald Regular'), local('Oswald-Regular'), url(fonts/Oswald-Regular.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+ h2 {
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+}
+
+.btn-category {
+	font-size: 26px;
+	width: 100%;
+	margin: auto;
+}
+
+.col-center {
+	float: none;
+	margin: 0 auto;
+}
+
+
+/**
+ * HOMEPAGE
+ */
+
+.homepage-article p {
+	width: 100%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+/**
+ * GENERAL
+ */
+
+ul {
+	list-style: none;
+	text-align: left;
+}
+
+p {
+	font-size: 14px;
+	font-size: 1.4rem;
+	color: #123321;
+	padding: 1rem;
+	text-align: justify;
+}
+
+a {
+	border-radius: 0 !important;
+	transition: ease-in .1s;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.no-effects {
+	color: black !important;
+}
+
+a.no-effects:hover {
+	color: black;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+/**
+ * PAGE TITLE
+ */
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	padding-bottom: 2rem;
+	text-transform: uppercase;
+	width: 100%;
+	background-color: #3D72A4;
+	color: #f0f0f0;
+	margin: 0;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+	padding: 10px;
+	padding: 1rem;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+
+
+/**
+ * CONTAINER
+ */
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/**
+ * LOGO | NAME
+ */
+
+@media (min-width: 768px) {
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		margin-left: 15px;
+	}
+
+	.homepage-article p {
+		width: 60%;
+	}
+}
+
+
+
+
+
+/**
+ * MAIN CONTENT
+ */
+main {
+	min-height: 100%;
+	height: auto;
+	background-color: #f0f0f0;
+	padding-top: 80px;
+	padding-bottom: 2rem;
+	overflow: hidden;
+}
+
+.btn-primary {
+	background-color: #3D72A4;
+	border: 1px solid #3D72A4;
+}
+
+.btn:hover {
+	color: black;
+	background: none;
+	border: 1px solid #3D72A4;;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+@media screen and (max-width: 480px) {
+	#main {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	article {
+		padding: 0;
+	}
+}
+
+
+/**
+ * FOOTER
+ */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: rgb(61, 114, 164);
+}
+
+footer > .col-md-12, 
+footer > .col-md-12 > p,
+footer > .col-md-12 > p > a
+ {
+	text-align: center;
+	color: rgb(240, 240, 240);
+	font-weight: bold;
+}
+
+footer > .col-md-12 > p > a:hover {
+	color: white;
+}
