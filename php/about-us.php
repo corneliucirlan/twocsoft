@@ -43,7 +43,6 @@
 <div class="about-us col-md-10 col-md-offset-1">
 	<section class="row">
 		<div class="expertise card col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h2>About us</h2>
 			<div class="col-md-12">
 				<p>We provide integrated digital marketing and web development solutions for small companies that need and wish to promote their business on the Internet whether it's an website or an application. Because we believe each client is unique, we create customized quality products and services that aim to increase the benefits of your online presence.</p>
 			</div>

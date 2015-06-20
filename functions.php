@@ -53,4 +53,10 @@
 	 */
 	require_once('php/functions/backend.php');
 
+
+	/**
+	 * BLOG FUNCTIONS
+	 */
+	require_once('php/functions/blog-functions.php');
+
 ?>

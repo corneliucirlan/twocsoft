@@ -40,4 +40,17 @@
 	// SERVICES
 	define('PAGE_SERVICES', 149);
 
+	// BLOG
+	define('PAGE_BLOG', 179);
+
+
+	/**
+	 * CATEGORIES
+	 */
+	
+	// BLOG
+	define('CATEGORY_BLOG', 5);
+
+	// PROJECTS
+	define('CATEGORY_PROJECTS', 4);
 ?>
