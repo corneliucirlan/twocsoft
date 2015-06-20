@@ -57,40 +57,4 @@
 		wp_enqueue_script('mdmenu', get_template_directory_uri().'/js/jquery.mdmenu.js', array('jquery'), MDMENU_VERSION, true);
 	});
 
-
-	add_action('wp_footer', function() {
-		?>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				// MOBILE MENU
-				$('.navbar-toggle').mdMenu();
-
-				<?php if (get_the_id() == PAGE_SERVICES): ?>
-					$('.services').masonry({
-						itemSelector: '.service',
-						isAnimated: true,
-						columnWidth: '.service',
-					});
-				<?php endif; ?>
-
-				<?php if (get_the_id() == PAGE_PROJECTS): ?>
-					$('.projects-tab').masonry({
-						itemSelector: '.project',
-						isAnimated: true,
-						columnWidth: '.project',
-					});
-				<?php endif; ?>
-
-				<?php if (get_the_id() == PAGE_ABOUT_US): ?>
-					$('.skills').masonry({
-						itemSelector: '.skill',
-						isAnimated: true,
-						columnWidth: '.skill',
-					});
-				<?php endif; ?>
-			});
-		</script>
-		<?php
-	});
-
 ?>

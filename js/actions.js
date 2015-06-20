@@ -1,30 +1,27 @@
 jQuery(document).ready(function($) {
 
-	$.ajaxSetup({cache: true});
-	
-	/**
-	 * LOAD FACEBOOK JS API
-	 */
-	$.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-		FB.init({
-			appId: '730165393722202',
-    		version: 'v2.1' // or v2.0, v2.1, v2.0
-  		});     
-		
-		//$('#loginbutton,#feedbutton').removeAttr('disabled');
-		//FB.getLoginStatus(updateStatusCallback);
-	});
-	
+	// MOBILE MENU
+	$('.navbar-toggle').mdMenu();
 
-	$('.share-website').on('click', 'a.facebook', function(event) {
-		event.preventDefault();
-		
-		FB.ui({
-			method: 'share',
-			href: location.href,
-		}, function(response){
-			console.log(response);
-		});
+	// SERVICES PAGE MASONRY
+	$('.services').masonry({
+		itemSelector: '.service',
+		isAnimated: true,
+		columnWidth: '.service',
+	});
+
+	// PORJECTS MASONRY
+	$('.projects-tab').masonry({
+		itemSelector: '.project',
+		isAnimated: true,
+		columnWidth: '.project',
+	});
+
+	// SKILLS MASONRY
+	$('.skills').masonry({
+		itemSelector: '.skill',
+		isAnimated: true,
+		columnWidth: '.skill',
 	});
 
 	// PROJECT TABS
