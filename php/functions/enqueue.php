@@ -31,20 +31,15 @@
 		// material design mobile menu
 		wp_enqueue_style('mdmenu', get_template_directory_uri().'/css/jquery.mdmenu.css', array('main-style'), MDMENU_VERSION, 'all');
 		
-		// project page
-		//if (is_single()) wp_enqueue_style('project', get_template_directory_uri().'/css/project.css', array('main-style'), TCS_VERSION, 'all');
-
 		// font awesome
-		wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), FONT_AWESOME, 'all');
+		wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/font-awesome.min.css', array(), FONT_AWESOME, 'all');
 
 
 		/**
 		 * Scripts
 		 */
 
-		// jQuery - the right way
-		/*wp_deregister_script('jquery');
-		wp_register_script('jquery', get_bloginfo('url').'/wp-includes/js/jquery/jquery.js', '', '1.11.1', false);*/
+		// jQuery
 		wp_enqueue_script('jquery');
 
 		// Masonry
