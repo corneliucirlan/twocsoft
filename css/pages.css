@@ -92,3 +92,51 @@
 	text-transform: uppercase;
 	text-align: center;
 }
+
+
+/**
+ * BLOG POST - SINGLE
+ */
+
+.blog-post {
+	padding: .3rem;
+}
+
+.blog-post-details {
+	text-align: left;
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, .6);
+	margin: 2rem 0;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #eee;
+}
+
+.blog-post-tags {
+	border: 1px solid #eee;
+	margin: 1rem;
+	padding: 1rem;
+	text-align: left;
+}
+
+.blog-post-tag {
+	padding: 1rem;
+	background-color: white;
+	transition: ease-in-out .3s;
+}
+
+.blog-post-tag:hover {
+	background-color: rgb(61, 114, 164);
+	color: white;
+}
+
+/* SIDEBAR */
+.latest-posts li {
+	border-top: 1px solid #eee;
+	line-height: 3rem;
+	font-size: 1.9rem;
+	font-weight: normal !important;
+}
+
+.latest-posts li:last-child {
+	border-bottom: 1px solid #eee;
+}
