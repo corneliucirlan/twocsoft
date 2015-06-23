@@ -18,6 +18,7 @@
 	$skills[] = new SKILL('jQuery', 4);
 	$skills[] = new SKILL('Web Development', 5);
 	$skills[] = new SKILL('Plugins', 5);
+	$skills[] = new SKILL('OOP', 5);
 
 	shuffle($skills);
 
