@@ -44,6 +44,10 @@
 
 		// Masonry
 		wp_enqueue_script('masonry');
+
+		// jQuery UI Tabs
+		wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script('jquery-ui-tabs');
 		
 		// actions
 		wp_enqueue_script('actions', get_template_directory_uri().'/js/actions.js', array('jquery'), TCS_VERSION, true);

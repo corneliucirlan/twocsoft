@@ -25,19 +25,9 @@ jQuery(document).ready(function($) {
 	});
 
 	// PROJECT TABS
-	$('#projects ul').on('click', 'li a', function(event) {
-		event.preventDefault();
+	$('#projects').tabs();
 
-		// remove active class from all elements
-		$('.nav-tabs li').removeClass('active')
-		$('#projects').find('.projects-tab').removeClass('show').addClass('hidden');
-
-		// add active class to current elements
-		$(this).parent().addClass('active');
-		$($(this).attr('href')).removeClass('hidden').addClass('show');
-	});
-
-	var isVisible = $(this).find('.extra').is(':visible');
+	//var isVisible = $(this).find('.extra').is(':visible');
 	
 	// ABOUT PAGE CARDS MOUSE OVER
 	$('main').on('mouseover', '.card', function(event) {

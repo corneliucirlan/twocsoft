@@ -42,15 +42,15 @@
 
 <div id="projects" class="col-md-10 col-md-offset-1">
 	<ul class="nav nav-tabs project-tabs">
-		<li role="presentation" class="active"><a href="#webistes">Websites</a></li>
+		<li role="presentation"><a href="#webistes">Websites</a></li>
 		<li role="presentation"><a href="#plugin">Plugins</a></li>
 	</ul>
 
-	<section id="webistes" class="projects-tab show">
+	<section id="webistes" class="projects-tab">
 		<?php printProjects('website') ?>
 	</section>
 
-	<section id="plugin" class="projects-tab hidden">
+	<section id="plugin" class="projects-tab">
 		<?php printProjects('plugin'); ?>
 	</section>
 </div>

@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 1.1.2 (2015.06.29)
+- mod: fixed Projects tabs
+
 ##### Version 1.1.1 (2015.06.23)
 - add: OOP Skill
 

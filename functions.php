@@ -59,4 +59,10 @@
 	 */
 	require_once('php/functions/blog-functions.php');
 
+
+	/**
+	 * SKILLS PAGE
+	 */
+	require_once('php/libs/skills.php');
+
 ?>

@@ -52,6 +52,14 @@
 	padding: .3rem;
 }
 
+.ui-tabs-active,
+.ui-state-hover,
+.nav-tabs li a:hover {
+	background-color: white;
+	border: 1px solid #eee;
+	margin-right: 0;
+}
+
 
 /**
  * ABOUT US PAGE
