@@ -67,6 +67,84 @@ jQuery(document).ready(function($) {
 	 */
 	$('#contact').submit(function(event) {
 		event.preventDefault();
-		$(this).append("<p>Click</p>");
+		
+		var hasSuccessClass  	= 'has-success';
+		var	hasWarningClass  	= 'has-warning';
+		var	glyphiconOK		 	= 'glyphicon-ok';
+		var	glyphiconWarning 	= 'glyphicon-warning-sign';
+		var submitButtonSpinner = '<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>';
+		var submitButtonText 	= 'Send message';
+
+		var data = {
+			'action': 'submit-form',
+			'name': $('#name').val(),
+			'email': $('#email').val(),
+			'message': $('#message').val(),
+		};
+
+		$.ajax({
+			url: TCSAjax.ajaxurl,
+			type: 'POST',
+			dataType: 'json',
+			data: data,
+			beforeSend: function()
+			{
+				$('form input,textarea,button').prop('disabled', true);
+
+				// submit button animation
+				$('#submit-form').html(submitButtonSpinner);
+			}
+		})
+		.done(function(data, textStatus, jqXHR) {
+		})
+		.fail(function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR.responseText);
+		})
+		.always(function(data, textStatus, jqXHR) {
+			$('form input,textarea,button').prop('disabled', false);
+			$('#submit-form').html(submitButtonText);
+
+			// if email was sent
+			if (data.emailSent === true)
+					{
+						$.each(data, function(index, el) {
+							var $parent = $('#'+index).parent();
+							var $icon = $('#'+index).next();
+						
+							$parent.removeClass(hasWarningClass).addClass(hasSuccessClass);
+							$icon.removeClass(glyphiconWarning).addClass(glyphiconOK);
+						});
+
+						$('#submit-form').html("Message sent");
+					}
+
+				// email failed to send
+				else
+					{
+						$.each(data, function(index, el) {
+							var $parent = $('#'+index).parent();
+							var $icon = $('#'+index).next();
+				
+							if (!el)
+									{
+										$parent.removeClass(hasSuccessClass).addClass(hasWarningClass);
+										$icon.removeClass(glyphiconOK).addClass(glyphiconWarning);
+									}
+								else
+									{
+										$parent.removeClass(hasWarningClass).addClass(hasSuccessClass);
+										$icon.removeClass(glyphiconWarning).addClass(glyphiconOK);
+									}
+						});
+
+						if (!data.failReason) $('#submit-form').html("Something went wrong. Try again");
+							else $('#submit-form').html(data.failReason);
+
+						// log failure
+						console.log(data.failReason);
+					}
+			
+		});
+		
 	});
 });

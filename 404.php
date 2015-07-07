@@ -1,1 +1,1 @@
-<?php header('Location: '.get_bloginfo('url')); ?>
+<?php //header('Location: '.get_bloginfo('url')); ?>

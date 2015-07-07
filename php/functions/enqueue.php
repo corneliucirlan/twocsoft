@@ -54,6 +54,13 @@
 
 		// mobile menu
 		wp_enqueue_script('mdmenu', get_template_directory_uri().'/js/jquery.mdmenu.js', array('jquery'), MDMENU_VERSION, true);
+
+
+		// LOCALIZE WPPC AJAX HANDLER
+		wp_localize_script('actions', 'TCSAjax', array(
+			'ajaxurl' => get_bloginfo('wpurl').'/wp-admin/admin-ajax.php',
+			'action' => 'submit-form',
+		));
 	});
 
 ?>
