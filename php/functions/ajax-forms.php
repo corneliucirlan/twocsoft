@@ -9,7 +9,7 @@
 		$ajaxResponse = array();
 
 		// check if name is present
-		$ajaxResponse['name'] = $_POST['name'] != '' ? esc_attr($_POST['name']) : null;
+		$ajaxResponse['full-name'] = $_POST['full-name'] != '' ? esc_attr($_POST['full-name']) : null;
 
 		// check if email present
 		$ajaxResponse['email'] = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? esc_attr($_POST['email']) : null;

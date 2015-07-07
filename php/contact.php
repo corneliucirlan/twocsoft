@@ -30,6 +30,7 @@
 <div class="col-md-4 col-md-offset-4">
 	<p>You can contact us using <a href="mailto:cornel@twocsoft.com" target="_blank">cornel@twocsoft.com</a> or the form below.</p>
 	<form id="contact" role="form" action="" method="post">
+		<input type="hidden" name="action" id="action" value="submit-form" />
 		<div class="form-group has-feedback<?php if ($_POST) echo $_POST['full-name'] ? ' has-success' : ' has-warning' ?>">
 			<input type="text" class="form-control" name="full-name" id="full-name" placeholder="Nane"<?php echo $_POST['full-name'] ? ' value="'.$_POST['full-name'].'"' : '' ?>>
 			<span class="glyphicon<?php if ($_POST) echo $_POST['full-name'] ? ' glyphicon-ok' : ' glyphicon-warning-sign' ?> form-control-feedback" aria-hidden="true"></span>

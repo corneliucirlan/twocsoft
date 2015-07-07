@@ -77,7 +77,7 @@ jQuery(document).ready(function($) {
 
 		var data = {
 			'action': 'submit-form',
-			'name': $('#name').val(),
+			'full-name': $('#full-name').val(),
 			'email': $('#email').val(),
 			'message': $('#message').val(),
 		};
@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
 			url: TCSAjax.ajaxurl,
 			type: 'POST',
 			dataType: 'json',
-			data: data,
+			data: $(this).serialize(),
 			beforeSend: function()
 			{
 				$('form input,textarea,button').prop('disabled', true);
@@ -96,6 +96,7 @@ jQuery(document).ready(function($) {
 			}
 		})
 		.done(function(data, textStatus, jqXHR) {
+			console.log(data);
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) {
 			console.log(jqXHR.responseText);
