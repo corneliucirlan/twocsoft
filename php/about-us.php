@@ -24,18 +24,9 @@
 
 	// CERTIFICATIONS
 	$certifications = array();
-	$certifications[] = new CERT('Intro to Programming in Java', 'Udacity', 2013);
-	$certifications[] = new CERT('Introduction to Computer Science: Building a Search Engine', 'Udacity', 2013);
-	$certifications[] = new CERT('Web Development: How to Build a Blog', 'Udacity', 2013);
-	$certifications[] = new CERT('Learn to Program: The Fundamentals', 'Coursera', 2013);
 	$certifications[] = new CERT('Digital Analytics Fundamentals', 'Google', 2013);
-	$certifications[] = new CERT('Algorithms: Crunching Social Networks', 'Udacity', 2013);
-	$certifications[] = new CERT('Introduction to Computer Science and Programming', 'edX', 2014);
-	$certifications[] = new CERT('Creative, Serious and Playful Science of Android Apps', 'Coursera', 2014);
 	$certifications[] = new CERT('Google Analytics Platform Principles', 'Google', 2014);
-	$certifications[] = new CERT('Programming Mobile Applications for Android Handheld Systems', 'Coursera', 2014);
-	$certifications[] = new CERT('Pattern-Oriented Software Architectures: Programming Mobile Services for Android Handheld Systems', 'Coursera', 2014);
-	$certifications[] = new CERT('Creative Programming for Digital Media & Mobile Apps', 'Coursera', 2014);
+	$certifications[] = new CERT('Google Tag Manager Fundamentals', 'Google', 2015);
 	shuffle($certifications);
 
 ?>
@@ -111,10 +102,10 @@
 			<span class="glyphicon glyphicon-resize-full expander hidden"></span>
 			<h2>CERTIFICATIONS</h2>
 			<div class="intro">
-				<?php for ($i = 0; $i < 4; $i++) printCertification($certifications[$i]); ?>
+				<?php for ($i = 0; $i < 2; $i++) printCertification($certifications[$i]); ?>
 			</div>
 			<div class="extra">
-				<?php for ($i = 4; $i < sizeof($certifications); $i++) printCertification($certifications[$i]); ?>
+				<?php for ($i = 2; $i < sizeof($certifications); $i++) printCertification($certifications[$i]); ?>
 			</div>
 		</div>
 	</section>

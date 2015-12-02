@@ -8,6 +8,8 @@
 	padding: 1rem;
 	transition: ease-in-out .1s;
 	overflow: hidden;
+	margin: 5px;
+	margin: .5rem;
 }
 
 .card:hover {
@@ -20,7 +22,7 @@
  */
 
 .service {
-	padding: .3rem;
+	padding: 0;
 }
 
 .service img {
@@ -49,7 +51,7 @@
 }
 
 .project {
-	padding: .3rem;
+	padding: 0;
 }
 
 .ui-tabs-active,
@@ -84,10 +86,6 @@
 	display: block;
 }
 
-.about-us > .row {
-	padding: .3rem;
-}
-
 .expertise .expertise-title {
 	font-size: 1.7rem;
 	text-transform: uppercase;
@@ -106,9 +104,9 @@
  * BLOG POST - SINGLE
  */
 
-.blog-post {
+/*.blog-post {
 	padding: .3rem;
-}
+}*/
 
 .blog-post-details {
 	text-align: left;

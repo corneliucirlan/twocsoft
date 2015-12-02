@@ -20,6 +20,27 @@
 	 */
 	define('FONT_AWESOME', '4.3.0');
 
+	/**
+	 * DEFINE IMAGES LOADED VERSION
+	 */
+	define('IMAGES_LOADED_VERSION', '3.1.8');
+
+	/**
+	 * DEFINE THEME URI
+	 */
+	define('TCS_URI', get_template_directory_uri());
+	
+
+	/**
+	 * POST TYPES
+	 */
+	
+	// WEBSITES
+	define('POST_TYPE_WEBSITE', 'website');
+
+	// PLUGINS
+	define('POST_TYPE_PLUGIN', 'plugin');
+
 
 	/**
 	 * PAGES

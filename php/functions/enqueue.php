@@ -20,23 +20,23 @@
 		 */
 		
 		// bootstrap framework
-		wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', '', BOOTSTRAP_VERSION, 'all');
+		wp_enqueue_style('bootstrap', TCS_URI.'/css/bootstrap.min.css', '', BOOTSTRAP_VERSION, 'all');
 
 		// main stylesheet
-		wp_enqueue_style('main-style', get_template_directory_uri().'/style.css', array('bootstrap'), TCS_VERSION, 'all');
+		wp_enqueue_style('main-style', TCS_URI.'/style.css', array('bootstrap'), TCS_VERSION, 'all');
 
 		// pages
-		wp_enqueue_style('pages', get_template_directory_uri().'/css/pages.css', array('main-style'), TCS_VERSION, 'all');
+		wp_enqueue_style('pages', TCS_URI.'/css/pages.css', array('main-style'), TCS_VERSION, 'all');
 
 		// material design mobile menu
-		wp_enqueue_style('mdmenu', get_template_directory_uri().'/css/jquery.mdmenu.css', array('main-style'), MDMENU_VERSION, 'all');
+		wp_enqueue_style('mdmenu', TCS_URI.'/css/jquery.mdmenu.css', array('main-style'), MDMENU_VERSION, 'all');
 		
 		// font awesome
-		wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/font-awesome.min.css', array(), FONT_AWESOME, 'all');
+		wp_enqueue_style('font-awesome', TCS_URI.'/css/font-awesome.min.css', array(), FONT_AWESOME, 'all');
 
 
 		/**
-		 * Scripts
+		 * JS SCRIPTS
 		 */
 
 		// jQuery
@@ -45,15 +45,14 @@
 		// Masonry
 		wp_enqueue_script('masonry');
 
-		// jQuery UI Tabs
-		wp_enqueue_script('jquery-ui-core');
-		wp_enqueue_script('jquery-ui-tabs');
-		
 		// actions
-		wp_enqueue_script('actions', get_template_directory_uri().'/js/actions.js', array('jquery'), TCS_VERSION, true);
+		wp_enqueue_script('actions', TCS_URI.'/js/actions.js', array('jquery'), TCS_VERSION, true);
 
 		// mobile menu
-		wp_enqueue_script('mdmenu', get_template_directory_uri().'/js/jquery.mdmenu.js', array('jquery'), MDMENU_VERSION, true);
+		wp_enqueue_script('mdmenu', TCS_URI.'/js/jquery.mdmenu.js', array('jquery'), MDMENU_VERSION, true);
+
+		// images loaded
+		wp_enqueue_script('images-loaded', TCS_URI.'/js/imagesloaded.pkgd.min.js', array('jquery'), IMAGES_LOADED_VERSION, true);
 
 
 		// LOCALIZE WPPC AJAX HANDLER
@@ -61,6 +60,15 @@
 			'ajaxurl' => get_bloginfo('wpurl').'/wp-admin/admin-ajax.php',
 			'action' => 'submit-form',
 		));
+	});
+
+
+	/**
+	 * FOOTER
+	 */
+	add_action('wp_footer', function() {
+		?>
+		<?php
 	});
 
 ?>

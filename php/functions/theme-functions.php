@@ -34,4 +34,19 @@
 		<?php
 	}
 
+
+	/**
+	 * GET PHOTO SIZE BASED ON DEVICE
+	 */
+	function getPhotoSize()
+	{
+		$detect = new Mobile_Detect();
+
+		$size = 'large';
+		if ($detect->isMobile() && !$detect->isTablet()) $size = 'medium';
+			elseif ($detect->isTablet()) $size = 'medium';
+
+		return $size;
+	}
+
 ?>

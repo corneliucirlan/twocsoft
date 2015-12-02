@@ -11,10 +11,12 @@ jQuery(document).ready(function($) {
 	});
 
 	// PORJECTS MASONRY
-	$('.projects-tab').masonry({
-		itemSelector: '.project',
-		isAnimated: true,
-		columnWidth: '.project',
+	$('.projects').imagesLoaded(function() {
+		$('.projects').masonry({
+			itemSelector: '.project',
+			isAnimated: true,
+			columnWidth: '.project',
+		});
 	});
 
 	// SKILLS MASONRY
@@ -24,11 +26,6 @@ jQuery(document).ready(function($) {
 		columnWidth: '.skill',
 	});
 
-	// PROJECT TABS
-	$('#projects').tabs();
-
-	//var isVisible = $(this).find('.extra').is(':visible');
-	
 	// ABOUT PAGE CARDS MOUSE OVER
 	$('main').on('mouseover', '.card', function(event) {
 		event.preventDefault();
