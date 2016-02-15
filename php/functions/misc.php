@@ -25,14 +25,16 @@
 
 
 	/**
+	 * ADD HEADER SUPPORT
+	 */
+	add_theme_support('custom-header');
+
+	/**
 	 * CREATE CUSTOM POST TYPES
 	 */
-	$custom = new CustomPostType('text-domain');
+	$websites = new CC_CPT(POST_TYPE_WEBSITE, array('rewrite' => array('slug' => 'projects')));
+//	$websites->register_taxonomy('website_type');
 
-	// WEBSITES
-	$custom->make(POST_TYPE_WEBSITE, 'Website', 'Websites', array('rewrite' => array('slug' => 'projects/'.sanitize_title_with_dashes('Websites'))));
-
-	// PLUGINS
-	$custom->make(POST_TYPE_PLUGIN, 'Plugin', 'Plugins', array('rewrite' => array('slug' => 'projects/'.sanitize_title_with_dashes('Plugins'))));
+	$plugins = new CC_CPT(POST_TYPE_PLUGIN, array('rewrite' => array('slug' => 'projects')));
 
 ?>

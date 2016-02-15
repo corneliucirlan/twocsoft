@@ -15,7 +15,7 @@
 	/**
 	 * CUSTOM POST TYPE CLASS
 	 */
-	require_once('php/libs/CustomPostType.class.php');
+	require_once('php/libs/cc-cpt.php');
 
 
 	/**
@@ -70,5 +70,11 @@
 	 * AJAX FUNCTIONS
 	 */
 	require_once('php/functions/ajax-forms.php');
+
+
+	/**
+	 * BREADCRUMBS
+	 */
+	require_once('php/libs/breadcrumbs.php');
 
 ?>

@@ -3,7 +3,7 @@
 	/**
 	 * DEFINE WEBSITE VERSION
 	 */
-	define('TCS_VERSION', '1.1.2');
+	define('TCS_VERSION', '2');
 
 	/**
 	 * DEFINE BOOTSTRAP VERSION
@@ -18,7 +18,7 @@
 	/**
 	 * DEFINE FONT AWESOME VERSION
 	 */
-	define('FONT_AWESOME', '4.3.0');
+	define('FONT_AWESOME', '4.5.0');
 
 	/**
 	 * DEFINE IMAGES LOADED VERSION

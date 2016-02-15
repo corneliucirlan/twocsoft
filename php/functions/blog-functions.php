@@ -35,10 +35,19 @@
 	function displayBlogPostDetails()
 	{
 		global $post;
+		
+		$category = get_the_category();
+		$category = $category[sizeof($category)-1];
 		?>
-		<div class="blog-post-details">
-			Posted on <a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a> by <a href="<?php the_permalink() ?>"><?php the_author() ?></a>
-		</div>
+		<small class="blog-post-details row">
+			<div class="no-padding-left col-md-8">
+				<a class="category-link" href="<?php echo get_category_link($category->cat_ID) ?>"><?php echo $category->cat_name ?></a> - 
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>, by <a href="<?php the_permalink() ?>"><?php the_author() ?></a>
+			</div>
+			<div class="no-padding-right col-md-4">
+				<?php renderShareButtons(true) ?>
+			</div>
+		</small>
 		<?php
 	}
 ?>

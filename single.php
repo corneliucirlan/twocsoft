@@ -9,20 +9,29 @@
 
 <?php get_header(); ?>
 
-<?php
-	
-	switch (get_post_type($post)):
-		
-		// WEBSITE POST
-		case POST_TYPE_WEBSITE: get_template_part('php/templates/post-website'); break;
-		
-		// PLUGIN POST
-		case POST_TYPE_PLUGIN: get_template_part('php/templates/post-plugin'); break;
-
-		// DEFAULT - BLOG POST
-		default: get_template_part('php/templates/post-blog'); break;
-	endswitch;
-
-?>
+<div class="row">
+	<main class="blog-post-main md-card-holder col-md-8">
+		<div class="md-card md-shadow-2dp">
+			<div class="md-card-header">
+				<h1><?php the_title(); ?></h1>
+				<?php displayBlogPostDetails() ?>
+			</div>
+			<div class="md-card-body">
+				<?php the_post_thumbnail(getPhotoSize()); ?>
+				<?php the_content() ?>
+			</div>
+			<div class="md-card-footer">
+				<?php renderShareButtons() ?>
+				<?php previous_post_link() ?>
+				<?php next_post_link() ?>
+			</div>
+		</div>
+	</main>
+	<!-- <aside class="blog-post-aside md-card-holder col-md-4">
+		<div class="md-card md-shadow-2dp">
+			<?php displayRecentPosts(CATEGORY_BLOG, 5) ?>
+		</div>
+	</aside> -->
+</div>
 
 <?php get_footer(); ?>

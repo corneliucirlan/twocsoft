@@ -12,7 +12,7 @@
         
         <!-- HEADER -->
         <header>
-            <nav class="navbar navbar-default" role="navigation">
+            <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     
                     <!-- BRAND -->
@@ -51,9 +51,21 @@
                     </div>
                 </div>
             </nav>
+
+            <?php
+                $headerImage = get_header_image();
+                $headerDetect = new Mobile_Detect();
+
+                if ($headerDetect->isTablet() && $headerDetect->isMobile()) $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x147.jpg';
+                    elseif ($headerDetect->isMobile()) $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x98.jpg';
+            ?>
+            <img src="<?php echo $headerImage; ?>" alt="<?php bloginfo('name') ?> header" style="margin-top: 80px;" />
         </header>
 
+
         <!-- MAIN CONTENT -->
-        <main class="container-fluid" role="main">
-            <!-- <h1 <?php echo is_front_page() || is_home() ? 'class="frontpage-title"' : '' ?>><?php is_front_page() || is_home() ? bloginfo() : the_title() ?></h1> -->
-            <?php if (!is_front_page() && !is_home()) echo '<h1>'.get_the_title().'</h1>'; ?>
+        <div class="container-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                
+                <!-- BREADCRUMBS -->
+                <?php renderBreadcrumbs() ?>

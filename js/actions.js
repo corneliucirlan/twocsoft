@@ -1,67 +1,49 @@
 jQuery(document).ready(function($) {
 
+	// set bottom margin to fit footer
+    var bumpIt = function() {  
+    	$('body').css('margin-bottom', $('footer').outerHeight());
+    },
+    didResize = false;
+
+    bumpIt();
+
+    $(window).resize(function() {
+    	didResize = true;
+    });
+    setInterval(function() {  
+    	if(didResize) {
+    		didResize = false;
+    		bumpIt();
+    	}
+    }, 250);
+
+	var cardsContainer 	= '.md-cards-holder',
+		card 			= '.md-card-holder';
+
 	// MOBILE MENU
 	$('.navbar-toggle').mdMenu();
 
-	// SERVICES PAGE MASONRY
-	$('.services').masonry({
-		itemSelector: '.service',
-		isAnimated: true,
-		columnWidth: '.service',
-	});
-
-	// PORJECTS MASONRY
-	$('.projects').imagesLoaded(function() {
-		$('.projects').masonry({
-			itemSelector: '.project',
-			isAnimated: true,
-			columnWidth: '.project',
+	// PAGE MASONRY
+	$(cardsContainer).imagesLoaded(function() {
+		$(cardsContainer).masonry({
+			itemSelector: 	card,
+			columnWidth: 	card,
+			isAnimated: 	true,
 		});
 	});
 
-	// SKILLS MASONRY
-	$('.skills').masonry({
-		itemSelector: '.skill',
-		isAnimated: true,
-		columnWidth: '.skill',
-	});
 
-	// ABOUT PAGE CARDS MOUSE OVER
-	$('main').on('mouseover', '.card', function(event) {
-		event.preventDefault();
-
-		if ($(this).find('.extra').length > 0)
-			$(this).find('.expander').removeClass('hidden').addClass('visible');
-	});
-
-	// ABOUT PAGE CARDS MOUSE OUT
-	$('main').on('mouseout', '.card', function(event) {
-		event.preventDefault();
-
-		$(this).find('.expander').removeClass('visible').addClass('hidden');
-	});
-
-	// ABOUT PAGE CARDS CLICK
-	$('main').on('click', '.card', function(event) {
+	// SHARE BUTTONS
+	$('.share-button').on('click', function(event) {
 		event.preventDefault();
 		
-		$(this).find('.extra').toggle('fast');
-		$(this).find('.expander').toggleClass('glyphicon-resize-full glyphicon-resize-small');
-	});
-
-	$('.card').on('click', 'a', function(event) {
-		event.preventDefault();
-		
-		window.open($(this).attr('href'), $(this).attr('target'));
-
-		event.stopPropagation();
+		var popup = {width: 500, height: 350};
+		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
 	});
 
 
-
-	/**
-	 * CONTACT FORM PROCESSING
-	 */
+	// CONTACT FORM PROCESSING
 	$('#contact').submit(function(event) {
 		event.preventDefault();
 		
