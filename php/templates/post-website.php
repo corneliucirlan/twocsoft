@@ -1,29 +1,23 @@
 <?php
 
-	// SECURITY CHECK
-	if (!defined('ABSPATH')) exit;
+	// Security check
+	if (!defined('ABSPATH')) die;
 
 ?>
 
-<div class="col-md-8 col-md-offset-2">
-	<?php echo wp_get_attachment_image(get_post_thumbnail_id(), $size) ?>
+<main>
+	<h1><?php the_title() ?></h1>
+	<p style="padding: 1rem 0;"><?php the_post_thumbnail('large'); ?></p>
 
 	<div class="project-description row">
 		<div class="project-description-left col-md-8">
 			<?php the_content() ?>
-			<!-- <div class="share-website">
-				<h2>Share this website</h2>
-				<i class="fa fa-facebook-square fa-2x"></i>
-				<i class="fa fa-google-plus-square fa-2x"></i>
-				<i class="fa fa-twitter-square fa-2x"></i>
-				<i class="fa fa-linkedin-square fa-2x"></i>
-			</div> -->
 		</div>
 		<div class="project-description-right col-md-4">
 			<h2>Services provided</h2>
 			<ul class="provided-services">
 				<?php
-					$services = get_field('project_services');
+					$services = get_field('project-services');
 					foreach ($services as $service)
 						switch ($service):
 							case "website-design": echo '<li><i class="fa fa-check"></i> Website Design</li>'; break;
@@ -37,4 +31,4 @@
 			<h2><a href="<?php the_field('project-url') ?>" target="_blank">Live Version</a></h2>
 		</div>
 	</div>
-</div>
+</main>

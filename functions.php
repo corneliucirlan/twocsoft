@@ -7,6 +7,18 @@
 
 
 	/**
+	 * MOBILE DETECT LIB
+	 */
+	require_once('php/libs/Mobile_Detect.php');
+
+
+	/**
+	 * CUSTOM POST TYPE CLASS
+	 */
+	require_once('php/libs/cc-cpt.php');
+
+
+	/**
 	 * ENQUEUE SCRIPTS
 	 */
 	require_once('php/functions/enqueue.php');
@@ -25,15 +37,9 @@
 
 
 	/**
-	 * CUSTOM FUNCTIONS
+	 * THEME FUNCTIONS
 	 */
-	require_once('php/functions/custom.php');
-
-
-	/**
-	 * MOBILE DETECT LIB
-	 */
-	require_once('php/libs/Mobile_Detect.php');
+	require_once('php/functions/theme-functions.php');
 
 
 	/**
@@ -64,5 +70,11 @@
 	 * AJAX FUNCTIONS
 	 */
 	require_once('php/functions/ajax-forms.php');
+
+
+	/**
+	 * BREADCRUMBS
+	 */
+	require_once('php/libs/breadcrumbs.php');
 
 ?>

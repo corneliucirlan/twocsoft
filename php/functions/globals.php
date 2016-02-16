@@ -3,7 +3,7 @@
 	/**
 	 * DEFINE WEBSITE VERSION
 	 */
-	define('TCS_VERSION', '1.1.2');
+	define('TCS_VERSION', '2.0');
 
 	/**
 	 * DEFINE BOOTSTRAP VERSION
@@ -18,7 +18,30 @@
 	/**
 	 * DEFINE FONT AWESOME VERSION
 	 */
-	define('FONT_AWESOME', '4.3.0');
+	define('FONT_AWESOME', '4.5.0');
+
+	/**
+	 * DEFINE IMAGES LOADED VERSION
+	 */
+	define('IMAGES_LOADED_VERSION', '3.1.8');
+
+	/**
+	 * HIDE ACF
+	 */
+	define('ACF_LITE', true);
+
+	/**
+	 * DEFINE THEME URI
+	 */
+	define('TCS_URI', get_template_directory_uri());
+	
+
+	/**
+	 * POST TYPES
+	 */
+	
+	// PROJECTS
+	define('POST_TYPE_PORTFOLIO', 'portfolio');
 
 
 	/**
@@ -26,7 +49,7 @@
 	 */
 	
 	// PROJECTS
-	define('PAGE_PROJECTS', 24);
+	define('PAGE_PORTFOLIO', 24);
 
 	// ABOUT US
 	define('PAGE_ABOUT_US', 44);

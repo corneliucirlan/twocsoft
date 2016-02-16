@@ -22,7 +22,7 @@
 		};
 		
 		// body overlay
-		var overlay = '<div class="'+this.classes['overlay']+'"></div>';
+		var overlay = '<div class="'+this.classes.overlay+'"></div>';
 
 		// plugin settings
 		this.settings = {};
@@ -45,15 +45,15 @@
 			this.settings = $.extend({}, defaults, settings);
 
 			// add overlay
-			$('body').prepend(overlay).addClass(this.classes['enableScroll']);;
+			$('body').prepend(overlay).addClass(this.classes.enableScroll);
 
 			// fixed top menu
-			if (this.settings['fixedTop'])
-				this.navMenu.addClass(this.classes['navFixedTop']);
+			if (this.settings.fixedTop)
+				this.navMenu.addClass(this.classes.navFixedTop);
 
 			// DEBUG ONLY
 			console.log(this.settings);
-		}
+		};
 
 		this.resizeMenuHeight = function(nav, menu)
 		{
@@ -62,7 +62,7 @@
 				var navHeight = nav.outerHeight();
 				var menuHeight = menu.height();
 				var navColor = nav.css('background-color');
-
+				
 				if (menuHeight+navHeight > windowHeight) minHeight = menuHeight = windowHeight-navHeight;
 					else menuHeight = "100%";
 
@@ -72,19 +72,19 @@
 					"height": menuHeight,
 					"background-color": navColor,
 				});
-		}
+		};
 
 		this.toggleScroll = function(element)
 		{
 			var $element = $(element);
 
 			// element is still scrollable
-			if ($element.hasClass(this.classes['enableScroll']))
-				return $element.removeClass(this.classes['enableScroll']).addClass(this.classes['disableScroll']);
+			if ($element.hasClass(this.classes.enableScroll))
+				return $element.removeClass(this.classes.enableScroll).addClass(this.classes.disableScroll);
 	
-			if ($element.hasClass(this.classes['disableScroll']))
-				return $element.removeClass(this.classes['disableScroll']).addClass(this.classes['enableScroll']);
-		}
+			if ($element.hasClass(this.classes.disableScroll))
+				return $element.removeClass(this.classes.disableScroll).addClass(this.classes.enableScroll);
+		};
 
 		// initialize
 		this.init();
@@ -110,30 +110,30 @@
 				$menu.resizeMenuHeight($navMenu, $divMenu);
 
 				$menu.toggleScroll('body');
-				$divMenu.addClass($menu.settings['enableScroll']);
+				$divMenu.addClass($menu.settings.enableScroll);
 				
 				// toggle overlay
-				$('.'+$menu.classes['overlay']).fadeToggle().toggleClass($menu.classes['overlayVisible']);
+				$('.'+$menu.classes.overlay).fadeToggle().toggleClass($menu.classes.overlayVisible);
 				
 				// toggle menu
 				$divMenu.toggleClass('mdmenu-visible');
 			});
 
 			// CLOSE MENU WHEN CLICKING ON OVERLAY
-			$('.'+$menu.classes['overlay']).on('click', function(event) {
+			$('.'+$menu.classes.overlay).on('click', function(event) {
 				event.preventDefault();
 				
 				$menu.toggleScroll('body');
-				$(this).fadeToggle().toggleClass($menu.classes['overlayVisible']);
-				$divMenu.toggleClass($menu.classes['menuVisible']);
+				$(this).fadeToggle().toggleClass($menu.classes.overlayVisible);
+				$divMenu.toggleClass($menu.classes.menuVisible);
 			});
 
 			// STICK NAVIGATION TO THE TOP ON SCROLL
-			if ($menu.settings['stickyAt'] > 0)
+			if ($menu.settings.stickyAt > 0)
 			{
 				$(window).on('scroll', function() {
-					if ($(document).scrollTop() > $menu.settings['stickyAt']) $navMenu.addClass($menu.classes['navbarStickyTop']);
-						else $navMenu.removeClass($menu.classes['navbarStickyTop']);
+					if ($(document).scrollTop() > $menu.settings.stickyAt) $navMenu.addClass($menu.classes.navbarStickyTop);
+						else $navMenu.removeClass($menu.classes.navbarStickyTop);
 					 	
 					if ($($menu.$button).is(':visible'))
 						$divMenu.css({

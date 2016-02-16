@@ -32,13 +32,28 @@
 	/**
 	 * DISPLAY BLOG POST DETAILS
 	 */
-	function displayBlogPostDetails()
+	function displayBlogPostDetails($singlePost = false)
 	{
 		global $post;
+		$categoriesText = '';
+		
+		$categories = get_the_category();
+		foreach ($categories as $category):
+				$categoriesText .= '<a class="category-link" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>&nbsp;|&nbsp;';
+		endforeach;
+
 		?>
-		<div class="blog-post-details">
-			Posted on <a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a> by <a href="<?php the_permalink() ?>"><?php the_author() ?></a>
-		</div>
+		<small class="blog-post-details row">
+			<div class="no-padding-left <?php echo $singlePost ? 'col-md-8' : 'col-md-12' ?>">
+				<?php echo $categoriesText ?>
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>, by <a href="<?php the_permalink() ?>"><?php the_author() ?></a>
+			</div>
+			<?php if ($singlePost): ?>
+				<div class="no-padding-right col-md-4">
+					<?php renderShareButtons(true) ?>
+				</div>
+			<?php endif; ?>
+		</small>
 		<?php
 	}
 ?>
