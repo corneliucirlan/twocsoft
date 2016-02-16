@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+##### Version 2.0 (2016.02.16)
+- updated design
+- merged all projects into one custom post type
+- changed Projects into Portfolio
+- added breadcrumbs
+- added Blog section
+
 ##### Version 1.1.2 (2015.06.29)
 - mod: fixed Projects tabs
 

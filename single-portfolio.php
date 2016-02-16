@@ -8,29 +8,18 @@
 
 <?php get_header(); ?>
 
-<main>
-	<h1><?php the_title() ?></h1>
-	<?php the_content() ?>
+<?php
 
-	<!-- Requirements -->
-	<?php if (get_field('plugin-requirements')): ?>
-		<h2>Requirements</h2>
-		<?php the_field('plugin-requirements') ?>
-	<?php endif; ?>
+	switch (get_field('portfolio-type')):
 
-	<!-- Instalation -->
-	<?php if (get_field('plugin-instalation')): ?>
-		<h2>Instalation</h2>
-		<?php the_field('plugin-instalation') ?>
-	<?php endif; ?>
+		// website
+		case 'portfolio-website': get_template_part('php/templates/post-website'); break;
 
-	<!-- USAGE -->
-	<?php if (get_field('plugin-usage')): ?>
-		<h2>Usage</h2>
-		<?php the_field('plugin-usage') ?>
-	<?php endif; ?>
-	
-</main>
+		// plugin
+		case 'portfolio-plugin': get_template_part('php/templates/post-plugin'); break;
 
+	endswitch;
+
+?>
 
 <?php get_footer(); ?>

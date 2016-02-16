@@ -1,16 +1,13 @@
 <?php
 
-	// SECURITY CHECK
-	if (!defined('ABSPATH')) exit;
+	// Security check
+	if (!defined('ABSPATH')) die;
 
-	the_post();
 ?>
-
-<?php get_header(); ?>
 
 <main>
 	<h1><?php the_title() ?></h1>
-	<?php echo wp_get_attachment_image(get_post_thumbnail_id(), $size) ?>
+	<p style="padding: 1rem 0;"><?php the_post_thumbnail('large'); ?></p>
 
 	<div class="project-description row">
 		<div class="project-description-left col-md-8">
@@ -35,5 +32,3 @@
 		</div>
 	</div>
 </main>
-
-<?php get_footer(); ?>
