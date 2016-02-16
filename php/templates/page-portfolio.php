@@ -5,7 +5,7 @@
 		
 		$args = array(
 			'numberposts' 	=> -1,
-			'post_type' 	=> array(POST_TYPE_WEBSITE, POST_TYPE_PLUGIN),
+			'post_type' 	=> POST_TYPE_PORTFOLIO,
 			'post_tatus'	=> 'publish',
 		);
 		$the_query = new WP_Query($args);
@@ -29,8 +29,8 @@
 							<?php the_excerpt() ?>
 						</div>
 						<div class="md-card-footer">
-							<a href="<?php the_permalink() ?>" target="_self" class="btn btn-primary md-shadow-2dp">Details</a>
-							<a href="<?php echo get_field('project-url') ?>" target="_blank" class="btn btn-primary md-shadow-2dp">Live Version</a>
+							<a href="<?php the_permalink() ?>" target="_self" class="btn btn-primary">Details</a>
+							<a href="<?php echo get_field('project-url') ?>" target="_blank" class="btn btn-primary">Live Version</a>
 						</div>
 					</div>
 				</div>

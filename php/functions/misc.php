@@ -32,9 +32,12 @@
 	/**
 	 * CREATE CUSTOM POST TYPES
 	 */
-	$websites = new CC_CPT(POST_TYPE_WEBSITE, array('rewrite' => array('slug' => 'projects')));
-//	$websites->register_taxonomy('website_type');
-
-	$plugins = new CC_CPT(POST_TYPE_PLUGIN, array('rewrite' => array('slug' => 'projects')));
+	$portfolio = new CC_CPT(array(
+		'post_type_name'	=> POST_TYPE_PORTFOLIO,
+		'singular'			=> 'Portfolio',
+		'plural'			=> 'Portfolio',
+		'slug'				=> POST_TYPE_PORTFOLIO
+	));
+	$portfolio->register_taxonomy('type');
 
 ?>

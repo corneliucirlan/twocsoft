@@ -18,10 +18,15 @@
 						echo '<li>'.get_the_title(get_option('page_for_posts', true)).'</li>';
 					elseif (is_category()):
 							global $cat;
+
+							// print main blog page
+							$blogPageID = get_option('page_for_posts');
+							echo '<li><a href="'.get_permalink($blogPageID).'">'.get_the_title($blogPageID).'</a></li>';
 					
+							// get current category
 							$category = get_category($cat);
 
-							// PARENT CATEGORIES
+							// parent categories
 							$categories = get_category_parents($category);
 							$categories = explode('/', $categories);
 
@@ -41,21 +46,24 @@
 										echo "<li>404 Not Found</li>";
 									elseif (is_single()):
 
-											// POST CATEGORY
-											$category = get_the_category();
-											$category = $category[0];
+											// Get WP post object
+											global $post;
 
-											// PARENT CATEGORIES
-											$categories = get_category_parents($category);
-											$categories = explode('/', $categories);
-
-											if ($categories)
-												foreach ($categories as $key => $value):
-													if (strlen($value) != 0):
-														echo '<li><a href="'. get_category_link(get_cat_ID($categories[$key])) .'">'. $value .'</a></li>';
+											// If current post is WP default blog post
+											if ($post->post_type == 'post'):
+													if (get_option('show_on_front') == 'page'):
+														$blogPageID = get_option('page_for_posts');
+														echo '<li><a href="'.get_permalink($blogPageID).'">'.get_the_title($blogPageID).'</a></li>';
 													endif;
-												endforeach;
 
+												// else is custom post type
+												else:
+													$parentPage = get_page_by_path($post->post_type);
+													echo '<li><a href="'.get_permalink($parentPage->ID).'">'.$parentPage->post_title.'</a></li>';
+												
+											endif;
+
+											
 											// CURRENT PAGE
 											echo '<li>'.the_title('','', FALSE) ."</li>";
 										elseif (is_page()):

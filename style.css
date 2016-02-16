@@ -27,16 +27,6 @@ body {
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-h2 {
-	font-family: 'Oswald', 'Arial', 'sans-serif';
-	font-size: 2.5rem;
-}
-
-h3 {
-	font-size: 1.7rem;
-	text-transform: uppercase;
-}
-
 .btn-category {
 	font-size: 26px;
 	width: 100%;
@@ -46,6 +36,10 @@ h3 {
 .col-center {
 	float: none;
 	margin: 0 auto;
+}
+
+.homepage-article h3 {
+	text-align: center;
 }
 
 .homepage-article p {
@@ -62,9 +56,13 @@ h3 {
 .container-fluid {
 	min-height: 100%;
 	height: auto;
-	background-color: #f0f0f0;
+	background-color: #fafafa;
 	padding: 2rem 0;
 	overflow: hidden;
+}
+
+.container-fluid > .content {
+	padding: 0;
 }
 
 .navbar .container-fluid {
@@ -88,6 +86,7 @@ h4,
 h5,
 h6 {
 	font-family: 'Oswald', 'Helvetica', 'Arial', 'sans-serif';
+	text-transform: none;
 }
 
 h1 {
@@ -98,6 +97,14 @@ h1 {
 	margin: 0;
 	padding-bottom: 10px;
 	padding-bottom: 1rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: 1.7rem;
 }
 
 .off-site-title {
@@ -148,7 +155,13 @@ img {
 }
 
 .md-card-holder {
-	padding: .5rem;
+	padding: 1rem;
+}
+
+@media screen (max-height: 480px) {
+	.md-card-holder {
+		padding: .3rem 0;
+	}
 }
 
 .md-card {
@@ -247,7 +260,6 @@ img {
 
 .blog-posts h2 {
 	text-align: left;
-	text-transform: none;
 	margin: 10px 0;
 	margin: 1rem 0;
 }
@@ -257,7 +269,6 @@ img {
 .blog-post-main h2,
 .blog-post-main h3,
 .blog-post-main h4 {
-	text-transform: none;
 	text-align: left;
 	margin: 1rem 0;
 }
@@ -342,6 +353,7 @@ footer a
 footer a:hover,
 footer a:active,
 footer a:focus {
+	color: #fff;
 	color: rgba(255, 255, 255, 1);
 	text-decoration: none;
 }
@@ -371,6 +383,10 @@ footer .navbar-inverse {
 	border-color: #444444;
 }
 
+footer .navbar {
+	margin-bottom: 0;
+}
+
 footer .navbar-inverse li {
 	width: 100%;
 }
@@ -393,9 +409,18 @@ footer .footer-follow-us li {
 }
 
 @media screen and (max-width: 480px) {
+	footer {
+		padding-bottom: 1rem;
+	}
+
 	footer .navbar-inverse li a {
 		padding: 1rem 0;
 		text-align: center;
 		font-size: 2rem;
+	}
+
+	footer .footer-copyright {
+		margin: 20px 0;
+		margin: 2rem 0;
 	}	
 }

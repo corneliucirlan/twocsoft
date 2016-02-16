@@ -13,6 +13,9 @@
 
 <main class="md-cards-holder row">
 	<?php foreach ($array as $x): ?>
-		<div class="md-card-holder col-md-6"><div class="md-card md-shadow-2dp"><?php the_field('box-'.$x[0].'-'.$x[1]) ?></div></div>
+		<div class="md-card-holder col-md-6">
+			<div class="md-card md-shadow-2dp">
+				<?php the_field('box-'.$x[0].'-'.$x[1]) ?></div>
+		</div>
 	<?php endforeach; ?>
 </main>

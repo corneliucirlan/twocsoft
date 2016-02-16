@@ -14,7 +14,7 @@
 		<div class="md-card md-shadow-2dp">
 			<div class="md-card-header">
 				<h1><?php the_title(); ?></h1>
-				<?php displayBlogPostDetails() ?>
+				<?php displayBlogPostDetails(true) ?>
 			</div>
 			<div class="md-card-body">
 				<?php the_post_thumbnail(getPhotoSize()); ?>

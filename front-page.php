@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <!-- SERVICES -->
-<h2>SERVICES</h2>
+<h2 style="text-align: center;">Services</h2>
 
 <a href="<?php echo get_permalink(PAGE_SERVICES); ?>">
 	<?php for ($row = 1; $row <= 2; $row++): ?>

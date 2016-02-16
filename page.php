@@ -6,7 +6,7 @@
 		/**
 		 * PROJECTS PAGE
 		 */
-		case PAGE_PROJECTS: get_template_part('php/templates/page-projects'); break;
+		case PAGE_PORTFOLIO: get_template_part('php/templates/page-portfolio'); break;
 
 		/**
 		 * ABOUT US PAGE

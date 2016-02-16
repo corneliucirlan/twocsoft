@@ -446,7 +446,7 @@
 	            'search_items'       => sprintf(__('Search %s', $this->textdomain), $plural),
 	            'not_found'          => sprintf(__('No %s found', $this->textdomain), $plural),
 	            'not_found_in_trash' => sprintf(__('No %s found in Trash', $this->textdomain), $plural),
-	            'parent_item_colon'  => sprintf(__('Parent %s:', $this->textdomain), $singula)
+	            'parent_item_colon'  => sprintf(__('Parent %s:', $this->textdomain), $singular)
 	        );
 
 
@@ -486,7 +486,7 @@
 	    	$numberOfPosts = number_format_i18n(wp_count_posts($this->postTypeName)->publish);
 
 			// render CPT number
-			echo '<li class="post-count"><a href="edit.php?post_type='.$this->postTypeName.'">'.$numberOfPosts.' '._n($this->singular, $this->plural, intval($num), $this->textdomain).'</a></li>';
+			echo '<li class="post-count"><a href="edit.php?post_type='.$this->postTypeName.'">'.$numberOfPosts.' '._n($this->singular, $this->plural, intval($numberOfPosts), $this->textdomain).'</a></li>';
 	    }
 
 	    /**
@@ -1059,7 +1059,7 @@
 	     * Set menu icon
 	     *
 	     * Use this public function to set the menu icon in the admin dashboard. Since WordPress v3.8
-	     * dashicons are used. For more information see @link http://melchoyce.github.io/dashicons/
+	     * dashicons are used. For more information see @link https://developer.wordpress.org/resource/dashicons/
 	     *
 	     * @since  1.0
 	     * 

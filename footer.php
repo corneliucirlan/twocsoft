@@ -28,7 +28,7 @@
 				</nav>
 			</div>
 			<div class="col-md-4">
-				<p>Have a new business ideea and need online presence ? <a href="<?php the_permalink(PAGE_CONTACT); ?>">Contact us</a> and we can work together</p>
+				<p>Having problems with your website on want to create a whole new one? <a href="<?php the_permalink(PAGE_CONTACT); ?>">Contact us</a>, we can help.</p>
 			</div>
 			<div class="footer-copyright col-md-4">
 				<ul class="footer-follow-us">

@@ -65,7 +65,7 @@
 
         <!-- MAIN CONTENT -->
         <div class="container-fluid">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="content col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
                 
                 <!-- BREADCRUMBS -->
                 <?php renderBreadcrumbs() ?>

@@ -35,11 +35,8 @@
 	 * POST TYPES
 	 */
 	
-	// WEBSITES
-	define('POST_TYPE_WEBSITE', 'website');
-
-	// PLUGINS
-	define('POST_TYPE_PLUGIN', 'plugin');
+	// PROJECTS
+	define('POST_TYPE_PORTFOLIO', 'portfolio');
 
 
 	/**
@@ -47,7 +44,7 @@
 	 */
 	
 	// PROJECTS
-	define('PAGE_PROJECTS', 24);
+	define('PAGE_PORTFOLIO', 24);
 
 	// ABOUT US
 	define('PAGE_ABOUT_US', 44);
