@@ -26,6 +26,11 @@
 	define('IMAGES_LOADED_VERSION', '3.1.8');
 
 	/**
+	 * HIDE ACF
+	 */
+	define('ACF_LITE', true);
+
+	/**
 	 * DEFINE THEME URI
 	 */
 	define('TCS_URI', get_template_directory_uri());

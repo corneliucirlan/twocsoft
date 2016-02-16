@@ -40,4 +40,12 @@
 	));
 	$portfolio->register_taxonomy('type');
 
+
+	/**
+	 * LOAD ACF TEMPLATES
+	 */
+	include_once(get_template_directory_uri().'/php/templates/acf/frontpage.php');
+	include_once(get_template_directory_uri().'/php/templates/acf/portfolio.php');
+	include_once(get_template_directory_uri().'/php/templates/acf/services.php');
+
 ?>
