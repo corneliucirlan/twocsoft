@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 2.1.1 (2016.02.17)
+- added PrismJS for code highlighting
+
 ##### Version 2.1 (2016.02.17)
 - updated security with index.php and ABSPATH check
 

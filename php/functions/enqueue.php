@@ -34,7 +34,7 @@
 		/**
 		 * CSS
 		 */
-		
+
 		// bootstrap framework
 		wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', '', BOOTSTRAP_VERSION, 'all');
 
@@ -81,6 +81,13 @@
 	 * FOOTER
 	 */
 	add_action('wp_footer', function() {
+
+		// load prismjs for code highlighting
+		if (is_singular(POST_TYPE_PORTFOLIO)):
+			wp_enqueue_style('prismjs', get_template_directory_uri().'/css/prism.css', '', TCS_VERSION, 'all');
+			wp_enqueue_script('prism-js', get_template_directory_uri().'/js/prism.js', '', TCS_VERSION, true);
+		endif;
+
 		// font awesome
 		wp_enqueue_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), FONT_AWESOME, 'all');
 	});

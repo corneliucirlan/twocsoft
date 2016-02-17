@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
 
+	// Add language-php class to all <code> elements
+	$('code').addClass('language-php');
+
+
 	// set bottom margin to fit footer
     var bumpIt = function() {  
     	$('body').css('margin-bottom', $('footer').outerHeight());

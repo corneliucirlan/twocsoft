@@ -511,7 +511,7 @@
 	    /**
 	     * Register taxonomy
 	     *
-	     * @see http://codex.wordpress.org/public function_Reference/register_taxonomy
+	     * @see https://codex.wordpress.org/Function_Reference/register_taxonomy
 	     *
 	     * @since  1.0
 	     * 
