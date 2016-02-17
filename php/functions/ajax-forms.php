@@ -1,12 +1,5 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
-
-?>
-
-<?php
-
 	add_action('wp_ajax_submit-form', 'tcsContactForm');
 	add_action('wp_ajax_nopriv_submit-form', 'tcsContactForm');
 

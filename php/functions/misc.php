@@ -1,12 +1,5 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
-
-?>
-
-<?php
-
 	/**
 	 * ADD FEATURED IMAGE
 	 */
@@ -19,6 +12,12 @@
 	add_action('init', function() {
 		register_nav_menu('header-menu', __("Header Menu"));
 	});
+
+
+	/**
+	 * CHANGE YOAST SEO PRIORITY TO LOW
+	 */
+	add_filter('wpseo_metabox_prio', function() { return 'low';});
 
 
 	/**

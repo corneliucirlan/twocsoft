@@ -1,12 +1,5 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
-
-?>
-
-<?php
-
 	/*
 	 * REMOVE COMMENTS ICON FROM ADMINBAR
 	 */
