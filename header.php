@@ -1,3 +1,9 @@
+<?php
+
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
 	<head>

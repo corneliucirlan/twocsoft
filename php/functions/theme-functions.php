@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	/**
 	 * PRINT ONE SKILL
 	 */

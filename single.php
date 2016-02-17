@@ -1,7 +1,7 @@
 <?php
 
-	// SECURITY CHECK
-	if (!defined('ABSPATH')) exit;
+	// Security check
+	if (!defined('ABSPATH')) die;
 
 	the_post();
 ?>

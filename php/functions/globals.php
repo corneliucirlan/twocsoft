@@ -1,9 +1,16 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	/**
 	 * DEFINE WEBSITE VERSION
 	 */
-	define('TCS_VERSION', '2.0');
+	define('TCS_VERSION', '2.1');
 
 	/**
 	 * DEFINE BOOTSTRAP VERSION
@@ -33,7 +40,7 @@
 	/**
 	 * DEFINE THEME URI
 	 */
-	define('TCS_URI', get_template_directory_uri());
+	define('TCS_URI', get_template_directory());
 	
 
 	/**

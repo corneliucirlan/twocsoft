@@ -1,8 +1,11 @@
 <?php
 
-	// SECURITY CHECK
-	if (!defined('ABSPATH')) exit;
+    // Security check
+    if (!defined('ABSPATH')) die;
 
+?>
+
+<?php
 
 	/**
 	 * DISPLAY LATEST POSTS

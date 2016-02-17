@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	if (isset($_POST['submit'])):
 		$name = isset($_POST['full-name']) ? esc_attr($_POST['full-name']) : false;
 		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? esc_attr($_POST['email']) : false;
@@ -29,6 +36,7 @@
 
 <main class="col-md-6 col-md-offset-3">
 	<div class="md-card md-shadow-2dp">
+		<div class="md-card-header"></div>
 		<div class="md-card-body">
 			<p>You can contact us using <a href="mailto:cornel@twocsoft.com" target="_blank">cornel@twocsoft.com</a> or the form below.</p>
 			<form id="contact" role="form" action="" method="post">

@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	// First, create a function that includes the path to your favicon
 	function add_favicon()
 	{

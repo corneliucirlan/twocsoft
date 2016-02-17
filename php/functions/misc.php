@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	/**
 	 * ADD FEATURED IMAGE
 	 */
@@ -37,15 +44,14 @@
 		'singular'			=> 'Portfolio',
 		'plural'			=> 'Portfolio',
 		'slug'				=> POST_TYPE_PORTFOLIO
-	));
+	), array('has_archive' => false));
 	$portfolio->register_taxonomy('type');
-
 
 	/**
 	 * LOAD ACF TEMPLATES
 	 */
-	include_once(get_template_directory_uri().'/php/templates/acf/frontpage.php');
-	include_once(get_template_directory_uri().'/php/templates/acf/portfolio.php');
-	include_once(get_template_directory_uri().'/php/templates/acf/services.php');
+	include_once(TCS_URI.'/php/templates/acf/frontpage.php');
+	include_once(TCS_URI.'/php/templates/acf/portfolio.php');
+	include_once(TCS_URI.'/php/templates/acf/services.php');
 
 ?>

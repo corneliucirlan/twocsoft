@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	if(function_exists("register_field_group"))
 	{
 		register_field_group(array (

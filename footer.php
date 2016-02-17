@@ -1,3 +1,10 @@
+<?php
+
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
             </div>
 		</div>
 

@@ -1,10 +1,9 @@
 <?php
 
-	// Security check
-	if (!defined('ABSPATH')) die;
+    // Security check
+    if (!defined('ABSPATH')) die;
 
 ?>
-
 
 <?php get_header() ?>
 

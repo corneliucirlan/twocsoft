@@ -1,5 +1,12 @@
 <?php
 
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
+<?php
+
 	// SKILLS
 	$skills = array();
 	$skills[] = new SKILL('PHP', 4);

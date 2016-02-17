@@ -1,3 +1,10 @@
+<?php
+
+    // Security check
+    if (!defined('ABSPATH')) die;
+
+?>
+
 <main class="md-cards-holder row">
 	<?php
 		global $post;

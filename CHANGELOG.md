@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 2.1 (2016.02.17)
+- updated security with index.php and ABSPATH check
+
 ##### Version 2.0 (2016.02.16)
 - updated design
 - merged all projects into one custom post type
