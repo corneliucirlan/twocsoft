@@ -20,7 +20,7 @@
 					<?php the_excerpt() ?>
 				</div>
 				<div class="md-card-footer">
-					<?php renderShareButtons() ?>
+					<?php renderShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,7 @@
 	/**
 	 * DEFINE WEBSITE VERSION
 	 */
-	define('TCS_VERSION', '2.1.2');
+	define('TCS_VERSION', '2.2');
 
 	/**
 	 * DEFINE BOOTSTRAP VERSION

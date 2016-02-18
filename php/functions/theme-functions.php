@@ -36,7 +36,11 @@
 
 
 	/**
-	 * GET PHOTO SIZE BASED ON DEVICE
+	 * Get thumbnail photo size
+	 *
+	 * Uses PHP MobileDetect class
+	 * 
+	 * @return string WP media size
 	 */
 	function getPhotoSize()
 	{
@@ -50,15 +54,23 @@
 	}
 
 
-	function renderShareButtons($top = false)
+	/**
+	 * Display share buttons
+	 *
+	 * @param  array $settings Array of various settings
+	 */
+	function displayShareButtons($settings)
 	{
-		$url = urlencode(get_permalink());
-		$title = urlencode(get_the_title());
+		$url = array_key_exists('isCategory', $settings) && $settings['isCategory'] == true ? get_category_link($settings['id']) : urlencode(get_permalink($settings['id']));
+		$title = urlencode(get_the_title($settings['id']));
 		$excerpt = urlencode(get_the_excerpt());
 		$related = urlencode('twocsoft:TwoCSoft,corneliucirlan:Corneliu Cirlan');
-		?>
 		
-		<ul class="share-buttons <?php echo $top == true ? ' pull-right' : '' ?>">
+		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+		$url = $bitly->data->url;
+		?>
+
+		<ul class="share-buttons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">
 			<li><span>Share:</span></li>
             <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;via=TwoCSoft&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>

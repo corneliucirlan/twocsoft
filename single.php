@@ -21,7 +21,7 @@
 				<?php the_content() ?>
 			</div>
 			<div class="md-card-footer">
-				<?php renderShareButtons() ?>
+				<?php renderShareButtons(array('id' => get_the_id())) ?>
 				<?php previous_post_link() ?>
 				<?php next_post_link() ?>
 			</div>

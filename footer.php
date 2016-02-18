@@ -35,7 +35,7 @@
 				</nav>
 			</div>
 			<div class="col-md-4">
-				<p>Having problems with your website on want to create a whole new one? <a href="<?php the_permalink(PAGE_CONTACT); ?>">Contact us</a>, we can help.</p>
+				<p><?php echo get_option('footer_center_text') ?></p>
 			</div>
 			<div class="footer-copyright col-md-4">
 				<ul class="footer-follow-us">

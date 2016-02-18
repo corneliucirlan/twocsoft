@@ -1,18 +1,11 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
-
-?>
-
-<?php
-
 	// Security check
 	if (!defined('ABSPATH')) die;
 
 ?>
 
-<main>
+<main class="md-card-holder">
 	<h1><?php the_title() ?></h1>
 	<p style="padding: 1rem 0;"><?php the_post_thumbnail('large'); ?></p>
 

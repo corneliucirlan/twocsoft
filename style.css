@@ -5,7 +5,7 @@
 	Author: TwoCSoft
 	Author URI: https://www.TwoCSoft.com
 	GitHub Theme URI: https://github.com/corneliucirlan/twocsoft
-	Version: 2.1.2
+	Version: 2.2
 	Tags: responsive, white, bootstrap
 */
 
@@ -222,6 +222,11 @@ img {
 	background-color: #eeeeee;
 }
 
+.item-footer-social {
+	height: 32px;
+	line-height: 32px;
+}
+
 .share-buttons li {
 	float: left;
 }
@@ -339,6 +344,7 @@ footer {
 	width: 100%;
 	padding-top: 2rem;
 	background-color: #444444;
+	padding-bottom: 1rem;
 }
 
 footer p,
@@ -415,9 +421,6 @@ footer .footer-follow-us li {
 }
 
 @media screen and (max-width: 480px) {
-	footer {
-		padding-bottom: 1rem;
-	}
 
 	footer .navbar-inverse li a {
 		padding: 1rem 0;

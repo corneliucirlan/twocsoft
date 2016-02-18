@@ -42,11 +42,12 @@
 		<small class="blog-post-details row">
 			<div class="no-padding-left <?php echo $singlePost ? 'col-md-8' : 'col-md-12' ?>">
 				<?php echo $categoriesText ?>
-				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>, by <a href="<?php the_permalink() ?>"><?php the_author() ?></a>
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
+				<i style="color: #1DA1F2;" class="fa fa-twitter"></i>&nbsp;<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank">@<?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
 			<?php if ($singlePost): ?>
 				<div class="no-padding-right col-md-4">
-					<?php renderShareButtons(true) ?>
+					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
 				</div>
 			<?php endif; ?>
 		</small>

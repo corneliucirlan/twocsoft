@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 2.2 (2016.02.19)
+- added social media links on all pages
+- added bitly url shortener
+- minor design updates
+
 ##### Version 2.1.2 (2016.02.18)
 - updated Portfolio template
 

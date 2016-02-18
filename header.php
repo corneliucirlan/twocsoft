@@ -4,17 +4,52 @@
     if (!defined('ABSPATH')) die;
 
 ?>
+
+<?php
+
+    if (is_front_page() || is_home() || is_page() || is_singular(POST_TYPE_PORTFOLIO) || is_category() || is_tag() || is_tax()):
+
+            // show social media buttons on breadcrumbs row
+            $isPage = true;
+
+            // create social media settings
+            $pageSettings = array();
+
+            // page is category page
+            if (is_category()):
+                    global $cat;
+                    $pageSettings['id'] = $cat;
+                    $pageSettings['isCategory'] = true;
+
+                // page is blog page
+                elseif (is_home()):
+                        $pageSettings['id'] = get_option('page_for_posts', true);
+
+                    // page is ordinary page
+                    else:
+                        $pageSettings['id'] = get_the_id();
+            endif;
+
+            // set buttons to the right
+            $pageSettings['alignRight'] = true;
+
+        else:
+            $isPage = false;
+    endif;
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title><?php wp_title() ?></title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><?php wp_title() ?></title>
 
-      	<?php wp_head() ?>
+        <?php wp_head() ?>
      </head>
 
-	<body>
+    <body>
         
         <!-- HEADER -->
         <header>
@@ -68,10 +103,18 @@
             <img src="<?php echo $headerImage; ?>" alt="<?php bloginfo('name') ?> header" style="margin-top: 80px;" />
         </header>
 
-
         <!-- MAIN CONTENT -->
         <div class="container-fluid">
             <div class="content col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                
+
                 <!-- BREADCRUMBS -->
-                <?php renderBreadcrumbs() ?>
+                <div class="row">
+                    <div class="no-padding-left <?php echo $isPage ? 'col-md-8' : 'col-md-12' ?>">
+                        <?php renderBreadcrumbs() ?>
+                    </div>
+                    <?php if ($isPage): ?>
+                        <div class="no-padding-right col-md-4">
+                            <?php displayShareButtons($pageSettings) ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
