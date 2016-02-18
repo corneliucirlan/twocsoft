@@ -5,14 +5,7 @@
 
 ?>
 
-<?php
-
-	// Security check
-	if (!defined('ABSPATH')) die;
-
-?>
-
-<main>
+<main class="md-card-holder">
 	<h1><?php the_title() ?></h1>
 	<?php the_content() ?>
 

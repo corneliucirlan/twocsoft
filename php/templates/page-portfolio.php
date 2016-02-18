@@ -18,11 +18,6 @@
 		$the_query = new WP_Query($args);
 		
 		if ($the_query->have_posts()):
-			$size = 'medium';
-			$detect = new Mobile_Detect();
-			if ($detect->isMobile() && !$detect->isTablet()) $size = 'thumbnail';
-				elseif ($detect->isTablet()) $size = 'medium';
-
 			while ($the_query->have_posts()):
 				$the_query->the_post();
 				?>
@@ -37,7 +32,7 @@
 						</div>
 						<div class="md-card-footer">
 							<a href="<?php the_permalink() ?>" target="_self" class="btn btn-primary">Details</a>
-							<a href="<?php echo get_field('project-url') ?>" target="_blank" class="btn btn-primary">Live Version</a>
+							<?php if (get_field('portfolio-type') == PORTFOLIO_WEBSITE): ?><a href="<?php echo get_field('project-url') ?>" target="_blank" class="btn btn-primary">Live Version</a><?php endif; ?>
 						</div>
 					</div>
 				</div>

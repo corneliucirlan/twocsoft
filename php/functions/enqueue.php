@@ -82,8 +82,8 @@
 	 */
 	add_action('wp_footer', function() {
 
-		// load prismjs for code highlighting
-		if (is_singular(POST_TYPE_PORTFOLIO)):
+		// PrismJS for code highlighting
+		if (is_singular()):
 			wp_enqueue_style('prismjs', get_template_directory_uri().'/css/prism.css', '', TCS_VERSION, 'all');
 			wp_enqueue_script('prism-js', get_template_directory_uri().'/js/prism.js', '', TCS_VERSION, true);
 		endif;

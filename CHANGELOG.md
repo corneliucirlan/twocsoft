@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 2.1.2 (2016.02.18)
+- updated Portfolio template
+
 ##### Version 2.1.1 (2016.02.17)
 - added PrismJS for code highlighting
 

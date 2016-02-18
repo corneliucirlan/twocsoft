@@ -5,7 +5,7 @@
 	Author: TwoCSoft
 	Author URI: https://www.TwoCSoft.com
 	GitHub Theme URI: https://github.com/corneliucirlan/twocsoft
-	Version: 2.1.1
+	Version: 2.1.2
 	Tags: responsive, white, bootstrap
 */
 
@@ -64,6 +64,12 @@ body {
 
 .container-fluid > .content {
 	padding: 0;
+}
+
+@media (max-width: 768px) {
+	.container-fluid > .content {
+		padding: 0 1.5rem;
+	}
 }
 
 .navbar .container-fluid {

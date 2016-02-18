@@ -3,7 +3,7 @@
 	/**
 	 * DEFINE WEBSITE VERSION
 	 */
-	define('TCS_VERSION', '2.1.1');
+	define('TCS_VERSION', '2.1.2');
 
 	/**
 	 * DEFINE BOOTSTRAP VERSION
@@ -68,12 +68,13 @@
 
 
 	/**
-	 * CATEGORIES
+	 * PORTFOLIO ITEMS TYPE
 	 */
 	
-	// BLOG
-	define('CATEGORY_BLOG', 5);
+	// WEBSITE
+	define('PORTFOLIO_WEBSITE', 'portfolio-website');
 
-	// PROJECTS
-	define('CATEGORY_PROJECTS', 4);
+	// PLUGIN
+	define('PORTFOLIO_PLUGIN', 'portfolio-plugin');
+
 ?>
