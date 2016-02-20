@@ -97,8 +97,11 @@
                 $headerImage = get_header_image();
                 $headerDetect = new Mobile_Detect();
 
-                if ($headerDetect->isTablet() && $headerDetect->isMobile()) $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x147.jpg';
-                    elseif ($headerDetect->isMobile()) $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x98.jpg';
+                if ($headerDetect->isTablet() && $headerDetect->isMobile()):
+                        $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x147.jpg';
+                    elseif ($headerDetect->isMobile()):
+                        $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x98.jpg';
+                endif;
             ?>
             <img src="<?php echo $headerImage; ?>" alt="<?php bloginfo('name') ?> header" style="margin-top: 80px;" />
         </header>

@@ -94,5 +94,6 @@
 		'slug'				=> POST_TYPE_PORTFOLIO
 	), array('has_archive' => false));
 	$portfolio->register_taxonomy('type');
+	$portfolio->register_taxonomy('post_tag');
 
 ?>

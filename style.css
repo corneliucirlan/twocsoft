@@ -236,6 +236,16 @@ img {
 	text-align: center;
 }
 
+@media (max-width: 480px) {
+	.share-buttons {
+		width: 100%;
+	}
+
+	.share-buttons li {
+		width: 20%;
+	}
+}
+
 .btn-primary {
 	background-color: transparent;
 	border: none;
