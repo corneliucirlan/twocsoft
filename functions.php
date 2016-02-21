@@ -61,12 +61,6 @@
 
 
 	/**
-	 * BLOG FUNCTIONS
-	 */
-	require_once('php/functions/blog-functions.php');
-
-
-	/**
 	 * AJAX FUNCTIONS
 	 */
 	require_once('php/functions/ajax-forms.php');

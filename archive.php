@@ -14,13 +14,14 @@
 			<div class="md-card md-shadow-2dp">
 				<div class="md-card-header">
 					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-					<?php displayBlogPostDetails() ?>
+					<?php if (is_category()) displayBlogPostDetails() ?>
 				</div>
 				<div class="md-card-body">
+					<?php the_post_thumbnail(getPhotoSize()) ?>
 					<?php the_excerpt() ?>
 				</div>
 				<div class="md-card-footer">
-					<?php renderShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
+					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
 				</div>
 			</div>
 		</div>

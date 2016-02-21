@@ -25,7 +25,7 @@
 					
 							// get current category
 							$category = get_category($cat);
-
+							
 							// parent categories
 							$categories = get_category_parents($category);
 							$categories = explode('/', $categories);
@@ -39,7 +39,36 @@
 								endforeach;
 							endif;
 						elseif (is_archive() && !is_category()):
-								echo "<li>Archives</li>";
+
+								//echo '<pre><code>';
+							
+
+
+
+								// current taxonomy
+								$currentTaxonomy = get_query_var($wp_query->query_vars['taxonomy']);
+								
+								// taxonomy term
+								$tax = get_term_by('slug', $currentTaxonomy, $wp_query->query_vars['taxonomy']);
+								
+								//var_dump($tax->taxonomy);
+
+								if ($currentTaxonomy) {
+								    $taxObject = get_taxonomy($tax->taxonomy);
+								    $postTypeArray = $taxObject->object_type;
+								    //var_dump($postTypeArray);
+
+								    $parentPage = get_page_by_path($postTypeArray[0]);
+
+								    echo '<li><a href="'.get_permalink($parentPage->ID).'">'.$parentPage->post_title.'</a></li>';
+								}
+
+
+
+
+								//echo '</pre></code>';
+
+								echo "<li>".$tax->name."</li>";
 							elseif (is_search()):
 									echo "<li>Search Results</li>";
 								elseif (is_404()):
