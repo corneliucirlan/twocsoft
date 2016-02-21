@@ -111,7 +111,7 @@
             <div class="content col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
 
                 <!-- BREADCRUMBS -->
-                <div class="row">
+                <div class="breadcrumbs-container row">
                     <div class="no-padding-left <?php echo $isPage ? 'col-md-8' : 'col-md-12' ?>">
                         <?php renderBreadcrumbs() ?>
                     </div>

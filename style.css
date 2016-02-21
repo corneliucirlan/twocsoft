@@ -66,9 +66,19 @@ body {
 	padding: 0;
 }
 
+.no-padding-left {
+	padding-left: 0;
+}
+
+.no-padding-right {
+	padding-right: 0;
+}
+
 @media (max-width: 768px) {
-	.container-fluid > .content {
-		padding: 0 1.5rem;
+	.no-padding-left,
+	.no-padding-right {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 }
 
@@ -78,8 +88,14 @@ body {
 
 .breadcrumb {
 	background: none;
-	padding: 5px;
-	padding: .5rem;
+	padding: 5px 5px 5px 0;
+	padding: .5rem .5rem .5rem 0;
+}
+
+@media (max-width: 768px) {
+	.breadcrumbs-container {
+		padding-bottom: 1rem;
+	}
 }
 
 textarea {
@@ -256,14 +272,6 @@ img {
 .btn-primary:focus {
 	background-color: #eee;
 	color: #444444;
-}
-
-.no-padding-left {
-	padding-left: 0;
-}
-
-.no-padding-right {
-	padding-right: 0;
 }
 
 
