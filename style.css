@@ -438,7 +438,12 @@ footer .footer-follow-us li {
 	text-align: center;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+
+	footer .navbar-inverse li {
+		width: 100%;
+		float: none;
+	}
 
 	footer .navbar-inverse li a {
 		padding: 1rem 0;
@@ -450,4 +455,20 @@ footer .footer-follow-us li {
 		margin: 20px 0;
 		margin: 2rem 0;
 	}	
+}
+
+@media (min-width: 481px) and (max-width: 991px) {
+	footer .navbar-nav {
+		width: 100%;
+	}
+
+	footer .navbar-inverse li {
+		float: left;
+		width: calc(100%/6);
+	}
+
+	footer .navbar-inverse li a {
+		padding: 0;
+		text-align: center;
+	}
 }
