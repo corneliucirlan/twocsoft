@@ -17,7 +17,7 @@
 			<h2>Services provided</h2>
 			<ul class="provided-services">
 				<?php
-					$services = get_field('project-services');
+					$services = get_field('website-services');
 					foreach ($services as $service)
 						switch ($service):
 							case "website-design": echo '<li><i class="fa fa-check"></i> Website Design</li>'; break;

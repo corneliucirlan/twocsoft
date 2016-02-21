@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 2.2.1 (2016.02.22)
+- minor design fixes
+- merged blog-functions.php with theme-functions.php
+- renamed category.php to archive.php
+
 ##### Version 2.2 (2016.02.19)
 - added social media links on all pages
 - added bitly url shortener
