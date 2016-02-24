@@ -7,27 +7,31 @@
 
 <?php get_header() ?>
 
+<?php
+
+	$cardSettings = array(
+		'containerClass'		=> 'col-md-6',
+		'showCardDetails'		=> true,
+		'isCategory' 			=> is_category() ? true : false,
+		'isTag'					=> is_tag() ? true : false,
+
+		'showFooterShare'		=> true,
+		'footerShareSettings'	=> array('id' => get_the_id(), 'alignRight' => true),
+	);
+
+?>
+
 <main class="md-cards-holder row">
 
-<?php if (have_posts()): while (have_posts()): the_post(); ?>
-		<div class="md-card-holder col-md-6">
-			<div class="md-card md-shadow-2dp">
-				<div class="md-card-header">
-					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-					<?php if (is_category()) displayBlogPostDetails() ?>
-				</div>
-				<div class="md-card-body">
-					<?php the_post_thumbnail(getPhotoSize()) ?>
-					<?php the_excerpt() ?>
-				</div>
-				<div class="md-card-footer">
-					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
-				</div>
-			</div>
-		</div>
-	<?php endwhile; else: ?>
-		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
+	<?php if (have_posts()): ?>
+			<?php while (have_posts()): ?>
+				<?php the_post() ?>
+				<?php displayCard($cardSettings); ?>
+			<?php endwhile; ?>
+		<?php else: ?>
+			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+	<?php endif; ?>
+
 </main>
 
 <?php get_footer() ?>

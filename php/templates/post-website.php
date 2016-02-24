@@ -28,7 +28,7 @@
 						endswitch;
 				?>
 			</ul>
-			<h2><a href="<?php the_field('project-url') ?>" target="_blank">Live Version</a></h2>
+			<h2><a href="<?php the_field('website-url') ?>" target="_blank">Live Version</a></h2>
 		</div>
 	</div>
 </main>

@@ -38,12 +38,18 @@
 									endif;
 								endforeach;
 							endif;
-						elseif (is_archive() && !is_category()):
 
-								//echo '<pre><code>';
-							
+						elseif (is_tag()):
+								
+								// print main blog page
+								$blogPageID = get_option('page_for_posts');
+								echo '<li><a href="'.get_permalink($blogPageID).'">'.get_the_title($blogPageID).'</a></li>';
+								
+								// print current tag page
+								$currentTag = single_tag_title("", false);
+								echo '<li>'.$currentTag.'</li>';
 
-
+						elseif (is_archive()):
 
 								// current taxonomy
 								$currentTaxonomy = get_query_var($wp_query->query_vars['taxonomy']);
@@ -51,9 +57,7 @@
 								// taxonomy term
 								$tax = get_term_by('slug', $currentTaxonomy, $wp_query->query_vars['taxonomy']);
 								
-								//var_dump($tax->taxonomy);
-
-								if ($currentTaxonomy) {
+								if ($currentTaxonomy):
 								    $taxObject = get_taxonomy($tax->taxonomy);
 								    $postTypeArray = $taxObject->object_type;
 								    //var_dump($postTypeArray);
@@ -61,12 +65,7 @@
 								    $parentPage = get_page_by_path($postTypeArray[0]);
 
 								    echo '<li><a href="'.get_permalink($parentPage->ID).'">'.$parentPage->post_title.'</a></li>';
-								}
-
-
-
-
-								//echo '</pre></code>';
+								endif;
 
 								echo "<li>".$tax->name."</li>";
 							elseif (is_search()):

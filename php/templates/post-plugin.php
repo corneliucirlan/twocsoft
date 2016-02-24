@@ -6,6 +6,7 @@
 ?>
 
 <main class="md-card-holder">
+
 	<h1><?php the_title() ?></h1>
 	<?php the_content() ?>
 
@@ -21,7 +22,7 @@
 		<?php the_field('plugin-instalation') ?>
 	<?php endif; ?>
 
-	<!-- USAGE -->
+	<!-- Usage -->
 	<?php if (get_field('plugin-usage')): ?>
 		<h2>Usage</h2>
 		<?php the_field('plugin-usage') ?>

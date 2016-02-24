@@ -25,6 +25,11 @@
                 elseif (is_home()):
                         $pageSettings['id'] = get_option('page_for_posts', true);
 
+                    // page is tag page
+                    elseif (is_tag()):
+                            $pageSettings['id'] = get_query_var('tag_id');
+                            $pageSettings['isTag'] = true;
+
                     // page is ordinary page
                     else:
                         $pageSettings['id'] = get_the_id();

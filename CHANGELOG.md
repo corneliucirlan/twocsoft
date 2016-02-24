@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+##### Version 2.3 (2016.02.24)
+- minor design changes
+- new function for creating cards
+- changed default post slug
+- changed portfolio custom taxonomy
+
 ##### Version 2.2.1 (2016.02.22)
 - minor design fixes
 - merged blog-functions.php with theme-functions.php

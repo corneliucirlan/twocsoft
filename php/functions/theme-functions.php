@@ -1,6 +1,43 @@
 <?php
 
 	/**
+	 * DISPLAY CARD
+	 */
+	function displayCard($settings, $content = false)
+	{
+		?>
+		<div class="md-card-holder <?php echo $settings['containerClass'] ?>">
+			<div class="md-card md-shadow-2dp">
+				<div class="md-card-header">
+					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+					<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
+				</div>
+				<div class="md-card-body">
+					<?php the_post_thumbnail(getPhotoSize()) ?>
+					<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] ? the_content() : the_excerpt() ?>
+				</div>
+				<div class="md-card-footer <?php echo array_key_exists('buttons', $settings) ? 'row' : '' ?>">
+					<?php if (array_key_exists('buttons', $settings)): ?>
+							<div class="col-md-6">
+								<?php foreach ($settings['buttons'] as $button): ?>
+									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="<?php echo $button['class'] ?>"><?php echo $button['label'] ?></a>
+								<?php endforeach; ?>
+							</div>
+							<div class="item-footer-social col-md-6">
+								<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+							</div>
+
+						<?php else: ?>
+								<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+		<?php
+	}
+
+
+	/**
 	 * DISPLAY LATEST POSTS
 	 */
 	function displayRecentPosts($category, $numberOfPosts = 3)
@@ -116,12 +153,32 @@
 	 */
 	function displayShareButtons($settings)
 	{
-		$url = array_key_exists('isCategory', $settings) && $settings['isCategory'] == true ? get_category_link($settings['id']) : urlencode(get_permalink($settings['id']));
+		// get url if page is category page
+		if (array_key_exists('isCategory', $settings) && $settings['isCategory']):
+				$url = urlencode(get_category_link($settings['id']));
+			
+			// or if tag page
+			elseif (array_key_exists('isTag', $settings) && $settings['isTag']):
+					$url = urlencode(get_tag_link($settings['id']));
+
+				// or if normal page
+				else:
+					$url = urlencode(get_permalink($settings['id']));
+		endif;
+		
+		// get page title
 		$title = urlencode(get_the_title($settings['id']));
+		
+		// get page excerpt
 		$excerpt = urlencode(get_the_excerpt());
+
+		// set twitter related accounts
 		$related = urlencode('twocsoft:TwoCSoft,corneliucirlan:Corneliu Cirlan');
 		
+		// get bitly short url
 		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+		
+		// set url to bitly short url
 		$url = $bitly->data->url;
 		?>
 
