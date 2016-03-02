@@ -5,7 +5,7 @@
 	Author: TwoCSoft
 	Author URI: https://www.TwoCSoft.com
 	GitHub Theme URI: https://github.com/corneliucirlan/twocsoft
-	Version: 2.3
+	Version: 2.3.1
 	Tags: responsive, white, bootstrap
 */
 
@@ -185,9 +185,9 @@ img {
 	padding: 1rem;
 }
 
-@media screen (max-height: 480px) {
+@media (max-width: 480px) {
 	.md-card-holder {
-		padding: .3rem 0;
+		padding: .5rem 0;
 	}
 }
 
@@ -218,6 +218,10 @@ img {
     padding: 1rem 1.5rem;
 }
 
+.md-flat-card {
+    padding: 1rem 1.5rem;
+}
+
 .md-card > .md-card-header h1,
 .md-card > .md-card-header h2 {
 	margin-top: 5px;
@@ -228,7 +232,8 @@ img {
 	padding-top: 0;
 }
 
-.md-card > .md-card-body img {
+.md-card > .md-card-body img,
+.md-flat-card img {
 	width: calc(100% + 30px);
 	width: calc(100% + 3rem);
 	margin: 0 -15px;

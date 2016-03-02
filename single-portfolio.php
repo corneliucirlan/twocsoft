@@ -13,10 +13,10 @@
 	switch (get_field('portfolio-type')):
 
 		// website
-		case 'portfolio-website': get_template_part('php/templates/post-website'); break;
+		case 'portfolio-website': get_template_part('php/templates/single-website'); break;
 
 		// plugin
-		case 'portfolio-plugin': get_template_part('php/templates/post-plugin'); break;
+		case 'portfolio-plugin': get_template_part('php/templates/single-plugin'); break;
 
 	endswitch;
 

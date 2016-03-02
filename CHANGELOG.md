@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 2.3.1 (2016.03.02)
+- minor design changes
+
 ##### Version 2.3 (2016.02.24)
 - minor design changes
 - new function for creating cards

@@ -5,7 +5,7 @@
 
 ?>
 
-<main class="md-card-holder">
+<main class="md-flat-card">
 	<h1><?php the_title() ?></h1>
 	<p style="padding: 1rem 0;"><?php the_post_thumbnail('large'); ?></p>
 
