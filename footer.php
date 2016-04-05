@@ -13,9 +13,9 @@
 			<div class="col-md-4">
 				<nav class="navbar navbar-inverse">
 				<?php
-                    if (has_nav_menu('header-menu'))
+                    if (has_nav_menu('footer-menu'))
                         wp_nav_menu(array(
-                            'theme_location' => 'header-menu',
+                            'theme_location' => 'footer-menu',
                             'container' => 'ul',
                             'container_class' => '',
                             'container_id' => 'footer-menu',
@@ -34,15 +34,15 @@
                     ?>
 				</nav>
 			</div>
-			<div class="col-md-4">
+			<div class="contact-us col-md-4">
 				<p><?php echo get_option('footer_center_text') ?></p>
 			</div>
 			<div class="footer-copyright col-md-4">
 				<ul class="footer-follow-us">
-                    <li><a class="facebook" target="_blank" href="https://www.facebook.com/TwoCSoft-226215330901146" title="Follow us on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
-                    <li><a class="twitter" target="_blank" href="https://twitter.com/twocsoft" title="Follow us on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
-                    <li><a class="google-plus" target="_blank" href="https://plus.google.com/106197722229308309686/about" title="Follow us on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
-                    <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/company/twocsoft" title="Follow us on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                    <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+                    <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+                    <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
+                    <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
                 </ul>
                 <p>Copyright &copy; <?php echo date('Y') ?> <a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a></p>
 			</div>

@@ -7,32 +7,44 @@
 	{
 		?>
 		<div class="md-card-holder <?php echo $settings['containerClass'] ?>">
+			<div class="card">
+				<div class="card-main">
+			        <div class="card-inner">
+			        	<h2 class="card-heading"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+						<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
+						<?php the_post_thumbnail(getPhotoSize()) ?>
+						<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] ? the_content() : the_excerpt() ?>
+			        </div>
+			        <div class="card-action">
+						<?php if (array_key_exists('buttons', $settings)): ?>
+								<div class="col-md-6">
+									<?php foreach ($settings['buttons'] as $button): ?>
+										<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn btn-flat btn-brand waves-attach"><?php echo $button['label'] ?></a>
+									<?php endforeach; ?>
+								</div>
+								<div class="item-footer-social col-md-6">
+									<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+								</div>
+
+							<?php else: ?>
+									<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+						<?php endif; ?>
+			        </div>
+			    </div>
+			</div>
+		</div>
+
+		<!-- <div class="md-card-holder <?php echo $settings['containerClass'] ?>">
 			<div class="md-card md-shadow-2dp">
 				<div class="md-card-header">
 					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-					<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
 				</div>
 				<div class="md-card-body">
-					<?php the_post_thumbnail(getPhotoSize()) ?>
-					<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] ? the_content() : the_excerpt() ?>
 				</div>
 				<div class="md-card-footer <?php echo array_key_exists('buttons', $settings) ? 'row' : '' ?>">
-					<?php if (array_key_exists('buttons', $settings)): ?>
-							<div class="col-md-6">
-								<?php foreach ($settings['buttons'] as $button): ?>
-									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="<?php echo $button['class'] ?>"><?php echo $button['label'] ?></a>
-								<?php endforeach; ?>
-							</div>
-							<div class="item-footer-social col-md-6">
-								<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
-							</div>
-
-						<?php else: ?>
-								<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
-					<?php endif; ?>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<?php
 	}
 
@@ -173,7 +185,7 @@
 		$excerpt = urlencode(get_the_excerpt());
 
 		// set twitter related accounts
-		$related = urlencode('twocsoft:TwoCSoft,corneliucirlan:Corneliu Cirlan');
+		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 		
 		// get bitly short url
 		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
@@ -185,11 +197,24 @@
 		<ul class="share-buttons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">
 			<li><span>Share:</span></li>
             <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;via=TwoCSoft&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;via=CorneliuCirlan&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>
 		<?php
+	}
+
+
+	/**
+	 * EDIT HEADER MENU
+	 */
+	add_filter('wp_nav_menu', 'custom_homepage', 10, 2);
+	function custom_homepage($menu, $args)
+	{
+		if ('header-menu' == $args->theme_location)
+		$menu = preg_replace('/Home/', '<i class="fa fa-home" style="font-size: 2rem;"></i>', $menu);
+
+		return $menu;
 	}
 
 ?>

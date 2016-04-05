@@ -5,7 +5,7 @@
 	Author: TwoCSoft
 	Author URI: https://www.TwoCSoft.com
 	GitHub Theme URI: https://github.com/corneliucirlan/twocsoft
-	Version: 2.3.1
+	Version: 2.4
 	Tags: responsive, white, bootstrap
 */
 
@@ -54,10 +54,10 @@ body {
 	margin-right: 0;
 }
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+/*.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
 	padding-left: 0;
 	padding-right: 0;
-}
+}*/
 
 .container-fluid {
 	min-height: 100%;
@@ -88,7 +88,7 @@ body {
 }
 
 .navbar .container-fluid {
-	background-color: #FAF7F2;
+	background-color: transparent;
 }
 
 .breadcrumb {
@@ -424,6 +424,8 @@ footer .navbar-inverse {
 
 footer .navbar {
 	margin-bottom: 0;
+	min-height: 1px;
+	height: auto;
 }
 
 footer .navbar-inverse li {
@@ -431,7 +433,7 @@ footer .navbar-inverse li {
 }
 
 footer .navbar-inverse li a {
-	padding: .5rem 0 0 29%;
+	padding: 0 0 .5rem 29%;
 	text-align: left;
 }
 
@@ -449,13 +451,19 @@ footer .footer-follow-us li {
 
 @media (max-width: 480px) {
 
+	footer .navbar-inverse {
+		margin-bottom: 1rem;
+		height: auto;
+	}
+
 	footer .navbar-inverse li {
 		width: 100%;
 		float: none;
 	}
 
 	footer .navbar-inverse li a {
-		padding: 1rem 0;
+		margin: 0 auto 1rem auto;
+		padding: 0;
 		text-align: center;
 		font-size: 2rem;
 	}
@@ -467,8 +475,10 @@ footer .footer-follow-us li {
 }
 
 @media (min-width: 481px) and (max-width: 991px) {
-	footer .navbar-nav {
+	footer .navbar-nav,
+	footer .contact-us {
 		width: 100%;
+		margin-bottom: 2rem;
 	}
 
 	footer .navbar-inverse li {

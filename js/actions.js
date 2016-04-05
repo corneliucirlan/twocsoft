@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 
 
 	// CONTACT FORM PROCESSING
-	$('#contact').submit(function(event) {
+	$('#contact').on('submit', function(event) {
 		event.preventDefault();
 		
 		var hasSuccessClass  	= 'has-success';
@@ -57,13 +57,8 @@ jQuery(document).ready(function($) {
 		var	glyphiconWarning 	= 'glyphicon-warning-sign';
 		var submitButtonSpinner = '<span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>';
 		var submitButtonText 	= 'Send message';
-
-		var data = {
-			'action': 'submit-form',
-			'full-name': $('#full-name').val(),
-			'email': $('#email').val(),
-			'message': $('#message').val(),
-		};
+		var data = $(this).serialize();
+		console.log(data);
 
 		$.ajax({
 			url: TCSAjax.ajaxurl,
@@ -129,6 +124,5 @@ jQuery(document).ready(function($) {
 					}
 			
 		});
-		
 	});
 });

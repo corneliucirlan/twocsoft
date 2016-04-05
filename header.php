@@ -55,12 +55,21 @@
      </head>
 
     <body>
+                    <?php
+                        $menu = wp_get_nav_menu_object ('main-menu');
+
+                        $menu_items = wp_get_nav_menu_items($menu->term_id);
+                    
+                        //echo '<pre><code>';
+                        //var_dump($menu_items);
+                        //echo '</pre></code>';
+                    ?>
         
         <!-- HEADER -->
         <header>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
-                    
+
                     <!-- BRAND -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-target="#header-menu">
@@ -81,7 +90,7 @@
                                     'container' => 'ul',
                                     'container_class' => 'collapse navbar-collapse',
                                     'container_id' => 'header-menu',
-                                    'menu_class' => 'nav navbar-nav navbar-right',
+                                    'menu_class' => 'nav navbar-nav',
                                     'menu_id' => '',
                                     'echo' => true,
                                     'fallback_cb' => false,
@@ -100,15 +109,15 @@
 
             <?php
                 $headerImage = get_header_image();
-                $headerDetect = new Mobile_Detect();
+                //$headerDetect = new Mobile_Detect();
 
-                if ($headerDetect->isTablet() && $headerDetect->isMobile()):
+                /*if ($headerDetect->isTablet() && $headerDetect->isMobile()):
                         $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x147.jpg';
                     elseif ($headerDetect->isMobile()):
                         $headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x98.jpg';
-                endif;
+                endif;*/
             ?>
-            <img src="<?php echo $headerImage; ?>" alt="<?php bloginfo('name') ?> header" style="margin-top: 80px;" />
+            <img src="<?php echo $headerImage; ?>" alt="<?php bloginfo('name') ?> header" />
         </header>
 
         <!-- MAIN CONTENT -->

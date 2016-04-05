@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 2.4 (2016.04.05)
+- various changes
+
 ##### Version 2.3.1 (2016.03.02)
 - minor design changes
 
