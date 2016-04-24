@@ -1,2 +1,2 @@
-# TwoCSoft
-Custom Responsive Wordpress Theme for [TwoCsoft](http://www.TwoCSoft.com)
+# Theme for CorneliuCirlan.com
+Custom Responsive Wordpress Theme for [CorneliuCirlan.com](http://www.corneliucirlan.com)
