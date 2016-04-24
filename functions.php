@@ -1,74 +1,24 @@
 <?php
 
-	/**
-	 * GLOBALS
-	 */
-	require_once('php/functions/globals.php');
+	// Load global variables
+	include_once('functions/globals.php');
 
+	// Load WP specific loaders
+	include_once('functions/enqueue.php');
 
-	/**
-	 * MOBILE DETECT LIB
-	 */
-	require_once('php/libs/Mobile_Detect.php');
+	// Load custom theme functions
+	include_once('functions/theme-functions.php');
 
+	// Load custom post types
+	include_once('functions/post-types.php');
 
-	/**
-	 * CUSTOM POST TYPE CLASS
-	 */
-	require_once('php/libs/cc-cpt.php');
+	// Load misc
+	include_once('functions/misc.php');
 
+	// Load breadcurmbs
+	include_once('libs/breadcrumbs.php');
 
-	/**
-	 * ENQUEUE SCRIPTS
-	 */
-	require_once('php/functions/enqueue.php');
-
-	
-	/**
-	 * REMOVE BLOAT
-	 */
-	require_once('php/functions/remove-bloat.php');
-
-	
-	/**
-	 * MISC
-	 */
-	require_once('php/functions/misc.php');
-
-
-	/**
-	 * THEME FUNCTIONS
-	 */
-	require_once('php/functions/theme-functions.php');
-
-
-	/**
-	 * SKILL CLASS
-	 */
-	require_once('php/libs/skill.class.php');
-
-
-	/**
-	 * CERTIFICATIONS CLASS
-	 */
-	require_once('php/libs/certs.class.php');
-
-
-	/**
-	 * BACKEND
-	 */
-	require_once('php/functions/backend.php');
-
-
-	/**
-	 * AJAX FUNCTIONS
-	 */
-	require_once('php/functions/ajax-forms.php');
-
-
-	/**
-	 * BREADCRUMBS
-	 */
-	require_once('php/libs/breadcrumbs.php');
+	// Load remove
+	include_once('functions/remove.php');
 
 ?>

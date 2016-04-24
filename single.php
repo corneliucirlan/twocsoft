@@ -9,7 +9,7 @@
 <?php
 
 	$cardSettings = array(
-		'containerClass'		=> '',
+		'containerClass'		=> 'col s12 m8 l8',
 		'showCardDetails'		=> true,
 		'isSingle'				=> true,
 		'showFooterShare'		=> false,

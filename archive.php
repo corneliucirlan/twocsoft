@@ -1,7 +1,7 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
+	// Security check
+	if (!defined('ABSPATH')) die;
 
 ?>
 
@@ -10,7 +10,7 @@
 <?php
 
 	$cardSettings = array(
-		'containerClass'		=> 'col-md-6',
+		'containerClass'		=> 'col m6',
 		'showCardDetails'		=> true,
 		'isCategory' 			=> is_category() ? true : false,
 		'isTag'					=> is_tag() ? true : false,
@@ -21,7 +21,7 @@
 
 ?>
 
-<main class="md-cards-holder row">
+<main class="masonry-elements row">
 
 	<?php if (have_posts()): ?>
 			<?php while (have_posts()): ?>

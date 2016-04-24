@@ -13,27 +13,22 @@
 		/**
 		 * PROJECTS PAGE
 		 */
-		case PAGE_PORTFOLIO: get_template_part('php/templates/page-portfolio'); break;
+		case PAGE_PORTFOLIO: get_template_part('templates/page-portfolio'); break;
 
 		/**
 		 * ABOUT US PAGE
 		 */
-		case PAGE_ABOUT_US: get_template_part('php/templates/page-about-us'); break;
+		case PAGE_ABOUT: get_template_part('templates/page-about-us'); break;
 
 		/**
 		 * CONTACT PAGE
 		 */
-		case PAGE_CONTACT: get_template_part('php/templates/page-contact'); break;
-
-		/**
-		 * SOLUTIONS PAGE
-		 */
-		case PAGE_SOLUTIONS: get_template_part('php/templates/page-solutions'); break;
+		case PAGE_CONTACT: get_template_part('templates/page-contact'); break;
 
 		/**
 		 * SERVICES PAGE
 		 */
-		case PAGE_SERVICES: get_template_part('php/templates/page-services'); break;
+		case PAGE_SERVICES: get_template_part('templates/page-services'); break;
 
 		/**
 		 * DEFAULT CASE

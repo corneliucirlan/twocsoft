@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.0 (2016.04.24)
+- Changed repo name
+- Switched from Bootstrap to Materialize framework
+
 ##### Version 2.4 (2016.04.05)
 - various changes
 
