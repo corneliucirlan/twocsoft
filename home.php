@@ -28,9 +28,19 @@
 
 <div class="row">
 	<?php if (have_posts()): ?>
-		<main class="blog-posts col-md-8">
+		<main class="blog-posts col m8">
 			<?php while (have_posts()): the_post() ?>
-				<?php displayCard($cardSettings) ?>
+				<?php
+					$cardSettings['buttons'] = array(
+						'details'		=> array(
+							'url'		=> get_the_permalink(),
+							'label'		=> __('Read more'),
+							'target'	=> '_self',
+							'class'		=> 'btn btn-primary',
+						)
+					);
+					displayCard($cardSettings);
+				?>
 			<?php endwhile; ?>
 		</main>
 		<?php next_posts_link('Older Posts'); ?>
