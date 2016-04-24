@@ -55,16 +55,7 @@
      </head>
 
     <body>
-                    <?php
-                        $menu = wp_get_nav_menu_object ('main-menu');
 
-                        $menu_items = wp_get_nav_menu_items($menu->term_id);
-                    
-                        //echo '<pre><code>';
-                        //var_dump($menu_items);
-                        //echo '</pre></code>';
-                    ?>
-        
         <!-- HEADER -->
         <header>
             <nav class="navbar navbar-default">

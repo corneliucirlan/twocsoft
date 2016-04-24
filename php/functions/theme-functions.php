@@ -7,15 +7,16 @@
 	{
 		?>
 		<div class="md-card-holder <?php echo $settings['containerClass'] ?>">
-			<div class="card">
-				<div class="card-main">
-			        <div class="card-inner">
-			        	<h2 class="card-heading"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-						<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
-						<?php the_post_thumbnail(getPhotoSize()) ?>
-						<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] ? the_content() : the_excerpt() ?>
-			        </div>
-			        <div class="card-action">
+			<div class="md-card md-shadow-2dp">
+				<div class="md-card-header">
+			       	<h2 class="card-heading"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+					<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
+				</div>
+				<div class="md-card-body">
+					<?php the_post_thumbnail(getPhotoSize()) ?>
+					<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] ? the_content() : the_excerpt() ?>
+				</div>
+				<div class="md-card-footer <?php echo array_key_exists('buttons', $settings) ? 'row' : '' ?>">
 						<?php if (array_key_exists('buttons', $settings)): ?>
 								<div class="col-md-6">
 									<?php foreach ($settings['buttons'] as $button): ?>
@@ -29,22 +30,9 @@
 							<?php else: ?>
 									<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
 						<?php endif; ?>
-			        </div>
-			    </div>
+				</div>
 			</div>
 		</div>
-
-		<!-- <div class="md-card-holder <?php echo $settings['containerClass'] ?>">
-			<div class="md-card md-shadow-2dp">
-				<div class="md-card-header">
-					<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-				</div>
-				<div class="md-card-body">
-				</div>
-				<div class="md-card-footer <?php echo array_key_exists('buttons', $settings) ? 'row' : '' ?>">
-				</div>
-			</div>
-		</div> -->
 		<?php
 	}
 

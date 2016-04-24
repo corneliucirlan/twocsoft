@@ -61,13 +61,13 @@
 				var minHeight = "100%";
 				var navHeight = nav.outerHeight();
 				var menuHeight = menu.height();
-				var navColor = nav.css('background-color');
+				var navColor = 'white';
 				
 				if (menuHeight+navHeight > windowHeight) minHeight = menuHeight = windowHeight-navHeight;
 					else menuHeight = "100%";
 
 				menu.css({
-					"top": navHeight,
+					"top": 0,
 					"min-height": minHeight,
 					"height": menuHeight,
 					"background-color": navColor,
