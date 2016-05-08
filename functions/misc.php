@@ -43,7 +43,8 @@
 
 				// create email
 				$to = $admins[0]->user_email;
-				$subject = $ajaxResponse['subject'];
+				$subject = esc_attr($ajaxResponse['subject']);
+				$message = esc_attr($ajaxResponse['message']);
 				$headers   = array();
 				$headers[] = "MIME-Version: 1.0";
 				$headers[] = "Content-type: text/html; charset=utf-8";
@@ -52,13 +53,13 @@
 				$headers[] = "Subject: {$subject}";
 				$headers[] = "X-Mailer: PHP/".phpversion();
 
-				//$emailResponse = mail($to, $subject, $email, implode("\r\n", $headers));
-				$emailResponse = wp_mail($to, $subject, $ajaxResponse['message'], $headers);
+				//$emailResponse = wp_mail($to, $subject, $ajaxResponse['message'], $headers);
+				$emailResponse = mail($to, $subject, $message, implode("\r\n", $headers));
 				if ($emailResponse):
 						$ajaxResponse['emailSent'] = true;
 					else:
 						$ajaxResponse['emailSent'] = false;
-						$ajaxResponse['failReason'] = "Server error.";
+						$ajaxResponse['failReason'] = $emailResponse;
 				endif;
 			else:
 				$ajaxResponse['emailSent'] = false;

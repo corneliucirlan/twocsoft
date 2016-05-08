@@ -21,4 +21,7 @@
 	// Load remove
 	include_once('functions/remove.php');
 
+	// Load backend functions
+	include_once('functions/backend.php');
+
 ?>

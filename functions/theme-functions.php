@@ -169,10 +169,10 @@
 		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 		
 		// get bitly short url
-		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+		//$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
 		
 		// set url to bitly short url
-		$url = $bitly->data->url;
+		//$url = $bitly->data->url;
 		?>
 
 		<ul class="share-buttons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">

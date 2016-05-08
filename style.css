@@ -79,7 +79,8 @@ p,
 a,
 span,
 .input-field label,
-.input-field input {
+.input-field input,
+.input-field textarea {
 	font-size: 1.5rem;
 }
 
@@ -296,6 +297,11 @@ header .side-nav a {
 	line-height: 36px;
 }
 
+.card .card-content .share-buttons {
+	margin: 0;
+}
+
+.card .card-content .share-buttons li,
 .card .card-action .share-buttons li {
 	float: left;
 	min-width: 3rem;
