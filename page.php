@@ -18,7 +18,7 @@
 		/**
 		 * ABOUT US PAGE
 		 */
-		case PAGE_ABOUT: get_template_part('templates/page-about-us'); break;
+		case PAGE_ABOUT: get_template_part('templates/page-about'); break;
 
 		/**
 		 * CONTACT PAGE

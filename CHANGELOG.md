@@ -1,6 +1,10 @@
 ## CHANGELOG
 
 ##### Version 3.0 (2016.04.24)
+- Removed ACF admin page
+- Integrated About page into WP
+
+##### Version 3.0 (2016.04.24)
 - Changed repo name
 - Switched from Bootstrap to Materialize framework
 

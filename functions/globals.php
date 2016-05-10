@@ -27,4 +27,8 @@
 	// Services page
 	define('PAGE_SERVICES', 149);
 
+
+	// HIDE ACF ADMIN PAGE
+	define('ACF_LITE', true);
+
 ?>

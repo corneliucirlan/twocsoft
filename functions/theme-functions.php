@@ -92,30 +92,17 @@
 	function printSkill($skill)
 	{
 		?>
-		<article class="md-card-holder col s4 m2">
+		<div class="masonry-element col s6 m3 l2">
 			<h3 style="text-transform: uppercase; font-size: 1.7rem;" class="subtitle"><?php echo $skill->getSkillName() ?></h3>
 			<div class="item-stars">
 				<?php
-				for ($x = 1; $x <= 5; $x++):
-					if ($x <= $skill->getSkillLevel()) echo '<i class="fa fa-star"></i>';
-						else echo '<i class="fa fa-star-o"></i>';
-				endfor;
+					for ($x = 1; $x <= 5; $x++):
+						if ($x <= $skill->getSkillLevel()) echo '<i class="fa fa-star"></i>';
+							else echo '<i class="fa fa-star-o"></i>';
+					endfor;
 				?>
 			</div>
-		</article>
-		<?php
-	}
-
-	/**
-	 * PRINT ONE CERTIFICATION
-	 */
-	function printCertification($cert)
-	{
-		?>
-		<article class="col m12">
-			<h3><?php echo $cert->getCertName() ?></h3>
-			<p class="center-align"><strong><?php echo strtoupper($cert->getCertOrganisation()) ?></strong> - <?php echo strtoupper($cert->getCertYear()) ?></p>
-		</article>
+		</div>
 		<?php
 	}
 

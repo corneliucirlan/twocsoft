@@ -5,7 +5,7 @@
 	Author: Corneliu Cirlan
 	Author URI: http://www.corneliucirlan.com
 	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
-	Version: 3.0
+	Version: 3.0.1
 	Tags: responsive, light, material design, materialize, framework
 */
 
@@ -78,6 +78,7 @@ p {
 p,
 a,
 span,
+ul,
 .input-field label,
 .input-field input,
 .input-field textarea {
@@ -280,6 +281,7 @@ header .side-nav a {
 
 .card .card-content .card-title {
 	margin: 0;
+	text-transform: uppercase;
 }
 
 .card .card-content p {
@@ -432,7 +434,7 @@ footer.page-footer .footer-copyright {
 
 	footer ul li {
 		float: left;
-		width: calc(100%/6);
+		width: calc(100%/5);
 		text-align: center;
 	}
 

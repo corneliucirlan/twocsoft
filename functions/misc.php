@@ -4,6 +4,7 @@
 	include_once(THEME_DIR.'libs/breadcrumbs.php');
 
 	// Load ACF fields
+	include_once(THEME_DIR.'functions/acf/about.php');
 	include_once(THEME_DIR.'functions/acf/frontpage.php');
 	include_once(THEME_DIR.'functions/acf/portfolio.php');
 	include_once(THEME_DIR.'functions/acf/services.php');
@@ -53,7 +54,7 @@
 				$headers[] = "Subject: {$subject}";
 				$headers[] = "X-Mailer: PHP/".phpversion();
 
-				//$emailResponse = wp_mail($to, $subject, $ajaxResponse['message'], $headers);
+				//$emailResponse = wp_mail($to, $subject, $message, $headers);
 				$emailResponse = mail($to, $subject, $message, implode("\r\n", $headers));
 				if ($emailResponse):
 						$ajaxResponse['emailSent'] = true;
