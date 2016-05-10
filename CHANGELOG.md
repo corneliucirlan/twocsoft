@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-##### Version 3.0 (2016.04.24)
+##### Version 3.0.1 (2016.05.10)
 - Removed ACF admin page
 - Integrated About page into WP
 
