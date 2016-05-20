@@ -46,29 +46,29 @@
 		<div class="card">
 			<div class="card-content">
 				<h2 class="card-title">Let's work together</h2>
-				<p>For any business inquiries email me using <a href="mailto:corneliu@corneliucirlan.com" target="_blank">corneliu@corneliucirlan.com</a><!--  or the form below -->.</p>
-				<!-- <form id="contact-form" role="form" action="" method="post">
+				<p>For any business inquiries email me using <a href="mailto:corneliu@corneliucirlan.com" target="_blank">corneliu@corneliucirlan.com</a> or the form below.</p>
+				<form id="contact-form" role="form" action="" method="post">
 					<input type="hidden" name="action" id="action" value="submit-form" />
 
-					<!-- FULL NAME --
+					<!-- FULL NAME -->
 					<div class="input-field col s12">
 						<input type="text" class="validate" name="name" id="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?>>
 						<label for="name">Full name</label>
 					</div>
 
-					<!-- EMAIL ADDRESS --
+					<!-- EMAIL ADDRESS -->
 					<div class="input-field col s12">
 						<input type="email" class="validate" name="email" id="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?>>
 						<label for="email">E-mail address</label>
 					</div>
 	 
-	 				<!-- MESSAGE SUBJECT --
+	 				<!-- MESSAGE SUBJECT -->
 	 				<div class="input-field col s12">
 						<input type="text" class="validate" name="subject" id="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?>>
 						<label for="subject">Subject</label>
 					</div>
 
-					<!-- MESSAGE BODY --
+					<!-- MESSAGE BODY -->
 					<div class="input-field col s12">
 						<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
 						<label for="message">Message</label>
@@ -77,7 +77,7 @@
 					<div id="form-progress" class="progress" style="display: none;">
 				    	<div class="indeterminate"></div>
 				  	</div>
-				</form> -->
+				</form>
 			</div>
 		</div>
 	</div>

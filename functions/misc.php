@@ -54,8 +54,8 @@
 				$headers[] = "Subject: {$subject}";
 				$headers[] = "X-Mailer: PHP/".phpversion();
 
-				//$emailResponse = wp_mail($to, $subject, $message, $headers);
-				$emailResponse = mail($to, $subject, $message, implode("\r\n", $headers));
+				$emailResponse = wp_mail($to, $subject, $message, $headers);
+				//$emailResponse = mail($to, $subject, $message, implode("\r\n", $headers));
 				if ($emailResponse):
 						$ajaxResponse['emailSent'] = true;
 					else:

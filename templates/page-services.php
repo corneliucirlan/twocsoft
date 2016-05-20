@@ -20,7 +20,7 @@
 
 <main class="masonry-elements row">
 	<?php foreach ($array as $x): ?>
-		<div class="masonry-element col s12 m6 l6">
+		<div class="masonry-element col s12 m4 l4">
 			<div class="card hoverable">
 				<div class="card-content"><?php the_field('box-'.$x[0].'-'.$x[1]) ?></div>
 			</div>

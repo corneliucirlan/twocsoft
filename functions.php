@@ -24,4 +24,7 @@
 	// Load backend functions
 	include_once('functions/backend.php');
 
+	// Load most popular posts
+	include_once('libs/most-read-posts.php');
+
 ?>

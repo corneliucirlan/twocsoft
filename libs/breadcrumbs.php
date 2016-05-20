@@ -118,4 +118,21 @@
 		echo '</ul>';
 	}
 
+
+	// Register settings page
+	add_action('admin_menu', function() {
+		add_options_page(__('Breadcrumbs settings'), __('Breadcrumbs'), 'manage_options', 'breadcrumbs', 'renderBreadcrumbsSettings');
+	});
+
+
+	// Render breadcrumbs settings
+	function renderBreadcrumbsSettings()
+	{
+		?>
+		<div class="wrap">
+			<h2><?php _e('Breadcrumbs settings') ?></h2>
+		</div>
+		<?php
+	}
+
 ?>

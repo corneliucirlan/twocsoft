@@ -133,6 +133,11 @@
 	 */
 	function displayShareButtons($settings)
 	{
+		/*
+			_yoast_wpseo_title
+			_yoast_wpseo_metadesc
+		 */
+		
 		// get url if page is category page
 		if (array_key_exists('isCategory', $settings) && $settings['isCategory']):
 				$url = urlencode(get_category_link($settings['id']));
@@ -147,7 +152,7 @@
 		endif;
 		
 		// get page title
-		$title = urlencode(get_the_title($settings['id']));
+		$title = urlencode(get_post_meta(get_the_id(), '_yoast_wpseo_title', true) != '' ? get_post_meta(get_the_id(), '_yoast_wpseo_title', trues) : get_the_title($settings['id']));
 		
 		// get page excerpt
 		$excerpt = urlencode(get_the_excerpt());

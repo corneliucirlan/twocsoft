@@ -328,6 +328,17 @@ header .side-nav a {
 }
 
 
+@media screen and (max-width: 480px) {
+	.card .card-action .share-buttons {
+		width: 100%;
+	}
+
+	.card .card-action .share-buttons li {
+		width: 20%;
+	}
+}
+
+
 /**
  * Footer
  */
