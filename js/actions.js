@@ -1,4 +1,7 @@
 jQuery(document).ready(function($) {
+
+	// Parallax header
+	$('.parallax').parallax();
 	
 	// Fire sideNav
 	$(".button-collapse").sideNav();

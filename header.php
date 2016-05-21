@@ -9,12 +9,12 @@
 
 	// Get header image
 	$headerImage = get_header_image();
-	$headerDetect = new Mobile_Detect();
+	/*$headerDetect = new Mobile_Detect();
 	if ($headerDetect->isTablet() && $headerDetect->isMobile()):
-			$headerImage = preg_replace('/.png$/', '', $headerImage).'-600x172.png';
+			$headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x312.jpg';
 		elseif ($headerDetect->isMobile()):
-			$headerImage = preg_replace('/.png$/', '', $headerImage).'-400x115.png';
-	endif;
+			$headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x208.jpg';
+	endif;*/
 
 
     if (!is_singular('post')):
@@ -64,13 +64,13 @@
         <?php wp_head() ?>
     </head>
 
-	<body style="background-image: url(<?php echo $headerImage ?>); background-size: 100%; background-repeat: no-repeat;"> <!--   -->
+	<body> <!--  style="background-image: url(<?php echo $headerImage ?>); background-size: 100%; background-repeat: no-repeat;" -->
 
 		<!-- Navigation -->
 		<header class="navbar-fixed">
 			<nav>
 			    <div class="nav-wrapper container">
-			    	<a href="<?php bloginfo('url') ?>" class="brand-logo"><?php bloginfo() ?></a>
+			    	<!-- <a href="<?php bloginfo('url') ?>" class="brand-logo"><?php bloginfo() ?></a> -->
 			      	<a href="#" data-activates="nav-mobile-menu" class="button-collapse"><i class="fa fa-bars" style="color: #444;"></i></a>
 			      	
 			      	<?php
@@ -83,7 +83,7 @@
 		      					'container' => 'ul',
 		      					'container_class' => 'side-nav',
 		      					'container_id' => 'nav-desktop-menu',
-		      					'menu_class' => 'right hide-on-med-and-down',
+		      					'menu_class' => 'hide-on-med-and-down', /*right */
 		      					'menu_id' => '',
 		      					'echo' => true,
 		      					'fallback_cb' => 'wp_page_menu',
@@ -119,16 +119,27 @@
 		      				wp_nav_menu($args);
 			      		endif;
 			      	?>
+			      	<div class="right">
+			      		<ul class="footer-follow-us">
+                            <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+			      	</div>
 			    </div>
 			</nav>
 		</header>
 
 		<!-- Header image (added for space, hidden) -->
-        <div class="row" style="margin-bottom: 0;">
+        <!-- <div class="row" style="margin-bottom: 0;">
         	<div class="col s12 m12 l12">
         		<img class="header-image" src="<?php echo $headerImage ?>" width="1948" height="560" alt="<?php bloginfo('name') ?> header" />
         	</div>
-		</div>
+		</div> -->
+		<div class="parallax-container">
+	    	<div class="parallax"><img src="<?php echo $headerImage ?>"></div>
+	    </div>
  
 		<div class="container main-container">
 

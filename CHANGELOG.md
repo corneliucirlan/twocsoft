@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.1 (2016.05.21)
+- Updated header design
+- Added Parallax on header image
+
 ##### Version 3.0.1 (2016.05.10)
 - Removed ACF admin page
 - Integrated About page into WP
