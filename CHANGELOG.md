@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-##### Version 3.1.1 (2016.05.21)
+##### Version 3.1.1 (2016.05.25)
 - Removed Parallax
 - Fixed mobile width overflow
 
