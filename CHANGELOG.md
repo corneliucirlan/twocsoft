@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.1.1 (2016.05.21)
+- Removed Parallax
+- Fixed mobile width overflow
+
 ##### Version 3.1 (2016.05.21)
 - Updated header design
 - Added Parallax on header image

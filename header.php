@@ -9,13 +9,6 @@
 
 	// Get header image
 	$headerImage = get_header_image();
-	/*$headerDetect = new Mobile_Detect();
-	if ($headerDetect->isTablet() && $headerDetect->isMobile()):
-			$headerImage = preg_replace('/.jpg$/', '', $headerImage).'-600x312.jpg';
-		elseif ($headerDetect->isMobile()):
-			$headerImage = preg_replace('/.jpg$/', '', $headerImage).'-400x208.jpg';
-	endif;*/
-
 
     if (!is_singular('post')):
 
@@ -64,7 +57,7 @@
         <?php wp_head() ?>
     </head>
 
-	<body> <!--  style="background-image: url(<?php echo $headerImage ?>); background-size: 100%; background-repeat: no-repeat;" -->
+	<body>
 
 		<!-- Navigation -->
 		<header class="navbar-fixed">
@@ -131,22 +124,16 @@
 			</nav>
 		</header>
 
-		<!-- Header image (added for space, hidden) -->
-        <!-- <div class="row" style="margin-bottom: 0;">
-        	<div class="col s12 m12 l12">
-        		<img class="header-image" src="<?php echo $headerImage ?>" width="1948" height="560" alt="<?php bloginfo('name') ?> header" />
-        	</div>
-		</div> -->
-		<div class="parallax-container">
-	    	<div class="parallax"><img src="<?php echo $headerImage ?>"></div>
-	    </div>
- 
+		<!-- Header image -->
+        <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 611px; padding: 0px; margin: -64px 0 0;"></div>
+		
+		<!-- Content -->
 		<div class="container main-container">
 
 			<!-- Page H1 title -->
 			<h1 class="offsite-title"><?php the_title() ?></h1>
 
-			<!-- BREADCRUMBS -->
+			<!-- Breadcrumbs -->
             <div class="breadcrumbs-container row">
                 <div class="no-padding-left col s12 <?php echo $isSingular ? 'l12' : 'l8' ?>">
                     <?php renderBreadcrumbs() ?>
