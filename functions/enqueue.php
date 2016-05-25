@@ -65,7 +65,7 @@
 	add_action('wp_footer', function() {
 
 		// Register Font Awesome
-		wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', '', '', 'all');
+		wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', '', '', 'all');
 		wp_enqueue_style('font-awesome');
 
 		// Define ajaxurl
