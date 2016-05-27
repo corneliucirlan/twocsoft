@@ -21,7 +21,7 @@
                                     'container' => 'ul',
                                     'container_class' => '',
                                     'container_id' => '',
-                                    'menu_class' => '',
+                                    'menu_class' => 'footer-menu',
                                     'menu_id' => '',
                                     'echo' => true,
                                     'fallback_cb' => 'wp_page_menu',

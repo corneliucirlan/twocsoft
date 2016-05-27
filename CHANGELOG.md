@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.2 (2016.05.27)
+- Updated footer menu design
+
 ##### Version 3.1.1 (2016.05.25)
 - Removed Parallax
 - Fixed mobile width overflow

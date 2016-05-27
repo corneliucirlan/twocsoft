@@ -5,7 +5,7 @@
 	Author: Corneliu Cirlan
 	Author URI: http://www.corneliucirlan.com
 	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
-	Version: 3.1.1
+	Version: 3.2
 	Tags: responsive, light, material design, materialize, framework, parallax
 */
 
@@ -347,6 +347,13 @@ footer.page-footer {
 	background-color: #444;
 }
 
+footer .footer-menu li {
+	float: left;
+	width: calc(100%/6);
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
 footer .footer-follow-us {
 	list-style: none;
 	overflow: hidden;
@@ -424,12 +431,12 @@ footer.page-footer .footer-copyright {
 	footer .container {
 		width: 100%;
 	}
-	footer ul li {
+	footer .footer-menu li {
 		width: 100%;
 		text-align: center;
 	}
 
-	footer ul li a {
+	footer .footer-menu li a {
 		font-size: 2rem;
 	}
 }
@@ -439,17 +446,23 @@ footer.page-footer .footer-copyright {
 		width: 100%;
 	}
 
-	footer ul {
+	footer .footer-menu {
 		width: 100%;
 	}
 
-	footer ul li {
+	footer .footer-menu li {
 		float: left;
 		width: calc(100%/5);
 		text-align: center;
 	}
 
-	footer ul li a {
+	footer .footer-menu li a {
 		text-align: center;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1600px) {
+	footer .footer-menu li {
+		width: calc(100%/3);
 	}
 }
