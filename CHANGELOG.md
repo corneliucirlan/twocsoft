@@ -1,6 +1,10 @@
 ## CHANGELOG
 
-##### Version 3.2.2 (2016.06.2)
+##### Version 3.2.3 (2016.06.02)
+- Minor updates to contact page
+- Addded PrismJS for code highlighting
+
+##### Version 3.2.2 (2016.06.02)
 - Updated contact page
 - Improved flexbox compatibility
 

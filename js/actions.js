@@ -32,6 +32,8 @@ jQuery(document).ready(function($) {
 			else $('header nav').removeClass('fixed-top');
 	});
 
+	// PrismJS
+	$('code').addClass('language-php');
 
 	// Contact form processing
 	$('#contact-form').on('submit', function(event) {

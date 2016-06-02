@@ -29,7 +29,6 @@
 				$headers[] = "X-Mailer: PHP/".phpversion();
 
 				// send email
-				//$emailResponse = mail($to, $subject, $email, implode("\r\n", $headers));
 				$emailResponse = wp_mail($to, $subject, $message, $headers);
 				if (!$emailResponse):
 					$failReason = "Email error. Try again or use the address above";
@@ -42,14 +41,14 @@
 ?>
 
 <main class="row">
-	<div class="col m5">
-		<h2 class="card-title">Let's work together</h2>
-		<p>Feel free to contact me using the form or by using any of the below options.</p>
-		<ul class="contact-social">
+	<div class="col m6">
+		 <h2 class="card-title">Let's work together</h2>
+		 <?php the_content() ?>
+		 <ul class="contact-social">
 			<li><a title="Email" class="mail" target="_blank" href="mailto:corneliu@corneliucirlan.com"><i class="fa fa-3x fa-envelope-o"></i></a></li>
 			<li><a title="Facebook" class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan"><i class="fa fa-3x fa-facebook"></i></a></li>
 			<li><a title="Twitter" class="twitter" target="_blank" href="https://twitter.com/corneliucirlan"><i class="fa fa-3x fa-twitter"></i></a></li>
-			<li><a title="Google+" class="google" target="_blank" href="https://plus.google.com/+CorneliuCirlan"><i class="fa fa-3x fa-google"></i></a></li>
+			<li><a title="Google+" class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan"><i class="fa fa-3x fa-google-plus"></i></a></li>
 			<li><a title="Linkedin" class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan"><i class="fa fa-3x fa-linkedin"></i></a></li>
 			<li><a title="Github" class="github" target="_blank" href="https://www.github.com/corneliucirlan"><i class="fa fa-3x fa-github"></i></a></li>
 		</ul>
@@ -82,7 +81,7 @@
 				<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
 				<label for="message">Message</label>
 			</div>
-			<button id="submit-form" type="submit" class="waves-effect waves-blue btn-flat" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
+			<button id="submit-form" type="submit" class="waves-effect waves-light btn blue darken-2" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
 			<div id="form-progress" class="progress" style="display: none;">
 		    	<div class="indeterminate"></div>
 		  	</div>

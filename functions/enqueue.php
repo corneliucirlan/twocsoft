@@ -64,9 +64,15 @@
 	// WP Footer hook
 	add_action('wp_footer', function() {
 
-		// Register Font Awesome
+		// Font Awesome
 		wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', '', '', 'all');
 		wp_enqueue_style('font-awesome');
+
+		// PrismJS
+		wp_register_style('prism-css', THEME_URI.'css/prism.css', '', '', 'all');
+		wp_enqueue_style('prism-css');
+		wp_register_script('prism-js', THEME_URI.'js/prism.js', array('jquery'), '', true);
+		wp_enqueue_script('prism-js');
 
 		// Define ajaxurl
 		if (is_page(PAGE_CONTACT)):
