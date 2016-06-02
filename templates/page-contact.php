@@ -42,43 +42,50 @@
 ?>
 
 <main class="row">
-	<div class="col m6 offset-m3">
-		<div class="card">
-			<div class="card-content">
-				<h2 class="card-title">Let's work together</h2>
-				<p>For any business inquiries email me using <a href="mailto:corneliu@corneliucirlan.com" target="_blank">corneliu@corneliucirlan.com</a> or the form below.</p>
-				<form id="contact-form" role="form" action="" method="post">
-					<input type="hidden" name="action" id="action" value="submit-form" />
+	<div class="col m5">
+		<h2 class="card-title">Let's work together</h2>
+		<p>Feel free to contact me using the form or by using any of the below options.</p>
+		<ul class="contact-social">
+			<li><a title="Email" class="mail" target="_blank" href="mailto:corneliu@corneliucirlan.com"><i class="fa fa-3x fa-envelope-o"></i></a></li>
+			<li><a title="Facebook" class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan"><i class="fa fa-3x fa-facebook"></i></a></li>
+			<li><a title="Twitter" class="twitter" target="_blank" href="https://twitter.com/corneliucirlan"><i class="fa fa-3x fa-twitter"></i></a></li>
+			<li><a title="Google+" class="google" target="_blank" href="https://plus.google.com/+CorneliuCirlan"><i class="fa fa-3x fa-google"></i></a></li>
+			<li><a title="Linkedin" class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan"><i class="fa fa-3x fa-linkedin"></i></a></li>
+			<li><a title="Github" class="github" target="_blank" href="https://www.github.com/corneliucirlan"><i class="fa fa-3x fa-github"></i></a></li>
+		</ul>
+	</div>
+	
+	<div class="col m5 offset-m1">
+		<form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
+			<input type="hidden" name="action" id="action" value="submit-form" />
 
-					<!-- FULL NAME -->
-					<div class="input-field col s12">
-						<input type="text" class="validate" name="name" id="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?>>
-						<label for="name">Full name</label>
-					</div>
-
-					<!-- EMAIL ADDRESS -->
-					<div class="input-field col s12">
-						<input type="email" class="validate" name="email" id="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?>>
-						<label for="email">E-mail address</label>
-					</div>
-	 
-	 				<!-- MESSAGE SUBJECT -->
-	 				<div class="input-field col s12">
-						<input type="text" class="validate" name="subject" id="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?>>
-						<label for="subject">Subject</label>
-					</div>
-
-					<!-- MESSAGE BODY -->
-					<div class="input-field col s12">
-						<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
-						<label for="message">Message</label>
-					</div>
-					<button id="submit-form" type="submit" class="waves-effect waves-blue btn-flat" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
-					<div id="form-progress" class="progress" style="display: none;">
-				    	<div class="indeterminate"></div>
-				  	</div>
-				</form>
+			<!-- FULL NAME -->
+			<div class="input-field col s12">
+				<input type="text" class="validate" name="name" id="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?>>
+				<label for="name">Full name</label>
 			</div>
-		</div>
+
+			<!-- EMAIL ADDRESS -->
+			<div class="input-field col s12">
+				<input type="email" class="validate" name="email" id="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?>>
+				<label for="email">E-mail address</label>
+			</div>
+
+				<!-- MESSAGE SUBJECT -->
+				<div class="input-field col s12">
+				<input type="text" class="validate" name="subject" id="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?>>
+				<label for="subject">Subject</label>
+			</div>
+
+			<!-- MESSAGE BODY -->
+			<div class="input-field col s12">
+				<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
+				<label for="message">Message</label>
+			</div>
+			<button id="submit-form" type="submit" class="waves-effect waves-blue btn-flat" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
+			<div id="form-progress" class="progress" style="display: none;">
+		    	<div class="indeterminate"></div>
+		  	</div>
+		</form>
 	</div>
 </main>

@@ -54,8 +54,7 @@
           	</div>
           	<div class="footer-copyright">
             	<div class="container center-align">
-            		Copyright © <?php echo date('Y').' '.get_bloginfo() ?> 
-            		<!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+            		Copyright © <?php echo date('Y').' '.get_bloginfo() ?>
             	</div>
           	</div>
 		</footer>

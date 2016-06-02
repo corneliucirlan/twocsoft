@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.2.2 (2016.06.2)
+- Updated contact page
+- Improved flexbox compatibility
+
 ##### Version 3.2 (2016.05.27)
 - Updated footer menu design
 
