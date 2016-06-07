@@ -19,10 +19,10 @@
 <?php
 	
 	// get all portfolio items
-	query_posts(array('post_type' => 'portfolio', 'posts_per_page' => -1));
+	query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => -1));
 
 	if (have_posts()):
-		?><main class="row masonry-elements"><?php
+		?><main class="masonry-elements row"><?php
 			while (have_posts()):
 				the_post();
 

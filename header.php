@@ -64,10 +64,10 @@
 			<nav>
 			    <div class="nav-wrapper container">
 			      	<a href="#" data-activates="nav-mobile-menu" class="button-collapse"><i class="fa fa-bars" style="color: #444;"></i></a>
-			      	
+
 			      	<?php
 			      		if (has_nav_menu('header-menu')):
-			      			   
+
 		      			   	// desktop menu
 		      			   	$args = array(
 		      					'theme_location' => 'header-menu',
@@ -125,12 +125,8 @@
 
 		<!-- Header image -->
         <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 611px; padding: 0px; margin: -64px 0 0;">
-        	<!-- <div class="header-description">
-	        	<h1 class="header-title">Corneliu Cirlan</h2>
-	        	<p>Web Developer, Web Designer & SEO Consultant</p>
-	        </div> -->
         </div>
-		
+
 		<!-- Content -->
 		<div class="container main-container">
 
@@ -139,11 +135,11 @@
 
 			<!-- Breadcrumbs -->
             <div class="breadcrumbs-container row">
-                <div class="no-padding-left col s12 <?php echo $isSingular ? 'l12' : 'l8' ?>">
+                <div class="no-padding-left col s12 <?php echo $isSingular ? 'm12 l12' : 'm8 l8' ?>">
                     <?php renderBreadcrumbs() ?>
                 </div>
                 <?php if (!$isSingular): ?>
-	                <div class="no-padding-right col s12 l4">
+	                <div class="no-padding-right col s12 m4 l4">
 	                    <?php displayShareButtons($pageSettings) ?>
 	                </div>
                 <?php endif; ?>

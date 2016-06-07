@@ -3,21 +3,24 @@
     // Security check
     if (!defined('ABSPATH')) die;
 
+    the_post();
+
 ?>
 
 <?php get_header() ?>
 
-<!-- SERVICES -->
-<h2 style="text-align: center;">Services</h2>
+<div class="row">
+	<div class="col s12 m12 l12">
+		<?php the_content() ?>
+	</div>
+</div>
 
 <div class="row">
-	<a href="<?php echo get_permalink(PAGE_SERVICES); ?>">
-		<?php for ($row = 1; $row <= 2; $row++): ?>
-			<?php for ($col = 1; $col <= 3; $col++): ?>
-				<div class="homepage-article col m4"><?php the_field('box-'.$row.'-'.$col) ?></div>
-			<?php endfor; ?>
-		<?php endfor; ?>
-	</a>
+	<?php for ($x=1; $x<=3; $x++): ?>
+		<div class="frontpage-button col s12 m4 l4">
+			<a href="<?php the_field('button-'.$x) ?>" class="waves-effect waves-light btn cc-blue" style="width: 80%;"><?php the_field('button-'.$x.'-text') ?></a>
+		</div>
+	<?php endfor; ?>
 </div>
 
 <?php get_footer() ?>

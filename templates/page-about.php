@@ -30,41 +30,36 @@
 
 	shuffle($skills);
 
-	// CERTIFICATIONS
-	/*$certifications = array();
-	$certifications[] = new CERT('Google Tag Manager Fundamentals', 'Google', 2015);
-	$certifications[] = new CERT('Google Analytics Platform Principles', 'Google', 2014);
-	$certifications[] = new CERT('Digital Analytics Fundamentals', 'Google', 2013);
-*/
 ?>
 
 <main class="row">
-	<section class="card hoverable col s12 m12 l12">
+	<section class="card hoverable col s12 m12 l12" style="padding-bottom: 2rem;">
 		<div class="card-content">
 			<h2 class="card-title center-align"><?php the_title() ?></h2>
 			<?php the_content() ?>
 		</div>
 	</section>
 
-	<section class="card hoverable col s12 m12 l12">
+	<section class="card hoverable col s12 m12 l12" style="padding-bottom: 2rem;">
 		<div class="card-content">
 			<h2 class="card-title center-align">EXPERIENCE</h2>
 			<?php the_field('experience') ?>
 		</div>
 	</section>
 
-	<section class="card hoverable center-align col s12 m12 l12">
+	<section class="card hoverable center-align col s12 m12 l12" style="padding-bottom: 2rem;">
 		<div class="card-content">
-			<h2 class="card-title">SKILLS</h2>
+			<h2 class="card-title center-align">SKILLS</h2>
 			<div class=" masonry-elements">
 				<?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
 			</div>
 		</div>
 	</section>
 						
-	<section class="card hoverable center-align col s12 m12 l12">
+	<section class="card hoverable center-align col s12 m12 l12" style="padding-bottom: 2rem;">
 		<div class="card-content">
-			<h2 class="cart-title">CERTIFICATIONS</h2>
+			<h2 class="cart-title center-align">CERTIFICATIONS</h2>
 			<?php the_field('certifications') ?>
+		</div>
 	</section>
 </main>

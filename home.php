@@ -15,6 +15,9 @@
 
 		'showFooterShare'		=> false,
 		'footerShareSettings'	=> array('id' => get_the_id(), 'alignRight' => true),
+
+		// Place link on title
+		'linkTitle'				=> true,
 	);
 
 	$args = array(

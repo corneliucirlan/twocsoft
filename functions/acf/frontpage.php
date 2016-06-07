@@ -1,5 +1,5 @@
 <?php
-
+	
 	if(function_exists("register_field_group"))
 	{
 		register_field_group(array (
@@ -7,58 +7,73 @@
 			'title' => 'FrontPage',
 			'fields' => array (
 				array (
-					'key' => 'field_55538b50a6fc2',
-					'label' => 'Box 1-1',
-					'name' => 'box-1-1',
-					'type' => 'wysiwyg',
-					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'key' => 'field_5751c2dc86373',
+					'label' => 'Button #1',
+					'name' => 'button-1',
+					'type' => 'page_link',
+					'post_type' => array (
+						0 => 'page',
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
 				),
 				array (
-					'key' => 'field_55538c55a6fc7',
-					'label' => 'Box 1-2',
-					'name' => 'box-1-2',
-					'type' => 'wysiwyg',
+					'key' => 'field_5751c3dd96fc5',
+					'label' => 'Button #1 Text',
+					'name' => 'button-1-text',
+					'type' => 'text',
 					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'formatting' => 'html',
+					'maxlength' => '',
 				),
 				array (
-					'key' => 'field_55538c54a6fc6',
-					'label' => 'Box 1-3',
-					'name' => 'box-1-3',
-					'type' => 'wysiwyg',
-					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'key' => 'field_5751c3b186375',
+					'label' => 'Button #2',
+					'name' => 'button-2',
+					'type' => 'page_link',
+					'post_type' => array (
+						0 => 'page',
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
 				),
 				array (
-					'key' => 'field_55538c53a6fc5',
-					'label' => 'Box 2-1',
-					'name' => 'box-2-1',
-					'type' => 'wysiwyg',
+					'key' => 'field_5751c40d96fc7',
+					'label' => 'Button #2 Text',
+					'name' => 'button-2-text',
+					'type' => 'text',
 					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'formatting' => 'html',
+					'maxlength' => '',
 				),
 				array (
-					'key' => 'field_55538c52a6fc4',
-					'label' => 'Box 2-2',
-					'name' => 'box-2-2',
-					'type' => 'wysiwyg',
-					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'key' => 'field_5751c3b086374',
+					'label' => 'Button #3',
+					'name' => 'button-3',
+					'type' => 'page_link',
+					'post_type' => array (
+						0 => 'page',
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
 				),
 				array (
-					'key' => 'field_55538c51a6fc3',
-					'label' => 'Box 2-3',
-					'name' => 'box-2-3',
-					'type' => 'wysiwyg',
+					'key' => 'field_5751c40b96fc6',
+					'label' => 'Button #3 Text',
+					'name' => 'button-3-text',
+					'type' => 'text',
 					'default_value' => '',
-					'toolbar' => 'full',
-					'media_upload' => 'yes',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'formatting' => 'html',
+					'maxlength' => '',
 				),
 			),
 			'location' => array (
@@ -81,6 +96,5 @@
 			'menu_order' => 0,
 		));
 	}
-
 
 ?>

@@ -5,7 +5,7 @@
 	Author: Corneliu Cirlan
 	Author URI: http://www.corneliucirlan.com
 	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
-	Version: 3.2.3
+	Version: 3.3
 	Tags: responsive, light, material design, materialize, framework, parallax
 */
 
@@ -81,6 +81,11 @@ p {
 	margin-bottom: 1rem;
 }
 
+a {
+	color: #3d96cb;
+	color: rgba(61, 150, 203, 1);
+}
+
 p,
 a,
 span,
@@ -96,7 +101,7 @@ ul,
 }
 
 .container .row {
-    margin: 0;
+    margin: 0 0 2rem;
 }
 
 @media (max-width: 480px) {
@@ -123,19 +128,10 @@ ul,
 	padding: 0 .7rem;
 }
 
-/*.btn, .btn-large {
-	background-color: #1976d2;
+.cc-blue, .cc-blue:hover {
+	background-color: #3d96cb;
+	background-color: rgba(61, 150, 203, 1);
 }
-
-.btn:hover, .btn-large:hover {
-	background-color: #1976d2;
-}*/
-
-/*.waves-effect .waves-blue .waves-ripple {
-	background-color: #337AB7;
-	background-color: rgba(51, 122, 183, 0.65);
-	color: white;
-}*/
 
 .offsite-title {
 	position: absolute;
@@ -286,18 +282,23 @@ header .side-nav a {
 
 
 /**
- * Homepage
+ * Frontpage
  */
 
-.homepage-article h3 {
+.frontpage-button {
 	text-align: center;
 }
 
-.homepage-article p {
-	width: 60%;
-	margin: 0 auto;
-	text-align: left;
+@media (max-width: 480px) {
+	.frontpage-button {
+		margin-bottom: 2rem;
+	}
+
+	.frontpage-button:last-child {
+		margin-bottom: 0;
+	}
 }
+
 
 
 /**
@@ -309,23 +310,23 @@ header .side-nav a {
 	overflow: hidden;
 }
 
+.card p {
+	margin: 0 2rem 1rem;
+}
+
+/*.card img {
+	width: calc(100% + 40px);
+    width: calc(100% + 4rem);
+    margin: 0 -20px;
+}*/
+
+.card .card-content {
+	padding-bottom: 0;
+}
+
 .card .card-content .card-title {
 	margin: 0;
 	text-transform: uppercase;
-}
-
-.card .card-content p {
-	margin: 0 0 1rem 0;
-}
-
-.card .card-action {
-	background-color: #eee;
-	padding: 1rem;
-}
-
-.card .card-action .share-buttons {
-	margin: 0;
-	line-height: 36px;
 }
 
 .card .card-content .share-buttons {
@@ -342,7 +343,8 @@ header .side-nav a {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating),
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
 	margin: 0;
-	color: #337ab7;
+	color: #3d96cb;
+	color: rgba(61, 150, 203, 1);
 }
 
 .card .blog-post-details {
@@ -350,14 +352,22 @@ header .side-nav a {
 	text-transform: uppercase;
 }
 
-.card img {
-	width: calc(100% + 40px);
-    width: calc(100% + 4rem);
-    margin: 0 -20px;
+.card .card-action {
+	background-color: #eee;
+	padding: 1rem;
+}
+
+.card .card-action .row {
+	margin-bottom: 0;
+}
+
+.card .card-action .share-buttons {
+	margin: 0;
+	line-height: 36px;
 }
 
 
-@media screen and (max-width: 480px) {
+@media (max-width: 1000px) {
 	.card .card-action .share-buttons {
 		width: 100%;
 	}
@@ -484,7 +494,25 @@ footer a:focus {
 	text-decoration: none;
 }
 
+footer .facebook:hover {
+	color: #43609C;
+	color: rgba(62, 91, 153, 1);
+}
 
+footer .twitter:hover {
+	color: #1DA1F2;
+	color: rgba(29, 161, 242, 1);
+}
+
+footer .google-plus:hover {
+	color: #DB4437;
+	color: rgba(219, 68, 55, 1);
+}
+
+footer .linkedin:hover {
+	color: #1D87BD;
+	color: rgba(29, 135, 189, 1);
+}
 
 footer.page-footer .footer-copyright {
 	padding-bottom: 2rem;

@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.3 (2016.06.07)
+- Updated front page design
+
 ##### Version 3.2.3 (2016.06.02)
 - Minor updates to contact page
 - Addded PrismJS for code highlighting

@@ -5,14 +5,20 @@
 	{
 		?>
 		<div class="masonry-element <?php echo $settings['containerClass'] ?>">
-	  		<div class="card hoverable">
-	    		<div class="card-content">
-			       	<h2 class="card-title"><?php the_title() ?></h2>
+	  		<article class="card hoverable">
+				<header class="card-content">
+			       	<?php if (array_key_exists('linkTitle', $settings) && $settings['linkTitle']): ?>
+			       			<a href="<?php the_permalink() ?>"><h2 class="card-title"><?php the_title() ?></h2></a>
+			       		<?php else: ?>
+			       			<h2 class="card-title"><?php the_title() ?></h2>
+			       	<?php endif; ?>
 					<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
-	      			<?php the_post_thumbnail('medium') ?>
-	      			<p><?php array_key_exists('isSingle', $settings) && $settings['isSingle'] == true ? the_content() : the_excerpt() ?></p>
+	    		</header>
+      			<div>
+      				<?php the_post_thumbnail('medium') ?>
+      				<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] == true ? the_content() : the_excerpt() ?>
 	    		</div>
-	    		<div class="card-action">
+	    		<footer class="card-action">
 	    			<div class="row">
 		    			<?php if (array_key_exists('buttons', $settings)): ?>
 								<div class="col s12 l6">
@@ -24,13 +30,13 @@
 									<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
 								</div>
 							<?php else: ?>
-									<div class="col s12 l6 offset-l6">
+									<div class="col s12 offset-m6 l6 offset-l6">
 										<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
 									</div>
 						<?php endif; ?>
 	    			</div>
-	    		</div>
-	  		</div>
+	    		</footer>
+	  		</article>
 		</div>
 		<?php
 	}
@@ -71,13 +77,13 @@
 
 		?>
 		<div class="blog-post-details row valign-wrapper">
-			<div class="no-padding-left <?php echo $singlePost ? 'col m8' : 'col m12' ?>">
+			<div class="no-padding-left <?php echo $singlePost ? 'col s12 m8 l8' : 'col s12 m12 l12' ?>">
 				<?php echo $categoriesText ?>
 				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
 				<i style="color: #1DA1F2;" class="fa fa-twitter"></i>&nbsp;<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank">@<?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
 			<?php if ($singlePost): ?>
-				<div class="no-padding-right col m4">
+				<div class="no-padding-right col s12 m4 l4">
 					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
 				</div>
 			<?php endif; ?>
@@ -133,11 +139,6 @@
 	 */
 	function displayShareButtons($settings)
 	{
-		/*
-			_yoast_wpseo_title
-			_yoast_wpseo_metadesc
-		 */
-		
 		// get url if page is category page
 		if (array_key_exists('isCategory', $settings) && $settings['isCategory']):
 				$url = urlencode(get_category_link($settings['id']));
@@ -161,16 +162,16 @@
 		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 		
 		// get bitly short url
-		//$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
 		
 		// set url to bitly short url
-		//$url = $bitly->data->url;
+		$url = $bitly->data->url;
 		?>
 
 		<ul class="share-buttons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">
 			<li><span>Share:</span></li>
             <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;via=CorneliuCirlan&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>

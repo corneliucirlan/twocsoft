@@ -81,10 +81,8 @@
 				<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
 				<label for="message">Message</label>
 			</div>
-			<button id="submit-form" type="submit" class="waves-effect waves-light btn blue darken-2" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
-			<div id="form-progress" class="progress" style="display: none;">
-		    	<div class="indeterminate"></div>
-		  	</div>
+			<button id="submit-form" type="submit" class="waves-effect waves-light btn cc-blue" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
+			<div id="form-progress" class="progress" style="display: none;"><div class="indeterminate"></div></div>
 		</form>
 	</div>
 </main>
