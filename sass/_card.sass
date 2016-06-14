@@ -1,0 +1,50 @@
+.card
+	color: #444
+	overflow: hidden
+
+	p
+		margin: 0 2rem 1rem
+
+	.card-content
+		padding-bottom: 0
+
+		.card-title
+			margin: 0
+			text-transform: uppercase
+			line-height: 40px
+
+		.share-buttons
+			margin: 0
+
+			li
+				float: left
+				min-width: 3rem
+				text-align: center
+
+	.card-action
+		background-color: #eee
+		padding: 1rem
+
+		.row
+			margin-bottom: 0
+
+		.share-buttons
+			margin: 0
+			line-height: 36px
+
+			li
+				float: left
+				min-width: 3rem
+				text-align: center
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating),
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover
+	margin: 0
+	color: rgba(61, 150, 203, 1)
+
+@media (max-width: 1000px)
+	.card .card-action .share-buttons
+		width: 100%
+
+		li
+			width: 20%

@@ -1,0 +1,86 @@
+footer
+	background-color: #444
+
+	.footer-menu
+		li
+			float: left
+			width: calc(100%/6)
+			text-align: center
+			margin-bottom: 1rem
+
+	.footer-follow-us
+		list-style: none
+		overflow: hidden
+		margin-bottom: 2rem
+
+		li
+			float: left
+			width: 25%
+			text-align: center
+
+	.footer-copyright
+		font-size: 1.5rem
+		padding-bottom: 2rem
+		color: white
+
+	p, a
+		color: rgba(200, 200, 200, 1)
+
+	p
+		text-align: center
+
+	a
+		font-weight: bold
+		transition: ease-in-out .1s
+
+		&:hover, &:active, &:focus
+			color: rgba(255, 255, 255, 1)
+			text-decoration: none
+
+	ul
+		overflow: hidden
+		margin-bottom: 0
+
+	.footer-subtitle
+		color: white
+
+	.facebook:hover
+		color: rgba(62, 91, 153, 1)
+
+	.twitter:hover
+		color: rgba(29, 161, 242, 1)
+
+	.google-plus:hover
+		color: rgba(219, 68, 55, 1)
+
+	.linkedin:hover
+		color: rgba(29, 135, 189, 1)
+
+@media (max-width: $maxPhone)
+	footer
+		.container
+			width: 100%
+
+		.footer-menu li
+			width: 100%
+			text-align: center
+
+			a
+				font-size: 2rem
+
+@media (min-width: 481px) and (max-width: $minDesktop)
+	footer
+		.container
+			width: 100%
+
+		.footer-menu
+			width: 100%
+
+			li
+				float: left
+				width: calc(100%/5)
+				text-align: center
+
+@media (min-width: 992px) and (max-width: 1600px)
+	footer .footer-menu li
+		width: calc(100%/3)
