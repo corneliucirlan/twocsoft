@@ -59,88 +59,76 @@
 
 	<body>
 
-		<!-- Navigation -->
-		<header class="navbar-fixed">
-            <nav>
-			    <div class="nav-wrapper container">
-			      	<a href="#" data-activates="nav-mobile-menu" class="button-collapse"><i class="fa fa-bars" style="color: #444;"></i></a>
+		<!-- Header -->
+        <header>
+            <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
+                <div class="container-fluid">
+                    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+                        &#9776;
+                    </button>
 
-					<?php
-			      		if (has_nav_menu('header-menu')):
+                    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                        <?php
 
-		      			   	// desktop menu
-		      			   	$args = array(
-		      					'theme_location' => 'header-menu',
-		      					'menu' => 'header-menu',
-		      					'container' => 'ul',
-		      					'container_class' => 'side-nav',
-		      					'container_id' => 'nav-desktop-menu',
-		      					'menu_class' => 'hide-on-med-and-down', /*right */
-		      					'menu_id' => '',
-		      					'echo' => true,
-		      					'fallback_cb' => 'wp_page_menu',
-		      					'before' => '',
-		      					'after' => '',
-		      					'link_before' => '',
-		      					'link_after' => '',
-		      					'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-		      					'depth' => 0,
-		      					'walker' => ''
-		      				);
-		      				wp_nav_menu($args);
+                            /**
+                            * Filter the CSS class for a nav menu based on a condition.
+                            *
+                            * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
+                            * @param object $item    The current menu item.
+                            * @return array (maybe) modified nav menu class.
+                            */
+                            function wpdocs_special_nav_class($classes, $item)
+                            {
+                                // to be added later - "active" class to the active page
+                                $classes[] = "nav-item";
+                                return $classes;
+                            }
+                            add_filter('nav_menu_css_class' , 'wpdocs_special_nav_class' , 10, 2);
 
-		      				// mobile menu
-			      			$args = array(
-		      					'theme_location' => 'header-menu',
-		      					'menu' => 'header-menu',
-		      					'container' => 'ul',
-		      					'container_class' => 'side-nav',
-		      					'container_id' => 'nav-mobile-menu',
-		      					'menu_class' => 'side-nav',
-		      					'menu_id' => '',
-		      					'echo' => true,
-		      					'fallback_cb' => 'wp_page_menu',
-		      					'before' => '',
-		      					'after' => '',
-		      					'link_before' => '',
-		      					'link_after' => '',
-		      					'items_wrap' => '<ul id="nav-mobile-menu" class = "%2$s">%3$s</ul>',
-		      					'depth' => 0,
-		      					'walker' => ''
-		      				);
-		      				wp_nav_menu($args);
-			      		endif;
-			      	?>
-			      	<div class="right">
+                            /**
+                             * Add custom class to menu anchor tags
+                             */
+                            function my_walker_nav_menu_start_el($item_output, $item, $depth, $args)
+                            {
+                                $item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
+                                return $item_output;
+                            }
+                            add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);
+
+                            // Render header menu
+        		      		if (has_nav_menu('header-menu')):
+                                $args = array(
+        	      					'theme_location' => 'header-menu',
+        	      					'menu' => 'header-menu',
+        	      					'container' => 'ul',
+        	      					'menu_class' => 'nav navbar-nav',
+        	      					'echo' => true,
+        	      					'fallback_cb' => 'wp_page_menu',
+        	      					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        	      					'depth' => 0,
+        	      				);
+        	      				wp_nav_menu($args);
+                            endif;
+                        ?>
+                    </div>
+
+                    <!-- Social media -->
+                    <!-- <div class="pull-right">
 			      		<ul class="footer-follow-us">
                             <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
                             <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
                             <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
-			      	</div>
-			    </div>
-			</nav>
-		</header>
-
-		<!-- Header image -->
-        <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
-        </div>
-
-		<!-- Content -->
-		<div class="container main-container">
-
-			<!-- Page H1 title -->
-			<h1 class="offsite-title"><?php the_title() ?></h1>
-
-			<!-- Breadcrumbs -->
-            <div class="breadcrumbs-container row">
-                <div class="no-padding-left col s12 <?php echo $isSingular ? 'm12 l12' : 'm8 l8' ?>">
-                    <?php renderBreadcrumbs() ?>
+			      	</div> -->
                 </div>
-                <?php if (!$isSingular): ?>
-	                <div class="no-padding-right col s12 m4 l4">
-	                    <?php displayShareButtons($pageSettings) ?>
-	                </div>
-                <?php endif; ?>
+            </nav>
+
+            <div class="row" style="background: url(<?php echo $headerImage ?>); center center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
             </div>
+
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Library</li>
+            </ol>
+        </header>

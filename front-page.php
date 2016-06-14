@@ -9,7 +9,7 @@
 
 <?php get_header() ?>
 
-<div class="row">
+<!-- <div class="row">
 	<div class="col s12 m12 l12">
 		<?php the_content() ?>
 	</div>
@@ -21,6 +21,6 @@
 			<a href="<?php the_field('button-'.$x) ?>" class="waves-effect waves-light btn cc-blue" style="width: 80%;"><?php the_field('button-'.$x.'-text') ?></a>
 		</div>
 	<?php endfor; ?>
-</div>
+</div> -->
 
-<?php get_footer() ?>
+<?php //get_footer() ?>

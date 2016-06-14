@@ -36,18 +36,9 @@
 	// Enqueue scripts
 	add_action('wp_enqueue_scripts', function() {
 
-		// Load Materialize framework
-		//wp_register_style('google-icons', 'http://fonts.googleapis.com/icon?family=Material+Icons', '', '', 'all');
-		//wp_enqueue_style('google-icons');
-		//wp_register_style('materialize-css', THEME_URI.'css/materialize.min.css', '', '', 'all');
-		//wp_enqueue_style('materialize-css');
-		wp_register_script('materialize-js', THEME_URI.'js/materialize.min.js', array('jquery'), '', false);
-		wp_enqueue_script('materialize-js');
-
 		// Load main stylesheet
 		wp_register_style('main-style', THEME_URI.'style.css', '', '', 'all');
 		wp_enqueue_style('main-style');
-
 
 		// Load custom JS actions
 		wp_register_script('actions', THEME_URI.'js/actions.js', array('jquery'), '', true);
@@ -58,7 +49,6 @@
 
 		// images loaded
 		wp_register_script('images-loaded', THEME_URI.'js/imagesloaded.pkgd.min.js', array('jquery'), '', true);
-		//wp_enqueue_script('images-loaded');
 	});
 
 	// WP Footer hook
