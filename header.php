@@ -61,11 +61,11 @@
 
 		<!-- Navigation -->
 		<header class="navbar-fixed">
-			<nav>
+            <nav>
 			    <div class="nav-wrapper container">
 			      	<a href="#" data-activates="nav-mobile-menu" class="button-collapse"><i class="fa fa-bars" style="color: #444;"></i></a>
 
-			      	<?php
+					<?php
 			      		if (has_nav_menu('header-menu')):
 
 		      			   	// desktop menu
@@ -124,7 +124,7 @@
 		</header>
 
 		<!-- Header image -->
-        <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 611px; padding: 0px; margin: -64px 0 0;">
+        <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
         </div>
 
 		<!-- Content -->

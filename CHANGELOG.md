@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.4 (2016.06.14)
+- Compile CSS using SASS
+
 ##### Version 3.3 (2016.06.07)
 - Updated front page design
 
