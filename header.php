@@ -63,9 +63,7 @@
         <header>
             <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
                 <div class="container-fluid">
-                    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-                        &#9776;
-                    </button>
+                    <!-- <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button> -->
 
                     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
                         <?php
@@ -124,11 +122,22 @@
                 </div>
             </nav>
 
-            <div class="row" style="background: url(<?php echo $headerImage ?>); center center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
+            <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
             </div>
 
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Library</li>
-            </ol>
+            <div class="container-fluid">
+                <div class="no-padding-left col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">
+                    <?php renderBreadcrumbs() ?>
+                </div>
+                <?php if (!$isSingular): ?>
+                    <div class="no-padding-right col-xs-12 col-md-4 col-lg-4">
+                        <?php displayShareButtons($pageSettings) ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Library</li>
+                </ul> --> 
+            </div>
         </header>

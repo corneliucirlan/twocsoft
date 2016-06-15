@@ -9,18 +9,22 @@
 
 <?php get_header() ?>
 
-<!-- <div class="row">
-	<div class="col s12 m12 l12">
-		<?php the_content() ?>
-	</div>
-</div>
+<main class="container-fluid">
 
-<div class="row">
-	<?php for ($x=1; $x<=3; $x++): ?>
-		<div class="frontpage-button col s12 m4 l4">
-			<a href="<?php the_field('button-'.$x) ?>" class="waves-effect waves-light btn cc-blue" style="width: 80%;"><?php the_field('button-'.$x.'-text') ?></a>
+	<section class="row">
+		<div class="col s12 m12 l12">
+			<?php the_content() ?>
 		</div>
-	<?php endfor; ?>
-</div> -->
+	</section>
 
-<?php //get_footer() ?>
+	<section class="row">
+		<?php for ($x=1; $x<=3; $x++): ?>
+			<div class="frontpage-button col-xs-12 col-md-4 col-lg-4">
+				<a href="<?php the_field('button-'.$x) ?>" class="btn btn-primary ripplelink" style="width: 80%;"><?php the_field('button-'.$x.'-text') ?></a>
+			</div>
+		<?php endfor; ?>
+	</section>
+
+</main>
+
+<?php get_footer() ?>
