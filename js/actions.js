@@ -1,8 +1,5 @@
 jQuery(document).ready(function($) {
 
-	// Fire sideNav
-	$(".button-collapse").sideNav();
-
 	// Masonry layout
 	$('.masonry-elements').imagesLoaded(function() {
 		$('.masonry-elements').masonry({
