@@ -7,9 +7,9 @@
 
         </div>
         <footer>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col s12 l4">
+                    <div class="col-xs-12 col-md-4 col-lg-4">
                         <h2 class="footer-subtitle center-align">Links</h2>
                         <?php
                             if (has_nav_menu('footer-menu')):
@@ -19,29 +19,21 @@
                                     'theme_location' => 'footer-menu',
                                     'menu' => 'footer-menu',
                                     'container' => 'ul',
-                                    'container_class' => '',
-                                    'container_id' => '',
                                     'menu_class' => 'footer-menu',
-                                    'menu_id' => '',
                                     'echo' => true,
                                     'fallback_cb' => 'wp_page_menu',
-                                    'before' => '',
-                                    'after' => '',
-                                    'link_before' => '',
-                                    'link_after' => '',
                                     'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                                     'depth' => 0,
-                                    'walker' => ''
                                 );
                                 wp_nav_menu($args);
                             endif;
                         ?>
                     </div>
-                    <div class="contact-us col s12 l4">
+                    <div class="contact-us col-xs-12 col-md-4 col-lg-4">
                         <h2 class="footer-subtitle center-align">Let's work together</h2>
                         <p><?php echo get_option('footer_center_text') ?></p>
                     </div>
-                    <div class="col s12 l4">
+                    <div class="col-xs-12 col-md-4 col-lg-4">
                         <h2 class="footer-subtitle center-align">On social media</h2>
                         <ul class="footer-follow-us">
                             <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
