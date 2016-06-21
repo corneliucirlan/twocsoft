@@ -1,18 +1,29 @@
 jQuery(document).ready(function($) {
 
-	// Masonry layout
-	$('.masonry-elements').imagesLoaded(function() {
-		$('.masonry-elements').masonry({
-			itemSelector: 	'.masonry-element',
-			columnWidth: 	'.masonry-element',
-			isAnimated: 	true,
-		});
+	$('body').prepend('<div id="overlay"></div>');
+
+	// Animate mobile menu
+	$('.navbar-toggler').on('click', function(event) {
+		event.preventDefault();
+
+		$('#overlay').addClass('overlay');
+		$('.navbar-nav').css('transform', 'translateX(100%)');
 	});
+
+	$(document).on('keydown', function(event) {
+		if (event.keyCode == 27)
+			{
+				$('.navbar-nav').css('transform', 'translateX(-70%)');
+				$('#overlay').removeClass('overlay');
+			}
+	});
+
+
 
 	// Share buttons popup
 	$('.share-button').on('click', function(event) {
 		event.preventDefault();
-		
+
 		var popup = {width: 500, height: 350};
 		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
 	});
@@ -23,7 +34,7 @@ jQuery(document).ready(function($) {
 		else $('header nav').removeClass('fixed-top');
 	$(window).on('scroll', function(event) {
 		event.preventDefault();
-		
+
 		// Stick navigation to top
 		if ($(window).scrollTop() > 10) $('header nav').addClass('fixed-top');
 			else $('header nav').removeClass('fixed-top');
@@ -36,7 +47,7 @@ jQuery(document).ready(function($) {
 	$('#contact-form').on('submit', function(event) {
 		event.preventDefault();
 
-		
+
 		var data = $(this).serialize();
 		console.log(ajaxurl);
 
@@ -49,7 +60,7 @@ jQuery(document).ready(function($) {
 			{
 				// disable input fields
 				$('form input,textarea').prop('disabled', true);
-				
+
 				// Toggle submit button
 				toggleSubmit();
 			}
@@ -62,13 +73,13 @@ jQuery(document).ready(function($) {
 		})
 		.always(function(data, textStatus, jqXHR) {
 			$('form input,textarea').prop('disabled', false);
-			
+
 			// Toggle submit button
 			toggleSubmit();
 
 			// If email was sent
 			if (data.emailSent === true)
-					
+
 					// Materialize.toast(message, displayLength, className, completeCallback);
 		  			Materialize.toast('Message sent.', 4000); // 4000 is the duration of the toast
 
@@ -81,7 +92,7 @@ jQuery(document).ready(function($) {
 						// log failure
 						console.log(data.failReason);
 					}
-			
+
 		});
 	});
 

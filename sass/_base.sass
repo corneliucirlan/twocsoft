@@ -1,9 +1,36 @@
 body
 	background-color: $body-bg
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.main-container
+	flex: 1
 
 .container-fluid
-//	max-width: 90%
+	max-width: 100%
+	width: 100%
 
-.fixed-top
-	background-color: rgba(255, 255, 255, 0.9)
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+.overlay
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(0, 0, 0, .3)
+	z-index: 1000
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.container-fluid
+		max-width: 90%
+
+// medium screens
+@include media-breakpoint-up(md)
+	.container-fluid
+		max-width: 90%
+
+// large screens
+@include media-breakpoint-up(lg)
+	.container-fluid
+		max-width: 80%

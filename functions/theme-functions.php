@@ -1,5 +1,31 @@
 <?php
 
+	/**
+     * Filter the CSS class for a nav menu based on a condition.
+     *
+     * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
+     * @param object $item    The current menu item.
+     * @return array (maybe) modified nav menu class.
+     */
+    function wpdocs_special_nav_class($classes, $item)
+    {
+        // to be added later - "active" class to the active page
+        $classes[] = "nav-item";
+        return $classes;
+    }
+    add_filter('nav_menu_css_class' , 'wpdocs_special_nav_class' , 10, 2);
+
+    /**
+     * Add custom class to menu anchor tags
+     */
+    function my_walker_nav_menu_start_el($item_output, $item, $depth, $args)
+    {
+        $item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
+        return $item_output;
+    }
+    add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);
+
+
 	// Display one card
 	function displayCard($settings, $content = false)
 	{
@@ -168,12 +194,12 @@
 		//$url = $bitly->data->url;
 		?>
 
-		<ul class="share-buttons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">
+		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-right' : '' ?>">
 			<li><span>Share:</span></li>
-            <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>
 		<?php
 	}

@@ -62,82 +62,59 @@
 		<!-- Header -->
         <header>
             <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
+
                 <div class="container-fluid">
-                    <!-- <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button> -->
 
-                    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-                        <?php
+                    <!-- Navigation toggle -->
+                    <button class="navbar-toggler hidden-lg-up" type="button"><i class="fa fa-bars"></i></button>
 
-                            /**
-                            * Filter the CSS class for a nav menu based on a condition.
-                            *
-                            * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
-                            * @param object $item    The current menu item.
-                            * @return array (maybe) modified nav menu class.
-                            */
-                            function wpdocs_special_nav_class($classes, $item)
-                            {
-                                // to be added later - "active" class to the active page
-                                $classes[] = "nav-item";
-                                return $classes;
-                            }
-                            add_filter('nav_menu_css_class' , 'wpdocs_special_nav_class' , 10, 2);
+                    <?php
 
-                            /**
-                             * Add custom class to menu anchor tags
-                             */
-                            function my_walker_nav_menu_start_el($item_output, $item, $depth, $args)
-                            {
-                                $item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
-                                return $item_output;
-                            }
-                            add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);
-
-                            // Render header menu
-        		      		if (has_nav_menu('header-menu')):
-                                $args = array(
-        	      					'theme_location' => 'header-menu',
-        	      					'menu' => 'header-menu',
-        	      					'container' => 'ul',
-        	      					'menu_class' => 'nav navbar-nav',
-        	      					'echo' => true,
-        	      					'fallback_cb' => 'wp_page_menu',
-        	      					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-        	      					'depth' => 0,
-        	      				);
-        	      				wp_nav_menu($args);
-                            endif;
-                        ?>
-                    </div>
-
-                    <!-- Social media -->
-                    <!-- <div class="pull-right">
-			      		<ul class="footer-follow-us">
+                        // Render header menu
+                        if (has_nav_menu('header-menu')):
+                            $args = array(
+                                'theme_location' => 'header-menu',
+                                'menu' => 'header-menu',
+                                'container' => 'ul',
+                                'menu_class' => 'nav navbar-nav',
+                                'echo' => true,
+                                'fallback_cb' => 'wp_page_menu',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 0,
+                            );
+                            wp_nav_menu($args);
+                        endif;
+                    ?>
+                    <div class="header-social">
+			      		<ul class="social-icons">
                             <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
                             <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
                             <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
-			      	</div> -->
+			      	</div>
+
                 </div>
             </nav>
 
             <!-- Header image -->
             <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;"></div>
 
-            <div class="container-fluid">
-                <div class="no-padding-left col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">
+            <div class="breadcrumbs-container container-fluid">
+                <div class="col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">
                     <?php renderBreadcrumbs() ?>
                 </div>
                 <?php if (!$isSingular): ?>
-                    <div class="no-padding-right col-xs-12 col-md-4 col-lg-4">
+                    <div class="col-xs-12 col-md-4 col-lg-4">
                         <?php displayShareButtons($pageSettings) ?>
                     </div>
                 <?php endif; ?>
-
-                <!-- <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Library</li>
-                </ul> --> 
             </div>
         </header>
+
+        <!-- Main Content -->
+        <?php if (!is_page(PAGE_BLOG)): ?>
+                <main class="main-container container-fluid">
+            <?php else: ?>
+                <div class="main-container container-fluid">
+        <?php endif; ?>

@@ -1,0 +1,29 @@
+.card-columns
+	column-count: 1
+
+.card
+	border: none
+	border-radius: 0
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4)
+
+	.card-title
+		font-family: "Oswald", "sans-serif"
+
+	img
+		width: calc(100%)
+		height: auto
+		margin: 0 -1.25rem
+
+	footer
+		background: $gray-lighter
+		margin-top: 0
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.card-columns
+		column-count: 2
+
+// large screens
+@include media-breakpoint-up(lg)
+	.card-columns
+		column-count: 3

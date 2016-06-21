@@ -18,7 +18,7 @@
 ?>
 
 
-<main class="masonry-elements row">
+<div class="masonry-elements row">
 	<?php foreach ($array as $x): ?>
 		<div class="masonry-element col s12 m4 l4">
 			<article class="card hoverable">
@@ -26,4 +26,4 @@
 			</article>
 		</div>
 	<?php endforeach; ?>
-</main>
+</div>

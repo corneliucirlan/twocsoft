@@ -5,7 +5,11 @@
 
 ?>
 
-        </div>
+        <?php if (!is_page(PAGE_BLOG)): ?>
+                </main>
+            <?php else: ?>
+                </div>
+        <?php endif; ?>
         <footer>
             <div class="container-fluid">
                 <div class="row">

@@ -32,7 +32,7 @@
 
 ?>
 
-<main class="row">
+<div class="row">
 	<section class="card hoverable col s12 m12 l12" style="padding-bottom: 2rem;">
 		<div class="card-content">
 			<h2 class="card-title center-align"><?php the_title() ?></h2>
@@ -62,4 +62,4 @@
 			<?php the_field('certifications') ?>
 		</div>
 	</section>
-</main>
+</div>
