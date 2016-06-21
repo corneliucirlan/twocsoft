@@ -3761,25 +3761,28 @@ header nav .container-fluid .navbar-nav .nav-item a {
   -webkit-column-count: 1;
      -moz-column-count: 1;
           column-count: 1;
+  text-align: center;
 }
 
-.card {
+.card-columns .card {
+  width: calc(100% - 1rem);
   border: none;
   border-radius: 0;
+  text-align: left;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
 }
 
-.card .card-title {
+.card-columns .card .card-title {
   font-family: "Oswald", "sans-serif";
 }
 
-.card img {
-  width: calc(100%);
+.card-columns .card img {
+  width: calc(100% + 2.5rem);
   height: auto;
   margin: 0 -1.25rem;
 }
 
-.card footer {
+.card-columns .card footer {
   background: #eceeef;
   margin-top: 0;
 }
