@@ -7,13 +7,19 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 
 		$('#overlay').addClass('overlay');
-		$('.navbar-nav').css('transform', 'translateX(100%)');
+		$('.navbar-nav').css({
+			//'display'	: 'block',
+			'transform'	: 'translateX(100%)'
+		});
 	});
 
 	$(document).on('keydown', function(event) {
 		if (event.keyCode == 27)
 			{
-				$('.navbar-nav').css('transform', 'translateX(-70%)');
+				$('.navbar-nav').css({
+					'transform'	: 'translateX(-13rem)',
+					//'display'	: 'none'
+				});
 				$('#overlay').removeClass('overlay');
 			}
 	});

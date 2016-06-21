@@ -1,17 +1,21 @@
 .social-icons
+	width: 100%
 	list-style: none
-	display: flex
-	justify-content: space-around
-	flex-wrap: wrap
+	display: block
+	position: relative
+	overflow: hidden
+	padding: 0
 
 	li
-		min-width: 3rem
+		float: left
+		width: calc(100%/5)
 		text-align: center
 		padding: 1rem
 		color: inherit
 
 		a
 			color: inherit
+			transition: all 0.2s ease-in-out
 
 
 
@@ -27,27 +31,19 @@
 .linkedin:hover
 	color: rgba(29, 135, 189, 1)
 
-//
-//// header social links
-//.header-social
-//	ul
-//		line-height: 3rem
-//		margin: 0
-//		line-height: 64px
-//		list-style: none
-//		background: red
-//
-//		li
-//			float: left
-//			min-width: 3rem
-//
-//
-//// share buttons
-//.share-buttons
-//	list-style: none
-//
-//	li
-//		float: left
-//		min-width: 3rem
-//		text-align: center
-//
+// small to medium screens
+@include media-breakpoint-up(md)
+	.social-icons
+		width: 100%
+		list-style: none
+		position: relative
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+
+		li
+			min-width: 3rem
+			width: auto
+			text-align: center
+			padding: 1rem
+			color: inherit
