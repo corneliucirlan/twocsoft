@@ -18,12 +18,17 @@
 ?>
 
 
-<div class="masonry-elements row">
-	<?php foreach ($array as $x): ?>
-		<div class="masonry-element col s12 m4 l4">
-			<article class="card hoverable">
-				<div class="card-content" style="padding-bottom: 2rem;"><?php the_field('box-'.$x[0].'-'.$x[1]) ?></div>
-			</article>
-		</div>
-	<?php endforeach; ?>
+<div class="page-services row">
+    <div class="card-columns">
+        <?php for ($x = 1; $x<= 6; $x++): ?>
+            <article class="card">
+                <header class="card-header">
+                    <h2 class="card-title"><?php the_field('services-card-'.$x.'-title') ?></h2>
+                </header>
+                <div class="card-block">
+                    <?php the_field('services-card-'.$x.'-body') ?>
+                </div>
+            </article>
+        <?php endfor; ?>
+    </div>
 </div>

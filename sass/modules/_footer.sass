@@ -1,4 +1,4 @@
-footer
+.footer
 	background-color: $gray-dark
 	margin-top: 2rem
 	padding: 1rem
@@ -48,7 +48,7 @@ footer
 
 // small to medium screens
 @include media-breakpoint-up(sm)
-	footer
+	.footer
 		.footer-menu li
 			width: calc(100%/3)
 			float: left
@@ -56,10 +56,10 @@ footer
 
 // medium screens
 @include media-breakpoint-up(md)
-	footer .footer-menu li
+	.footer .footer-menu li
 		width: calc(100%/3)
 
 // large screens
 @include media-breakpoint-up(lg)
-	footer .footer-menu li
+	.footer .footer-menu li
 		width: calc(100%/6)

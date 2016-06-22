@@ -29,9 +29,9 @@
 	query_posts($args);
 ?>
 
-<div class="row">
+<div class="page-blog row">
 	<?php if (have_posts()): ?>
-		<main class="blog-posts col m8">
+		<main class="card-columns col-md-8">
 			<?php while (have_posts()): the_post() ?>
 				<?php
 					$cardSettings['buttons'] = array(
@@ -39,7 +39,7 @@
 							'url'		=> get_the_permalink(),
 							'label'		=> __('Read more'),
 							'target'	=> '_self',
-							'class'		=> 'btn btn-primary',
+							'class'		=> 'btn btn-primary-outline',
 						)
 					);
 					displayCard($cardSettings);

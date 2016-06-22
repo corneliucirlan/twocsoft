@@ -10,14 +10,14 @@
             <?php else: ?>
                 </div>
         <?php endif; ?>
-        <footer>
+        <footer class="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-md-4 col-lg-4">
                         <h2 class="footer-subtitle center-align">Links</h2>
                         <?php
                             if (has_nav_menu('footer-menu')):
-                               
+
                                 // desktop menu
                                 $args = array(
                                     'theme_location' => 'footer-menu',
@@ -44,7 +44,7 @@
                             <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
                             <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
                             <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
-                        </ul>    
+                        </ul>
                     </div>
             	</div>
           	</div>

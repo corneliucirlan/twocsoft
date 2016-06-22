@@ -9,7 +9,7 @@
 <?php
 
 	$cardSettings = array(
-		'containerClass'		=> 'col s12 m8 l8',
+		'containerClass'		=> 'col-sm-12 col-md-8',
 		'showCardDetails'		=> true,
 		'isSingle'				=> true,
 		'showFooterShare'		=> false,
@@ -21,10 +21,10 @@
 
 <?php get_header(); ?>
 
-<div class="row">
-	<main class="blog-post-main md-card-holder col-md-8">
+<div class="page-single row">
+	<div class="col-md-8">
 		<?php displayCard($cardSettings) ?>
-	</main>
+	</div>
 </div>
 
 <?php get_footer(); ?>

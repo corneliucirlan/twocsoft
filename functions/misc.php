@@ -38,7 +38,7 @@
 
 		// send email
 		if ($ajaxResponse['name'] && $ajaxResponse['email'] && $ajaxResponse['subject'] && $ajaxResponse['message']):
-				
+
 				// get admin emails
 				$admins = get_users(array('role' => 'administrator', 'fields' => array('user_email')));
 
