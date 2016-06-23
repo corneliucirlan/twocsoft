@@ -1,29 +1,76 @@
 jQuery(document).ready(function($) {
 
-	$('body').prepend('<div id="overlay"></div>');
 
-	// Animate mobile menu
-	$('.navbar-toggler').on('click', function(event) {
-		event.preventDefault();
+/************************************
+ *    MOBILE MENU START
+ ************************************/
 
-		$('#overlay').addClass('overlay');
-		$('.navbar-nav').css({
-			//'display'	: 'block',
-			'transform'	: 'translateX(100%)'
-		});
-	});
+ // Declare variables
+ var $mobileMenu         = $('.navbar-nav'),
+ 	$mobileMenuParent   = $('header > nav');
 
-	$(document).on('keydown', function(event) {
-		if (event.keyCode == 27)
-			{
-				$('.navbar-nav').css({
-					'transform'	: 'translateX(-13rem)',
-					//'display'	: 'none'
-				});
-				$('#overlay').removeClass('overlay');
-			}
-	});
+ // Append overlay to document
+ $('body').prepend('<div class="overlay"></div>');
 
+ // Animate mobile menu
+ $('.navbar-toggler').on('click', function(event) {
+ 	event.preventDefault();
+
+ 	toggleOverlay();
+
+ 	$mobileMenu
+ 		.css({
+ 			'display' : 'block',
+ 		})
+ 		.animate({
+ 			'left' : '0rem'
+ 		});
+
+ 	$mobileMenuParent.removeClass('fixed-top');
+
+ });
+
+ // Close menu on ESC key
+ $(document).on('keydown', function(event) {
+ 	if (event.keyCode == 27 && $('.overlay:visible').length > 0)
+ 		closeMobileMenu();
+ });
+
+ // Close menu when overlay clicked
+ $('.overlay').on('click', function(event) {
+ 	event.preventDefault();
+
+ 	closeMobileMenu();
+ })
+
+ // Close mobile menu
+ function closeMobileMenu()
+ {
+ 	var wScroll = $(window).scrollTop();
+
+ 	$mobileMenu.animate({
+ 		'left' : '-13rem'
+ 	}).css({
+ 		'display' : 'none',
+ 	});
+
+ 	if (wScroll > 10)
+ 	$mobileMenuParent.addClass('fixed-top');
+
+ 	toggleOverlay();
+ }
+
+ // Toggle overlay
+ function toggleOverlay()
+ {
+ 	$('.overlay').fadeToggle('fast');
+ 	$('body').toggleClass('block-scroll');
+ }
+
+
+ /************************************
+  *    MOBILE MENU END
+  ************************************/
 
 
 	// Share buttons popup

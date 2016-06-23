@@ -28,16 +28,17 @@ header
 
 			// Menu
 			.navbar-nav
-				position: absolute
+				display: none
+				position: fixed
 				max-width: 13rem
 				width: 100%
 				background-color: white
 				left: -13rem
 				top: 0
 				height: 100vh
-				transition: all .2s ease-in-out
+				transition: transform 5s ease-in-out
 				box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2)
-				z-index: 1050
+				z-index: 1030
 
 				.nav-item
 					display: block
@@ -66,6 +67,7 @@ header
 					flex: initial
 
 				.navbar-nav
+					display: block
 					position: relative
 					left: 0
 					top: 5px

@@ -3529,13 +3529,21 @@ body {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1000;
+}
+
+.block-scroll {
+  overflow: hidden;
+  height: 100%;
 }
 
 @media (min-width: 544px) {
@@ -3616,16 +3624,19 @@ header nav .container-fluid .header-social {
 }
 
 header nav .container-fluid .navbar-nav {
-  position: absolute;
+  display: none;
+  position: fixed;
   max-width: 13rem;
   width: 100%;
   background-color: white;
   left: -13rem;
   top: 0;
   height: 100vh;
-  transition: all .2s ease-in-out;
+  transition: -webkit-transform 5s ease-in-out;
+  transition: transform 5s ease-in-out;
+  transition: transform 5s ease-in-out, -webkit-transform 5s ease-in-out;
   box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
-  z-index: 1050;
+  z-index: 1030;
 }
 
 header nav .container-fluid .navbar-nav .nav-item {
@@ -3656,6 +3667,7 @@ header nav .container-fluid .navbar-nav .nav-item a {
             flex: initial;
   }
   header nav .container-fluid .navbar-nav {
+    display: block;
     position: relative;
     left: 0;
     top: 5px;
