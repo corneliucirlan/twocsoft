@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
 	function closeMobileMenu()
 	{
 		var wScroll = $(window).scrollTop();
-		
+
 		$mobileMenu.animate({
 			'left' : '-13rem'
 			}).css({
@@ -71,8 +71,8 @@ jQuery(document).ready(function($) {
 
 
 	/************************************
-	*    MOBILE MENU END
-	************************************/
+	 *    MOBILE MENU END
+	 ************************************/
 
 
 	// Share buttons popup
