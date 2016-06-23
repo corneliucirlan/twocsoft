@@ -6,8 +6,11 @@ jQuery(document).ready(function($) {
 	 ************************************/
 
 	// Declare variables
-	var $mobileMenu         = $('.navbar-nav'),
-		$mobileMenuParent   = $('header > nav');
+	var wScroll 			= $(window).scrollTop(),
+		scrollValue			= '10',
+
+		$mobileMenu         = $('.navbar-nav'),
+		$mobileMenuParent   = $('header nav');
 
 	// Append overlay to document
 	$('body').prepend('<div class="overlay"></div>');
@@ -27,7 +30,6 @@ jQuery(document).ready(function($) {
 			});
 
 		$mobileMenuParent.removeClass('fixed-top');
-
 	});
 
 	// Close menu on ESC key
@@ -47,15 +49,15 @@ jQuery(document).ready(function($) {
 	function closeMobileMenu()
 	{
 		var wScroll = $(window).scrollTop();
-
+		
 		$mobileMenu.animate({
 			'left' : '-13rem'
-		}).css({
-			'display' : 'none',
-		});
+			}).css({
+				'display' : 'none',
+			});
 
-		if (wScroll > 10)
-		$mobileMenuParent.addClass('fixed-top');
+		if (wScroll > scrollValue)
+			$mobileMenuParent.addClass('fixed-top');
 
 		toggleOverlay();
 	}
@@ -82,15 +84,16 @@ jQuery(document).ready(function($) {
 	});
 
 	// Detect scroll
-	// Stick navigation to top
-	if ($(window).scrollTop() > 10) $('header nav').addClass('fixed-top');
-		else $('header nav').removeClass('fixed-top');
+	if (wScroll > scrollValue) $mobileMenuParent.addClass('fixed-top');
+		else $mobileMenuParent.removeClass('fixed-top');
 	$(window).on('scroll', function(event) {
 		event.preventDefault();
 
+		var wScroll = $(window).scrollTop();
+
 		// Stick navigation to top
-		if ($(window).scrollTop() > 10) $('header nav').addClass('fixed-top');
-			else $('header nav').removeClass('fixed-top');
+		if (wScroll > scrollValue) $mobileMenuParent.addClass('fixed-top');
+			else $mobileMenuParent.removeClass('fixed-top');
 	});
 
 	// PrismJS
