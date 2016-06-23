@@ -1,76 +1,76 @@
 jQuery(document).ready(function($) {
 
 
-/************************************
- *    MOBILE MENU START
- ************************************/
+	/************************************
+	 *    MOBILE MENU START
+	 ************************************/
 
- // Declare variables
- var $mobileMenu         = $('.navbar-nav'),
- 	$mobileMenuParent   = $('header > nav');
+	 // Declare variables
+	 var $mobileMenu         = $('.navbar-nav'),
+	 	$mobileMenuParent   = $('header > nav');
 
- // Append overlay to document
- $('body').prepend('<div class="overlay"></div>');
+	 // Append overlay to document
+	 $('body').prepend('<div class="overlay"></div>');
 
- // Animate mobile menu
- $('.navbar-toggler').on('click', function(event) {
- 	event.preventDefault();
+	 // Animate mobile menu
+	 $('.navbar-toggler').on('click', function(event) {
+	 	event.preventDefault();
 
- 	toggleOverlay();
+	 	toggleOverlay();
 
- 	$mobileMenu
- 		.css({
- 			'display' : 'block',
- 		})
- 		.animate({
- 			'left' : '0rem'
- 		});
+	 	$mobileMenu
+	 		.css({
+	 			'display' : 'block',
+	 		})
+	 		.animate({
+	 			'left' : '0rem'
+	 		});
 
- 	$mobileMenuParent.removeClass('fixed-top');
+	 	$mobileMenuParent.removeClass('fixed-top');
 
- });
+	 });
 
- // Close menu on ESC key
- $(document).on('keydown', function(event) {
- 	if (event.keyCode == 27 && $('.overlay:visible').length > 0)
- 		closeMobileMenu();
- });
+	 // Close menu on ESC key
+	 $(document).on('keydown', function(event) {
+	 	if (event.keyCode == 27 && $('.overlay:visible').length > 0)
+	 		closeMobileMenu();
+	 });
 
- // Close menu when overlay clicked
- $('.overlay').on('click', function(event) {
- 	event.preventDefault();
+	 // Close menu when overlay clicked
+	 $('.overlay').on('click', function(event) {
+	 	event.preventDefault();
 
- 	closeMobileMenu();
- })
+	 	closeMobileMenu();
+	 })
 
- // Close mobile menu
- function closeMobileMenu()
- {
- 	var wScroll = $(window).scrollTop();
+	 // Close mobile menu
+	 function closeMobileMenu()
+	 {
+	 	var wScroll = $(window).scrollTop();
 
- 	$mobileMenu.animate({
- 		'left' : '-13rem'
- 	}).css({
- 		'display' : 'none',
- 	});
+	 	$mobileMenu.animate({
+	 		'left' : '-13rem'
+	 	}).css({
+	 		'display' : 'none',
+	 	});
 
- 	if (wScroll > 10)
- 	$mobileMenuParent.addClass('fixed-top');
+	 	if (wScroll > 10)
+	 	$mobileMenuParent.addClass('fixed-top');
 
- 	toggleOverlay();
- }
+	 	toggleOverlay();
+	 }
 
- // Toggle overlay
- function toggleOverlay()
- {
- 	$('.overlay').fadeToggle('fast');
- 	$('body').toggleClass('block-scroll');
- }
+	 // Toggle overlay
+	 function toggleOverlay()
+	 {
+	 	$('.overlay').fadeToggle('fast');
+	 	$('body').toggleClass('block-scroll');
+	 }
 
 
- /************************************
-  *    MOBILE MENU END
-  ************************************/
+	 /************************************
+	  *    MOBILE MENU END
+	  ************************************/
 
 
 	// Share buttons popup
