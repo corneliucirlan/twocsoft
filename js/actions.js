@@ -8,9 +8,26 @@ jQuery(document).ready(function($) {
 	// Declare variables
 	var wScroll 			= $(window).scrollTop(),
 		scrollValue			= '10',
+		mobileMenuBreak		= '992',
 
 		$mobileMenu         = $('.navbar-nav'),
 		$mobileMenuParent   = $('header nav');
+
+	// Reposition menu on browser resize
+	$(window).on('resize', function(event) {
+
+		if ($(this).width() >= mobileMenuBreak)
+				$mobileMenu.css({
+					'display': 'block',
+					'left': '0rem'
+				});
+			else
+				$mobileMenu.css({
+					'display': 'none',
+					'left': '-13rem'
+				});
+
+	});
 
 	// Append overlay to document
 	$('body').prepend('<div class="overlay"></div>');
