@@ -23,28 +23,30 @@
 
 	if (have_posts()):
 
-		?><div class="page-portfolio card-columns"><?php
-		while (have_posts()):
-			the_post();
+		?><div class="page-portfolio row"><?php
+            ?><div class="card-columns"><?php
+        		while (have_posts()):
+        			the_post();
 
-			$cardSettings['buttons'] = array(
-				'details'		=> array(
-					'url'		=> get_the_permalink(),
-					'label'		=> __('Details'),
-					'target'	=> '_self',
-				)
-			);
+        			$cardSettings['buttons'] = array(
+        				'details'		=> array(
+        					'url'		=> get_the_permalink(),
+        					'label'		=> __('Details'),
+        					'target'	=> '_self',
+        				)
+        			);
 
-			if (get_field('portfolio-type') == PORTFOLIO_WEBSITE):
-				$cardSettings['buttons']['liveVersion']	= array(
-					'url'		=> get_field('website-url'),
-					'label'		=> __('Live version'),
-					'target'	=> '_blank',
-				);
-			endif;
+        			if (get_field('portfolio-type') == PORTFOLIO_WEBSITE):
+        				$cardSettings['buttons']['liveVersion']	= array(
+        					'url'		=> get_field('website-url'),
+        					'label'		=> __('Live version'),
+        					'target'	=> '_blank',
+        				);
+        			endif;
 
-			displayCard($cardSettings);
-		endwhile;
-		?></div><?php
+        			displayCard($cardSettings);
+        		endwhile;
+		    ?></div><?php
+        ?></div><?php
 	endif;
 ?>

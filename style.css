@@ -4021,6 +4021,38 @@ header nav .container-fluid .navbar-nav .nav-item a {
   }
 }
 
+.page-portfolio .card-columns {
+  -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1;
+}
+
+.page-portfolio .card-columns .card {
+  width: 100%;
+  margin: .5rem 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-services .card-columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+  .page-services .card-columns .card {
+    width: calc(100% - 1rem);
+    margin: .5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-services .card-columns {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+}
+
 .page-blog .card-columns {
   -webkit-column-count: 1;
      -moz-column-count: 1;

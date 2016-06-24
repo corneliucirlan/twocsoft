@@ -1,0 +1,19 @@
+.page-portfolio .card-columns
+        column-count: 1
+
+        .card
+            width: 100%
+            margin: .5rem 0
+            text-align: center
+
+@include media-breakpoint-up(md)
+    .page-services .card-columns
+        column-count: 2
+
+        .card
+            width: calc(100% - 1rem)
+            margin: .5rem
+
+@include media-breakpoint-up(lg)
+    .page-services .card-columns
+        column-count: 3
