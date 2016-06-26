@@ -10,7 +10,8 @@
 	$cardSettings = array(
 		'containerClass'		=> 'col-sm-12 col-md-6',
 		'showCardDetails'		=> false,
-		'showFooterShare'		=> false,
+        
+		'showFooterShare'		=> true,
 		'footerShareSettings'	=> array('id' => get_the_id(), 'alignRight' => true),
 	);
 

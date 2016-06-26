@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 
-
 	/************************************
   	 *    MOBILE MENU START
 	 ************************************/
@@ -90,6 +89,27 @@ jQuery(document).ready(function($) {
 	/************************************
 	 *    MOBILE MENU END
 	 ************************************/
+
+
+
+
+
+	// Center title vertically
+	var $headerWrapper = $('.header-wrapper');
+	$headerWrapper.css({
+		'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px)',
+	});
+	$(window).on('scroll', function(event) {
+		event.preventDefault();
+
+		var wScroll = $(window).scrollTop();
+		console.log(wScroll);
+
+		$headerWrapper.css({
+			'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px + '+ wScroll/2 +'px)',
+		});
+	});
+
 
 
 	// Share buttons popup

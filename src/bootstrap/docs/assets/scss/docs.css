@@ -1,0 +1,1769 @@
+/*!
+ * Bootstrap Docs (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see https://creativecommons.org/licenses/by/3.0/.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_booticon\.scss}line{font-family:\000035}}
+.bd-booticon {
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  font-size: 6.5rem;
+  line-height: 9rem;
+  color: #fff;
+  text-align: center;
+  cursor: default;
+  background-color: #563d7c;
+  border-radius: 15%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_booticon\.scss}line{font-family:\0000317}}
+.bd-booticon.inverse {
+  color: #563d7c;
+  background-color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_booticon\.scss}line{font-family:\0000321}}
+.bd-booticon.outline {
+  background-color: transparent;
+  border: 1px solid #cdbfe3;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\000035}}
+.bd-navbar {
+  font-size: 87.5%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\000039}}
+.bd-navbar .navbar-nav .nav-link {
+  color: #8e869d;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\0000312}}
+.bd-navbar .navbar-nav .nav-link.active, .bd-navbar .navbar-nav .nav-link:hover, .bd-navbar .navbar-nav .nav-link:focus {
+  color: #373a3c;
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\0000319}}
+.bd-navbar .navbar-nav .nav-link.active {
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\0000325}}
+.bd-navbar .dropdown-menu {
+  font-size: inherit;
+}
+@media (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\0000330}}
+  .bd-navbar .nav-link {
+    float: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_nav\.scss}line{font-family:\0000333}}
+  .bd-navbar .nav-link + .nav-link {
+    margin-left: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\000031}}
+.bd-masthead {
+  position: relative;
+  padding: 3rem 0.9375rem 2rem;
+  color: #cdbfe3;
+  text-align: center;
+  background-image: -webkit-linear-gradient(135deg, #271b38, #563d7c, #7952b3);
+  background-image: linear-gradient(135deg, #271b38, #563d7c, #7952b3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF271B38', endColorstr='#FF7952B3', gradientType='1');
+  /* For IE9 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000310}}
+.bd-masthead .bd-booticon {
+  margin: 0 auto 2rem;
+  color: #cdbfe3;
+  border-color: #cdbfe3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000316}}
+.bd-masthead h1 {
+  font-weight: 300;
+  line-height: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000321}}
+.bd-masthead .lead {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000329}}
+.bd-masthead .version {
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000334}}
+.bd-masthead .btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffe484;
+  border-color: #ffe484;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000342}}
+.bd-masthead .btn:hover {
+  color: #2a2730;
+  background-color: #ffe484;
+  border-color: #ffe484;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000349}}
+.bd-masthead .carbonad {
+  margin-bottom: -2rem !important;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\000031}}
+  .bd-masthead {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000357}}
+  .bd-masthead .btn {
+    width: auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000361}}
+  .bd-masthead .carbonad {
+    margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\000031}}
+  .bd-masthead {
+    padding-bottom: 4rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000369}}
+  .bd-masthead .bd-header {
+    margin-bottom: 4rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000373}}
+  .bd-masthead h1 {
+    font-size: 4rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000377}}
+  .bd-masthead .lead {
+    font-size: 1.5rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000381}}
+  .bd-masthead .carbonad {
+    margin-top: 3rem !important;
+  }
+}
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_masthead\.scss}line{font-family:\0000387}}
+  .bd-masthead .lead {
+    width: 85%;
+    font-size: 2rem;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\000031}}
+.bd-featurette {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000311}}
+.bd-featurette .highlight {
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000315}}
+.bd-featurette .lead {
+  margin-right: auto;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  font-size: 1rem;
+  text-align: center;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\000031}}
+  .bd-featurette {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000328}}
+  .bd-featurette .col-sm-6:first-child {
+    padding-right: 2.8125rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000331}}
+  .bd-featurette .col-sm-6:last-child {
+    padding-left: 2.8125rem;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000337}}
+.bd-featurette-title {
+  margin-bottom: .5rem;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000345}}
+.half-rule {
+  width: 6rem;
+  margin: 2.5rem auto;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000345}}
+  .half-rule {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000354}}
+.bd-featurette h4 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: normal;
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000360}}
+.bd-featurette-img {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000365}}
+.bd-featurette-img:hover {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000369}}
+.bd-featurette-img img {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000375}}
+  .bd-featurette .img-fluid {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000380}}
+  .bd-featurette {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000384}}
+  .bd-featurette-title {
+    font-size: 2.5rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000387}}
+  .bd-featurette-title + .lead {
+    font-size: 1.5rem;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000391}}
+  .bd-featurette .lead {
+    max-width: 80%;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featurettes\.scss}line{font-family:\0000394}}
+  .bd-featurette .img-fluid {
+    margin-top: 0;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featured-sites\.scss}line{font-family:\000031}}
+.bd-featured-sites {
+  margin-right: -1px;
+  margin-left: -1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featured-sites\.scss}line{font-family:\000035}}
+.bd-featured-sites .col-xs-6 {
+  padding: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featured-sites\.scss}line{font-family:\000038}}
+.bd-featured-sites .img-fluid {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featured-sites\.scss}line{font-family:\0000313}}
+  .bd-featured-sites .col-sm-3:first-child img {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_featured-sites\.scss}line{font-family:\0000317}}
+  .bd-featured-sites .col-sm-3:last-child img {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\000035}}
+.carbonad {
+  width: auto !important;
+  height: auto !important;
+  padding: 1.25rem !important;
+  margin: 2rem -1.875rem -2rem !important;
+  overflow: hidden;
+  font-size: .8rem !important;
+  font-family: inherit !important;
+  line-height: 1rem !important;
+  color: #cdbfe3 !important;
+  text-align: left;
+  background: #3e2c5a !important;
+  border: 0 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000320}}
+.carbonad-img {
+  margin: 0 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000324}}
+.carbonad-text,
+.carbonad-tag {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin-left: 145px !important;
+  font-family: inherit !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000334}}
+.carbonad-text {
+  padding-top: 0 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000338}}
+.carbonad-tag {
+  color: inherit !important;
+  text-align: left !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000343}}
+.carbonad-text a,
+.carbonad-tag a {
+  color: #cdbfe3 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000347}}
+.carbonad-text a:hover,
+.carbonad-tag a:hover {
+  color: #fff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000352}}
+.carbonad #azcarbon > img {
+  display: none;
+}
+
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_ads\.scss}line{font-family:\0000357}}
+  .carbonad {
+    width: 330px !important;
+    padding: 1rem !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    border-radius: .25rem;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\000036}}
+.bd-content > table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000318}}
+.bd-content > table > thead > tr > th,
+.bd-content > table > thead > tr > td,
+.bd-content > table > tbody > tr > th,
+.bd-content > table > tbody > tr > td,
+.bd-content > table > tfoot > tr > th,
+.bd-content > table > tfoot > tr > td {
+  padding: 0.75rem;
+  line-height: 1.5;
+  vertical-align: top;
+  border: 1px solid #eceeef;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000325}}
+.bd-content > table > thead > tr > th > p:last-child,
+.bd-content > table > thead > tr > td > p:last-child,
+.bd-content > table > tbody > tr > th > p:last-child,
+.bd-content > table > tbody > tr > td > p:last-child,
+.bd-content > table > tfoot > tr > th > p:last-child,
+.bd-content > table > tfoot > tr > td > p:last-child {
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000333}}
+.bd-content > table td:first-child > code {
+  white-space: nowrap;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000344}}
+.bd-content > h2:not(:first-child) {
+  margin-top: 3rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000348}}
+.bd-content > h3 {
+  margin-top: 1.5rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000352}}
+.bd-content > ul li,
+.bd-content > ol li {
+  margin-bottom: .25rem;
+}
+
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000358}}
+  .bd-title {
+    font-size: 3rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000362}}
+  .bd-title + p {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000376}}
+#markdown-toc > li:first-child {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_content\.scss}line{font-family:\0000380}}
+#markdown-toc ul {
+  padding-left: 2rem;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\000031}}
+.bd-pageheader {
+  padding: 2rem 0.9375rem;
+  margin-bottom: 1.5rem;
+  color: #cdbfe3;
+  text-align: center;
+  background-color: #563d7c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\000038}}
+.bd-pageheader .container {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000312}}
+.bd-pageheader h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000318}}
+.bd-pageheader p {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\000031}}
+  .bd-pageheader {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000330}}
+  .bd-pageheader .carbonad {
+    margin: 2rem 0 0 !important;
+  }
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000336}}
+  .bd-pageheader h1 {
+    font-size: 4rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000340}}
+  .bd-pageheader p {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000346}}
+  .bd-pageheader h1,
+  .bd-pageheader p {
+    margin-right: 380px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_page-header\.scss}line{font-family:\0000351}}
+  .bd-pageheader .carbonad {
+    position: absolute;
+    top: 0;
+    right: .75rem;
+    margin: 0 !important;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_skiplink\.scss}line{font-family:\000031}}
+#skippy {
+  display: block;
+  padding: 1em;
+  color: #fff;
+  background-color: #563d7c;
+  outline: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_skiplink\.scss}line{font-family:\000038}}
+#skippy .skiplink-text {
+  padding: .5em;
+  outline: 1px dotted;
+}
+
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\000035}}
+  .bd-sidebar {
+    padding-left: 1rem;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000311}}
+.bd-search {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000315}}
+.bd-search .form-control {
+  height: 2.45rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  background-color: #fafafa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000321}}
+.bd-search .form-control:focus {
+  background-color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000327}}
+.bd-search-results {
+  right: 0;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  font-size: .9rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000334}}
+.bd-search-results:empty {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000338}}
+.bd-search-results .dropdown-item {
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000342}}
+.bd-search-results .dropdown-item:first-child {
+  margin-top: .25rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000343}}
+.bd-search-results .dropdown-item:last-child {
+  margin-bottom: .25rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000346}}
+.bd-search-results .no-results {
+  padding: .75rem 1rem;
+  color: #7a7a7a;
+  text-align: center;
+  white-space: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000355}}
+.bd-sidenav {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000359}}
+.bd-toc-link {
+  display: block;
+  padding: .25rem .75rem;
+  color: #55595c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000364}}
+.bd-toc-link:hover,
+.bd-toc-link:focus {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000369}}
+.active > .bd-toc-link {
+  font-weight: 500;
+  color: #373a3c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000373}}
+.active > .bd-sidenav {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000377}}
+.bd-toc-item.active {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000381}}
+.bd-toc-item:first-child {
+  margin-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000384}}
+.bd-toc-item:last-child {
+  margin-bottom: 2rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000389}}
+.bd-sidebar .nav > li > a {
+  display: block;
+  padding: .25rem .75rem;
+  font-size: 90%;
+  color: #99979c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\0000395}}
+.bd-sidebar .nav > li > a:hover,
+.bd-sidebar .nav > li > a:focus {
+  color: #0275d8;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_sidebar\.scss}line{font-family:\00003101}}
+.bd-sidebar .nav > .active > a,
+.bd-sidebar .nav > .active:hover > a,
+.bd-sidebar .nav > .active:focus > a {
+  font-weight: 500;
+  color: #373a3c;
+  background-color: transparent;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\000035}}
+.bd-footer {
+  padding: 4rem 0;
+  margin-top: 4rem;
+  font-size: 85%;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000312}}
+.bd-footer a {
+  font-weight: 500;
+  color: #55595c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000316}}
+.bd-footer a:hover {
+  color: #0275d8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000321}}
+.bd-footer p {
+  margin-bottom: 0;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\000035}}
+  .bd-footer {
+    text-align: left;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000330}}
+.bd-footer-links {
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000334}}
+.bd-footer-links li {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_footer\.scss}line{font-family:\0000337}}
+.bd-footer-links li + li {
+  margin-left: 1rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\000036}}
+.bd-example-row .row {
+  margin-bottom: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\000039}}
+.bd-example-row .row > [class^="col-"] {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000323}}
+.bd-example-container {
+  min-width: 16rem;
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000330}}
+.bd-example-container-header {
+  height: 3rem;
+  margin-bottom: .5rem;
+  background-color: #daeeff;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000337}}
+.bd-example-container-sidebar {
+  float: right;
+  width: 4rem;
+  height: 8rem;
+  background-color: #fae3c4;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000345}}
+.bd-example-container-body {
+  height: 8rem;
+  margin-right: 4.5rem;
+  background-color: #957bbe;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000352}}
+.bd-example-container-fluid {
+  max-width: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000361}}
+.bd-example {
+  position: relative;
+  padding: 1rem;
+  margin: 1rem -1rem;
+  border: solid #f7f7f9;
+  border-width: .2rem 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/scss\/mixins\/_clearfix\.scss}line{font-family:\000032}}
+.bd-example::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000361}}
+  .bd-example {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 1.5rem;
+    border-width: .2rem;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000377}}
+.bd-example + .highlight,
+.bd-example + .clipboard + .highlight {
+  margin-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000382}}
+.bd-example + p {
+  margin-top: 2rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000387}}
+.bd-example .container {
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000392}}
+.bd-example > .form-control + .form-control {
+  margin-top: .5rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\0000398}}
+.bd-example > .card {
+  max-width: 20rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003102}}
+.bd-example > .nav + .nav,
+.bd-example > .alert + .alert,
+.bd-example > .navbar + .navbar,
+.bd-example > .progress + .progress,
+.bd-example > .progress + .btn {
+  margin-top: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003110}}
+.bd-example > .dropdown-menu:first-child {
+  position: static;
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003116}}
+.bd-example > .close {
+  float: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003121}}
+.bd-example-type .table .type-info {
+  color: #999;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003125}}
+.bd-example-type .table td {
+  padding: 1rem 0;
+  border-color: #eee;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003129}}
+.bd-example-type .table tr:first-child td {
+  border-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003132}}
+.bd-example-type h1,
+.bd-example-type h2,
+.bd-example-type h3,
+.bd-example-type h4,
+.bd-example-type h5,
+.bd-example-type h6 {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003142}}
+.bd-example-bg-classes p {
+  padding: 1rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003148}}
+.bd-example > img + img {
+  margin-left: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003154}}
+.bd-example > .btn-group {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003158}}
+.bd-example > .btn-toolbar + .btn-toolbar {
+  margin-top: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003163}}
+.bd-example-control-sizing select,
+.bd-example-control-sizing input[type="text"] + input[type="text"] {
+  margin-top: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003167}}
+.bd-example-form .input-group {
+  margin-bottom: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003170}}
+.bd-example > textarea.form-control {
+  resize: vertical;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003175}}
+.bd-example > .list-group {
+  max-width: 400px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003181}}
+.bd-example .navbar-fixed-top {
+  position: static;
+  margin: -1rem -1rem 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003185}}
+.bd-example .navbar-fixed-bottom {
+  position: static;
+  margin: 1rem -1rem -1rem;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003191}}
+  .bd-example .navbar-fixed-top {
+    margin: -1.5rem -1.5rem 1rem;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003194}}
+  .bd-example .navbar-fixed-bottom {
+    margin: 1rem -1.5rem -1.5rem;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003201}}
+.bd-example .pagination {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003207}}
+.bd-example > .pager {
+  margin-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003212}}
+.bd-example-modal {
+  background-color: #f5f5f5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003215}}
+.bd-example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003224}}
+.bd-example-modal .modal-dialog {
+  left: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003231}}
+.bd-example > .dropdown > .dropdown-toggle {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003234}}
+.bd-example > .dropdown > .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: .25rem;
+  clear: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003242}}
+.bd-example-tabs .nav-tabs {
+  margin-bottom: 1rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003247}}
+.bd-example-tooltips {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003250}}
+.bd-example-tooltips > .btn {
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003256}}
+.bd-example-popover-static {
+  padding-bottom: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003260}}
+.bd-example-popover-static .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 1.25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003269}}
+.tooltip-demo a {
+  white-space: nowrap;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003273}}
+.bd-example-tooltip-static .tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px 20px;
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003281}}
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  margin-top: .5rem;
+  overflow: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003290}}
+.bd-example > .center-block:not(img) {
+  max-width: 200px;
+  padding: .5rem;
+  background-color: #eee;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003302}}
+.bd-example > .bg-primary:not(.navbar),
+.bd-example > .bg-success:not(.navbar),
+.bd-example > .bg-info:not(.navbar),
+.bd-example > .bg-warning:not(.navbar),
+.bd-example > .bg-danger:not(.navbar),
+.bd-example > .bg-inverse:not(.navbar) {
+  padding: .5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003315}}
+.highlight {
+  padding: 1rem;
+  margin: 1rem -1rem;
+  background-color: #f7f7f9;
+}
+@media (min-width: 544px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003315}}
+  .highlight {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003326}}
+.highlight pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003333}}
+.highlight pre code {
+  font-size: inherit;
+  color: #373a3c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_component-examples\.scss}line{font-family:\00003343}}
+#focusedInput {
+  border-color: #66afe9;
+  outline: 0;
+  outline: thin dotted \9;
+  box-shadow: 0 0 0.5rem rgba(102, 175, 233, 0.6);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\000036}}
+.table-responsive .highlight pre {
+  white-space: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000311}}
+.bd-table th small,
+.responsive-utilities th small {
+  display: block;
+  font-weight: normal;
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000317}}
+.responsive-utilities tbody th {
+  font-weight: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000320}}
+.responsive-utilities td {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000323}}
+.responsive-utilities td.is-visible {
+  color: #468847;
+  background-color: #dff0d8 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000327}}
+.responsive-utilities td.is-hidden {
+  color: #ccc;
+  background-color: #f9f9f9 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000333}}
+.responsive-utilities-test {
+  margin-top: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000336}}
+.responsive-utilities-test .col-xs-6 {
+  margin-bottom: .5rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000339}}
+.responsive-utilities-test span {
+  display: block;
+  padding: 1rem .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000351}}
+.visible-on .col-xs-6 > .not-visible,
+.hidden-on .col-xs-6 > .not-visible {
+  color: #999;
+  border: 1px solid #ddd;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000360}}
+.visible-on .col-xs-6 .visible,
+.hidden-on .col-xs-6 .visible {
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+
+@media (max-width: 543px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000369}}
+  .hidden-xs-only {
+    display: none !important;
+  }
+}
+@media (min-width: 544px) and (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000374}}
+  .hidden-sm-only {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000379}}
+  .hidden-md-only {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000384}}
+  .hidden-lg-only {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_responsive-tests\.scss}line{font-family:\0000389}}
+  .hidden-xl-only {
+    display: none !important;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_buttons\.scss}line{font-family:\000035}}
+.btn-bs {
+  font-weight: 500;
+  color: #7952b3;
+  border-color: #7952b3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_buttons\.scss}line{font-family:\0000310}}
+.btn-bs:hover, .btn-bs:focus, .btn-bs:active {
+  color: #fff;
+  background-color: #7952b3;
+  border-color: #7952b3;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\000035}}
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000313}}
+.bd-callout h4 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000317}}
+.bd-callout p:last-child {
+  margin-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000320}}
+.bd-callout code {
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000324}}
+.bd-callout + .bd-callout {
+  margin-top: -.25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000334}}
+.bd-callout-info {
+  border-left-color: #5bc0de;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000332}}
+.bd-callout-info h4 {
+  color: #5bc0de;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000335}}
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000332}}
+.bd-callout-warning h4 {
+  color: #f0ad4e;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000336}}
+.bd-callout-danger {
+  border-left-color: #d9534f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_callouts\.scss}line{font-family:\0000332}}
+.bd-callout-danger h4 {
+  color: #d9534f;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_examples\.scss}line{font-family:\000035}}
+.bd-examples .img-thumbnail {
+  margin-bottom: .75rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_examples\.scss}line{font-family:\000038}}
+.bd-examples h4 {
+  margin-bottom: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_examples\.scss}line{font-family:\0000311}}
+.bd-examples p {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_examples\.scss}line{font-family:\0000316}}
+  .bd-examples {
+    margin-right: -.75rem;
+    margin-left: -.75rem;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_examples\.scss}line{font-family:\0000320}}
+  .bd-examples > [class^="col-"] {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_team\.scss}line{font-family:\000031}}
+.bd-team {
+  margin-bottom: 1.5rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_team\.scss}line{font-family:\000034}}
+.bd-team .team-member {
+  line-height: 2rem;
+  color: #555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_team\.scss}line{font-family:\000039}}
+.bd-team .team-member:hover {
+  color: #333;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_team\.scss}line{font-family:\0000314}}
+.bd-team .github-btn {
+  border: none;
+  float: right;
+  width: 180px;
+  height: 1.25rem;
+  margin-top: .25rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_team\.scss}line{font-family:\0000322}}
+.bd-team img {
+  float: left;
+  width: 2rem;
+  margin-right: .5rem;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_browser-bugs\.scss}line{font-family:\000036}}
+.bd-browser-bugs td p {
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_browser-bugs\.scss}line{font-family:\000039}}
+.bd-browser-bugs th:first-child {
+  width: 18%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\000036}}
+.bd-brand-logos {
+  display: table;
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  color: #563d7c;
+  background-color: #f9f9f9;
+  border-radius: .25rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000317}}
+.bd-brand-item {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000321}}
+.bd-brand-item + .bd-brand-item {
+  border-top: 1px solid #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000324}}
+.bd-brand-logos .inverse {
+  color: #fff;
+  background-color: #563d7c;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000330}}
+.bd-brand-item h1,
+.bd-brand-item h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000335}}
+.bd-brand-item .bd-booticon {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000357}}
+  .bd-brand-item {
+    display: table-cell;
+    width: 1%;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000361}}
+  .bd-brand-item + .bd-brand-item {
+    border-top: 0;
+    border-left: 1px solid #fff;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000365}}
+  .bd-brand-item h1 {
+    font-size: 4rem;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000375}}
+.color-swatches {
+  margin: 0 -5px;
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000380}}
+.color-swatch {
+  float: left;
+  width: 4rem;
+  height: 4rem;
+  margin-right: .25rem;
+  margin-left: .25rem;
+  border-radius: .25rem;
+}
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000380}}
+  .color-swatch {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000396}}
+.color-swatches .bd-purple {
+  background-color: #563d7c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\0000399}}
+.color-swatches .bd-purple-light {
+  background-color: #cdbfe3;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\00003102}}
+.color-swatches .bd-purple-lighter {
+  background-color: #e5e1ea;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_brand\.scss}line{font-family:\00003105}}
+.color-swatches .bd-gray {
+  background-color: #f9f9f9;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_clipboard-js\.scss}line{font-family:\000035}}
+.bd-clipboard {
+  position: relative;
+  display: none;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_clipboard-js\.scss}line{font-family:\0000310}}
+.bd-clipboard + .highlight {
+  margin-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_clipboard-js\.scss}line{font-family:\0000315}}
+.btn-clipboard {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  z-index: 10;
+  display: block;
+  padding: .25rem .5rem;
+  font-size: 75%;
+  color: #818a91;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: .25rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_clipboard-js\.scss}line{font-family:\0000328}}
+.btn-clipboard:hover {
+  color: #fff;
+  background-color: #027de7;
+}
+
+@media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_clipboard-js\.scss}line{font-family:\0000335}}
+  .bd-clipboard {
+    display: block;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000031}}
+.hll {
+  background-color: #ffffcc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000032}}
+.c {
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000033}}
+.err {
+  color: #AA0000;
+  background-color: #FFAAAA;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000034}}
+.k {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000035}}
+.o {
+  color: #555555;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000036}}
+.cm {
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000037}}
+.cp {
+  color: #009999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000038}}
+.c1 {
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\000039}}
+.cs {
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000310}}
+.gd {
+  background-color: #FFCCCC;
+  border: 1px solid #CC0000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000311}}
+.ge {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000312}}
+.gr {
+  color: #FF0000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000313}}
+.gh {
+  color: #003300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000314}}
+.gi {
+  background-color: #CCFFCC;
+  border: 1px solid #00CC00;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000315}}
+.go {
+  color: #AAAAAA;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000316}}
+.gp {
+  color: #000099;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000317}}
+.gu {
+  color: #003300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000318}}
+.gt {
+  color: #99CC66;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000319}}
+.kc {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000320}}
+.kd {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000321}}
+.kn {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000322}}
+.kp {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000323}}
+.kr {
+  color: #006699;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000324}}
+.kt {
+  color: #007788;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000325}}
+.m {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000326}}
+.s {
+  color: #d44950;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000327}}
+.na {
+  color: #4f9fcf;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000328}}
+.nb {
+  color: #336666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000329}}
+.nc {
+  color: #00AA88;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000330}}
+.no {
+  color: #336600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000331}}
+.nd {
+  color: #9999FF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000332}}
+.ni {
+  color: #999999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000333}}
+.ne {
+  color: #CC0000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000334}}
+.nf {
+  color: #CC00FF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000335}}
+.nl {
+  color: #9999FF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000336}}
+.nn {
+  color: #00CCFF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000337}}
+.nt {
+  color: #2f6f9f;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000338}}
+.nv {
+  color: #003333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000339}}
+.ow {
+  color: #000000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000340}}
+.w {
+  color: #bbbbbb;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000341}}
+.mf {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000342}}
+.mh {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000343}}
+.mi {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000344}}
+.mo {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000345}}
+.sb {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000346}}
+.sc {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000347}}
+.sd {
+  color: #CC3300;
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000348}}
+.s2 {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000349}}
+.se {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000350}}
+.sh {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000351}}
+.si {
+  color: #AA0000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000352}}
+.sx {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000353}}
+.sr {
+  color: #33AAAA;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000354}}
+.s1 {
+  color: #CC3300;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000355}}
+.ss {
+  color: #FFCC33;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000356}}
+.bp {
+  color: #336666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000357}}
+.vc {
+  color: #003333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000358}}
+.vg {
+  color: #003333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000359}}
+.vi {
+  color: #003333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000360}}
+.il {
+  color: #FF6600;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_syntax\.scss}line{font-family:\0000362}}
+.css .o,
+.css .o + .nt,
+.css .nt + .nt {
+  color: #999;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_anchor\.scss}line{font-family:\000031}}
+.anchorjs-link {
+  color: inherit;
+}
+
+@media (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_anchor\.scss}line{font-family:\000036}}
+  .anchorjs-link {
+    display: none;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_anchor\.scss}line{font-family:\0000311}}
+*:hover > .anchorjs-link {
+  opacity: .75;
+  -webkit-transition: color .16s linear;
+  -o-transition: color .16s linear;
+  transition: color .16s linear;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Websites\/cc\/wp-content\/themes\/cornelius\/src\/bootstrap\/docs\/assets\/scss\/_anchor\.scss}line{font-family:\0000318}}
+*:hover > .anchorjs-link:hover,
+.anchorjs-link:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=docs.css.map */

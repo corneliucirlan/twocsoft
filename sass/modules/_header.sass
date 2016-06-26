@@ -54,6 +54,18 @@ header
 					a
 						font-size: 1rem
 
+.header-wrapper
+	position: absolute
+	top: 50%
+	right: 0%
+	padding: 1rem
+	//border: 1px solid red
+
+	.header-title
+		font-size: 50px
+		font-weight: 100
+		color: $gray-lightest
+		text-transform: uppercase
 
 .fixed-top
 	transition: all 0.3s ease-in-out
@@ -93,3 +105,6 @@ header
 
 						&:first-child
 							margin-left: 0
+
+		.header-wrapper
+			right: 20%

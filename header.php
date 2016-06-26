@@ -98,7 +98,16 @@
             </nav>
 
             <!-- Header image -->
-            <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;"></div>
+            <div class="row" style="position: relative; background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
+                <!--<div class="header-wrapper">
+                    <h1 class="header-title"><?php bloginfo('name') ?></h1>
+                     <span class="share-button">
+                        <a href="https://twitter.com/intent/tweet?screen_name=corneliucirlan&hashtags=AskCorneliu&text=&nbsp;" target="_blank" style="font-size: 30px">
+                            #AskCorneliu
+                        </a>
+                    </span>
+                </div> -->
+            </div>
 
             <div class="breadcrumbs-container container-fluid">
                 <div class="col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">

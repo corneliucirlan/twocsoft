@@ -46,17 +46,17 @@
 			<footer class="card-footer">
 				<div class="row">
 					<?php if (array_key_exists('buttons', $settings)): ?>
-							<div class="col-sm-12 col-lg-6">
+							<div class="col-sm-12 col-md-12 col-lg-6">
 								<?php foreach ($settings['buttons'] as $button): ?>
 									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn btn-primary-outline"><?php echo $button['label'] ?></a>
 								<?php endforeach; ?>
 							</div>
-							<div class="col-sm-12 col-lg-6">
-								<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+							<div class="col-sm-12 col-md-12 col-lg-6">
+								<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
 							</div>
 						<?php else: ?>
-								<div class="col-sm-12 col-offset-md-6 col-lg-6 col-offset-lg-6">
-									<?php if (array_key_exists('showFooterShare', $settings)) displayShareButtons($settings['footerShareSettings']) ?>
+								<div class="col-sm-12 col-md-6 col-offset-md-6 col-lg-6 col-offset-lg-6">
+									<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
 								</div>
 					<?php endif; ?>
 				</div>
@@ -193,7 +193,7 @@
 		//$url = $bitly->data->url;
 		?>
 
-		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' pull-xs-right' : '' ?>">
+		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' ' : '' ?>">
 			<li><span>Share:</span></li>
             <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
             <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
