@@ -3819,7 +3819,7 @@ header nav .container-fluid .navbar-nav .nav-item a {
     width: auto;
   }
   .social-icons li {
-    min-width: 3rem;
+    min-width: 2rem;
   }
 }
 
@@ -3863,6 +3863,11 @@ header nav .container-fluid .navbar-nav .nav-item a {
 
 .card .card-header:first-child {
   border-radius: 0;
+}
+
+.card .card-header .blog-post-details {
+  font-size: 0.9rem;
+  margin-top: -.6rem;
 }
 
 .card .card-block {
@@ -4116,11 +4121,28 @@ header nav .container-fluid .navbar-nav .nav-item a {
 .page-portfolio .card-columns .card {
   width: 100%;
   margin: .5rem 0;
-  text-align: center;
+  text-align: justify;
 }
 
 .page-portfolio .card-columns .card .card-title {
   text-align: left;
+}
+
+.page-portfolio .card-columns .card .card-block img {
+  margin-bottom: 1rem;
+}
+
+.page-portfolio .card-columns .card .card-footer .social-icons {
+  margin: 0;
+  height: 38px;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-portfolio .card-columns .card .card-footer .social-icons li {
+  line-height: 38px;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -4136,6 +4158,14 @@ header nav .container-fluid .navbar-nav .nav-item a {
 }
 
 @media (min-width: 992px) {
+  .page-portfolio .card-columns {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (min-width: 1200px) {
   .page-portfolio .card-columns {
     -webkit-column-count: 3;
        -moz-column-count: 3;

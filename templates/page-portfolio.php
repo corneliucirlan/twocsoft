@@ -10,7 +10,7 @@
 	$cardSettings = array(
 		'containerClass'		=> 'col-sm-12 col-md-6',
 		'showCardDetails'		=> false,
-        
+
 		'showFooterShare'		=> true,
 		'footerShareSettings'	=> array('id' => get_the_id(), 'alignRight' => true),
 	);
@@ -40,7 +40,7 @@
         			if (get_field('portfolio-type') == PORTFOLIO_WEBSITE):
         				$cardSettings['buttons']['liveVersion']	= array(
         					'url'		=> get_field('website-url'),
-        					'label'		=> __('Live version'),
+        					'label'		=> __('Live'),
         					'target'	=> '_blank',
         				);
         			endif;

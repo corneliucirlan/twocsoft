@@ -4,10 +4,24 @@
         .card
             width: 100%
             margin: .5rem 0
-            text-align: center
+            text-align: justify
 
             .card-title
                 text-align: left
+
+            .card-block img
+                margin-bottom: 1rem
+
+            .card-footer
+                .social-icons
+                    //border: 1px solid red
+                    margin: 0
+                    height: 38px
+                    justify-content: space-between
+
+                    li
+                        line-height: 38px
+                        padding: 0
 
 @include media-breakpoint-up(md)
     .page-portfolio .card-columns
@@ -18,5 +32,9 @@
             margin: .5rem
 
 @include media-breakpoint-up(lg)
+    .page-portfolio .card-columns
+        column-count: 2
+
+@include media-breakpoint-up(xl)
     .page-portfolio .card-columns
         column-count: 3

@@ -45,20 +45,20 @@
 			</div>
 			<footer class="card-footer">
 				<div class="row">
-					<?php if (array_key_exists('buttons', $settings)): ?>
-							<div class="col-sm-12 col-md-12 col-lg-6">
+					<?php //if (array_key_exists('buttons', $settings)): ?>
+							<div class="col-sm-12">
 								<?php foreach ($settings['buttons'] as $button): ?>
-									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn btn-primary-outline"><?php echo $button['label'] ?></a>
+									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn btn-primary-outline btn-md" role="button"><?php echo $button['label'] ?></a>
 								<?php endforeach; ?>
 							</div>
-							<div class="col-sm-12 col-md-12 col-lg-6">
+							<!-- <div class="col-sm-12 col-md-12 col-lg-6">
 								<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
-							</div>
-						<?php else: ?>
-								<div class="col-sm-12 col-md-6 col-offset-md-6 col-lg-6 col-offset-lg-6">
+							</div> -->
+						<?php //else: ?>
+								<!-- <div class="col-sm-12 col-md-6 col-offset-md-6 col-lg-6 col-offset-lg-6">
 									<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
-								</div>
-					<?php endif; ?>
+								</div> -->
+					<?php //endif; ?>
 				</div>
 			</footer>
 		</article>
@@ -102,13 +102,13 @@
 
 		?>
 		<div class="blog-post-details row valign-wrapper">
-			<div class="no-padding-left <?php echo $singlePost ? 'col-sm-12 col-md-8' : 'col-sm-12' ?>">
+			<div class="<?php echo $singlePost ? 'col-sm-12 col-md-8' : 'col-sm-12' ?>">
 				<?php echo $categoriesText ?>
 				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
 				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i style="color: #1DA1F2;" class="fa fa-twitter"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
 			<?php if ($singlePost): ?>
-				<div class="no-padding-right col-sm-12 col-md-4">
+				<div class="col-sm-12 col-md-4">
 					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
 				</div>
 			<?php endif; ?>
