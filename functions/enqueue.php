@@ -40,8 +40,12 @@
 		wp_register_style('main-style', THEME_URI.'style.css', '', '', 'all');
 		wp_enqueue_style('main-style');
 
+		// Mobile menu
+		wp_register_script('mobile-menu', THEME_URI.'js/jquery-mdstrap.js', array('jquery'), '', true);
+		wp_enqueue_style('mobile-menu');
+
 		// Load custom JS actions
-		wp_register_script('actions', THEME_URI.'js/actions.js', array('jquery'), '', true);
+		wp_register_script('actions', THEME_URI.'js/actions.js', array('jquery', 'mobile-menu'), '', true);
 		wp_enqueue_script('actions');
 
 		// Load masonry
