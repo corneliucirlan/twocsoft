@@ -59,8 +59,8 @@
 	add_action('wp_footer', function() {
 
 		// Font Awesome
-		wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', '', '', 'all');
-		wp_enqueue_style('font-awesome');
+		//wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', '', '', 'all');
+		//wp_enqueue_style('font-awesome');
 
 		// PrismJS
 		wp_register_style('prism-css', THEME_URI.'css/prism.css', '', '', 'all');

@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 		$mobileMenuParent   = $('header nav');
 
 
-	$.mdStrap();
+	$('.navbar-nav').mdStrap();
 
 	// Center title vertically
 	var $headerWrapper = $('.header-wrapper');
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 
 		var wScroll = $(window).scrollTop();
-		console.log(wScroll);
+//		console.log(wScroll);
 
 		$headerWrapper.css({
 			'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px + '+ wScroll/2 +'px)',

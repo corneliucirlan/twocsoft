@@ -3,11 +3,24 @@
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
-$fa-font-path: "../src/font-awesome/fonts"
 
+// Import FA variables
 @import "../src/font-awesome/scss/variables"
-@import "../src/font-awesome/scss/mixins"
+$fa-font-path: "../cornelius/src/font-awesome/fonts"
+
+// Import FA fonts
 @import "../src/font-awesome/scss/path"
+@font-face
+    font-family: 'FontAwesome'
+    src: url('#{$fa-font-path}/fontawesome-webfont.eot')
+    src: url('#{$fa-font-path}/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+        url('#{$fa-font-path}/fontawesome-webfont.woff2') format('woff2'),
+        url('#{$fa-font-path}/fontawesome-webfont.woff?') format('woff'),
+        url('#{$fa-font-path}/fontawesome-webfont.ttf') format('truetype'),
+        url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg')
+
+// Import FA styles
+@import "../src/font-awesome/scss/mixins"
 @import "../src/font-awesome/scss/core"
 @import "../src/font-awesome/scss/larger"
 @import "../src/font-awesome/scss/fixed-width"
