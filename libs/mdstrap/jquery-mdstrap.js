@@ -1,21 +1,35 @@
+/**
+ * mdStrap
+ *
+ * jQuery plugin that enables mobile slide navigation for Bootstrap v4 framework
+ *
+ * @version 1.0
+ * @author Corneliu Cirlan (www.corneliucirlan.com)
+ */
+
 ;(function($) {
     "use strict";
 
-    $.fn.mdStrap = function($opts)
+    $.fn.mdStrap = function(options)
     {
-        // Declare variables
-        var wScroll 			= $(window).scrollTop(),
-            scrollValue			= '10',
-            mobileMenuBreak		= '992';
-
-        var defaults = {
-            'scrollValue'       : '10',
-            'mobileMenuBreak'   : '992',
-        };
-
         // Declare function variables
         var $menu = $(this);
         var $menuParent = $menu.parents('nav');
+
+        // Plugin default settings
+        var defaults = {
+            'scrollValue'       : '10',
+            'mobileMenuBreak'   : '992',
+            'overlay'           : {
+                'tag'       : 'div',
+                'class'     : 'overlay',
+            },
+            'fixedTop'          : 'fixed-top',
+        };
+
+        // Plugin settings
+        var settings = defaults;
+        if (options) settings = $.extend(true, {}, defaults, options);
 
         // Initialize
         initialize();
@@ -23,17 +37,35 @@
         // Init function
         function initialize()
         {
+            //console.log(settings);
+
             // Append overlay to document
-            $('body').prepend('<div class="overlay"></div>');
+            $('body').prepend('<'+ settings.overlay.tag +' class="'+ settings.overlay.class +'"></'+ settings.overlay.tag +'>');
+
+            // Detect scroll
+            toggleFixedTop();
+        };
+
+        $(window).on('scroll', function(event) {
+            toggleFixedTop();
+        });
+
+        // Toggle menu fixed top
+        function toggleFixedTop()
+        {
+            var wScroll = $(window).scrollTop();
+
+            if (wScroll > settings.scrollValue) $menuParent.addClass(settings.fixedTop);
+                else $menuParent.removeClass(settings.fixedTop);
         };
 
         // Toggle menu
         function toggleMenuDisplay()
         {
-            if ($(this).width() >= mobileMenuBreak)
+            if ($(this).width() >= settings.mobileMenuBreak)
                     $menu.css({
                         'display': 'block',
-                        'left': '0rem'
+                        'left': '0rem',
                     });
                 else
                     $menu.css({
@@ -55,8 +87,10 @@
                     'left' : '-13rem'
                 });
 
-            if (wScroll > scrollValue)
+            if (wScroll > settings.scrollValue)
                 $menuParent.addClass('fixed-top');
+
+            $menuParent.css({'pointer-events': 'all'});
 
             toggleOverlay();
         };
@@ -64,13 +98,13 @@
         // Toggle overlay
         function toggleOverlay()
         {
-            $('.overlay').fadeToggle('fast');
+            $('.' + settings.overlay.class).fadeToggle('fast');
             $('body').toggleClass('block-scroll');
         };
 
         // Close menu on ESC key
         $(document).on('keydown', function(event) {
-            if (event.keyCode == 27 && $('.overlay:visible').length > 0)
+            if (event.keyCode == 27 && $('.' + settings.overlay.class + ':visible').length > 0)
             closeMobileMenu();
         });
 
@@ -89,7 +123,6 @@
             event.preventDefault();
 
             toggleOverlay();
-            console.log($menu);
 
             $menu
                 .css({
@@ -99,7 +132,7 @@
                     'left' : '0rem'
                 });
 
-            $menuParent.removeClass('fixed-top');
+            $menuParent.removeClass(settings.fixedTop).css({'pointer-events': 'none'});
         });
 
     };

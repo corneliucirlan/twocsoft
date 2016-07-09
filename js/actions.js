@@ -20,14 +20,11 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 
 		var wScroll = $(window).scrollTop();
-//		console.log(wScroll);
 
 		$headerWrapper.css({
 			'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px + '+ wScroll/2 +'px)',
 		});
 	});
-
-
 
 	// Share buttons popup
 	$('.share-button').on('click', function(event) {
@@ -35,19 +32,6 @@ jQuery(document).ready(function($) {
 
 		var popup = {width: 500, height: 350};
 		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
-	});
-
-	// Detect scroll
-	if (wScroll > scrollValue) $mobileMenuParent.addClass('fixed-top');
-		else $mobileMenuParent.removeClass('fixed-top');
-	$(window).on('scroll', function(event) {
-		event.preventDefault();
-
-		var wScroll = $(window).scrollTop();
-
-		// Stick navigation to top
-		if (wScroll > scrollValue) $mobileMenuParent.addClass('fixed-top');
-			else $mobileMenuParent.removeClass('fixed-top');
 	});
 
 	// PrismJS

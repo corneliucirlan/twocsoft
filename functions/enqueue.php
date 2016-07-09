@@ -41,15 +41,12 @@
 		wp_enqueue_style('main-style');
 
 		// Mobile menu
-		wp_register_script('mobile-menu', THEME_URI.'js/jquery-mdstrap.js', array('jquery'), '', true);
+		wp_register_script('mobile-menu', THEME_URI.'libs/mdstrap/jquery-mdstrap.js', array('jquery'), '', true);
 		wp_enqueue_style('mobile-menu');
 
 		// Load custom JS actions
 		wp_register_script('actions', THEME_URI.'js/actions.js', array('jquery', 'mobile-menu'), '', true);
 		wp_enqueue_script('actions');
-
-		// Load masonry
-		wp_enqueue_script('masonry');
 
 		// images loaded
 		wp_register_script('images-loaded', THEME_URI.'js/imagesloaded.pkgd.min.js', array('jquery'), '', true);
@@ -57,10 +54,6 @@
 
 	// WP Footer hook
 	add_action('wp_footer', function() {
-
-		// Font Awesome
-		//wp_register_style('font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', '', '', 'all');
-		//wp_enqueue_style('font-awesome');
 
 		// PrismJS
 		wp_register_style('prism-css', THEME_URI.'css/prism.css', '', '', 'all');
