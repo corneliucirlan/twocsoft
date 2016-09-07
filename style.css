@@ -6,8 +6,8 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.4
- *	Tags: responsive, light, material design, materialize, framework, parallax
+ *	Version: 3.5
+ *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
@@ -3520,6 +3520,12 @@ a.text-danger:focus, a.text-danger:hover {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.eot");
+  src: url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.woff2") format("woff2"), url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.woff?") format("woff"), url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.ttf") format("truetype"), url("../cornelius/src/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
+}
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -6378,6 +6384,7 @@ a.text-danger:focus, a.text-danger:hover {
 
 body {
   background-color: #f5f5f5;
+  text-align: justify;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6432,6 +6439,181 @@ body {
 @media (min-width: 992px) {
   .container-fluid {
     max-width: 80%;
+  }
+}
+
+.mdstrap-overlay {
+  position: fixed;
+  display: none;
+  height: 100%;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.mobile-swipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.fixed-top {
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+}
+
+.fixed-top .navbar-nav .nav-link {
+  color: #444;
+}
+
+.disable-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+header nav {
+  padding: 0;
+}
+
+header nav .container-fluid {
+  width: 100%;
+  padding: 0;
+}
+
+header nav .navbar-toggler {
+  color: #919191;
+}
+
+header nav .navbar-toggler:active, header nav .navbar-toggler:focus, header nav .navbar-toggler:hover, header nav .navbar-toggler:visited {
+  outline: 0;
+}
+
+header nav .navbar-nav {
+  display: none;
+  position: fixed;
+  max-width: 13rem;
+  width: 100%;
+  left: -13rem;
+  top: 0;
+  height: 100vh;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+  z-index: 1030;
+  overflow: auto;
+  background-color: white;
+  color: #444;
+}
+
+header nav .navbar-nav .nav-link {
+  color: inherit;
+}
+
+header nav .navbar-nav .nav-link.active, header nav .navbar-nav .nav-link:focus, header nav .navbar-nav .nav-link:hover {
+  color: #111111;
+}
+
+header nav .navbar-nav .nav-item {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+header nav .navbar-nav .nav-item + .nav-item {
+  margin: 0;
+}
+
+header nav .navbar-nav .nav-item:last-child {
+  border-bottom: none;
+}
+
+header nav .navbar-nav .nav-item a {
+  font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+  header nav .container-fluid {
+    width: 100%;
+    margin: 0 auto;
+  }
+  header nav .container-fluid .navbar-nav {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    max-height: 50px;
+    height: 100%;
+    box-shadow: none;
+    background: transparent;
+    color: #444;
+  }
+  header nav .container-fluid .navbar-nav .nav-link {
+    color: inherit;
+  }
+  header nav .container-fluid .navbar-nav .nav-item {
+    float: left;
+    width: auto;
+    padding: 0.4rem 0;
+    margin-left: 1.5rem;
+    border-bottom: 0;
+  }
+  header nav .container-fluid .navbar-nav .nav-item:first-child {
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes send-mail {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+  }
+  70% {
+    opacity: 0.5;
+    -webkit-transform: translateY(-500%) scale(0.6);
+            transform: translateY(-500%) scale(0.6);
+  }
+  71% {
+    opacity: 0;
+    -webkit-transform: translateY(0%) scale(0.6);
+            transform: translateY(0%) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+  }
+}
+
+@keyframes send-mail {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+  }
+  70% {
+    opacity: 0.5;
+    -webkit-transform: translateY(-500%) scale(0.6);
+            transform: translateY(-500%) scale(0.6);
+  }
+  71% {
+    opacity: 0;
+    -webkit-transform: translateY(0%) scale(0.6);
+            transform: translateY(0%) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
   }
 }
 
@@ -6710,20 +6892,24 @@ header nav .container-fluid .navbar-nav .nav-item a {
 
 .btn-primary {
   border: none;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
   background-color: #3d96cb;
   color: white;
+  transition: all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01);
+  box-shadow: 0px 15px 10px -10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+.btn-primary:hover {
   background-color: #3d96cb;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  box-shadow: 0px 25px 15px -15px rgba(0, 0, 0, 0.3);
 }
 
 .card {
   border: none;
+  border: 1px solid #ddd;
   border-radius: 0;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .card .card-header {
@@ -6865,21 +7051,73 @@ header nav .container-fluid .navbar-nav .nav-item a {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1700px) {
   .footer .footer-menu li {
     width: calc(100%/6);
   }
 }
 
-.form-control {
-  transition: all .1s ease-in-out;
-  border: 1px solid #3d96cb;
-  border-radius: 0;
+input,
+textarea {
+  background: none;
+  border: none;
+  color: #21a1e1;
+  font-size: 18px;
+  display: inline-block;
 }
 
-.form-control:active, .form-control:hover, .form-control:focus {
-  box-shadow: 0px 0px 10px #3d96cb;
-  border: 1px solid #3d96cb;
+input:focus, input:active,
+textarea:focus,
+textarea:active {
+  outline: none;
+}
+
+input[type="submit"]:active,
+textarea[type="submit"]:active {
+  color: white;
+  background: #21a1e1;
+}
+
+.form-group {
+  width: 100%;
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+}
+
+.form-group input {
+  padding: 5px 0px;
+}
+
+.form-group input, .form-group textarea {
+  border: none;
+  border-bottom: 2px solid #21a1e1;
+}
+
+.form-group label {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: 0;
+  font-size: 1rem;
+  color: #999;
+  pointer-events: none;
+  -webkit-transform: translateY(-calc(50% - 0.5rem));
+      -ms-transform: translateY(-calc(50% - 0.5rem));
+          transform: translateY(-calc(50% - 0.5rem));
+  transition: all 300ms ease-in-out;
+}
+
+.form-group textarea + label {
+  top: 0.5rem;
+}
+
+.form-group input:focus + label,
+.form-group input.has-value + label,
+.form-group textarea:focus + label,
+.form-group textarea.has-value + label {
+  top: -10px;
+  font-size: 12px;
+  color: #aaa;
 }
 
 .page-frontpage .frontpage-button {
@@ -6921,6 +7159,7 @@ header nav .container-fluid .navbar-nav .nav-item a {
 .page-about .skills .card-columns .card {
   text-align: center;
   box-shadow: none;
+  border: none;
 }
 
 .page-about .skills .card-columns .card h3 {
@@ -6959,7 +7198,7 @@ header nav .container-fluid .navbar-nav .nav-item a {
 
 .page-services .card-columns .card {
   width: 100%;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   text-align: center;
 }
 
@@ -6971,7 +7210,7 @@ header nav .container-fluid .navbar-nav .nav-item a {
   }
   .page-services .card-columns .card {
     width: calc(100% - 1rem);
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -7050,6 +7289,10 @@ header nav .container-fluid .navbar-nav .nav-item a {
           column-count: 1;
 }
 
+.page-contact {
+  position: relative;
+}
+
 .page-contact .page-contact-social .social-icons {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7057,7 +7300,19 @@ header nav .container-fluid .navbar-nav .nav-item a {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  color: #1d87bd;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.page-contact .page-contact-social .social-icons i {
+  transition: all 300ms ease-in-out;
+}
+
+.page-contact .page-contact-social .social-icons i:hover {
+  -webkit-transform: scale(1.2) rotate(360deg);
+      -ms-transform: scale(1.2) rotate(360deg);
+          transform: scale(1.2) rotate(360deg);
 }
 
 .page-contact .page-contact-social .social-icons .mail {
@@ -7080,8 +7335,41 @@ header nav .container-fluid .navbar-nav .nav-item a {
   color: #333333;
 }
 
+.page-contact .page-contact-social .social-icons .linkedin {
+  color: #1d87bd;
+}
+
+.page-contact .page-contact-form {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms ease-in-out;
+}
+
 .page-contact .page-contact-form .btn {
   width: 100%;
+  box-shadow: none;
+}
+
+.page-contact .page-contact-form .btn:hover {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.page-contact .page-contact-form.is-sent {
+  -webkit-animation: send-mail 1.4s cubic-bezier(0.11, -0.15, 0.83, 0.67);
+          animation: send-mail 1.4s cubic-bezier(0.11, -0.15, 0.83, 0.67);
+}
+
+@media (min-width: 768px) {
+  .page-contact .page-contact-social .social-icons {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

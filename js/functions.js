@@ -1,5 +1,16 @@
 jQuery(document).ready(function($) {
 
+	$('.form-group input, textarea').focusout(function() {
+
+	    var text_val = $(this).val();
+		console.log(text_val);
+
+	    if(text_val === "") $(this).removeClass('has-value');
+	    	else $(this).addClass('has-value');
+
+	});
+
+
 	// Declare variables
 	var wScroll 			= $(window).scrollTop(),
 		scrollValue			= '10',
@@ -8,23 +19,9 @@ jQuery(document).ready(function($) {
 		$mobileMenu         = $('.navbar-nav'),
 		$mobileMenuParent   = $('header nav');
 
+	// Mobile menu
+	$mobileMenu.mdStrap();
 
-	$('.navbar-nav').mdStrap();
-
-	// Center title vertically
-	var $headerWrapper = $('.header-wrapper');
-	$headerWrapper.css({
-		'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px)',
-	});
-	$(window).on('scroll', function(event) {
-		event.preventDefault();
-
-		var wScroll = $(window).scrollTop();
-
-		$headerWrapper.css({
-			'top'	: 'calc(50% - '+ $headerWrapper.height()/2 +'px + '+ wScroll/2 +'px)',
-		});
-	});
 
 	// Share buttons popup
 	$('.share-button').on('click', function(event) {
@@ -34,29 +31,32 @@ jQuery(document).ready(function($) {
 		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
 	});
 
+
 	// PrismJS
 	$('code').addClass('language-php');
+
 
 	// Contact form processing
 	$('#contact-form').on('submit', function(event) {
 		event.preventDefault();
 
+		var $formParent = $('.page-contact-form');
 
 		var data = $(this).serialize();
-		console.log(ajaxurl);
 
 		$.ajax({
 			url: ajaxurl,
 			type: 'POST',
 			dataType: 'json',
-			data: $(this).serialize(),
+			data: data,
 			beforeSend: function()
 			{
-				// disable input fields
-				$('form input,textarea').prop('disabled', true);
-
-				// Toggle submit button
-				toggleSubmit();
+				// Email sent
+				$formParent.addClass('is-sent');
+				$('#contact-form')[0].reset();
+				setTimeout(function() {
+					$formParent.removeClass('is-sent');
+				}, 1800);
 			}
 		})
 		.done(function(data, textStatus, jqXHR) {
@@ -67,26 +67,6 @@ jQuery(document).ready(function($) {
 		})
 		.always(function(data, textStatus, jqXHR) {
 			$('form input,textarea').prop('disabled', false);
-
-			// Toggle submit button
-			toggleSubmit();
-
-			// If email was sent
-			if (data.emailSent === true)
-
-					// Materialize.toast(message, displayLength, className, completeCallback);
-		  			Materialize.toast('Message sent.', 4000); // 4000 is the duration of the toast
-
-				// Email failed to send
-				else
-					{
-		  				// Message was not sent
-		  				Materialize.toast('Message failed. Try again or use the address above the form.', 4000); // 4000 is the duration of the toast
-
-						// log failure
-						console.log(data.failReason);
-					}
-
 		});
 	});
 

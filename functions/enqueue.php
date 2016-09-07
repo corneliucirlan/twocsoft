@@ -36,29 +36,24 @@
 	// Enqueue scripts
 	add_action('wp_enqueue_scripts', function() {
 
-		// Load main stylesheet
-		wp_register_style('main-style', THEME_URI.'style.css', '', '', 'all');
+		// Main stylesheet
 		wp_enqueue_style('main-style');
 
 		// Mobile menu
-		wp_register_script('mobile-menu', THEME_URI.'libs/mdstrap/jquery-mdstrap.js', array('jquery'), '', true);
-		wp_enqueue_style('mobile-menu');
+		wp_enqueue_script('mobile-menu');
 
-		// Load custom JS actions
-		wp_register_script('actions', THEME_URI.'js/actions.js', array('jquery', 'mobile-menu'), '', true);
-		wp_enqueue_script('actions');
+		// JS functions
+		wp_enqueue_script('js-functions');
 
 		// images loaded
-		wp_register_script('images-loaded', THEME_URI.'js/imagesloaded.pkgd.min.js', array('jquery'), '', true);
+		wp_enqueue_script('images-loaded');
 	});
 
 	// WP Footer hook
 	add_action('wp_footer', function() {
 
 		// PrismJS
-		wp_register_style('prism-css', THEME_URI.'css/prism.css', '', '', 'all');
 		wp_enqueue_style('prism-css');
-		wp_register_script('prism-js', THEME_URI.'js/prism.js', array('jquery'), '', true);
 		wp_enqueue_script('prism-js');
 
 		// Define ajaxurl

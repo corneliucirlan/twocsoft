@@ -14,7 +14,7 @@
 		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? esc_attr($_POST['email']) : false;
 		$subject = esc_attr($_POST['subject']);
 		$message = isset($_POST['message']) ? esc_attr($_POST['message']) : false;
-		
+
 		if ($name && $email && $subject && $message):
 
 				// get admin emails
@@ -55,33 +55,34 @@
 			<li><a title="Github" class="github" target="_blank" href="https://www.github.com/corneliucirlan"><i class="fa fa-3x fa-github"></i></a></li>
 		</ul>
 	</div>
-	
+
 	<div class="page-contact-form col-md-5 col-md-offset-1">
-		<form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
+
+        <form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
 			<input type="hidden" name="action" id="action" value="submit-form" />
-			
+
 			<!-- Full name -->
 			<div class="form-group">
-				<label class="sr-only" for="name">Full name</label>
-				<input type="text" class="form-control" id="name" name="name" placeholder="Full name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?> />
+				<input type="text" class="form-control" id="name" name="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?> />
+                <label for="name">Full name</label>
 			</div>
 
 			<!-- Email address -->
 			<div class="form-group">
-				<label class="sr-only" for="email">Email</label>
-				<input type="email" class="form-control" id="email" name="email" placeholder="Email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?> />
+				<input type="email" class="form-control" id="email" name="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?> />
+                <label for="email">Email</label>
 			</div>
 
 			<!-- Message subject -->
 			<div class="form-group">
-				<label class="sr-only" for="subject">Subject</label>
-				<input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?> />
+				<input type="text" class="form-control" id="subject" name="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?> />
+                <label for="subject">Subject</label>
 			</div>
 
 			<!-- Message body -->
 			<div class="form-group">
-				<label class="sr-only" for="message">Message</label>
-				<textarea class="form-control" rows="4" id="message" name="message" placeholder="Message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
+                <textarea class="form-control" rows="4" id="message" name="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
+				<label for="message">Message</label>
 			</div>
 
 			<button id="submit-form" type="submit" name="submit" class="btn btn-primary"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>

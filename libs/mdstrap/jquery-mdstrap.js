@@ -9,22 +9,44 @@
 
 ;(function($) {
     "use strict";
+    $.mobile.autoInitializePage = false;
 
     $.fn.mdStrap = function(options)
     {
+
         // Declare function variables
         var $menu = $(this);
         var $menuParent = $menu.parents('nav');
 
         // Plugin default settings
         var defaults = {
+            'fixedTop'          : true,
+            'menuTrigger'       : 'navbar-toggler',
             'scrollValue'       : '10',
             'mobileMenuBreak'   : '992',
-            'overlay'           : {
-                'tag'       : 'div',
-                'class'     : 'overlay',
+        };
+
+        // Various internal options/classes
+        var internal = {
+            'fixedTop'              : 'fixed-top',
+            'enablePointerEvents'   : {'pointer-events': 'all'},
+            'disablePointerEvents'  : {'pointer-events': 'none'},
+            'disableScroll'         : 'disable-scroll',
+            'menu'                  : {
+                    'visibleMenu'       : {
+                        'display': 'block',
+                        'left': '0rem',
+                    },
+                    'hiddenMenu'        : {
+                        'display': 'none',
+                        'left': '-13rem'
+                    },
+                    'enableCss'         : {'display' : 'block'},
+                    'disableCss'        : {'display' : 'none'},
+                    'enableAnimate'     : {'left' : '0rem'},
+                    'disableAnimate'    : {'left' : '-13rem'},
             },
-            'fixedTop'          : 'fixed-top',
+            'overlay'               : 'mdstrap-overlay',
         };
 
         // Plugin settings
@@ -37,13 +59,18 @@
         // Init function
         function initialize()
         {
-            //console.log(settings);
+            // Add overlay to document
+            $('body').prepend('<div class="' + internal.overlay + '"></div>');
+            console.log($('body'));
 
-            // Append overlay to document
-            $('body').prepend('<'+ settings.overlay.tag +' class="'+ settings.overlay.class +'"></'+ settings.overlay.tag +'>');
+            // Add mobile swipe target
+            $('body').append('<div class="mobile-swipe"></div>');
 
             // Detect scroll
             toggleFixedTop();
+
+            // Debugging ...
+            debugging();
         };
 
         $(window).on('scroll', function(event) {
@@ -53,25 +80,20 @@
         // Toggle menu fixed top
         function toggleFixedTop()
         {
-            var wScroll = $(window).scrollTop();
+            if (settings.fixedTop === true)
+            {
+                var wScroll = $(window).scrollTop();
 
-            if (wScroll > settings.scrollValue) $menuParent.addClass(settings.fixedTop);
-                else $menuParent.removeClass(settings.fixedTop);
+                if (wScroll > settings.scrollValue) $menuParent.addClass(internal.fixedTop);
+                    else $menuParent.removeClass(internal.fixedTop);
+            }
         };
 
         // Toggle menu
         function toggleMenuDisplay()
         {
-            if ($(this).width() >= settings.mobileMenuBreak)
-                    $menu.css({
-                        'display': 'block',
-                        'left': '0rem',
-                    });
-                else
-                    $menu.css({
-                        'display': 'none',
-                        'left': '-13rem'
-                    });
+            if ($(window).width() >= settings.mobileMenuBreak) $menu.css(internal.menu.visibleMenu);
+                else $menu.css(internal.menu.hiddenMenu);
         };
 
         // Close mobile menu
@@ -79,18 +101,12 @@
         {
             var wScroll = $(window).scrollTop();
 
-            $menu
-                .css({
-                    'display' : 'none',
-                })
-                .animate({
-                    'left' : '-13rem'
-                });
+            $menu.css(internal.menu.disableCss).animate(internal.menu.disableAnimate);
 
             if (wScroll > settings.scrollValue)
-                $menuParent.addClass('fixed-top');
+                $menuParent.addClass(internal.fixedTop);
 
-            $menuParent.css({'pointer-events': 'all'});
+            $menuParent.css(internal.enablePointerEvents);
 
             toggleOverlay();
         };
@@ -98,18 +114,19 @@
         // Toggle overlay
         function toggleOverlay()
         {
-            $('.' + settings.overlay.class).fadeToggle('fast');
-            $('body').toggleClass('block-scroll');
+            $('.' + internal.overlay).fadeToggle('fast');
+            $('body').toggleClass(internal.disableScroll);
         };
 
         // Close menu on ESC key
         $(document).on('keydown', function(event) {
-            if (event.keyCode == 27 && $('.' + settings.overlay.class + ':visible').length > 0)
+            if (event.keyCode == 27 && $('.' + internal.overlay + ':visible').length > 0)
             closeMobileMenu();
         });
 
         // Close menu when overlay clicked
-        $('.overlay').on('click', function(event) {
+        $('.' + internal.overlay).on('click', function(event) {
+            console.log(event);
             closeMobileMenu();
         });
 
@@ -119,22 +136,36 @@
         });
 
         // Animate mobile menu
-        $('.navbar-toggler').on('click', function(event) {
-            event.preventDefault();
+        $('.' + settings.menuTrigger).on('click', function(event) {
+            event.defaultPrevented;
 
             toggleOverlay();
 
-            $menu
-                .css({
-                    'display' : 'block',
-                })
-                .animate({
-                    'left' : '0rem'
-                });
+            $menu.css(internal.menu.enableCss).animate(internal.menu.enableAnimate);
 
-            $menuParent.removeClass(settings.fixedTop).css({'pointer-events': 'none'});
+            $menuParent.removeClass(internal.fixedTop).css(internal.disablePointerEvents);
         });
 
+        // Slide out menu on touchscreen devices
+        $("div.mobile-swipe").on("swiperight", function(event) {
+            toggleOverlay();
+
+            $menu.css(internal.menu.enableCss).animate(internal.menu.enableAnimate);
+
+            $menuParent.removeClass(internal.fixedTop).css(internal.disablePointerEvents);
+        });
+
+        // Debugging
+        function debugging()
+        {
+            console.log("\nPlugin settings:");
+            console.log(settings);
+
+            console.log("\nInternal settings/classes:");
+            console.log(internal);
+
+            console.log("\njQuery version: " + jQuery.fn.jquery);
+        }
     };
 
 })(jQuery);
