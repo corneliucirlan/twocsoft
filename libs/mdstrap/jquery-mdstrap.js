@@ -61,7 +61,6 @@
         {
             // Add overlay to document
             $('body').prepend('<div class="' + internal.overlay + '"></div>');
-            console.log($('body'));
 
             // Add mobile swipe target
             $('body').append('<div class="mobile-swipe"></div>');
@@ -144,6 +143,8 @@
             $menu.css(internal.menu.enableCss).animate(internal.menu.enableAnimate);
 
             $menuParent.removeClass(internal.fixedTop).css(internal.disablePointerEvents);
+
+            $menu.css(internal.enablePointerEvents);
         });
 
         // Slide out menu on touchscreen devices
