@@ -1,0 +1,45 @@
+body
+	background-color: $body-bg
+	text-align: justify
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.main-container
+	flex: 1
+
+.container-fluid
+	max-width: 100%
+	width: 100%
+	margin: 0 auto
+
+.overlay
+	position: fixed
+	display: none
+	height: 100%
+	width: 100%
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(0, 0, 0, 0.4)
+	z-index: 1000
+
+.block-scroll
+	overflow: hidden
+	height: 100%
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.container-fluid
+		max-width: 90%
+
+// medium screens
+@include media-breakpoint-up(md)
+	.container-fluid
+		max-width: 90%
+
+// large screens
+@include media-breakpoint-up(lg)
+	.container-fluid
+		max-width: 80%

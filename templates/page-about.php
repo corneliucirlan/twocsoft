@@ -27,39 +27,53 @@
 	$skills[] = new SKILL('Web Development', 5);
 	$skills[] = new SKILL('Plugins', 5);
 	$skills[] = new SKILL('OOP', 4);
+    $skills[] = new SKILL('SASS', 3);
 
 	shuffle($skills);
 
 ?>
 
-<main class="row">
-	<section class="card hoverable col s12 m12 l12" style="padding-bottom: 2rem;">
-		<div class="card-content">
-			<h2 class="card-title center-align"><?php the_title() ?></h2>
-			<?php the_content() ?>
-		</div>
-	</section>
+<div class="page-about row">
 
-	<section class="card hoverable col s12 m12 l12" style="padding-bottom: 2rem;">
-		<div class="card-content">
-			<h2 class="card-title center-align">EXPERIENCE</h2>
-			<?php the_field('experience') ?>
-		</div>
-	</section>
+    <!-- About section -->
+    <article class="card">
+        <header class="card-header">
+            <h2 class="card-title"><?php the_title() ?></h2>
+        </header>
+        <div class="card-block">
+            <?php the_content() ?>
+        </div>
+    </article>
 
-	<section class="card hoverable center-align col s12 m12 l12" style="padding-bottom: 2rem;">
-		<div class="card-content">
-			<h2 class="card-title center-align">SKILLS</h2>
-			<div class=" masonry-elements">
-				<?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
-			</div>
-		</div>
-	</section>
-						
-	<section class="card hoverable center-align col s12 m12 l12" style="padding-bottom: 2rem;">
-		<div class="card-content">
-			<h2 class="cart-title center-align">CERTIFICATIONS</h2>
-			<?php the_field('certifications') ?>
-		</div>
-	</section>
-</main>
+    <!-- Experience section -->
+    <article class="card">
+        <header class="card-header">
+            <h2 class="card-title">Experience</h2>
+        </header>
+        <div class="card-block">
+            <?php the_field('experience') ?>
+        </div>
+    </article>
+
+    <!-- Skills section -->
+    <article class="skills card">
+        <header class="card-header">
+            <h2 class="card-title">Skills</h2>
+        </header>
+        <div class="card-block">
+            <div class="card-columns">
+                <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
+            </div>
+        </div>
+    </article>
+
+    <!-- Certifications section -->
+    <article class="card">
+        <header class="card-header">
+            <h2 class="card-title">Certifications</h2>
+        </header>
+        <div class="card-block">
+            <?php the_field('certifications') ?>
+        </div>
+    </article>
+</div>

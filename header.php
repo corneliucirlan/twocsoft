@@ -59,88 +59,71 @@
 
 	<body>
 
-		<!-- Navigation -->
-		<header class="navbar-fixed">
-            <nav>
-			    <div class="nav-wrapper container">
-			      	<a href="#" data-activates="nav-mobile-menu" class="button-collapse"><i class="fa fa-bars" style="color: #444;"></i></a>
+		<!-- Header -->
+        <header>
+            <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
 
-					<?php
-			      		if (has_nav_menu('header-menu')):
+                <div class="container-fluid">
 
-		      			   	// desktop menu
-		      			   	$args = array(
-		      					'theme_location' => 'header-menu',
-		      					'menu' => 'header-menu',
-		      					'container' => 'ul',
-		      					'container_class' => 'side-nav',
-		      					'container_id' => 'nav-desktop-menu',
-		      					'menu_class' => 'hide-on-med-and-down', /*right */
-		      					'menu_id' => '',
-		      					'echo' => true,
-		      					'fallback_cb' => 'wp_page_menu',
-		      					'before' => '',
-		      					'after' => '',
-		      					'link_before' => '',
-		      					'link_after' => '',
-		      					'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-		      					'depth' => 0,
-		      					'walker' => ''
-		      				);
-		      				wp_nav_menu($args);
+                    <!-- Navigation toggle -->
+                    <button class="navbar-toggler hidden-lg-up" type="button"><i class="fa fa-bars"></i></button>
 
-		      				// mobile menu
-			      			$args = array(
-		      					'theme_location' => 'header-menu',
-		      					'menu' => 'header-menu',
-		      					'container' => 'ul',
-		      					'container_class' => 'side-nav',
-		      					'container_id' => 'nav-mobile-menu',
-		      					'menu_class' => 'side-nav',
-		      					'menu_id' => '',
-		      					'echo' => true,
-		      					'fallback_cb' => 'wp_page_menu',
-		      					'before' => '',
-		      					'after' => '',
-		      					'link_before' => '',
-		      					'link_after' => '',
-		      					'items_wrap' => '<ul id="nav-mobile-menu" class = "%2$s">%3$s</ul>',
-		      					'depth' => 0,
-		      					'walker' => ''
-		      				);
-		      				wp_nav_menu($args);
-			      		endif;
-			      	?>
-			      	<div class="right">
-			      		<ul class="footer-follow-us">
+                    <?php
+
+                        // Render header menu
+                        if (has_nav_menu('header-menu')):
+                            $args = array(
+                                'theme_location' => 'header-menu',
+                                'menu' => 'header-menu',
+                                'container' => 'ul',
+                                'menu_class' => 'nav navbar-nav',
+                                'echo' => true,
+                                'fallback_cb' => 'wp_page_menu',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 0,
+                            );
+                            wp_nav_menu($args);
+                        endif;
+                    ?>
+                    <div class="header-social">
+			      		<ul class="social-icons">
                             <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
                             <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
                             <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
 			      	</div>
-			    </div>
-			</nav>
-		</header>
 
-		<!-- Header image -->
-        <div class="row" style="background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 50rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
-        </div>
+                </div>
+            </nav>
 
-		<!-- Content -->
-		<div class="container main-container">
+            <!-- Header image -->
+            <div class="row" style="position: relative; background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
+                <!--<div class="header-wrapper">
+                    <h1 class="header-title"><?php bloginfo('name') ?></h1>
+                     <span class="share-button">
+                        <a href="https://twitter.com/intent/tweet?screen_name=corneliucirlan&hashtags=AskCorneliu&text=&nbsp;" target="_blank" style="font-size: 30px">
+                            #AskCorneliu
+                        </a>
+                    </span>
+                </div> -->
+            </div>
 
-			<!-- Page H1 title -->
-			<h1 class="offsite-title"><?php the_title() ?></h1>
-
-			<!-- Breadcrumbs -->
-            <div class="breadcrumbs-container row">
-                <div class="no-padding-left col s12 <?php echo $isSingular ? 'm12 l12' : 'm8 l8' ?>">
+            <div class="breadcrumbs-container container-fluid">
+                <div class="col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">
                     <?php renderBreadcrumbs() ?>
                 </div>
                 <?php if (!$isSingular): ?>
-	                <div class="no-padding-right col s12 m4 l4">
-	                    <?php displayShareButtons($pageSettings) ?>
-	                </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <?php displayShareButtons($pageSettings) ?>
+                    </div>
                 <?php endif; ?>
             </div>
+        </header>
+
+        <!-- Main Content -->
+        <?php if (!is_page(PAGE_BLOG)): ?>
+                <main class="main-container container-fluid">
+            <?php else: ?>
+                <div class="main-container container-fluid">
+        <?php endif; ?>

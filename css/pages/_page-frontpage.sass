@@ -1,0 +1,28 @@
+.page-frontpage
+	.frontpage-button
+		margin-bottom: 2rem
+
+		&:last-child
+			margin-bottom: 0
+
+		.btn-primary
+			display: block
+			width: 100%
+			margin: 0 auto
+
+// small to medium screens
+//@include media-breakpoint-up(sm)
+
+// medium screens
+@include media-breakpoint-up(md)
+	.page-frontpage
+		.frontpage-button
+			.btn-primary
+				width: 90%
+
+// large screens
+@include media-breakpoint-up(lg)
+	.page-frontpage
+		.frontpage-button
+			.btn-primary
+				width: 80%

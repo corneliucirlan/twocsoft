@@ -1,0 +1,28 @@
+.page-about .card .card-title
+    text-align: center
+
+.page-about .skills .card-columns
+    column-count: 2
+
+    .card
+        text-align: center
+        box-shadow: none
+        border: none
+
+        h3
+            text-transform: uppercase
+
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+    .page-about .skills .card-columns
+        column-count: 3
+
+@include media-breakpoint-up(md)
+    .page-about .skills .card-columns
+        column-count: 4
+
+// large screens
+@include media-breakpoint-up(lg)
+    .page-about .skills .card-columns
+        column-count: 6

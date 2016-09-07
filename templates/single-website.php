@@ -5,7 +5,7 @@
 
 ?>
 
-<main class="md-flat-card">
+<div class="md-flat-card">
 	<h1><?php the_title() ?></h1>
 	<p style="padding: 1rem 0;"><?php the_post_thumbnail('large'); ?></p>
 
@@ -31,4 +31,4 @@
 			<h2><a href="<?php the_field('website-url') ?>" target="_blank">Live Version</a></h2>
 		</div>
 	</div>
-</main>
+</div>

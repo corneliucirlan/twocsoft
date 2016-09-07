@@ -3,6 +3,9 @@
 	// Load global variables
 	include_once('functions/globals.php');
 
+	// Register scripts
+	include_once('functions/register-scripts.php');
+
 	// Load WP specific loaders
 	include_once('functions/enqueue.php');
 

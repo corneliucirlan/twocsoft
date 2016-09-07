@@ -1,0 +1,63 @@
+//.form-control
+//	transition: all .1s ease-in-out
+//	border: 1px solid $brand-primary
+//	border-radius: 0
+//
+//	&:active, &:hover, &:focus
+//		box-shadow: 0px 0px 10px $brand-primary
+//		border: 1px solid $brand-primary
+//
+
+$input-color: #21a1e1
+$label-top: calc(50% - 0.5rem)
+
+input,
+textarea
+	background: none
+	border: none
+	color: $input-color
+	font-size: 18px
+	display: inline-block
+
+	&:focus,
+	&:active
+		outline: none
+
+	&[type="submit"]
+		&:active
+			color: white
+			background: $input-color
+
+.form-group
+	width: 100%
+	display: inline-block
+	margin-right: 20px
+	position: relative
+
+	input
+		padding: 5px 0px
+
+	input, textarea
+		border: none
+		border-bottom: 2px solid $input-color
+
+	label
+		position: absolute
+		top: $label-top
+		left: 0
+		font-size: 1rem
+		color: #999
+		pointer-events: none
+		transform: translateY(-$label-top)
+		transition: all 300ms ease-in-out
+
+	textarea + label
+		top: 0.5rem
+
+	input:focus + label,
+	input.has-value + label,
+	textarea:focus + label,
+	textarea.has-value + label
+		top: -10px
+		font-size: 12px
+		color: #aaa

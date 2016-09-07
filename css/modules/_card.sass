@@ -1,0 +1,50 @@
+.card
+	border: none
+	border: 1px solid #ddd
+	border-radius: 0
+	//box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4)
+
+	.card-header
+		background-color: $card-bg
+		border-bottom: 0
+		padding-bottom: 0
+
+		&:first-child
+			border-radius: 0
+
+		.blog-post-details
+			//border: 1px solid red
+			font-size: 0.9rem
+			margin-top: -.6rem
+
+	.card-block
+		padding-top: 0
+
+	.card-footer
+		border-radius: 0
+		background: $gray-lighter
+
+	img
+		width: calc(100% + 2.5rem)
+		height: auto
+		margin: 0 -1.25rem
+
+// Card columns
+.card-columns
+	column-count: 1
+	column-gap: 0
+	texxt-align: center
+
+	.card
+		width: calc(100% - 1rem)
+		margin: .5rem
+
+// small to medium screens
+@include media-breakpoint-up(md)
+	.card-columns
+		column-count: 2
+
+// large screens
+@include media-breakpoint-up(lg)
+	.card-columns
+		column-count: 3

@@ -1,0 +1,71 @@
+.footer
+	background-color: $gray-dark
+	margin-top: 2rem
+	padding: 1rem
+	color: $gray-light
+	text-align: center
+
+	a
+		color: $gray-lighter
+		font-weight: bold
+		transition: ease-in-out .1s
+
+		&:hover, &:active, &:focus
+			color: $gray
+			text-decoration: none
+
+	.container-fluid
+		width: 100%
+
+	.footer-menu
+		list-style: none
+		overflow: hidden
+		margin-bottom: 0
+		padding: 0
+
+		li
+			width: 100%
+			text-align: center
+			padding: 0
+			line-height: $line-height * 1.4
+
+			a
+				font-size: 1rem
+
+	.footer-subtitle
+		color: white
+
+	.social-icons
+		list-style: none
+		overflow: hidden
+		margin-bottom: 2rem
+
+		li
+			float: left
+			width: 25%
+			text-align: center
+
+			a
+				color: $gray-lighter
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.footer
+		.footer-menu li
+			width: calc(100%/3)
+			float: left
+			text-align: center
+
+		.social-icons
+			margin-bottom: 0
+
+// medium screens
+@include media-breakpoint-up(md)
+	.footer .footer-menu li
+		width: calc(100%/3)
+
+// large screens
+//@include media-breakpoint-up(lg)
+@media (min-width: 1700px)
+	.footer .footer-menu li
+		width: calc(100%/6)

@@ -5,7 +5,7 @@
 
 ?>
 
-<main class="md-flat-card">
+<div class="md-flat-card">
 
 	<h1><?php the_title() ?></h1>
 	<?php the_content() ?>
@@ -28,4 +28,4 @@
 		<?php the_field('plugin-usage') ?>
 	<?php endif; ?>
 	
-</main>
+</div>

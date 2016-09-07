@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+##### Version 3.5 (2016.09.07)
+- Switched back to Bootstrap Framework
+- Compiled custom version of Bootstrap using SASS source
+- Compiled Font Awesome from SASS source
+- Design updates
+
 ##### Version 3.4 (2016.06.14)
 - Compile CSS using SASS
 
@@ -34,53 +40,53 @@
 - Switched from Bootstrap to Materialize framework
 
 ##### Version 2.4 (2016.04.05)
-- various changes
+- Various changes
 
 ##### Version 2.3.1 (2016.03.02)
-- minor design changes
+- Minor design changes
 
 ##### Version 2.3 (2016.02.24)
-- minor design changes
-- new function for creating cards
-- changed default post slug
-- changed portfolio custom taxonomy
+- Minor design changes
+- New function for creating cards
+- Changed default post slug
+- Changed portfolio custom taxonomy
 
 ##### Version 2.2.1 (2016.02.22)
-- minor design fixes
-- merged blog-functions.php with theme-functions.php
-- renamed category.php to archive.php
+- Minor design fixes
+- Merged blog-functions.php with theme-functions.php
+- Renamed category.php to archive.php
 
 ##### Version 2.2 (2016.02.19)
-- added social media links on all pages
-- added bitly url shortener
-- minor design updates
+- Added social media links on all pages
+- Added bitly url shortener
+- Minor design updates
 
 ##### Version 2.1.2 (2016.02.18)
-- updated Portfolio template
+- Updated Portfolio template
 
 ##### Version 2.1.1 (2016.02.17)
-- added PrismJS for code highlighting
+- Added PrismJS for code highlighting
 
 ##### Version 2.1 (2016.02.17)
-- updated security with index.php and ABSPATH check
+- Updated security with index.php and ABSPATH check
 
 ##### Version 2.0 (2016.02.16)
-- updated design
-- merged all projects into one custom post type
-- changed Projects into Portfolio
-- added breadcrumbs
-- added Blog section
+- Updated design
+- Merged all projects into one custom post type
+- Changed Projects into Portfolio
+- Added breadcrumbs
+- Added Blog section
 
 ##### Version 1.1.2 (2015.06.29)
-- mod: fixed Projects tabs
+- Fixed Projects tabs
 
 ##### Version 1.1.1 (2015.06.23)
-- add: OOP Skill
+- Added OOP Skill
 
 ##### Version 1.1 (2015.06.20)
-- add: CHANGELOG file
-- add: blog section
-- mod: css and js optimization
+- Added CHANGELOG file
+- Added blog section
+- CSS and JS optimization
 
 ##### Version 1.0 (2015.05.06)
 - initial version

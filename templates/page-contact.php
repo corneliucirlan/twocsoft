@@ -3,6 +3,8 @@
     // Security check
     if (!defined('ABSPATH')) die;
 
+    the_post()
+
 ?>
 
 <?php
@@ -12,7 +14,7 @@
 		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? esc_attr($_POST['email']) : false;
 		$subject = esc_attr($_POST['subject']);
 		$message = isset($_POST['message']) ? esc_attr($_POST['message']) : false;
-		
+
 		if ($name && $email && $subject && $message):
 
 				// get admin emails
@@ -40,11 +42,11 @@
 
 ?>
 
-<main class="row">
-	<div class="col m6">
-		 <h2 class="card-title">Let's work together</h2>
+<div class="page-contact row">
+	<div class="page-contact-social col-md-6">
+		 <h2>Let's work together</h2>
 		 <?php the_content() ?>
-		 <ul class="contact-social">
+		 <ul class="social-icons">
 			<li><a title="Email" class="mail" target="_blank" href="mailto:corneliu@corneliucirlan.com"><i class="fa fa-3x fa-envelope-o"></i></a></li>
 			<li><a title="Facebook" class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan"><i class="fa fa-3x fa-facebook"></i></a></li>
 			<li><a title="Twitter" class="twitter" target="_blank" href="https://twitter.com/corneliucirlan"><i class="fa fa-3x fa-twitter"></i></a></li>
@@ -53,36 +55,37 @@
 			<li><a title="Github" class="github" target="_blank" href="https://www.github.com/corneliucirlan"><i class="fa fa-3x fa-github"></i></a></li>
 		</ul>
 	</div>
-	
-	<div class="col m5 offset-m1">
-		<form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
+
+	<div class="page-contact-form col-md-5 col-md-offset-1">
+
+        <form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
 			<input type="hidden" name="action" id="action" value="submit-form" />
 
-			<!-- FULL NAME -->
-			<div class="input-field col s12">
-				<input type="text" class="validate" name="name" id="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?>>
-				<label for="name">Full name</label>
+			<!-- Full name -->
+			<div class="form-group">
+				<input type="text" class="form-control" id="name" name="name" required <?php if (isset($_POST['name'])) echo $_POST['name'] ? ' value="'.$_POST['name'].'"' : '' ?> />
+                <label for="name">Full name</label>
 			</div>
 
-			<!-- EMAIL ADDRESS -->
-			<div class="input-field col s12">
-				<input type="email" class="validate" name="email" id="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?>>
-				<label for="email">E-mail address</label>
+			<!-- Email address -->
+			<div class="form-group">
+				<input type="email" class="form-control" id="email" name="email" required <?php if (isset($_POST['email'])) echo $_POST['email'] ? ' value="'.$_POST['email'].'"' : '' ?> />
+                <label for="email">Email</label>
 			</div>
 
-				<!-- MESSAGE SUBJECT -->
-				<div class="input-field col s12">
-				<input type="text" class="validate" name="subject" id="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?>>
-				<label for="subject">Subject</label>
+			<!-- Message subject -->
+			<div class="form-group">
+				<input type="text" class="form-control" id="subject" name="subject" required <?php if (isset($_POST['subject'])) echo $_POST['subject'] ? ' value="'.$_POST['subject'].'"' : '' ?> />
+                <label for="subject">Subject</label>
 			</div>
 
-			<!-- MESSAGE BODY -->
-			<div class="input-field col s12">
-				<textarea class="materialize-textarea validate" rows="4" name="message" id="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
+			<!-- Message body -->
+			<div class="form-group">
+                <textarea class="form-control" rows="4" id="message" name="message" required><?php if (isset($_POST['message'])) echo $_POST['message'] ? $_POST['message'] : '' ?></textarea>
 				<label for="message">Message</label>
 			</div>
-			<button id="submit-form" type="submit" class="waves-effect waves-light btn cc-blue" style="width: 100%;" name="submit"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
-			<div id="form-progress" class="progress" style="display: none;"><div class="indeterminate"></div></div>
+
+			<button id="submit-form" type="submit" name="submit" class="btn btn-primary"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
 		</form>
 	</div>
-</main>
+</div>
