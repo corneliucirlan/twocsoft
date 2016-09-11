@@ -72,7 +72,7 @@
         <header class="card-header">
             <h2 class="card-title">Certifications</h2>
         </header>
-        <div class="card-block">
+        <div class="card-block text-xs-center">
             <?php the_field('certifications') ?>
         </div>
     </article>

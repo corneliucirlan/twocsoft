@@ -7146,23 +7146,16 @@ textarea[type="submit"]:active {
   }
 }
 
-.page-about .card .card-title {
-  text-align: center;
-}
-
-.page-about .skills .card-columns {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-}
-
-.page-about .skills .card-columns .card {
-  text-align: center;
+.page-about .card {
   box-shadow: none;
   border: none;
 }
 
-.page-about .skills .card-columns .card h3 {
+.page-about .card h2, .page-about .card h3, .page-about .card h4 {
+  text-align: center;
+}
+
+.page-about .card h3 {
   text-transform: uppercase;
 }
 
@@ -7199,7 +7192,7 @@ textarea[type="submit"]:active {
 .page-services .card-columns .card {
   width: 100%;
   margin: 0.5rem 0;
-  text-align: center;
+  text-align: justify;
 }
 
 @media (min-width: 768px) {
