@@ -17,25 +17,57 @@
 			color: inherit
 			transition: all 0.2s ease-in-out
 
-.facebook:hover
-	color: rgba(62, 91, 153, 1) !important
-
-.twitter:hover
-	color: rgba(29, 161, 242, 1) !important
-
-.google-plus:hover
-	color: rgba(219, 68, 55, 1) !important
-
-.linkedin:hover
-	color: rgba(29, 135, 189, 1) !important
+//.facebook:hover
+//	color: rgba(62, 91, 153, 1) !important
+//
+//.twitter:hover
+//	color: rgba(29, 161, 242, 1) !important
+//
+//.google-plus:hover
+//	color: rgba(219, 68, 55, 1) !important
+//
+//.linkedin:hover
+//	color: rgba(29, 135, 189, 1) !important
 
 // small to medium screens
 @include media-breakpoint-up(md)
 	.social-icons
-		//border: 1px solid red
 		display: flex
 		justify-content: space-around
 		width: auto
 
 		li
 			min-width: 2rem
+
+.fa
+	transition: all 200ms ease-in-out
+
+	&:hover
+		animation: icon-pop 200ms ease-in-out forwards
+
+		&.fa-facebook
+			color: rgba(62, 91, 153, 1)
+
+		&.fa-twitter
+			color: rgba(29, 161, 242, 1)
+
+		&.fa-google-plus
+			color: rgba(219, 68, 55, 1)
+
+		&.fa-linkedin
+			color: rgba(29, 135, 189, 1)
+
+	&:hover.fa-3x
+		animation: icon-pop-3x 200ms ease-in-out forwards
+
+		&.fa-facebook
+			color: grayscale(rgba(62, 91, 153, 1))
+
+		&.fa-twitter
+			color: grayscale(rgba(29, 161, 242, 1))
+
+		&.fa-google-plus
+			color: grayscale(rgba(219, 68, 55, 1))
+
+		&.fa-linkedin
+			color: grayscale(rgba(29, 135, 189, 1))

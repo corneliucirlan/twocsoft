@@ -6617,6 +6617,66 @@ header nav .navbar-nav .nav-item a {
   }
 }
 
+@-webkit-keyframes icon-pop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes icon-pop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@-webkit-keyframes icon-pop-3x {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
+@keyframes icon-pop-3x {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
@@ -6845,22 +6905,6 @@ header nav .container-fluid .navbar-nav .nav-item a {
   transition: all 0.2s ease-in-out;
 }
 
-.facebook:hover {
-  color: #3e5b99 !important;
-}
-
-.twitter:hover {
-  color: #1da1f2 !important;
-}
-
-.google-plus:hover {
-  color: #db4437 !important;
-}
-
-.linkedin:hover {
-  color: #1d87bd !important;
-}
-
 @media (min-width: 768px) {
   .social-icons {
     display: -webkit-flex;
@@ -6874,6 +6918,52 @@ header nav .container-fluid .navbar-nav .nav-item a {
   .social-icons li {
     min-width: 2rem;
   }
+}
+
+.fa {
+  transition: all 200ms ease-in-out;
+}
+
+.fa:hover {
+  -webkit-animation: icon-pop 200ms ease-in-out forwards;
+          animation: icon-pop 200ms ease-in-out forwards;
+}
+
+.fa:hover.fa-facebook {
+  color: #3e5b99;
+}
+
+.fa:hover.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa:hover.fa-google-plus {
+  color: #db4437;
+}
+
+.fa:hover.fa-linkedin {
+  color: #1d87bd;
+}
+
+.fa:hover.fa-3x {
+  -webkit-animation: icon-pop-3x 200ms ease-in-out forwards;
+          animation: icon-pop-3x 200ms ease-in-out forwards;
+}
+
+.fa:hover.fa-3x.fa-facebook {
+  color: #6c6c6c;
+}
+
+.fa:hover.fa-3x.fa-twitter {
+  color: #888888;
+}
+
+.fa:hover.fa-3x.fa-google-plus {
+  color: #898989;
+}
+
+.fa:hover.fa-3x.fa-linkedin {
+  color: #6d6d6d;
 }
 
 .navbar-nav .nav-link {
