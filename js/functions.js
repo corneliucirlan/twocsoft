@@ -11,26 +11,14 @@ jQuery(document).ready(function($) {
 	});
 
 
-	// Declare variables
-	var wScroll 			= $(window).scrollTop(),
-		scrollValue			= '10',
-		mobileMenuBreak		= '992',
-
-		$mobileMenu         = $('.navbar-nav'),
-		$mobileMenuParent   = $('header nav');
-
 	// Mobile menu
-	$mobileMenu.mdStrap();
+	$('.navbar-nav').mdStrap({
+		'debug'	: true
+	});
 
 
 	// Share buttons popup
-	$('.share-button').on('click', function(event) {
-		event.preventDefault();
-
-		var popup = {width: 500, height: 350};
-		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
-	});
-
+	shareButtonPopup();
 
 	// PrismJS
 	$('code').addClass('language-php');
@@ -70,14 +58,25 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	// Toggle submit button
-	function toggleSubmit()
-	{
-		// toggle submit button
-		$('#submit-form').toggle();
-
-		// toggle preloader
-		$('#form-progress').toggle();
-	}
-
 });
+
+// Share buttons popup
+function shareButtonPopup()
+{
+	$('.share-button').on('click', function(event) {
+		event.preventDefault();
+
+		var popup = {width: 500, height: 350};
+		window.open($(this).find('a').attr('href'), "", "toolbar=no, location=yes, status=no, scrollbars=no, resizable=yes, left=10, top=10, width="+popup.width+", height="+popup.height);
+	});
+}
+
+// Toggle submit button
+function toggleSubmit()
+{
+	// toggle submit button
+	$('#submit-form').toggle();
+
+	// toggle preloader
+	$('#form-progress').toggle();
+}

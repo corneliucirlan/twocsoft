@@ -57,7 +57,8 @@
         <?php wp_head() ?>
     </head>
 
-	<body>
+	<?php //echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
+    <body class="<?php echo join(' ', get_body_class()) ?>">
 
 		<!-- Header -->
         <header>
@@ -98,7 +99,7 @@
             </nav>
 
             <!-- Header image -->
-            <div class="row" style="position: relative; background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
+            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
                 <!--<div class="header-wrapper">
                     <h1 class="header-title"><?php bloginfo('name') ?></h1>
                      <span class="share-button">
