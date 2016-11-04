@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <?php query_posts(array('post_type' => 'post', 'posts_per_page' => 1)); ?>
+        <?php query_posts(array('post_type' => 'post', 'posts_per_page' => 1, 'post_status' => 'publish')); ?>
         <?php if (have_posts()): the_post(); ?>
             <div class="card-wrapper card latest-blog-post">
                 <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a>
