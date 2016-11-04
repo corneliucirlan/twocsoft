@@ -9,18 +9,29 @@
 
 <?php get_header() ?>
 
-<section class="page-frontpage row">
-	<div class="col-xs-12">
-		<?php the_content() ?>
-	</div>
-</section>
+<div class="page-frontpage card-deck-wrapper">
+    <div class="card-deck">
+        <div class="card-wrapper card latest-project">
+            <?php query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => 1)); ?>
+            <?php the_post() ?>
+            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a>
+            <div class="card-block">
+                <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                <?php the_excerpt() ?>
+            </div>
+        </div>
 
-<section class="page-frontpage row">
-	<?php for ($x=1; $x<=3; $x++): ?>
-		<div class="frontpage-button col-xs-12 col-md-4 col-lg-4">
-			<a href="<?php the_field('button-'.$x) ?>" class="btn btn-primary"><?php the_field('button-'.$x.'-text') ?></a>
-		</div>
-	<?php endfor; ?>
-</section>
+        <?php query_posts(array('post_type' => 'post', 'posts_per_page' => 1)); ?>
+        <?php if (have_posts()): the_post(); ?>
+            <div class="card-wrapper card latest-blog-post">
+                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a>
+                <div class="card-block">
+                    <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                    <?php the_excerpt() ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
 
 <?php get_footer() ?>

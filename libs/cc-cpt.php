@@ -26,7 +26,7 @@
 	     * name, capitalized with spaces assigned on __construct().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var string $singular Post type singular name.
 	     */
 	    public $singular;
@@ -36,7 +36,7 @@
 	     * name, capitalized with spaces assigned on __construct().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var string $plural Singular post type name.
 	     */
 	    public $plural;
@@ -46,7 +46,7 @@
 	     * hyphens assigned on __construct().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var string $slug Holds the post type slug name.
 	     */
 	    public $slug;
@@ -55,7 +55,7 @@
 	     * User submitted options assigned on __construct().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $options Holds the user submitted post type options.
 	     */
 	    public $options;
@@ -64,7 +64,7 @@
 	     * Taxonomies
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $taxonomies Holds an array of taxonomies associated with the post type.
 	     */
 	    public $taxonomies;
@@ -74,7 +74,7 @@
 	     * type and their options used when registering the taxonomies.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $taxonomy_settings Holds the taxonomy settings.
 	     */
 	    public $taxonomy_settings;
@@ -82,7 +82,7 @@
 	     * Exisiting taxonomies to be registered after the posty has been registered
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $existing_taxonomies holds exisiting taxonomies
 	     */
 	    public $existing_taxonomies;
@@ -92,7 +92,7 @@
 	     * screen used in add_taxonmy_filters().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $filters Taxonomy filters.
 	     */
 	    public $filters;
@@ -102,7 +102,7 @@
 	     * in add_admin_columns().
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $columns Columns visible in admin edit screen.
 	     */
 	    public $columns;
@@ -111,7 +111,7 @@
 	     * User defined public functions to populate admin columns.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $custom_populate_columns User public functions to populate columns.
 	     */
 	    public $custom_populate_columns;
@@ -120,7 +120,7 @@
 	     * Sortable columns.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var array $sortable Define which columns are sortable on the admin edit screen.
 	     */
 	    public $sortable;
@@ -129,7 +129,7 @@
 	     * Textdomain used for translation. Use the set_textdomain() method to set a custom textdomain.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @var string $textdomain Used for internationalising. Defaults to "cpt" without quotes.
 	     */
 	    public $textdomain = 'cc-cpt';
@@ -140,7 +140,7 @@
 	     * Register a custom post type.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param mixed $post_type_names The name(s) of the post type, accepts (post type name, slug, plural, singular).
 	     * @param array $options User submitted options.
 	     */
@@ -148,7 +148,7 @@
 	    {
 			// Check if post type names is a string or an array.
 	        if (is_array($post_type_names)):
-	            
+
 		            // Add names to object.
 		            $names = array(
 		                'singular',
@@ -209,7 +209,7 @@
 
 			// add recent activity
 			add_filter( 'dashboard_recent_posts_query_args', array(&$this, 'dashboard_recent_posts'), 10, 1 );
-	        
+
 	        // Register exisiting taxonomies.
 	        $this->add_action('init', array(&$this, 'register_exisiting_taxonomies'));
 
@@ -232,7 +232,7 @@
 	     * Helper public function to get an object variable.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $var The variable you would like to retrieve.
 	     * @return mixed Returns the value on success, boolean false whe it fails.
 	     */
@@ -257,7 +257,7 @@
 	     * variables or create new ones. Cannot overwrite reserved variables.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param mixed $var The variable you would like to create/overwrite.
 	     * @param mixed $value The value you would like to set to the variable.
 	     */
@@ -287,7 +287,7 @@
 	     * Helper public function to add add_action WordPress filters.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $action Name of the action.
 	     * @param string $function public function to hook that will run on action.
 	     * @param integet $priority Order in which to execute the public function, relation to other public functions hooked to this action.
@@ -305,7 +305,7 @@
 	     * Create add_filter WordPress filter.
 	     *
 	     * @see http://codex.wordpress.org/public function_Reference/add_filter
-	     * 
+	     *
 	     * @since  1.0
 	     *
 	     * @param  string  $action           Name of the action to hook to, e.g 'init'.
@@ -325,7 +325,7 @@
 	     * Creates an url friendly slug.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param  string $name Name to slugify.
 	     * @return string $name Returns the slug.
 	     */
@@ -334,7 +334,7 @@
 	        // If no name set use the post type name.
 	        if (!isset($name))
 	            $name = $this->post_type_name;
-	        
+
 	        // Name to lower case.
 	        $name = strtolower($name);
 
@@ -357,7 +357,7 @@
 	     *    str_replace  replace all instances of _ to space
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param  string $name The slug name you want to pluralize.
 	     * @return string the friendly pluralized name.
 	     */
@@ -366,7 +366,7 @@
 	        // If no name is passed the post_type_name is used.
 	        if (!isset($name))
 	            $name = $this->post_type_name;
-	        
+
 	        // Return the plural name. Add 's' to the end.
 	        return $this->get_human_friendly($name) . 's';
 	    }
@@ -381,7 +381,7 @@
 	     *    str_replace  replace all instances of _ to space
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $name The slug name you want to unpluralize.
 	     * @return string The friendly singular name.
 	     */
@@ -405,7 +405,7 @@
 	     *    str_replace  replace all instances of hyphens and underscores to spaces
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $name The name you want to make friendly.
 	     * @return string The human friendly name.
 	     */
@@ -423,7 +423,7 @@
 	     * Register Post Type
 	     *
 	     * @see http://codex.wordpress.org/public function_Reference/register_post_type
-	     * 
+	     *
 	     * @since  1.0
 	     */
 	    public function register_post_type()
@@ -489,14 +489,14 @@
 
 	        // Check that the post type doesn't already exist.
 	        if (!post_type_exists($this->post_type_name))
-	
+
 	            // Register the post type.
 	            register_post_type($this->post_type_name, $options);
 	    }
 
 	    /**
 	     * Dashboard glance
-	     * 
+	     *
 	     * @see  https://developer.wordpress.org/reference/hooks/dashboard_glance_items
 	     *
 	     * @since  1.0
@@ -510,11 +510,11 @@
 			echo '<li class="post-count"><a href="edit.php?post_type='.$this->post_type_name.'">'.$numberOfPosts.' '._n($this->singular, $this->plural, intval($numberOfPosts), $this->textdomain).'</a></li>';
 	    }
 
-	    		/**
+	    /**
 		 * Recent Activity
 		 *
 		 * @since 1.1
-		 * 
+		 *
 		 * @param  array $query_args The current arguments array for displaying recent activity
 		 * @return array 			 Modified arguments array to include this post type
 		 */
@@ -524,7 +524,7 @@
 					$query_args['post_type'] = array($query_args['post_type'], $this->post_type_name);
 				else
 					$query_args['post_type'][] = $this->post_type_name;
-		
+
 			return $query_args;
 		}
 
@@ -534,7 +534,7 @@
 	     * @see https://codex.wordpress.org/Function_Reference/register_taxonomy
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $taxonomy_name The slug for the taxonomy.
 	     * @param array  $options Taxonomy options.
 	     */
@@ -552,7 +552,7 @@
 
 	        // if an array of names are passed
 	        if (is_array($taxonomy_names)):
-	        
+
 		            // Set the taxonomy name
 		            $taxonomy_name = $taxonomy_names['taxonomy_name'];
 
@@ -630,7 +630,7 @@
 
 	    /**
 	     * Register taxonomies
-	     * 
+	     *
 	     * Cycles through taxonomies added with the class and registers them.
 	     *
 	     * @since  1.0
@@ -659,7 +659,7 @@
 
 	    /**
 	     * Register Exisiting Taxonomies
-	     * 
+	     *
 	     * Cycles through exisiting taxonomies and registers them after the post type has been registered
 	     *
 	     * @since  1.0
@@ -677,7 +677,7 @@
 	     * Adds columns to the admin edit screen. public function is used with add_action
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $columns Columns to be added to the admin edit screen.
 	     * @return array
 	     */
@@ -715,13 +715,13 @@
 
 		                            // WordPress adds Categories and Tags automatically, ignore these
 		                            if ($tax !== 'category' && $tax !== 'post_tag'):
-		                                
+
 		                                // Get the taxonomy object for labels.
 		                                $taxonomy_object = get_taxonomy($tax);
 
 		                                // Column key is the slug, value is friendly name.
 		                                $new_columns[$tax] = sprintf(__('%s', $this->textdomain), $taxonomy_object->labels->name);
-		                           
+
 		                            endif;
 		                        endforeach;
 		                    endif;
@@ -746,7 +746,7 @@
 	     * Populate custom columns on the admin edit screen.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $column The name of the column.
 	     * @param integer $post_id The post ID.
 	     */
@@ -857,7 +857,7 @@
 	     * User public function to define which taxonomy filters to display on the admin page.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $filters An array of taxonomy filters to display.
 	     */
 	    public function filters($filters = array())
@@ -867,7 +867,7 @@
 
 	    /**
 	     *  Add taxtonomy filters
-	     * 
+	     *
 	     * Creates select fields for filtering posts by taxonomies on admin edit screen.
 	     *
 	     * @since  1.0
@@ -889,7 +889,7 @@
 		                $filters = $this->taxonomies;
 
 	            if (!empty($filters)):
-	            
+
 	                // Foreach of the taxonomies we want to create filters for...
 	                foreach ($filters as $tax_slug):
 
@@ -924,9 +924,9 @@
 		                            // ... create option for taxonomy.
 		                            else
 		                                printf('<option value="%s">%s (%s)</option>', $term->slug, $term->name, $term->count);
-	
+
 	                        endforeach; // foreach ($terms as $term)
-	
+
 	                        // End the select field.
 	                        print('</select>&nbsp;');
 	                    endif; // if ($terms)
@@ -941,7 +941,7 @@
 	     * Choose columns to be displayed on the admin edit screen.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $columns An array of columns to be displayed.
 	     */
 	    public function columns($columns)
@@ -959,7 +959,7 @@
 	     * Define what and how to populate a speicific admin column.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $column_name The name of the column to populate.
 	     * @param mixed $callback An anonyous public function or callable array to call when populating the column.
 	     */
@@ -974,7 +974,7 @@
 	     * Define what columns are sortable in the admin edit screen.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $columns An array of columns that are sortable.
 	     */
 	    public function sortable($columns = array())
@@ -995,7 +995,7 @@
 	     * Internal public function that adds user defined sortable columns to WordPress default columns.
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $columns Columns to be sortable.
 	     *
 	     */
@@ -1037,7 +1037,7 @@
 	     * @see load_edit()
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $vars The query vars submitted by user.
 	     * @return array A sorted array.
 	     */
@@ -1101,7 +1101,7 @@
 	     * dashicons are used. For more information see @link https://developer.wordpress.org/resource/dashicons/
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $icon dashicon name
 	     */
 	    public function menu_icon($icon = "dashicons-admin-page")
@@ -1117,7 +1117,7 @@
 	     * Set textdomain
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param string $textdomain Textdomain used for translation.
 	     */
 	    public function set_textdomain($textdomain)
@@ -1131,7 +1131,7 @@
 	     * Internal public function that modifies the post type names in updated messages
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $messages an array of post updated messages
 	     */
 	    public function updated_messages($messages)
@@ -1166,7 +1166,7 @@
 	     * Internal public function that modifies the post type names in bulk updated messages
 	     *
 	     * @since  1.0
-	     * 
+	     *
 	     * @param array $messages an array of bulk updated messages
 	     */
 	    public function bulk_updated_messages($bulk_messages, $bulk_counts)

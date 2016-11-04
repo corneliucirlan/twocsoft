@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+##### Version 3.6 (2016.11.03)
+- Updated Bootstrap to alpha 5
+- Updated card design
+- Updated single post layout
+- Added Blog section
+
 ##### Version 3.5 (2016.09.07)
 - Switched back to Bootstrap Framework
 - Compiled custom version of Bootstrap using SASS source

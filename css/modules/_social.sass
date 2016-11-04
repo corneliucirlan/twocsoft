@@ -1,43 +1,17 @@
 .social-icons
-	display: inline-block
-	position: relative
-	width: 100%
-	list-style: none
-	overflow: hidden
-	padding: 0
+	display: flex
+	padding: $breadcrumb-padding-y $breadcrumb-padding-x
+	text-align: right
+	margin-bottom: 0
 
 	li
-		float: left
-		width: calc(100%/5)
-		text-align: center
-		padding: 1rem
-		color: inherit
+		flex: 1
+		text-align: right
 
-		a
-			color: inherit
-			transition: all 0.2s ease-in-out
-
-//.facebook:hover
-//	color: rgba(62, 91, 153, 1) !important
-//
-//.twitter:hover
-//	color: rgba(29, 161, 242, 1) !important
-//
-//.google-plus:hover
-//	color: rgba(219, 68, 55, 1) !important
-//
-//.linkedin:hover
-//	color: rgba(29, 135, 189, 1) !important
-
-// small to medium screens
-@include media-breakpoint-up(md)
-	.social-icons
-		display: flex
-		justify-content: space-around
-		width: auto
+	&.header-icons
 
 		li
-			min-width: 2rem
+			min-width: 3rem
 
 .fa
 	transition: all 200ms ease-in-out
@@ -46,28 +20,28 @@
 		animation: icon-pop 200ms ease-in-out forwards
 
 		&.fa-facebook
-			color: rgba(62, 91, 153, 1)
+			color: $facebook
 
 		&.fa-twitter
-			color: rgba(29, 161, 242, 1)
+			color: $twitter
 
 		&.fa-google-plus
-			color: rgba(219, 68, 55, 1)
+			color: $google-plus
 
 		&.fa-linkedin
-			color: rgba(29, 135, 189, 1)
+			color: $linkedin
 
 	&:hover.fa-3x
 		animation: icon-pop-3x 200ms ease-in-out forwards
 
 		&.fa-facebook
-			color: grayscale(rgba(62, 91, 153, 1))
+			color: grayscale($facebook)
 
 		&.fa-twitter
-			color: grayscale(rgba(29, 161, 242, 1))
+			color: grayscale($twitter)
 
 		&.fa-google-plus
-			color: grayscale(rgba(219, 68, 55, 1))
+			color: grayscale($google-plus)
 
 		&.fa-linkedin
-			color: grayscale(rgba(29, 135, 189, 1))
+			color: grayscale($linkedin)

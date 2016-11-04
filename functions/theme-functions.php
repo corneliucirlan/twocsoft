@@ -26,65 +26,30 @@
     add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);
 
 
-	// Display one card
-	function displayCard($settings, $content = false)
+	function renderCard($settings, $content = null)
 	{
+		// Is singular post - eq blog post
+		$isSingular = is_singular('post');
+
 		?>
-		<article class="card">
-			<header class="card-header">
-				<?php if (array_key_exists('linkTitle', $settings) && $settings['linkTitle']): ?>
-					<a href="<?php the_permalink() ?>"><h2 class="card-title"><?php the_title() ?></h2></a>
-				<?php else: ?>
-					<h2 class="card-title"><?php the_title() ?></h2>
-				<?php endif; ?>
-				<?php if (array_key_exists('showCardDetails', $settings) && $settings['showCardDetails']) displayBlogPostDetails(array_key_exists('isSingle', $settings) && $settings['isSingle'] ? true : false) ?>
-			</header>
-			<div class="card-block">
-				<?php the_post_thumbnail('medium') ?>
-				<?php array_key_exists('isSingle', $settings) && $settings['isSingle'] == true ? the_content() : the_excerpt() ?>
-			</div>
-			<footer class="card-footer">
-				<div class="row">
-					<?php //if (array_key_exists('buttons', $settings)): ?>
-							<div class="col-sm-12">
-								<?php foreach ($settings['buttons'] as $button): ?>
-									<a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" class="btn btn-primary-outline btn-md" role="button"><?php echo $button['label'] ?></a>
-								<?php endforeach; ?>
-							</div>
-							<!-- <div class="col-sm-12 col-md-12 col-lg-6">
-								<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
-							</div> -->
-						<?php //else: ?>
-								<!-- <div class="col-sm-12 col-md-6 col-offset-md-6 col-lg-6 col-offset-lg-6">
-									<?php if (array_key_exists('showFooterShare', $settings) && $settings['showFooterShare']) displayShareButtons($settings['footerShareSettings']) ?>
-								</div> -->
-					<?php //endif; ?>
+		<div class="card-wrapper <?= $settings['cardWrapper'] ?>">
+			<div class="card <?= is_singular() ? 'card-flat' : '' ?>">
+
+				<!-- Featured image - if necessary -->
+				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a><?php endif; ?>
+				<div class="card-block">
+
+					<!-- Post title -->
+					<<?= $isSingular ? "h1" : "h3" ?> class="card-title">
+						<?= array_key_exists('blogPost', $settings) ? '<a href="'.get_the_permalink().'">'.get_the_title().'</a>' : (is_array($content) && array_key_exists('title', $content) ? $content['title'] : get_the_title()) ?>
+					</<?= $isSingular ? "h1" : "h3" ?>>
+
+					<!-- Post content/excerpt -->
+					<?= is_singular() ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
 				</div>
-			</footer>
-		</article>
-		<?php
-	}
 
-
-	// Display latest posts
-	function displayRecentPosts($category, $numberOfPosts = 3)
-	{
-		$args = array(
-			'post_type'			=> 'post',
-			'post_status' 		=> 'publish',
-			'order'				=> 'DESC',
-			'category__in'		=> $category,
-			'post__not_in'		=> array(get_the_id()),
-			'posts_per_page'	=> $numberOfPosts,
-		);
-		$blogPosts = new WP_Query($args);
-		?>
-		<h2>Latest Posts</h2>
-		<ul class="latest-posts">
-			<?php while ($blogPosts->have_posts()): $blogPosts->the_post(); ?>
-				<li><h4><a href="<?php the_permalink() ?>" target="_self"><?php the_title() ?></a></h4></li>
-			<?php endwhile; ?>
-		</ul>
+			</div>
+		</div>
 		<?php
 	}
 
@@ -123,15 +88,16 @@
 	function printSkill($skill)
 	{
 		?>
-		<div class="card">
-			<h3><?php echo $skill->getSkillName() ?></h3>
-			<div class="item-stars">
-				<?php
-					for ($x = 1; $x <= 5; $x++):
-						if ($x <= $skill->getSkillLevel()) echo '<i class="fa fa-star"></i>';
-							else echo '<i class="fa fa-star-o"></i>';
-					endfor;
-				?>
+		<div class="card-wrapper col-xs-12 col-sm-6 col-md-2">
+			<div class="card card-flat card-borderless">
+				<h3><?php echo $skill->getSkillName() ?></h3>
+				<div class="item-stars text-xs-center">
+					<?php
+						for ($x = 1; $x <= 5; $x++):
+							echo $x <= $skill->getSkillLevel() ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>';
+						endfor;
+					?>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -195,10 +161,10 @@
 
 		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' ' : '' ?>">
 			<li><span>Share:</span></li>
-            <li class="share-button"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-            <li class="share-button"><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            <li class="share-button"><a class="social-link" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="share-button"><a class="social-link" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="share-button"><a class="social-link" target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li class="share-button"><a class="social-link" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>
 		<?php
 	}

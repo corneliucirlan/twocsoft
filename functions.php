@@ -18,6 +18,9 @@
 	// Load misc
 	include_once('functions/misc.php');
 
+	// Custom fields
+	include_once('functions/custom-fields.php');
+
 	// Load breadcurmbs
 	include_once('libs/breadcrumbs.php');
 

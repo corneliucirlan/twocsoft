@@ -5,9 +5,9 @@
 
 ?>
 
-<div class="md-flat-card">
+<div class="card card-flat card-block">
 
-	<h1><?php the_title() ?></h1>
+	<h1 class="card-title"><?php the_title() ?></h1>
 	<?php the_content() ?>
 
 	<!-- Requirements -->
@@ -27,5 +27,5 @@
 		<h2>Usage</h2>
 		<?php the_field('plugin-usage') ?>
 	<?php endif; ?>
-	
+
 </div>

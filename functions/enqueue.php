@@ -30,6 +30,15 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="<?php echo THEME_URI ?>img/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+
+		<style>
+		    body.body-logged-in .navbar-fixed-top { top: 46px !important; }
+		    body.logged-in .navbar-fixed-top { top: 46px !important; }
+		    @media only screen and (min-width: 783px) {
+			    body.body-logged-in .navbar-fixed-top { top: 28px !important; }
+			    body.logged-in .navbar-fixed-top { top: 28px !important; }
+		    }
+			</style>
 		<?php
 	});
 
@@ -45,8 +54,11 @@
 		// JS functions
 		wp_enqueue_script('js-functions');
 
-		// images loaded
+		// Images loaded
 		wp_enqueue_script('images-loaded');
+
+		// Masonry
+		wp_enqueue_script('masonry');
 	});
 
 	// WP Footer hook

@@ -57,17 +57,16 @@
         <?php wp_head() ?>
     </head>
 
-	<?php //echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
     <body class="<?php echo join(' ', get_body_class()) ?>">
 
 		<!-- Header -->
         <header>
-            <nav class="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
+            <nav class="navbar navbar-fixed-top navbar-full navbar-light">
 
                 <div class="container-fluid">
 
                     <!-- Navigation toggle -->
-                    <button class="navbar-toggler hidden-lg-up" type="button"><i class="fa fa-bars"></i></button>
+                    <button class="navbar-toggler hidden-lg-up" type="button"></button>
 
                     <?php
 
@@ -86,45 +85,32 @@
                             wp_nav_menu($args);
                         endif;
                     ?>
-                    <div class="header-social">
-			      		<ul class="social-icons">
-                            <li><a class="facebook" target="_blank" href="https://www.facebook.com/corneliucirlan" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="twitter" target="_blank" href="https://twitter.com/corneliucirlan" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="google-plus" target="_blank" href="https://plus.google.com/+CorneliuCirlan" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/corneliucirlan" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-			      	</div>
+                	<ul class="social-icons header-icons">
+                        <li><a class="social-link" target="_blank" href="<?= get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="social-link" target="_blank" href="<?= get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="social-link" target="_blank" href="<?= get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a class="social-link" target="_blank" href="<?= get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
             </nav>
 
             <!-- Header image -->
-            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); top center no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0; background-attachment: fixed;">
-                <!--<div class="header-wrapper">
-                    <h1 class="header-title"><?php bloginfo('name') ?></h1>
-                     <span class="share-button">
-                        <a href="https://twitter.com/intent/tweet?screen_name=corneliucirlan&hashtags=AskCorneliu&text=&nbsp;" target="_blank" style="font-size: 30px">
-                            #AskCorneliu
-                        </a>
-                    </span>
-                </div> -->
-            </div>
+            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); background-position: top center; background-repeat: no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0;"></div>
 
             <div class="breadcrumbs-container container-fluid">
-                <div class="col-xs-12 <?php echo $isSingular ? 'col-md-12 col-lg-12' : 'col-md-8 col-lg-8' ?>">
-                    <?php renderBreadcrumbs() ?>
-                </div>
-                <?php if (!$isSingular): ?>
-                    <div class="col-xs-12 col-md-4 col-lg-4">
-                        <?php displayShareButtons($pageSettings) ?>
+                <div class="row">
+                    <div class="<?= $isSingular ? 'col-xs-12' : 'col-xs-12 col-md-8' ?>">
+                        <?php renderBreadcrumbs() ?>
                     </div>
-                <?php endif; ?>
+                    <?php if (!$isSingular): ?>
+                        <div class="col-xs-12 col-md-4">
+                            <?php displayShareButtons($pageSettings) ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </header>
 
         <!-- Main Content -->
-        <?php if (!is_page(PAGE_BLOG)): ?>
-                <main class="main-container container-fluid">
-            <?php else: ?>
-                <div class="main-container container-fluid">
-        <?php endif; ?>
+        <main class="main-container container-fluid">

@@ -10,7 +10,7 @@
 <?php
 
 	$cardSettings = array(
-		'containerClass'		=> 'col m6',
+		'cardWrapper'		=> 'col-xs-12 col-sm-6 col-md-6 col-lg-4',
 		'showCardDetails'		=> true,
 		'isCategory' 			=> is_category() ? true : false,
 		'isTag'					=> is_tag() ? true : false,
@@ -26,7 +26,7 @@
 	<?php if (have_posts()): ?>
 			<?php while (have_posts()): ?>
 				<?php the_post() ?>
-				<?php displayCard($cardSettings); ?>
+				<?php renderCard($cardSettings); ?>
 			<?php endwhile; ?>
 		<?php else: ?>
 			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

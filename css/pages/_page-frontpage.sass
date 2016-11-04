@@ -1,28 +1,16 @@
 .page-frontpage
-	.frontpage-button
-		margin-bottom: 2rem
-
-		&:last-child
-			margin-bottom: 0
-
-		.btn-primary
-			display: block
+	.card
+		&.latest-project::before,
+		&.latest-blog-post:before
+			position: absolute
+			color: $body-bg
+			padding: $spacer
+			background: rgba($body-color, 0.6)
 			width: 100%
-			margin: 0 auto
+			z-index: 1000
 
-// small to medium screens
-//@include media-breakpoint-up(sm)
+		&.latest-project::before
+			content: "Latest project"
 
-// medium screens
-@include media-breakpoint-up(md)
-	.page-frontpage
-		.frontpage-button
-			.btn-primary
-				width: 90%
-
-// large screens
-@include media-breakpoint-up(lg)
-	.page-frontpage
-		.frontpage-button
-			.btn-primary
-				width: 80%
+		&.latest-blog-post::before
+			content: "Latest blog entry"

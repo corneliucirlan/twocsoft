@@ -83,31 +83,4 @@
         	update_option('image_default_link_type', 'none');
 	}, 10);
 
-	// Add custom fields
-	add_action('admin_init', function() {
-
-		// Footer center text
-		register_setting('reading', 'footer_center_text');
-		add_settings_field('footer_center_text', __('<label for="footer_center_text">Footer center text</label>'), 'displayFooterCenterText', 'reading', 'default');
-
-		// Bitly API key
-		register_setting('general', 'bitly_api_key');
-		add_settings_field('bitly_api_key', __('<label for="bitly_api_key">Bitly API key</label>'), 'displayBitlyAPIKey', 'general', 'default');
-
-	});
-
-	// Footer center text callback
-	function displayFooterCenterText()
-	{
-		wp_editor(get_option('footer_center_text') ? get_option('footer_center_text') : '', 'footer_center_text');
-	}
-
-	// Bitly API Key callback
-	function displayBitlyAPIKey()
-	{
-		?>
-		<input class="regular-text" type="text" name="bitly_api_key" value="<?php echo get_option('bitly_api_key') ? get_option('bitly_api_key') : '' ?>" placeholder="" />
-		<?php
-	}
-
 ?>

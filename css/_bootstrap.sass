@@ -1,15 +1,10 @@
-/*!
- * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-// Variables
+// Core variables and mixins
 @import "../src/bootstrap/scss/variables"
-@import "variables"
-
-// Mixins
 @import "../src/bootstrap/scss/mixins"
+@import "../src/bootstrap/scss/custom"
+
+// Custom variables
+@import "variables"
 
 // Reset and dependencies
 @import "../src/bootstrap/scss/normalize"
@@ -36,13 +31,12 @@
 @import "../src/bootstrap/scss/card"
 @import "../src/bootstrap/scss/breadcrumb"
 //@import "../src/bootstrap/scss/pagination"
-//@import "../src/bootstrap/scss/pager"
-//@import "../src/bootstrap/scss/labels"
+//@import "../src/bootstrap/scss/tags"
 //@import "../src/bootstrap/scss/jumbotron"
 //@import "../src/bootstrap/scss/alert"
 //@import "../src/bootstrap/scss/progress"
 //@import "../src/bootstrap/scss/media"
-//@import "../src/bootstrap/scss/list-group"
+@import "../src/bootstrap/scss/list-group"
 //@import "../src/bootstrap/scss/responsive-embed"
 //@import "../src/bootstrap/scss/close"
 
@@ -54,6 +48,3 @@
 
 // Utility classes
 @import "../src/bootstrap/scss/utilities"
-//@import "../src/bootstrap/scss/utilities-background"
-@import "../src/bootstrap/scss/utilities-spacing"
-@import "../src/bootstrap/scss/utilities-responsive"

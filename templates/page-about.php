@@ -36,44 +36,38 @@
 <div class="page-about row">
 
     <!-- About section -->
-    <article class="card">
-        <header class="card-header">
-            <h2 class="card-title"><?php the_title() ?></h2>
-        </header>
-        <div class="card-block">
-            <?php the_content() ?>
-        </div>
-    </article>
+    <div class="card card-flat card-block">
+        <h2 class="card-title"><?php the_title() ?></h2>
+        <?php the_content() ?>
+    </div>
 
     <!-- Experience section -->
-    <article class="card">
-        <header class="card-header">
-            <h2 class="card-title">Experience</h2>
-        </header>
-        <div class="card-block">
-            <?php the_field('experience') ?>
-        </div>
-    </article>
+    <div class="card card-flat card-block">
+        <h2 class="card-title">Experience</h2>
+        <?php the_field('experience') ?>
+    </div>
 
     <!-- Skills section -->
-    <article class="skills card">
+    <div class="card card-flat card-block">
+        <h2 class="card-title">Skills</h2>
+        <div class="cards">
+            <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
+    </div>
+    <!-- <article class="skills card">
+</div>
         <header class="card-header">
-            <h2 class="card-title">Skills</h2>
         </header>
         <div class="card-block">
-            <div class="card-columns">
-                <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
-            </div>
         </div>
-    </article>
+    </article> -->
 
     <!-- Certifications section -->
-    <article class="card">
+    <!-- <article class="card">
         <header class="card-header">
             <h2 class="card-title">Certifications</h2>
         </header>
         <div class="card-block text-xs-center">
             <?php the_field('certifications') ?>
         </div>
-    </article>
+    </article> -->
 </div>

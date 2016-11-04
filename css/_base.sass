@@ -13,21 +13,19 @@ body
 	width: 100%
 	margin: 0 auto
 
-.overlay
-	position: fixed
-	display: none
-	height: 100%
+img
 	width: 100%
-	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-	background-color: rgba(0, 0, 0, 0.4)
-	z-index: 1000
+	height: auto
+	transition: all 200ms ease-in-out
 
-.block-scroll
-	overflow: hidden
-	height: 100%
+	&.hover
+		filter: opacity(0.8)
+
+ul
+	list-style: none
+
+	li
+		display: inline-block
 
 // small to medium screens
 @include media-breakpoint-up(sm)
