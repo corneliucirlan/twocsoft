@@ -58,7 +58,7 @@
 
 	<div class="page-contact-form card-wrapper col-md-5 offset-md-1">
         <div class="card card-block">
-            <form id="contact-form" action="<?php echo basename(__FILE__) ?>" method="post">
+            <form id="contact-form" action="<?= basename(__FILE__) ?>" method="post">
                 <input type="hidden" name="action" id="action" value="submit-form" />
 
                 <!-- Full name -->
