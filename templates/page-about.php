@@ -53,21 +53,4 @@
         <div class="cards">
             <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
     </div>
-    <!-- <article class="skills card">
-</div>
-        <header class="card-header">
-        </header>
-        <div class="card-block">
-        </div>
-    </article> -->
-
-    <!-- Certifications section -->
-    <!-- <article class="card">
-        <header class="card-header">
-            <h2 class="card-title">Certifications</h2>
-        </header>
-        <div class="card-block text-xs-center">
-            <?php the_field('certifications') ?>
-        </div>
-    </article> -->
 </div>

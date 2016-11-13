@@ -8,7 +8,7 @@
 <?php
 
     $cardSettings = array(
-        'cardWrapper'			=> 'col-xs-12 col-sm-6 col-md-6 col-lg-4',
+        'cardWrapper'			=> 'col-xs-12 col-sm-6 col-lg-4',
 
         'blogPost'				=> true,
     );
