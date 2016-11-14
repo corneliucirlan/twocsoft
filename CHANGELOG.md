@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 3.6.3 (2016.11.14)
+- Updated permalink structure
+- Changed favicon
+- Removed unnecessary post declaration
+
 ##### Version 3.6 (2016.11.03)
 - Updated Bootstrap to alpha 5
 - Updated card design

@@ -108,4 +108,15 @@
 	}
 	add_filter('walker_nav_menu_start_el', 'updateNavItemAnchorClasses', 10, 4);
 
+	/**
+	 * Set custom excerpt length
+	 * @param  int $length Excerpt length
+	 * @return int         New excerpt length
+	 */
+	function secExcerptLength($length)
+	{
+		return 20;
+	}
+	add_filter('excerpt_length', 'secExcerptLength', 999);
+
 ?>
