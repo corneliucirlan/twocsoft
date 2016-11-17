@@ -10,13 +10,9 @@
 <?php
 
 	$cardSettings = array(
-		'cardWrapper'		=> 'col-xs-12 col-sm-6 col-md-6 col-lg-4',
-		'showCardDetails'		=> true,
-		'isCategory' 			=> is_category() ? true : false,
-		'isTag'					=> is_tag() ? true : false,
+		'cardWrapper'			=> 'col-xs-12 col-sm-6 col-lg-4',
 
-		'showFooterShare'		=> true,
-		'footerShareSettings'	=> array('id' => get_the_id(), 'alignRight' => true),
+		'blogPost'				=> true,
 	);
 
 ?>
