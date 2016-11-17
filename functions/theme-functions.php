@@ -1,31 +1,11 @@
 <?php
 
 	/**
-     * Filter the CSS class for a nav menu based on a condition.
-     *
-     * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
-     * @param object $item    The current menu item.
-     * @return array (maybe) modified nav menu class.
-     */
-    function wpdocs_special_nav_class($classes, $item)
-    {
-        // to be added later - "active" class to the active page
-        $classes[] = "nav-item";
-        return $classes;
-    }
-    add_filter('nav_menu_css_class' , 'wpdocs_special_nav_class' , 10, 2);
-
-    /**
-     * Add custom class to menu anchor tags
-     */
-    function my_walker_nav_menu_start_el($item_output, $item, $depth, $args)
-    {
-        $item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
-        return $item_output;
-    }
-    add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);
-
-
+	 * Render single card
+	 *
+	 * @param  array $settings Various card settings
+	 * @param  array $content  Card content, null by default
+	 */
 	function renderCard($settings, $content = null)
 	{
 		// Is singular post - eq blog post
@@ -33,7 +13,7 @@
 
 		?>
 		<div class="card-wrapper <?= $settings['cardWrapper'] ?>">
-			<div class="card <?= is_singular() ? 'card-flat' : '' ?>">
+			<div class="card <?= $isSingular ? 'card-flat' : '' ?>">
 
 				<!-- Featured image - if necessary -->
 				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a><?php endif; ?>
@@ -52,7 +32,6 @@
 		</div>
 		<?php
 	}
-
 
 	// Display blog post details
 	function displayBlogPostDetails($singlePost = false)
@@ -81,9 +60,8 @@
 		<?php
 	}
 
-
 	/**
-	 * PRINT ONE SKILL
+	 * Print one skill
 	 */
 	function printSkill($skill)
 	{
@@ -102,7 +80,6 @@
 		</div>
 		<?php
 	}
-
 
 	/**
 	 * Get thumbnail photo size

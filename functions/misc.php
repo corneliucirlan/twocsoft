@@ -83,4 +83,40 @@
         	update_option('image_default_link_type', 'none');
 	}, 10);
 
+	/**
+	 * Filter the CSS class for a nav menu based on a condition.
+	 *
+	 * @param array  $classes The CSS classes that are applied to the menu item's <li> element.
+	 * @param object $item    The current menu item.
+	 * @return array (maybe) modified nav menu class.
+	 */
+	function updateNavItemClasses($classes, $item)
+	{
+		// to be added later - "active" class to the active page
+		$classes[] = "nav-item";
+		return $classes;
+	}
+	add_filter('nav_menu_css_class' , 'updateNavItemClasses' , 10, 2);
+
+	/**
+	 * Add custom class to menu anchor tags
+	 */
+	function updateNavItemAnchorClasses($item_output, $item, $depth, $args)
+	{
+		$item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
+		return $item_output;
+	}
+	add_filter('walker_nav_menu_start_el', 'updateNavItemAnchorClasses', 10, 4);
+
+	/**
+	 * Set custom excerpt length
+	 * @param  int $length Excerpt length
+	 * @return int         New excerpt length
+	 */
+	function secExcerptLength($length)
+	{
+		return 20;
+	}
+	add_filter('excerpt_length', 'secExcerptLength', 999);
+
 ?>
