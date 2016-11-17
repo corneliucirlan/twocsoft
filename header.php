@@ -96,7 +96,7 @@
             </nav>
 
             <!-- Header image -->
-            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); background-position: top center; background-repeat: no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 600px; min-height: 37.5rem; padding: 0px; margin: -64px 0 0;"></div>
+            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); background-position: top center; background-repeat: no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 31.25rem; padding: 0px; margin: -64px 0 0;"></div>
 
             <div class="breadcrumbs-container container-fluid">
                 <div class="row">
