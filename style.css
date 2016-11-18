@@ -7223,19 +7223,22 @@ ul li {
 }
 
 @media (min-width: 576px) {
-  .container-fluid {
-    width: 90%;
+  .container-fluid,
+  header nav .container-fluid {
+    width: 90% !important;
   }
 }
 
 @media (min-width: 768px) {
-  .container-fluid {
-    width: 90%;
+  .container-fluid,
+  header nav .container-fluid {
+    width: 90% !important;
   }
 }
 
 @media (min-width: 992px) {
-  .container-fluid {
+  .container-fluid,
+  header nav .container-fluid {
     max-width: 1500px;
   }
 }
