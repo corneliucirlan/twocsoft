@@ -9,7 +9,6 @@ body
 	flex: 1
 
 .container-fluid
-	max-width: 100%
 	width: 100%
 	margin: 0 auto
 
@@ -29,15 +28,18 @@ ul
 
 // small to medium screens
 @include media-breakpoint-up(sm)
-	.container-fluid
-		max-width: 90%
+	.container-fluid,
+	header nav .container-fluid
+		width: 90% !important
 
 // medium screens
 @include media-breakpoint-up(md)
-	.container-fluid
-		max-width: 90%
+	.container-fluid,
+	header nav .container-fluid
+		width: 90% !important
 
 // large screens
 @include media-breakpoint-up(lg)
-	.container-fluid
+	.container-fluid,
+	header nav .container-fluid
 		max-width: 1500px

@@ -7199,7 +7199,6 @@ body {
 }
 
 .container-fluid {
-  max-width: 100%;
   width: 100%;
   margin: 0 auto;
 }
@@ -7224,19 +7223,22 @@ ul li {
 }
 
 @media (min-width: 576px) {
-  .container-fluid {
-    max-width: 90%;
+  .container-fluid,
+  header nav .container-fluid {
+    width: 90% !important;
   }
 }
 
 @media (min-width: 768px) {
-  .container-fluid {
-    max-width: 90%;
+  .container-fluid,
+  header nav .container-fluid {
+    width: 90% !important;
   }
 }
 
 @media (min-width: 992px) {
-  .container-fluid {
+  .container-fluid,
+  header nav .container-fluid {
     max-width: 1500px;
   }
 }
