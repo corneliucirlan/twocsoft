@@ -7199,7 +7199,6 @@ body {
 }
 
 .container-fluid {
-  max-width: 100%;
   width: 100%;
   margin: 0 auto;
 }
@@ -7225,13 +7224,13 @@ ul li {
 
 @media (min-width: 576px) {
   .container-fluid {
-    max-width: 90%;
+    width: 90%;
   }
 }
 
 @media (min-width: 768px) {
   .container-fluid {
-    max-width: 90%;
+    width: 90%;
   }
 }
 
