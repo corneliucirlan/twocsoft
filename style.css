@@ -7237,7 +7237,7 @@ ul li {
 
 @media (min-width: 992px) {
   .container-fluid {
-    max-width: 80%;
+    max-width: 1500px;
   }
 }
 
