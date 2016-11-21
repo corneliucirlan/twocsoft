@@ -5,8 +5,8 @@
 
 	// Load ACF fields
 	include_once(THEME_DIR.'functions/acf/about.php');
-	include_once(THEME_DIR.'functions/acf/frontpage.php');
 	include_once(THEME_DIR.'functions/acf/portfolio.php');
+	include_once(THEME_DIR.'functions/acf/services.php');
 	include_once(THEME_DIR.'functions/acf/services.php');
 
 	// Load SKILL class

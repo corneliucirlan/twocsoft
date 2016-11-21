@@ -35,12 +35,12 @@
 
 ?>
 
-<div class="page-blog cards row">
+<main class="page-blog cards row">
 	<?php if (have_posts()): ?>
 		<?php while (have_posts()): the_post(); ?>
 			<?php renderCard($cardSettings); ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
-</div>
+</main>
 
 <?php get_footer(); ?>

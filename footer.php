@@ -4,7 +4,7 @@
     if (!defined('ABSPATH')) die;
 
 ?>
-        </main>
+        </div>
 
         <footer class="footer">
             <div class="container-fluid">

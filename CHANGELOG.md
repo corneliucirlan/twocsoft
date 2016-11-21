@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+##### Version 3.6.8 (2016.11.21)
+- Added social media feed on single blog posts
+- Added blog post details (author, date, categories) to single posts and share links
+- Created sidebar.php for future proofing code structure
+- Removed some unnecessary files
+
 ##### Version 3.6.3 (2016.11.14)
 - Updated permalink structure
 - Changed favicon

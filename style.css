@@ -6,7 +6,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.6.3
+ *	Version: 3.6.8
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -3073,7 +3073,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -3089,7 +3089,7 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -7707,6 +7707,10 @@ header nav .container-fluid .navbar-toggler:focus {
   border: 0;
 }
 
+.card .card-subtitle {
+  margin-bottom: 0.5rem;
+}
+
 .footer {
   background-color: #373a3c;
   margin-top: 2rem;
@@ -7846,23 +7850,6 @@ header nav .container-fluid .navbar-toggler:focus {
   font-size: 0.8rem;
 }
 
-.page-frontpage .card.latest-project::before, .page-frontpage .card.latest-blog-post:before {
-  position: absolute;
-  color: #f5f5f5;
-  padding: 1rem;
-  background: rgba(55, 58, 60, 0.6);
-  width: 100%;
-  z-index: 1000;
-}
-
-.page-frontpage .card.latest-project::before {
-  content: "Latest project";
-}
-
-.page-frontpage .card.latest-blog-post::before {
-  content: "Latest blog entry";
-}
-
 .page-about .card h2, .page-about .card h3, .page-about .card h4 {
   text-align: center;
   text-transform: uppercase;
@@ -7934,6 +7921,10 @@ header nav .container-fluid .navbar-toggler:focus {
 .single-website .services li {
   display: block;
   width: 100%;
+}
+
+.page-single .social-icons {
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

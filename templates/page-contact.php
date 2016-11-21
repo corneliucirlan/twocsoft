@@ -42,7 +42,7 @@
 
 ?>
 
-<div class="page-contact row">
+<main class="page-contact row">
 	<div class="page-contact-social col-md-6">
         <h2>Let's work together</h2>
         <?php the_content() ?>
@@ -89,4 +89,4 @@
             </form>
         </dvi>
 	</div>
-</div>
+</main>

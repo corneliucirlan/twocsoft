@@ -31,7 +31,7 @@
 	define('PAGE_BLOG', 179);
 
 
-	// HIDE ACF ADMIN PAGE
+	// Hide ACF admin page
 	define('ACF_LITE', true);
 
 ?>
