@@ -13,7 +13,7 @@
 
 ?>
 
-<div class="page-services cards row">
+<main class="page-services cards row">
     <?php for ($x = 1; $x<= 6; $x++): ?>
         <?php if (($serviceTitle = get_field('services-card-'.$x.'-title')) && ($serviceBody = get_field('services-card-'.$x.'-body'))): ?>
             <?php
@@ -24,4 +24,4 @@
             ?>
         <?php endif; ?>
     <?php endfor; ?>
-</div>
+</main>

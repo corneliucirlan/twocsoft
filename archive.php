@@ -17,7 +17,7 @@
 
 ?>
 
-<main class="masonry-elements row">
+<main class="page-archive cards row">
 
 	<?php if (have_posts()): ?>
 			<?php while (have_posts()): ?>

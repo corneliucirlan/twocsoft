@@ -5,7 +5,7 @@
 
 ?>
 
-<div class="card card-flat card-block">
+<main class="card card-flat card-block">
 
 	<h1 class="card-title"><?php the_title() ?></h1>
 	<?php the_content() ?>
@@ -28,4 +28,4 @@
 		<?php the_field('plugin-usage') ?>
 	<?php endif; ?>
 
-</div>
+</main>

@@ -33,7 +33,7 @@
 
 ?>
 
-<div class="page-about row">
+<main class="page-about row">
 
     <!-- About section -->
     <div class="card card-flat card-block">
@@ -52,5 +52,6 @@
         <h2 class="card-title">Skills</h2>
         <div class="cards">
             <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
+        </div>
     </div>
-</div>
+</main>

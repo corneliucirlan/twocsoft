@@ -113,4 +113,4 @@
         </header>
 
         <!-- Main Content -->
-        <main class="main-container container-fluid">
+        <div class="main-container container-fluid">

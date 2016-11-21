@@ -16,10 +16,10 @@
     query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => -1));
 ?>
 
-<div class="page-portfolio cards row">
+<main class="page-portfolio cards row">
     <?php if (have_posts()): ?>
 		<?php while (have_posts()): the_post() ?>
 			<?php renderCard($cardSettings) ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
-</div>
+</main>

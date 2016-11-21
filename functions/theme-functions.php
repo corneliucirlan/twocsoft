@@ -24,6 +24,9 @@
 						<?= array_key_exists('blogPost', $settings) ? '<a href="'.get_the_permalink().'">'.get_the_title().'</a>' : (is_array($content) && array_key_exists('title', $content) ? $content['title'] : get_the_title()) ?>
 					</<?= $isSingular ? "h1" : "h3" ?>>
 
+					<!-- Post details - if single blog post -->
+					<?= $isSingular ? renderPostDetails() : '' ?>
+
 					<!-- Post content/excerpt -->
 					<?= is_singular() ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
 				</div>
@@ -33,29 +36,31 @@
 		<?php
 	}
 
-	// Display blog post details
-	function displayBlogPostDetails($singlePost = false)
+	/**
+	 * Render blog post details
+	 *
+	 */
+	function renderPostDetails()
 	{
 		global $post;
 		$categoriesText = '';
 
+		// Get a list of categories with anchors
 		$categories = get_the_category();
 		foreach ($categories as $category):
-			$categoriesText .= '<a class="category-link" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>&nbsp;|&nbsp;';
+			$categoriesText .= '<a class="card-link" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>&nbsp;|&nbsp;';
 		endforeach;
-
 		?>
-		<div class="blog-post-details row valign-wrapper">
-			<div class="<?php echo $singlePost ? 'col-sm-12 col-md-8' : 'col-sm-12' ?>">
-				<?php echo $categoriesText ?>
+
+		<div class="card-subtitle row text-muted">
+			<div class="col-xs-8">
+				<?= $categoriesText ?>
 				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
-				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i style="color: #1DA1F2;" class="fa fa-twitter"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
+				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
-			<?php if ($singlePost): ?>
-				<div class="col-sm-12 col-md-4">
-					<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
-				</div>
-			<?php endif; ?>
+			<div class="col-xs-4">
+				<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
+			</div>
 		</div>
 		<?php
 	}
@@ -130,10 +135,10 @@
 		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 
 		// get bitly short url
-		//$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
 
 		// set url to bitly short url
-		//$url = $bitly->data->url;
+		$url = $bitly->data->url;
 		?>
 
 		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' ' : '' ?>">
