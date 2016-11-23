@@ -9,6 +9,9 @@
 	include_once(THEME_DIR.'functions/acf/services.php');
 	include_once(THEME_DIR.'functions/acf/services.php');
 
+	// Twitter Wrapper API
+	include_once(THEME_DIR."src/twitteroauth/autoload.php");
+
 	// Load SKILL class
 	include_once(THEME_DIR.'libs/skill.class.php');
 
