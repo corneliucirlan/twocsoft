@@ -8006,6 +8006,7 @@ header nav .container-fluid .navbar-toggler:focus {
   padding: 0;
 }
 
+<<<<<<< HEAD
 .page-single .card img {
   display: block;
   margin-left: 50%;
@@ -8015,3 +8016,6 @@ header nav .container-fluid .navbar-toggler:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> origin/master

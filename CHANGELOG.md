@@ -1,7 +1,10 @@
 ## CHANGELOG
 
-##### Version 3.6.9 (2016.11.26)
+##### Version 3.6.10 (2016.11.26)
 - Updated images style
+
+##### Version 3.6.9 (2016.11.23)
+- Updated social media boxes tor a cleaner design
 
 ##### Version 3.6.8 (2016.11.21)
 - Added social media feed on single blog posts
