@@ -6,7 +6,6 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.6.9
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -8006,8 +8005,11 @@ header nav .container-fluid .navbar-toggler:focus {
   padding: 0;
 }
 
-<<<<<<< HEAD
 .page-single .card img {
+  max-width: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   display: block;
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
@@ -8016,6 +8018,3 @@ header nav .container-fluid .navbar-toggler:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
-=======
-/*# sourceMappingURL=style.css.map */
->>>>>>> origin/master
