@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.6.11 (2016.11.30)
+- Updated login page logo
+
 ##### Version 3.6.10 (2016.11.26)
 - Updated images style
 
