@@ -68,8 +68,9 @@
                     <!-- Navigation toggle -->
                     <button class="navbar-toggler hidden-lg-up" type="button"></button>
 
-                    <?php
+                    <a href="<?php bloginfo('url') ?>"><img class="logo" src="<?= THEME_URI ?>img/logo.png" /></a>
 
+                    <?php
                         // Render header menu
                         if (has_nav_menu('header-menu')):
                             $args = array(

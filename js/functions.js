@@ -29,7 +29,6 @@ jQuery(document).ready(function($) {
 
 
 
-
 	// Parallax
 	function parallax()
 	{
@@ -77,7 +76,6 @@ jQuery(document).ready(function($) {
 		$('.form-group input, textarea').focusout(function() {
 
 			var text_val = $(this).val();
-			console.log(text_val);
 
 			if(text_val === "") $(this).removeClass('has-value');
 			else $(this).addClass('has-value');

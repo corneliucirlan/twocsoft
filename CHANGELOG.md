@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+##### Version 3.7 (2016.12.02)
+- Updated Font Awesome to version 4.7.0
+- Added a logo in the header, next to the menu
+- Updated favicon, based on logo
+- Updated imagesLoaded to CDN version
+- Deleted old unused images
+
 ##### Version 3.6.11 (2016.11.30)
 - Updated login page logo
 

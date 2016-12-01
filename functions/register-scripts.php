@@ -15,7 +15,8 @@
         wp_register_script('js-functions', THEME_URI.'js/functions.js', array('jquery', 'mobile-menu'), '', true);
 
         // Images loaded
-        wp_register_script('images-loaded', THEME_URI.'libs/images-loaded/imagesloaded.pkgd.min.js', array('jquery'), '', true);
+        wp_deregister_script('imagesloaded');
+        wp_register_script('imagesloaded', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js', array('jquery'), '', true);
 
         // PrismJS
         wp_register_style('prism-css', THEME_URI.'libs/prismjs/prism.css', '', '', 'all');

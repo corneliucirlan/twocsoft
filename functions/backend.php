@@ -12,9 +12,16 @@
 	// login logo
 	function customLoginLogo()
 	{
-		$logo = THEME_URI.'img/favicon/favicon-96x96.png';
+		$logo = THEME_URI.'img/logo.png';
 		?>
-		<style>.login h1 a { background-image: url('<?= $logo ?>') !important; }</style>
+		<style>
+			.login h1 a {
+				background-image: url('<?= $logo ?>') !important;
+				background-size: contain;
+				width: 320px;
+				height: 94px;
+			}
+		</style>
 		<?php
 	}
 	add_action('login_head', 'customLoginLogo');

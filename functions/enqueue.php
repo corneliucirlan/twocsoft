@@ -55,7 +55,7 @@
 		wp_enqueue_script('js-functions');
 
 		// Images loaded
-		wp_enqueue_script('images-loaded');
+		wp_enqueue_script('imagesloaded');
 
 		// Masonry
 		wp_enqueue_script('masonry');
