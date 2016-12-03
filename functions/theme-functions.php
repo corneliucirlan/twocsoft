@@ -112,33 +112,36 @@
 	 */
 	function displayShareButtons($settings)
 	{
-		// get url if page is category page
+		// Get url if page is category page
 		if (array_key_exists('isCategory', $settings) && $settings['isCategory']):
 				$url = urlencode(get_category_link($settings['id']));
 
-			// or if tag page
+			// Or if tag page
 			elseif (array_key_exists('isTag', $settings) && $settings['isTag']):
 					$url = urlencode(get_tag_link($settings['id']));
 
-				// or if normal page
+				// Or if normal page
 				else:
 					$url = urlencode(get_permalink($settings['id']));
 		endif;
 
-		// get page title
+		// Get page title
 		$title = urlencode(get_post_meta(get_the_id(), '_yoast_wpseo_title', true) != '' ? get_post_meta(get_the_id(), '_yoast_wpseo_title', true) : get_the_title($settings['id']));
 
-		// get page excerpt
+		// Get page excerpt
 		$excerpt = urlencode(get_the_excerpt());
 
-		// set twitter related accounts
+		// Set twitter related accounts
 		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 
-		// get bitly short url
+		// Get bitly short url
 		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
 
-		// set url to bitly short url
-		$url = $bitly->data->url;
+		// Chekc if status code OK
+		if ($bitly->status_code == 200)
+
+			// Set url to bitly short url
+			$url = $bitly->data->url;
 		?>
 
 		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' ' : '' ?>">
