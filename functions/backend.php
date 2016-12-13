@@ -12,7 +12,7 @@
 	// login logo
 	function customLoginLogo()
 	{
-		$logo = THEME_URI.'img/logo.png';
+		$logo = THEME_URI.'img/logo-big.png';
 		?>
 		<style>
 			.login h1 a {

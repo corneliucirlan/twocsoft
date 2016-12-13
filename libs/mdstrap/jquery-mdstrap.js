@@ -9,6 +9,10 @@
 
 ;(function($) {
     "use strict";
+
+    $(document).bind("mobileinit", function () {
+        $.mobile.autoInitializePage = false;
+    });
     $.mobile.autoInitializePage = false;
 
     $.fn.mdStrap = function(options)

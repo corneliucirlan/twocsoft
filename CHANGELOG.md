@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.7.1 (2016.12.14)
+- Concatenated all JavaScript files into a single minified file
+- Updated logo size
+
 ##### Version 3.7 (2016.12.02)
 - Updated Font Awesome to version 4.7.0
 - Added a logo in the header, next to the menu

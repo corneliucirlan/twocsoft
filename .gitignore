@@ -3,6 +3,7 @@
 ### Sass ###
 .sass-cache/
 *.css.map
+*.js.map
 
 
 ### SublimeText ###

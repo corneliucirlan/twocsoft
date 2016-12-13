@@ -1,3 +1,18 @@
+// jQuery
+//@prepros-prepend "../libs/jquery/jquery.min.js"
+
+// jQuery Mobile
+//@prepros-prepend "../libs/jquery/jquery.mobile.min.js"
+
+// Mobile menu
+//@prepros-prepend "../libs/mdstrap/jquery-mdstrap.js"
+
+// Images Loaded
+//@prepros-prepend "../libs/images-loaded/imagesloaded.pkgd.min.js"
+
+// Masonry
+//@prepros-prepend "../../../../wp-includes/js/masonry.min.js"
+
 jQuery(document).ready(function($) {
 
 	// Parallax

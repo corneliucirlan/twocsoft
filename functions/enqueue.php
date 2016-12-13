@@ -48,17 +48,8 @@
 		// Main stylesheet
 		wp_enqueue_style('main-style');
 
-		// Mobile menu
-		wp_enqueue_script('mobile-menu');
-
 		// JS functions
 		wp_enqueue_script('js-functions');
-
-		// Images loaded
-		wp_enqueue_script('imagesloaded');
-
-		// Masonry
-		wp_enqueue_script('masonry');
 	});
 
 	// WP Footer hook
@@ -66,7 +57,6 @@
 
 		// PrismJS
 		wp_enqueue_style('prism-css');
-		wp_enqueue_script('prism-js');
 
 		// Define ajaxurl
 		if (is_page(PAGE_CONTACT)):
