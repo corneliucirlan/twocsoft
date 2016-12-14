@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.7.2 (2016.12.14)
+- Added alt attribute to logo
+
 ##### Version 3.7.1 (2016.12.14)
 - Concatenated all JavaScript files into a single minified file
 - Updated logo size
