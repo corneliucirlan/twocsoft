@@ -1,0 +1,28 @@
+html, body
+    height: 100%
+
+.main-container
+    min-height: 100%
+
+    &::after
+        content: ""
+        display: block
+        height: 180px
+
+header nav .container-fluid
+    position: relative
+    display: block
+    margin: 0 auto
+
+    .header-icons, .logo, .navbar-nav
+        display: inline-block
+        float: left
+
+    .navbar-nav
+        width: 50%
+
+    .header-icons
+        float: right
+
+    .logo
+        margin-top: 10px

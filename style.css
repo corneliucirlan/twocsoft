@@ -6,7 +6,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.7.2
+ *	Version: 3.7.3
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -7414,6 +7414,70 @@ ul li {
   }
 }
 
+@media screen\0 {
+  html, body {
+    height: 100%;
+  }
+  .main-container {
+    min-height: 100%;
+  }
+  .main-container::after {
+    content: "";
+    display: block;
+    height: 180px;
+  }
+  header nav .container-fluid {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  header nav .container-fluid .header-icons, header nav .container-fluid .logo, header nav .container-fluid .navbar-nav {
+    display: inline-block;
+    float: left;
+  }
+  header nav .container-fluid .navbar-nav {
+    width: 50%;
+  }
+  header nav .container-fluid .header-icons {
+    float: right;
+  }
+  header nav .container-fluid .logo {
+    margin-top: 10px;
+  }
+}
+
+@media screen\9 {
+  html, body {
+    height: 100%;
+  }
+  .main-container {
+    min-height: 100%;
+  }
+  .main-container::after {
+    content: "";
+    display: block;
+    height: 180px;
+  }
+  header nav .container-fluid {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  header nav .container-fluid .header-icons, header nav .container-fluid .logo, header nav .container-fluid .navbar-nav {
+    display: inline-block;
+    float: left;
+  }
+  header nav .container-fluid .navbar-nav {
+    width: 50%;
+  }
+  header nav .container-fluid .header-icons {
+    float: right;
+  }
+  header nav .container-fluid .logo {
+    margin-top: 10px;
+  }
+}
+
 .mdstrap-overlay {
   position: fixed;
   display: none;
@@ -8132,9 +8196,9 @@ header nav .container-fluid .navbar-toggler:focus {
 }
 
 .page-contact .page-contact-social .social-icons .fa:hover {
-  -webkit-transform: scale(1.2) rotate(360deg);
-      -ms-transform: scale(1.2) rotate(360deg);
-          transform: scale(1.2) rotate(360deg);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .page-contact .page-contact-social .social-icons .fa.fa-envelope-o {

@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 3.7.3 (2016.12.15)
+- Added flexbox alternative for IE browsers
+- Removed emoji scripts
+- Fixed contact template typo
+
 ##### Version 3.7.2 (2016.12.14)
 - Added alt attribute to logo
 

@@ -87,6 +87,6 @@
 
                 <button id="submit-form" type="submit" name="submit" class="btn btn-primary-outline"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
             </form>
-        </dvi>
+        </div>
 	</div>
 </main>
