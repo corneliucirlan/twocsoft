@@ -11,6 +11,12 @@
         // PrismJS
         wp_register_style('prism-css', THEME_URI.'libs/prismjs/prism.css', '', '', 'all');
 
+        // jQuery
+        wp_deregister_script('jquery');
+
+        // jQuery Migrate
+        wp_deregister_script('jquery-migrate');
+
         // WP Embed
         wp_deregister_script('wp-embed');
     });
