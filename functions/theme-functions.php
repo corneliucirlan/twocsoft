@@ -28,7 +28,15 @@
 					<?= $isSingular ? renderPostDetails() : '' ?>
 
 					<!-- Post content/excerpt -->
-					<?= is_singular() ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
+					<?= $isSingular ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
+
+					<!-- Tags -->
+					<?php if ($isSingular && get_the_tag_list()): ?>
+						<div class="post-tags">
+							<i class="fa fa-tag no-animation"></i>
+							<?= get_the_tag_list('<ul class="tags"><li class="tag">', '</li><li class="tag">', '</li></ul>') ?>
+						</div>
+					<?php endif; ?>
 				</div>
 
 			</div>
@@ -56,7 +64,7 @@
 			<div class="col-xs-8">
 				<?= $categoriesText ?>
 				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
-				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
+				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter no-animation"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
 			<div class="col-xs-4">
 				<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>

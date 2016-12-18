@@ -5,6 +5,9 @@
 	box-shadow: $card-shadow
 	overflow: hidden
 
+	.no-animation
+		animation: none !important
+
 	&.card-flat
 		box-shadow: none
 		margin-bottom: $spacer-y
@@ -13,8 +16,39 @@
 		border: 0
 
 	.card-subtitle
-		margin-bottom: 0.5rem
+		margin-bottom: $spacer-y
 
 	.wp-post-image
 		width: 100%
 		height: auto
+
+	.post-tags
+		margin-top: $spacer * 2
+		border-top: $border-width solid #ddd
+		padding: $spacer-x 0
+
+		.fa-tag
+			color: white
+			background-color: $brand-inverse
+			padding: $spacer / 2
+			margin: $spacer / 4
+			line-height: 1.5
+			font-size: $font-size-base
+			border: 1px solid $brand-inverse
+
+		.tags
+			display: inline-block
+			padding: 0
+
+			.tag a
+				padding: $spacer / 2
+				margin: $spacer / 4
+				line-height: 1.5
+				font-size: $font-size-base
+				border: 1px solid $brand-inverse
+				color: $brand-inverse
+				transition: all 150ms ease-in-out
+
+				&:hover
+					color: white
+					background: $brand-inverse

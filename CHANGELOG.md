@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 3.8 (2016.12.18)
+- Switched order on index page
+- Added tags to blog posts
+- Minor design changes
+
 ##### Version 3.7.3 (2016.12.15)
 - Added flexbox alternative for IE browsers
 - Removed emoji scripts

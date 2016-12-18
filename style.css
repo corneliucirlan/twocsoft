@@ -6,7 +6,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.7.3
+ *	Version: 3.8
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -3648,11 +3648,11 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 .bg-inverse {
-  background-color: #373a3c !important;
+  background-color: #444333 !important;
 }
 
 a.bg-inverse:focus, a.bg-inverse:hover {
-  background-color: #1f2021 !important;
+  background-color: #27261d !important;
 }
 
 .rounded {
@@ -8016,6 +8016,11 @@ header nav .container-fluid .navbar-toggler:focus {
   overflow: hidden;
 }
 
+.card .no-animation {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
 .card.card-flat {
   box-shadow: none;
   margin-bottom: 1rem;
@@ -8026,12 +8031,48 @@ header nav .container-fluid .navbar-toggler:focus {
 }
 
 .card .card-subtitle {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .card .wp-post-image {
   width: 100%;
   height: auto;
+}
+
+.card .post-tags {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.card .post-tags .fa-tag {
+  color: white;
+  background-color: #444333;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  border: 1px solid #444333;
+}
+
+.card .post-tags .tags {
+  display: inline-block;
+  padding: 0;
+}
+
+.card .post-tags .tags .tag a {
+  padding: 0.5rem;
+  margin: 0.25rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  border: 1px solid #444333;
+  color: #444333;
+  transition: all 150ms ease-in-out;
+}
+
+.card .post-tags .tags .tag a:hover {
+  color: white;
+  background: #444333;
 }
 
 .footer {
