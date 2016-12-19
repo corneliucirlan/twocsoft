@@ -9,33 +9,18 @@
 				text-align: center
 
 			.fa
-				transition: all 300ms ease-in-out
+				transition: $social-links-transition
 
-				&:hover
-					transform: scale(1.2)
+				@each $current in $contact-links
+					$i: index($contact-links, $current)
+					&.fa-#{$current}
+						color: nth($contact-colors, $i)
 
-				&.fa-envelope-o
-					color: $mail
+						&:hover
+							color: darken(nth($contact-colors, $i), 10%)
 
-				&.fa-facebook
-					color: $facebook
+		.card
+			margin-top: $spacer-y
 
-				&.fa-twitter
-					color: $twitter
-
-				&.fa-google-plus
-					color: $google-plus
-
-				&.fa-github
-					color: $github
-
-				&.fa-linkedin
-					color: $linkedin
-
-	.page-contact-form
 		.btn
 			width: 100%
-			box-shadow: none
-
-			&:hover
-				transform: scale(1)

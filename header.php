@@ -68,6 +68,7 @@
                     <!-- Navigation toggle -->
                     <button class="navbar-toggler hidden-lg-up" type="button"></button>
 
+                    <!-- Logo -->
                     <a href="<?php bloginfo('url') ?>"><img class="logo" src="<?= THEME_URI ?>img/logo.png" width="100" height="29" alt="<?php bloginfo() ?>" /></a>
 
                     <?php

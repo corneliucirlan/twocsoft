@@ -15,8 +15,13 @@
 	&.card-borderless
 		border: 0
 
-	.card-subtitle
+	.post-meta
 		margin-bottom: $spacer-y
+		text-align: left
+
+		.meta-data
+			color: lighten($brand-inverse, 60%)
+			margin-bottom: $spacer-y
 
 	.wp-post-image
 		width: 100%
@@ -32,7 +37,7 @@
 			background-color: $brand-inverse
 			padding: $spacer / 2
 			margin: $spacer / 4
-			line-height: 1.5
+			line-height: $line-height-base
 			font-size: $font-size-base
 			border: 1px solid $brand-inverse
 
@@ -43,7 +48,6 @@
 			.tag a
 				padding: $spacer / 2
 				margin: $spacer / 4
-				line-height: 1.5
 				font-size: $font-size-base
 				border: 1px solid $brand-inverse
 				color: $brand-inverse
@@ -52,3 +56,7 @@
 				&:hover
 					color: white
 					background: $brand-inverse
+
+@include media-breakpoint-up(md)
+	.card .post-meta .meta-data
+		margin-bottom: 0

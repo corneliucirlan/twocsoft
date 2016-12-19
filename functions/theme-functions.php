@@ -30,6 +30,9 @@
 					<!-- Post content/excerpt -->
 					<?= $isSingular ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
 
+					<!-- Share buttons -->
+					<?php if ($isSingular) displayShareButtons(array('id' => get_the_id(), 'bottom' => true)) ?>
+
 					<!-- Tags -->
 					<?php if ($isSingular && get_the_tag_list()): ?>
 						<div class="post-tags">
@@ -50,24 +53,16 @@
 	 */
 	function renderPostDetails()
 	{
-		global $post;
-		$categoriesText = '';
-
-		// Get a list of categories with anchors
-		$categories = get_the_category();
-		foreach ($categories as $category):
-			$categoriesText .= '<a class="card-link" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>&nbsp;|&nbsp;';
-		endforeach;
 		?>
 
-		<div class="card-subtitle row text-muted">
-			<div class="col-xs-8">
-				<?= $categoriesText ?>
-				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;|&nbsp;
+		<div class="post-meta row text-muted">
+			<div class="meta-data col-xs-12 col-md-8">
+				<?= the_category(', ') ?>&nbsp;/&nbsp;
+				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;/&nbsp;
 				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter no-animation"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
 			</div>
-			<div class="col-xs-4">
-				<?php displayShareButtons(array('id' => get_the_id(), 'alignRight' => true)) ?>
+			<div class="post-share col-xs-12 col-md-4">
+				<?php displayShareButtons(array('id' => get_the_id())) ?>
 			</div>
 		</div>
 		<?php
@@ -150,14 +145,16 @@
 
 			// Set url to bitly short url
 			$url = $bitly->data->url;
+
+		// Check if share on card footer
+		$cardFooter = array_key_exists('bottom', $settings) && $settings['bottom'] === true ? " footer-share" : "";
 		?>
 
-		<ul class="social-icons <?php echo array_key_exists('alignRight', $settings) && $settings['alignRight'] == true ? ' ' : '' ?>">
-			<li><span>Share:</span></li>
-            <li class="share-button"><a class="social-link" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="share-button"><a class="social-link" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
-            <li class="share-button"><a class="social-link" target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-            <li class="share-button"><a class="social-link" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+		<ul class="social-icons">
+			<li class="share-button"><a class="social-link<?= $cardFooter ?>" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="share-button"><a class="social-link<?= $cardFooter ?>" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="share-button"><a class="social-link<?= $cardFooter ?>" target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
+            <li class="share-button"><a class="social-link<?= $cardFooter ?>" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
         </ul>
 		<?php
 	}

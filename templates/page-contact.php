@@ -43,7 +43,7 @@
 ?>
 
 <main class="page-contact row">
-	<div class="page-contact-social col-md-6">
+	<div class="page-contact-social col-xs-12 col-md-8 offset-md-2">
         <h2>Let's work together</h2>
         <?php the_content() ?>
         <ul class="social-icons">
@@ -54,9 +54,8 @@
 			<li><a title="Linkedin" class="" target="_blank" href="<?= get_option('linkedin_link') ?>"><i class="fa fa-3x fa-linkedin"></i></a></li>
 			<li><a title="Github" class="" target="_blank" href="<?= get_option('github_link') ?>"><i class="fa fa-3x fa-github"></i></a></li>
 		</ul>
-	</div>
 
-	<div class="page-contact-form card-wrapper col-md-5 offset-md-1">
+        <!-- Contact form -->
         <div class="card card-block">
             <form id="contact-form" action="<?= basename(__FILE__) ?>" method="post">
                 <input type="hidden" name="action" id="action" value="submit-form" />

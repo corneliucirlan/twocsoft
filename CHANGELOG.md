@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 3.8.5 (2016.12.19)
+- Complete re-designed the social media buttons
+- Updated contact page to a single column layout
+- Added share buttons after blog post content
+
 ##### Version 3.8 (2016.12.18)
 - Switched order on index page
 - Added tags to blog posts

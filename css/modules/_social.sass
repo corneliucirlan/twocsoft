@@ -1,52 +1,52 @@
 .social-icons
 	display: flex
 	padding: $breadcrumb-padding-y $breadcrumb-padding-x
-	text-align: right
 	margin-bottom: 0
+	color: white
 
+	.share-button
+		width: 25%
+		text-align: center
+
+
+		.fa, a
+			color: inherit
+			width: 100%
+			height: 100%
+			line-height: $line-height-base
+			transition: $social-links-transition
+
+		@each $current in $social-links
+			$i: index($social-links, $current)
+			.fa-#{$current}
+				background-color: nth($social-colors, $i)
+
+				&:hover
+					background-color: darken(nth($social-colors, $i), 10%)
+
+	.footer-share
+		.fa, a
+			padding: $spacer-y/2 0
+
+.header-icons
 	li
-		flex: 1
+		min-width: 3rem
+		width: 100%
 		text-align: right
 
-	&.header-icons
+		.fa, a
+			width: 100%
+			height: 100%
+			line-height: $line-height-base
+			transition: $social-links-transition
 
-		li
-			min-width: 3rem
+			&:hover
+				@each $current in $social-links
+					$i: index($social-links, $current)
+					.fa-#{$current}
+						color: nth($social-colors, $i)
 
-.fa
-	transition: all 200ms ease-in-out
-
-	&:hover
-		animation: icon-pop 200ms ease-in-out forwards
-
-		&.fa-facebook
-			color: $facebook
-
-		&.fa-twitter
-			color: $twitter
-
-		&.fa-google-plus
-			color: $google-plus
-
-		&.fa-linkedin
-			color: $linkedin
-
-	&:hover.fa-3x
-		animation: icon-pop-3x 200ms ease-in-out forwards
-
-		&.fa-facebook
-			color: grayscale($facebook)
-
-		&.fa-twitter
-			color: grayscale($twitter)
-
-		&.fa-google-plus
-			color: grayscale($google-plus)
-
-		&.fa-linkedin
-			color: grayscale($linkedin)
-
-
+// Twitter social box
 .twitter-box
 	position: relative
 
