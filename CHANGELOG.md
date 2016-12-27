@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.8.6 (2016.12.28)
+- Added categories card on blog posts
+- Moved post tags to card footer
+
 ##### Version 3.8.5 (2016.12.19)
 - Complete re-designed the social media buttons
 - Updated contact page to a single column layout

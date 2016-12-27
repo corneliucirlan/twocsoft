@@ -13,7 +13,7 @@
 
 		?>
 		<div class="card-wrapper <?= $settings['cardWrapper'] ?>">
-			<div class="card <?= $isSingular ? 'card-flat' : '' ?>">
+			<div class="card">
 
 				<!-- Featured image - if necessary -->
 				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a><?php endif; ?>
@@ -32,15 +32,15 @@
 
 					<!-- Share buttons -->
 					<?php if ($isSingular) displayShareButtons(array('id' => get_the_id(), 'bottom' => true)) ?>
-
-					<!-- Tags -->
-					<?php if ($isSingular && get_the_tag_list()): ?>
-						<div class="post-tags">
-							<i class="fa fa-tag no-animation"></i>
-							<?= get_the_tag_list('<ul class="tags"><li class="tag">', '</li><li class="tag">', '</li></ul>') ?>
-						</div>
-					<?php endif; ?>
 				</div>
+
+				<!-- Tags -->
+				<?php if ($isSingular && get_the_tag_list()): ?>
+					<div class="card-footer post-tags">
+						<i class="fa fa-tag no-animation"></i>
+						<?= get_the_tag_list('<ul class="tags"><li class="tag">', '</li><li class="tag">', '</li></ul>') ?>
+					</div>
+				<?php endif; ?>
 
 			</div>
 		</div>

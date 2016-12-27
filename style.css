@@ -6,7 +6,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.8.5
+ *	Version: 3.8.6
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
@@ -8051,6 +8051,11 @@ header nav .container-fluid .navbar-toggler:focus {
   border: 0;
 }
 
+.card .card-header .card-title {
+  margin: 0;
+  text-transform: uppercase;
+}
+
 .card .post-meta {
   margin-bottom: 1rem;
   text-align: left;
@@ -8067,9 +8072,7 @@ header nav .container-fluid .navbar-toggler:focus {
 }
 
 .card .post-tags {
-  margin-top: 2rem;
-  border-top: 1px solid #ddd;
-  padding: 1rem 0;
+  padding: 1.25rem;
 }
 
 .card .post-tags .fa-tag {
