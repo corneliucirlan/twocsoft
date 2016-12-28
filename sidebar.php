@@ -31,7 +31,7 @@
 
 ?>
 
-<aside class="col-md-4">
+<aside class="col-md-4 no-gutter">
 
 	<!-- Twitter -->
 	<div class="card-wrapper col-xs-12">
