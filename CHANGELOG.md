@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.9.1 (2016.01.11)
+- Fixed fonts missing from font-awesome
+
 ##### Version 3.9.0 (2016.01.11)
 - Added Bower and Composer for managing dependencies
 - Updated design for social media on blog posts
