@@ -1,0 +1,61 @@
+$bg-color : #bdcbce
+$body-color : #eee
+
+$desktop-size: 992px
+
+body
+    background-color: $bg-color
+    color: $body-color
+    text-align: justify
+    font-family: Helvetica
+
+header
+    position: relative
+    overflow: hidden
+    height: auto
+    margin-bottom: 2rem
+
+    nav
+        position: relative
+        width: 100%
+
+        .container-fluid
+            max-width: $desktop-size
+            margin: 0 auto
+
+main
+    width: 100%
+    padding: 2rem
+    color: #444
+
+pre
+    position: relative
+    z-index: -1
+
+code, pre
+    background-color: lighten($bg-color, 5%) !important
+
+.tag
+    font-size: 100%
+
+section
+    padding: 1rem 0
+
+pre
+    padding: 1rem
+
+.options .row
+    //border: 1px solid #eee
+
+    &:nth-child(odd)
+        background-color: darken($bg-color, 5%)
+
+    div
+        padding: 1rem
+
+        &:first-child
+            text-align: center
+
+@media (min-width: $desktop-size)
+    main
+        max-width: $desktop-size

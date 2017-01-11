@@ -43,6 +43,7 @@
                         <h2 class="footer-subtitle center-align">On social media</h2>
                         <ul class="social-icons">
                             <li><a class="social-link" target="_blank" href="<?= get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?= get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
                             <li><a class="social-link" target="_blank" href="<?= get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
                             <li><a class="social-link" target="_blank" href="<?= get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
                             <li><a class="social-link" target="_blank" href="<?= get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>

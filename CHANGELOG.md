@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+##### Version 3.9.0 (2016.01.11)
+- Added Bower and Composer for managing dependencies
+- Updated design for social media on blog posts
+
 ##### Version 3.8.6 (2016.12.28)
 - Added categories card on blog posts
 - Moved post tags to card footer

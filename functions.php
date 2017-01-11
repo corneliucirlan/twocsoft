@@ -21,9 +21,6 @@
 	// Custom fields
 	include_once('functions/custom-fields.php');
 
-	// Breadcurmbs
-	include_once('libs/breadcrumbs.php');
-
 	// Remove
 	include_once('functions/remove.php');
 

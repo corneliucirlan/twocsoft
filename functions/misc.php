@@ -1,7 +1,7 @@
 <?php
 
-	// Load breadcurmbs
-	include_once(THEME_DIR.'libs/breadcrumbs.php');
+	// Autoload PHP dependencies via Composer
+	require_once(THEME_DIR . 'vendor/autoload.php');
 
 	// Load ACF fields
 	include_once(THEME_DIR.'functions/acf/about.php');
@@ -9,17 +9,14 @@
 	include_once(THEME_DIR.'functions/acf/services.php');
 	include_once(THEME_DIR.'functions/acf/services.php');
 
-	// Twitter Wrapper API
-	include_once(THEME_DIR."src/twitteroauth/autoload.php");
+	// Load breadcurmbs
+	include_once(THEME_DIR.'functions/classes/breadcrumbs.php');
 
 	// Load SKILL class
-	include_once(THEME_DIR.'libs/skill.class.php');
+	include_once(THEME_DIR.'functions/classes/skill.class.php');
 
 	// Load CERTS class
-	include_once(THEME_DIR.'libs/certs.class.php');
-
-	// Load Mobile Detect class
-	include_once(THEME_DIR.'libs/Mobile_Detect.php');
+	include_once(THEME_DIR.'functions/classes/certs.class.php');
 
 	// Process contact form submission
 	function processContactForm()

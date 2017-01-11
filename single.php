@@ -9,7 +9,7 @@
 <?php
 
 	$cardSettings = array(
-		'cardWrapper'			=> '',
+		'cardWrapper'			=> 'col-xs-12',
 	);
 
 ?>
@@ -18,7 +18,7 @@
 <?php get_header(); ?>
 
 <div class="page-single row">
-	<main class="col-md-8">
+	<main class="col-xs-12 col-md-8 no-gutter">
 		<?php renderCard($cardSettings) ?>
 	</main>
 

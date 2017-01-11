@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jQuery mdStrip</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header>
+            <nav class="navbar navbar-fixed-top navbar-full navbar-light">
+
+                <div class="container-fluid">
+
+                    <!-- Navigation toggle -->
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">&#9776;</button>
+
+                    <div class="nav navbar-nav">
+                        <a class="nav-item nav-link active" href="#about">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#instalation">Instalation</a>
+                        <a class="nav-item nav-link" href="#options">Options</a>
+                        <a class="nav-item nav-link" href="#development">Development</a>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="container-fluid">
+
+                <!-- Description -->
+                <section class="row" id="about">
+                    <div class="col-xs-12">
+                        <h2>About </h2>
+                        jQuery mdStrap plugin creates a side menu for smartphones or other handheld devices. It's built based on Twitter Bootstrap's framework version 4 (currently alpha 2).
+                    </div>
+                </section>
+
+                <!-- Installation -->
+                <section class="row" id="instalation">
+                    <div class="col-xs-12">
+                        <h2>Plugin installation</h2>
+                        <p>First, you'll have to include the necessary CSS stylesheets into the <code class="language-markup">&lt;head&gt;</code> section.</p>
+                        <pre class="language-markup">
+                            <code class="language-markup">
+  &lt;!-- Bootstrap CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" /&gt;
+
+  &lt;!-- mdStrap Menu --&gt;
+&lt;link rel="stylesheet" href="css/mdstrap.css" /&gt;
+                            </code>
+                        </pre>
+
+                        <p>Second, you'll have to add the JS just before the closing <code class="language-markup">&lt;/body&gt;</code> tag. Being a jQuery plugin, don't forget to add the jQuery library before.</p>
+                        <pre class="language-markup">
+                            <code class="language-markup">
+  &lt;!-- jQuery library --&gt;
+&lt;script src="//code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+
+  &lt;!-- jQuery mdStrap --&gt;
+&lt;script src="jquery-mdstrap.js"&gt;&lt;/script&gt;
+                            </code>
+                        </pre>
+
+                        <p>And that's it.</p>
+
+                        <h3>Pre-Processors</h3>
+                        <p>If you are working with CSS pre-processors, you can <code class="language-sass">@import</code> the style into your project for better organization.</p>
+                        <pre><code class="language-sass">@import '/path/to/jquery-mdstrap'</code></pre>
+                        As of this moment, only the SASS version is available.
+                    </div>
+                </section>
+
+                <!-- Usage -->
+                <section class="row" id="usage">
+                    <div class="col-xs-12">
+                        <h2>Usage</h2>
+                        <p>To enable the plugin, you'll just need to call the function on the element containing the navigation.</p>
+                        <pre>
+                            <code class="language-javascript">
+jQuery(document).ready(function($) {
+
+    // Call with default params
+    $('.navbar-nav').mdStrap();
+
+    // Call with custom params
+    $('.navba-rnav').mdStrap({
+        'key1'    =&gt; 'value1',
+        'key2'    =&gt; 'value2',
+    });
+
+});
+                            </code>
+                        </pre>
+                    </div>
+                </section>
+
+                <!-- Options -->
+                <section class="row" id="options">
+                    <div class="col-xs-12">
+                        <h2>Options</h2>
+
+                        <div class="options">
+
+                            <!-- Fixed top -->
+                            <div class="row">
+                                <div class="col-xs-3"><samp>fixedTop</samp></div>
+                                <div class="col-xs-3">Bool (<samp>true</samp> by default)</div>
+                                <div class="col-xs-6">Setting it to true allowes you to customise the appearence of the menu when scrolling. Usually set only when <samp>.navbar-fixed-top</samp> class is present.</div>
+                            </div>
+
+                            <!-- Menu trigger -->
+                            <div class="row">
+                                <div class="col-xs-3"><samp>menuTrigger</samp></div>
+                                <div class="col-xs-3">CSS class (<samp>navbar-toggler</samp> by default)</div>
+                                <div class="col-xs-6">The class for the button that will trigger the menu when on mobile devices.</div>
+                            </div>
+
+                            <!-- Scoll value -->
+                            <div class="row">
+                                <div class="col-xs-3"><samp>scrollValue</samp></div>
+                                <div class="col-xs-3">integer (<sam>10</sam> by default)</div>
+                                <div class="col-xs-6">If <samp>fixedTop</samp> is set to <samp>true</samp>, this is required to trigger the necessary class for stylize the navbar.</div>
+                            </div>
+
+                            <!-- Mobile menu break -->
+                            <div class="row">
+                                <div class="col-xs-3"><samp>mobileMenuBreak</samp></div>
+                                <div class="col-xs-3">integer (<samp>992</samp> by default)</div>
+                                <div class="col-xs-6">In <samp>px</samp>, define the width breakpoint on which the mobile version of the menu kicks in.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Development -->
+                <section class="row" id="development">
+                    <h2>Development</h2>
+                    <p>This plugin is in continuous development, so expect changes to occur. To get the latest changes, visit this page and the repo itself at <a href="https://www.github.com/corneliucirlan/mdstrap" target="blank">https://www.github.com/corneliucirlan/mdstrap</a></p>
+                </section>
+        </main>
+
+        <!-- JavaScript -->
+        <script src="js/functions-dist.js" defer></script>
+    </body>
+</html>

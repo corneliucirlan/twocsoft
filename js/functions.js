@@ -1,14 +1,17 @@
 // jQuery
-//@prepros-prepend "../libs/jquery/jquery.min.js"
+//@prepros-prepend "../bower_components/jquery/jquery.js"
 
 // jQuery Mobile
-//@prepros-prepend "../libs/jquery/jquery.mobile.min.js"
+//@prepros-prepend "../bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.js"
 
 // Mobile menu
-//@prepros-prepend "../libs/mdstrap/jquery-mdstrap.js"
+//@prepros-prepend "../bower_components/jquery-mdstrap/js/jquery-mdstrap.js"
+
+// Images Loaded dependency
+//@prepros-prepend "../bower_components/ev-emitter/ev-emitter.js"
 
 // Images Loaded
-//@prepros-prepend "../libs/images-loaded/imagesloaded.pkgd.min.js"
+//@prepros-prepend "../bower_components/imagesloaded/imagesloaded.js"
 
 // Masonry
 //@prepros-prepend "../../../../wp-includes/js/masonry.min.js"
@@ -34,7 +37,7 @@ jQuery(document).ready(function($) {
 	shareButtonPopup();
 
 	// PrismJS
-	$('code').addClass('language-php');
+	$('pre').addClass('language-php');
 
 	// Contact form processing
 	processContactForm();

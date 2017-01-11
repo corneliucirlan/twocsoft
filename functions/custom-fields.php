@@ -15,6 +15,10 @@
         register_setting('general', 'facebook_link');
         add_settings_field('facebook_link', __('<label for="facebook_link">Facebook URL</label>'), 'displayFacebookLink', 'general', 'social_media_links');
 
+        // Instagram URL
+        register_setting('general', 'instagram_link');
+        add_settings_field('instagram_link', __('<label for="instagram_link">Instagram URL</label>'), 'displayInstagramLink', 'general', 'social_media_links');
+
         // Twitter URL
         register_setting('general', 'twitter_link');
         add_settings_field('twitter_link', __('<label for="twitter_link">Twitter URL</label>'), 'displayTwitterLink', 'general', 'social_media_links');
@@ -48,6 +52,16 @@
         register_setting('general', 'github_client_secret');
         add_settings_field('github_client_secret', __('<label for="github_client_secret">Github Client Secret</label>'), 'displayGithubClientSecret', 'general', 'api_keys');
 
+        // Facebook API
+        register_setting('general', 'facebook_access_token');
+        add_settings_field('facebook_access_token', __('<label for="facebook_access_token">Facebook Access Token</label>'), 'displayFacebookAccessToken', 'general', 'api_keys');
+
+        // Instagram API
+        register_setting('general', 'instagram_access_token');
+        add_settings_field('instagram_access_token', __('<label for="instagram_access_token">Instagram Access Token</label>'), 'displayInstagramAccessToken', 'general', 'api_keys');
+        register_setting('general', 'instagram_user_id');
+        add_settings_field('instagram_user_id', __('<label for="instagram_user_id">Instagram User ID</label>'), 'displayInstagramUserId', 'general', 'api_keys');
+
         // Twitter API
         register_setting('general', 'twitter_oauth_access_token');
         add_settings_field('twitter_oauth_access_token', __('<label for="twitter_oauth_access_token">Twitter Access Token</label>'), 'displayTwitterAccessToken', 'general', 'api_keys');
@@ -70,6 +84,14 @@
     {
         ?>
         <input class="regular-text" type="text" name="facebook_link" id="facebook_link" value="<?= get_option('facebook_link') ? get_option('facebook_link') : '' ?>" />
+        <?php
+    }
+
+    // Instagram URL
+    function displayInstagramLink()
+    {
+        ?>
+        <input class="regular-text" type="text" name="instagram_link" id="instagram_link" value="<?= get_option('instagram_link') ? get_option('instagram_link') : '' ?>" />
         <?php
     }
 
@@ -126,6 +148,30 @@
     {
         ?>
         <input class="regular-text" type="password" name="github_client_secret" id="github_client_secret" value="<?= get_option('github_client_secret') ? get_option('github_client_secret') : '' ?>" />
+        <?php
+    }
+
+    // Facebook Access Token
+    function displayFacebookAccessToken()
+    {
+        ?>
+        <input class="regular-text" type="password" name="facebook_access_token" id="facebook_access_token" value="<?= get_option('facebook_access_token') ? get_option('facebook_access_token') : '' ?>" />
+        <?php
+    }
+
+    // Instagram Access Token
+    function displayInstagramAccessToken()
+    {
+        ?>
+        <input class="regular-text" type="password" name="instagram_access_token" id="instagram_access_token" value="<?= get_option('instagram_access_token') ? get_option('instagram_access_token') : '' ?>" />
+        <?php
+    }
+
+    // Instagram Access Token
+    function displayInstagramUserId()
+    {
+        ?>
+        <input class="regular-text" type="text" name="instagram_user_id" id="instagram_user_id" value="<?= get_option('instagram_user_id') ? get_option('instagram_user_id') : '' ?>" />
         <?php
     }
 

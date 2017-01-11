@@ -1,0 +1,33 @@
+{
+  "name": "cornelius",
+  "homepage": "https://github.com/corneliucirlan/cornelius",
+  "authors": [
+    "Corneliu Cîrlan <corneliu@corneliucirlan.com>"
+  ],
+  "description": "Custom Wordpress Theme developed for www.corneliucirlan.com",
+  "main": "",
+  "keywords": [
+    "responsive",
+    "mobile-first",
+    "bootstrap",
+    "font-awesome",
+    "wordpress",
+    "theme",
+    "light",
+    "theme"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "v4.0.0-alpha.5",
+    "components-font-awesome": "^4.7.0",
+    "imagesloaded": "images-loaded#^4.1.1",
+    "prism": "^1.6.0"
+  }
+}

@@ -49,6 +49,7 @@
         <ul class="social-icons">
             <li><a title="Email" class="" target="_blank" href="mailto:<?= bloginfo('admin_email') ?>"><i class="fa fa-3x fa-envelope-o"></i></a></li>
 			<li><a title="Facebook" class="" target="_blank" href="<?= get_option('facebook_link') ?>"><i class="fa fa-3x fa-facebook"></i></a></li>
+			<li><a title="Instagram" class="" target="_blank" href="<?= get_option('instagram_link') ?>"><i class="fa fa-3x fa-instagram"></i></a></li>
 			<li><a title="Twitter" class="" target="_blank" href="<?= get_option('twitter_link') ?>"><i class="fa fa-3x fa-twitter"></i></a></li>
 			<li><a title="Google+" class="" target="_blank" href="<?= get_option('google_plus_link') ?>"><i class="fa fa-3x fa-google-plus"></i></a></li>
 			<li><a title="Linkedin" class="" target="_blank" href="<?= get_option('linkedin_link') ?>"><i class="fa fa-3x fa-linkedin"></i></a></li>

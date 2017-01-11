@@ -1,7 +1,7 @@
 <?php
 
 	// Include CC_CPT Class
-	include_once(THEME_DIR.'libs/cc-cpt.php');
+	include_once(THEME_DIR.'functions/classes/cc-cpt.php');
 
 	// Register Portfolio post type
 	$portfolio = new CC_CPT(array(

@@ -8,9 +8,6 @@
         // JS functions
         wp_register_script('js-functions', THEME_URI.'js/functions-dist.js', '', '', true);
 
-        // PrismJS
-        wp_register_style('prism-css', THEME_URI.'libs/prismjs/prism.css', '', '', 'all');
-
         // jQuery
         wp_deregister_script('jquery');
 
