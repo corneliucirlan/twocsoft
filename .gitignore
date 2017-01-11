@@ -38,3 +38,9 @@ bh_unicode_properties.cache
 # Prepros files
 *.config
 *.cfg
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
