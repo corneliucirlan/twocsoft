@@ -1,2 +1,2 @@
 # Theme for CorneliuCirlan.com
-Custom Responsive Wordpress Theme for [CorneliuCirlan.com](https://www.corneliucirlan.com)
+Custom Responsive Wordpress Theme for [www.corneliucirlan.com](https://www.corneliucirlan.com)
