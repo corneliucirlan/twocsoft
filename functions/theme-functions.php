@@ -28,7 +28,7 @@
 					<?= $isSingular ? renderPostDetails() : '' ?>
 
 					<!-- Post content/excerpt -->
-					<?= $isSingular ? (is_array($content) && array_key_exists('content', $content) ? $content['content'] : the_content()) : the_excerpt() ?>
+					<?= is_array($content) ? $content['content'] : ($isSingular ? the_content() : the_excerpt()) ?>
 
 					<!-- Share buttons -->
 					<?php if ($isSingular) displayShareButtons(array('id' => get_the_id(), 'bottom' => true)) ?>
