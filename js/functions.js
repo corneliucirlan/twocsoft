@@ -43,10 +43,6 @@ jQuery(document).ready(function($) {
 	processContactForm();
 
 
-
-
-
-
 	// Parallax
 	function parallax()
 	{
