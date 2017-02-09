@@ -1,8 +1,5 @@
 // jQuery
-//@prepros-prepend "../bower_components/jquery/jquery.js"
-
-// jQuery Mobile
-//@prepros-prepend "../bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.5.js"
+//@prepros-prepend "../bower_components/jquery/dist/jquery.js"
 
 // Mobile menu
 //@prepros-prepend "../bower_components/jquery-mdstrap/js/jquery-mdstrap.js"
@@ -31,7 +28,9 @@ jQuery(document).ready(function($) {
 	inputFields();
 
 	// Mobile menu
-	$('.navbar-nav').mdStrap();
+	$('.navbar-nav').mdStrap({
+		'fixedTop': true
+	});
 
 	// Share buttons popup
 	shareButtonPopup();
@@ -46,16 +45,25 @@ jQuery(document).ready(function($) {
 	// Parallax
 	function parallax()
 	{
-		var image = $('.header-image').height();
+		var $bgImage = $('.header-image'),
+			bgImageHeight = $bgImage.height(),
+			bgImageXPosition = $bgImage.css('background-position').split(' ')[0];
 
-		$(window).on('scroll', function(){
+		$(window).on('scroll', function() {
 
 			var wScroll = $(window).scrollTop();
-			if (wScroll <= image)
+			if (wScroll <= bgImageHeight)
+			{
+				// Parallax background image
 				$('.header-image').css({
-					'background-position': '0px ' + wScroll / 3 + 'px',
+					'background-position': bgImageXPosition + ' ' + wScroll / 2 + 'px',
 				});
 
+				// Background image overlay
+				$('.header-overlay').css({
+					'background-color': 'rgba(255, 255, 255, ' + (wScroll / bgImageHeight) + ')',
+				});
+			}
 		});
 	}
 

@@ -8,7 +8,25 @@
 <?php
 
 	// Get header image
-	$headerImage = get_header_image();
+    if (is_singular(POST_TYPE_PORTFOLIO)):
+            $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id()).");
+                background-position: center top;";
+        else:
+            $headerStyles = "background: url(".get_header_image().");
+                background-position: top top";
+    endif;
+
+    // Set header image style
+    $headerStyles .= "background-repeat: no-repeat;
+        color: white;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 500px;
+        min-height: 31.25rem;
+        padding: 0;
+        margin: 0;";
 
     if (!is_singular('post')):
 
@@ -99,8 +117,9 @@
             </nav>
 
             <!-- Header image -->
-            <div class="header-image row" style="position: relative; background: url(<?php echo $headerImage ?>); background-position: top center; background-repeat: no-repeat; color: white; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; max-height: 100%; max-width: 100%; min-height: 500px; min-height: 31.25rem; padding: 0px; margin: -64px 0 0;"></div>
+            <div class="header-image row" style="<?= $headerStyles ?>"><div class="header-overlay"></div></div>
 
+            <!-- Breadcrumbs -->
             <div class="breadcrumbs-container container-fluid">
                 <div class="row">
                     <div class="<?= $isSingular ? 'col-xs-12' : 'col-xs-12 col-md-8' ?>">
