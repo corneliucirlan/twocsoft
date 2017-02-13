@@ -32,6 +32,6 @@
 
 
 	// Hide ACF admin page
-	define('ACF_LITE', true);
+	//define('ACF_LITE', true);
 
 ?>

@@ -16,7 +16,7 @@
 			<div class="card">
 
 				<!-- Featured image - if necessary -->
-				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a><?php endif; ?>
+				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail('portfolio-cover') ?></a><?php endif; ?>
 				<div class="card-block">
 
 					<!-- Post title -->

@@ -24,14 +24,14 @@
                 </div>
             </div>
         <?php endif; ?>
-        
+
         <div class="card-wrapper card latest-project">
             <?php query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => 1)); ?>
             <?php the_post() ?>
             <div class="card-header">
                 Latest project
             </div>
-            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a>
+            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('portfolio-cover') ?></a>
             <div class="card-block">
                 <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                 <?php the_excerpt() ?>

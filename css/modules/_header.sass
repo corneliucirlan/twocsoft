@@ -1,13 +1,13 @@
 header
 	nav
 		.container-fluid
-			display: flex
-			justify-content: space-between
-			align-items: center
 			text-transform: uppercase
 
-			.navbar-nav .nav-item a
-				font-size: $font-size-base
+			.navbar-nav
+				background-color: white
+
+				.nav-item a
+					font-size: $font-size-base
 
 			.header-icons
 				flex: 2
@@ -19,8 +19,31 @@ header
 				margin-right: 2rem
 
 			.navbar-toggler
-				border: 0
-				margin: 0
+				margin: $spacer
 
-				&:focus
-					outline: none
+@include media-breakpoint-up(sm)
+	header nav .container-fluid
+		width: 100% !important
+
+@include media-breakpoint-up(md)
+	header nav .container-fluid
+		width: 100% !important
+
+@include media-breakpoint-up(lg)
+	header nav.navbar .container-fluid
+		display: flex
+
+		.navbar-nav
+			background: transparent
+
+.mds-fixed-top
+	background-color: white
+
+.header-overlay
+	position: absolute
+	width: 100%
+	height: 500px
+	height: 31.25rem
+	top: 0
+	left: 0
+	background-color: transparent

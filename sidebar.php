@@ -48,22 +48,22 @@
 			<div class="card-header">
 				<h3 class="card-title">Follow me on social media</h3>
 			</div>
-			<div class="card-block text-xs-center">
-				<div class="col-xs-4">
+			<div class="card-block text-center row">
+				<div class="col">
 					<a class="follow-me" href="<?= get_option('facebook_link') ?>" target="_blank">
 						<i class="fa fa-facebook fa-2x"></i>
 						<?= $facebookLikes ?> followers
 					</a>
 				</div>
 
-				<div class="col-xs-4">
+				<div class="col">
 					<a class="follow-me" href="<?= get_option('instagram_link') ?>" target="_blank">
 						<div><i class="fa fa-instagram fa-2x"></i></div>
 						<?= $instagramFollowers ?> followers
 					</a>
 				</div>
 
-				<div class="col-xs-4">
+				<div class="col">
 					<a class="follow-me" href="<?= get_option('twitter_link') ?>" target="_blank">
 						<div><i class="fa fa-twitter fa-2x"></i></div>
 						<?= $wtitterFollowers ?> followers
