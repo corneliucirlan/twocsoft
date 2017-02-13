@@ -10,15 +10,17 @@
 
 <?php
 
-	switch (get_field('portfolio-type')):
+	get_template_part('templates/single-website');
 
-		// website
-		case 'portfolio-website': get_template_part('templates/single-website'); break;
+	//switch (get_field('portfolio-type')):
 
-		// plugin
-		case 'portfolio-plugin': get_template_part('templates/single-plugin'); break;
+	//	// website
+	//	case 'portfolio-website': get_template_part('templates/single-website'); break;
 
-	endswitch;
+	//	// plugin
+	//	case 'portfolio-plugin': get_template_part('templates/single-plugin'); break;
+
+	//endswitch;
 
 ?>
 

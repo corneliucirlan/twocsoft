@@ -1,8 +1,8 @@
 // jQuery
-//@prepros-prepend "../bower_components/jquery/dist/jquery.js"
+//@prepros-prepend "../bower_components/jquery/jquery.js"
 
 // Mobile menu
-//@prepros-prepend "../bower_components/jquery-mdstrap/js/jquery-mdstrap.js"
+//@prepros-prepend "../bower_components/jquery-mdstrap/dist/js/jquery-mdstrap.js"
 
 // Images Loaded dependency
 //@prepros-prepend "../bower_components/ev-emitter/ev-emitter.js"
@@ -28,9 +28,7 @@ jQuery(document).ready(function($) {
 	inputFields();
 
 	// Mobile menu
-	$('.navbar-nav').mdStrap({
-		'fixedTop': true
-	});
+	$('.navbar-nav-left').mdStrap();
 
 	// Share buttons popup
 	shareButtonPopup();

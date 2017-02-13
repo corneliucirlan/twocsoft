@@ -4,10 +4,9 @@
 	require_once(THEME_DIR . 'vendor/autoload.php');
 
 	// Load ACF fields
-	include_once(THEME_DIR.'functions/acf/about.php');
-	include_once(THEME_DIR.'functions/acf/portfolio.php');
-	include_once(THEME_DIR.'functions/acf/services.php');
-	include_once(THEME_DIR.'functions/acf/services.php');
+	//include_once(THEME_DIR.'functions/acf/about.php');
+	//include_once(THEME_DIR.'functions/acf/portfolio.php');
+	//include_once(THEME_DIR.'functions/acf/services.php');
 
 	// Load breadcurmbs
 	include_once(THEME_DIR.'functions/classes/breadcrumbs.php');
@@ -118,5 +117,8 @@
 		return 20;
 	}
 	add_filter('excerpt_length', 'secExcerptLength', 999);
+
+	// Custom image size
+	add_image_size('portfolio-cover', 800, 500, true);
 
 ?>

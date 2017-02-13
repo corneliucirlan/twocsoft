@@ -25,9 +25,10 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "v4.0.0-alpha.5",
+    "bootstrap": "v4.0.0-alpha.6",
     "components-font-awesome": "^4.7.0",
     "imagesloaded": "images-loaded#^4.1.1",
-    "prism": "^1.6.0"
+    "prism": "^1.6.0",
+    "jquery-mdstrap": "v2.0.0",
   }
 }

@@ -5,14 +5,19 @@
 
 ?>
 
-<main class="single-website card card-flat card-block">
+
+<main class="single-website card card-block">
 	<h1 class="card-title"><?php the_title() ?></h1>
 
-	<div class="col-md-6">
-		<?php the_post_thumbnail(getPhotoSize()); ?>
-	</div>
-	<div class="col-md-6">
-		<?php the_content() ?>
-		<h2><a href="<?php the_field('website-url') ?>" target="_blank">Live Version</a></h2>
+	<div class="row">
+		<div class="single-website-previews col-md">
+			<?php for ($x = 1; $x <= 5; $x++): ?>
+				<?= ($image = wp_get_attachment_image(get_field('website-image-'.$x), 'medium')) ? $image : ""; ?>
+			<?php endfor; ?>
+		</div>
+		<div class="single-website-description col-md">
+			<?php the_content() ?>
+			<a class="btn btn-primary-outline" href="<?= the_field('website-uri') ?>" target="_blank">Visit Live Version</a>
+		</div>
 	</div>
 </main>

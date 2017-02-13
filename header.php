@@ -18,13 +18,16 @@
 
     // Set header image style
     $headerStyles .= "background-repeat: no-repeat;
+        position: relative;
         color: white;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         min-height: 500px;
-        min-height: 31.25rem;
+        height: 500px;
+        height: 31.25rem;
+        max-height: 500px
         padding: 0;
         margin: 0;";
 
@@ -79,12 +82,14 @@
 
 		<!-- Header -->
         <header>
-            <nav class="navbar navbar-fixed-top navbar-full navbar-light">
+            <nav class="navbar fixed-top navbar-full navbar-light">
 
                 <div class="container-fluid">
 
                     <!-- Navigation toggle -->
-                    <button class="navbar-toggler hidden-lg-up" type="button"></button>
+                    <button class="navbar-toggler navbar-toggler-left hidden-lg-up" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
                     <!-- Logo -->
                     <a href="<?php bloginfo('url') ?>"><img class="logo" src="<?= THEME_URI ?>img/logo.png" width="100" height="29" alt="<?php bloginfo() ?>" /></a>
@@ -96,7 +101,7 @@
                                 'theme_location' => 'header-menu',
                                 'menu' => 'header-menu',
                                 'container' => 'ul',
-                                'menu_class' => 'nav navbar-nav',
+                                'menu_class' => 'navbar-nav navbar-nav-left',
                                 'echo' => true,
                                 'fallback_cb' => 'wp_page_menu',
                                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
