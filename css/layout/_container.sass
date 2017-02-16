@@ -1,0 +1,48 @@
+body
+	background-color: $body-bg
+	text-align: justify
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.main-container
+	flex: 1
+
+.container-fluid
+	width: 100%
+	margin: 0 auto
+
+img
+	transition: all 300ms ease-in-out
+
+	&.hover
+		filter: opacity(0.9)
+
+ul
+	list-style: none
+
+	li
+		display: inline-block
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.container-fluid,
+		width: 90% !important
+
+// medium screens
+@include media-breakpoint-up(md)
+	.container-fluid
+		width: 90% !important
+
+// large screens
+@include media-breakpoint-up(lg)
+	.container-fluid
+		max-width: $content-max-width
+
+// IE 8 - 10
+@media screen\0
+	@import "components/ie-no-flexbox"
+
+// IE 6 - 7
+@media screen\9
+	@import "components/ie-no-flexbox"

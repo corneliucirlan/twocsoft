@@ -33,7 +33,7 @@
 		'access_token'	=> get_option('facebook_access_token'),
 		'fields'		=> "fan_count",
 	);
-	$url = "https://graph.facebook.com/v2.8/226215330901146/?" . http_build_query($query);
+	$url = "https://graph.facebook.com/v2.8/226215330901146/?".http_build_query($query);
 
 	$facebook = getCurlData($url);
 	$facebookLikes = $facebook->fan_count;
@@ -42,49 +42,52 @@
 
 <aside class="col-md-4 no-gutter">
 
-	<!-- Social media -->
-	<div class="card-wrapper col-xs-12">
-		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Follow me on social media</h3>
-			</div>
-			<div class="card-block text-center row">
-				<div class="col">
-					<a class="follow-me" href="<?= get_option('facebook_link') ?>" target="_blank">
-						<i class="fa fa-facebook fa-2x"></i>
-						<?= $facebookLikes ?> followers
-					</a>
-				</div>
+	<div class="sticky-top">
 
-				<div class="col">
-					<a class="follow-me" href="<?= get_option('instagram_link') ?>" target="_blank">
-						<div><i class="fa fa-instagram fa-2x"></i></div>
-						<?= $instagramFollowers ?> followers
-					</a>
+		<!-- Social media -->
+		<div class="card-wrapper col-xs-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Follow me on social media</h3>
 				</div>
+				<div class="card-block text-center row">
+					<div class="col">
+						<a class="follow-me" href="<?= get_option('facebook_link') ?>" target="_blank">
+							<i class="fa fa-facebook fa-2x"></i>
+							<?= $facebookLikes ?> followers
+						</a>
+					</div>
 
-				<div class="col">
-					<a class="follow-me" href="<?= get_option('twitter_link') ?>" target="_blank">
-						<div><i class="fa fa-twitter fa-2x"></i></div>
-						<?= $wtitterFollowers ?> followers
-					</a>
+					<div class="col">
+						<a class="follow-me" href="<?= get_option('instagram_link') ?>" target="_blank">
+							<div><i class="fa fa-instagram fa-2x"></i></div>
+							<?= $instagramFollowers ?> followers
+						</a>
+					</div>
+
+					<div class="col">
+						<a class="follow-me" href="<?= get_option('twitter_link') ?>" target="_blank">
+							<div><i class="fa fa-twitter fa-2x"></i></div>
+							<?= $wtitterFollowers ?> followers
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Categories -->
-	<div class="card-wrapper col-xs-12">
-		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Categories</h3>
+		<!-- Categories -->
+		<div class="card-wrapper col-xs-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Categories</h3>
+				</div>
+				<ul class="list-group list-group-flush">
+					<?php $categories = get_categories(); ?>
+					<?php foreach ($categories as $category): ?>
+						<li class="list-group-item"><a href="<?= get_category_link($category->cat_ID) ?>"><?= $category->cat_name ?></a></li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
-			<ul class="list-group list-group-flush">
-				<?php $categories = get_categories(); ?>
-				<?php foreach ($categories as $category): ?>
-					<li class="list-group-item"><a href="<?= get_category_link($category->cat_ID) ?>"><?= $category->cat_name ?></a></li>
-				<?php endforeach; ?>
-			</ul>
 		</div>
 	</div>
 

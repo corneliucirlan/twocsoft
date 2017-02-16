@@ -5,7 +5,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.9.1
+ *	Version: 3.10
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 
@@ -15,30 +15,30 @@
 // Font Awesome
 @import 'font-awesome'
 
-// General
-@import 'base'
-
 // Mobile menu
 @import '../bower_components/jquery-mdstrap/dist/css/jquery-mdstrap'
 
 // Prism JS
 @import '../bower_components/prism/themes/prism'
 
+// Layout
+@import "layout/container"
+@import "layout/grid"
+@import "layout/header"
+@import "layout/footer"
+@import "layout/card"
+
 // Modules
-@import 'modules/keyframes'
-@import 'modules/grid'
-@import 'modules/fonts'
-@import 'modules/typography'
-@import 'modules/header'
-@import "modules/breadcrumbs"
-@import 'modules/social'
-@import 'modules/buttons'
-@import 'modules/card'
-@import 'modules/footer'
-@import 'modules/inputs'
+@import "components/keyframes"
+@import "components/fonts"
+@import "components/typography"
+@import "components/breadcrumbs"
+@import "components/social"
+@import "components/buttons"
+@import "components/inputs"
 
 // Pages
-@import 'pages/page-about'
-@import 'pages/page-contact'
-@import 'pages/single-website'
-@import 'pages/page-single'
+@import "pages/page-about"
+@import "pages/page-contact"
+@import "pages/page-single"
+@import "pages/portfolio-website"

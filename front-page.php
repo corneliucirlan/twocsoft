@@ -17,7 +17,7 @@
                 <div class="card-header">
                     Latest blog entry
                 </div>
-                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize()) ?></a>
+                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail') ?></a>
                 <div class="card-block">
                     <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                     <?php the_excerpt() ?>
@@ -31,7 +31,7 @@
             <div class="card-header">
                 Latest project
             </div>
-            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('portfolio-cover') ?></a>
+            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail') ?></a>
             <div class="card-block">
                 <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                 <?php the_excerpt() ?>

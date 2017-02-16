@@ -16,7 +16,7 @@
 			<div class="card">
 
 				<!-- Featured image - if necessary -->
-				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail('portfolio-cover') ?></a><?php endif; ?>
+				<?php if (!$isSingular): ?><a href="<?php the_permalink() ?>"><?php the_post_thumbnail(getPhotoSize(true)) ?></a><?php endif; ?>
 				<div class="card-block">
 
 					<!-- Post title -->
@@ -78,11 +78,9 @@
 			<div class="card card-flat card-borderless">
 				<h3><?php echo $skill->getSkillName() ?></h3>
 				<div class="item-stars text-xs-center">
-					<?php
-						for ($x = 1; $x <= 5; $x++):
-							echo $x <= $skill->getSkillLevel() ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>';
-						endfor;
-					?>
+					<?php for ($x = 1; $x <= 5; $x++): ?>
+						<?= $x <= $skill->getSkillLevel() ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>'; ?>
+					<?php endfor; ?>
 				</div>
 			</div>
 		</div>
@@ -96,15 +94,17 @@
 	 *
 	 * @return string WP media size
 	 */
-	function getPhotoSize()
+	function getPhotoSize($featuredImage = false)
 	{
+		// Is featured image
+		if ($featuredImage) return "thumbnail";
+
+		// Create detect object
 		$detect = new Mobile_Detect();
 
-		$size = 'medium';
-		if ($detect->isMobile() && !$detect->isTablet()) $size = 'thumbnail';
-			elseif ($detect->isTablet()) $size = 'medium';
-
-		return $size;
+		// If mobile device
+		if ($detect->isMobile()) return "thumbnail";
+			else return "medium";
 	}
 
 

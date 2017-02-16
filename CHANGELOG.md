@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+##### Version 3.10 (2016.02.16)
+- Updated Bootstrap to latest version (v4.0.0 alpha 6)
+- Updated jQuery mdStrap to latest version (2.0.0)
+- Updated portfolio posts template
+- Updated header based on post
+- Restructured all SASS files
+- Baked ACF directly into the theme
+
 ##### Version 3.9.1 (2016.01.11)
 - Fixed fonts missing from font-awesome
 

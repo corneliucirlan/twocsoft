@@ -27,4 +27,7 @@
 	// Backend functions
 	include_once('functions/backend.php');
 
+	// AJAX
+	include_once('functions/ajax.php');
+
 ?>

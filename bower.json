@@ -4,18 +4,8 @@
   "authors": [
     "Corneliu Cîrlan <corneliu@corneliucirlan.com>"
   ],
-  "description": "Custom Wordpress Theme developed for www.corneliucirlan.com",
+  "description": "Custom WordPress theme for www.corneliucirlan.com",
   "main": "",
-  "keywords": [
-    "responsive",
-    "mobile-first",
-    "bootstrap",
-    "font-awesome",
-    "wordpress",
-    "theme",
-    "light",
-    "theme"
-  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -25,10 +15,12 @@
     "tests"
   ],
   "devDependencies": {
+    "ev-emitter": "~1.0.0",
     "bootstrap": "v4.0.0-alpha.6",
     "components-font-awesome": "^4.7.0",
     "imagesloaded": "images-loaded#^4.1.1",
+    "jquery": "v1.10.2",
     "prism": "^1.6.0",
-    "jquery-mdstrap": "v2.0.0",
+    "jquery-mdstrap": "v2.0.0"
   }
 }

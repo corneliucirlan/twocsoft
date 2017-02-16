@@ -36,10 +36,10 @@
 <main class="page-about row">
 
     <!-- About section -->
-    <div class="card card-flat card-block">
-        <h2 class="card-title"><?php the_title() ?></h2>
-        <?php the_content() ?>
-    </div>
+    <!-- <div class="card card-block"> -->
+        <!-- <h2 class="card-title"><?php the_title() ?></h2> -->
+        <!-- <?php the_content() ?> -->
+    <!-- </div> -->
 
     <!-- Experience section -->
     <div class="card card-flat card-block">

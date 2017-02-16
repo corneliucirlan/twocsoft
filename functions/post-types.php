@@ -10,7 +10,5 @@
 		'plural'			=> 'Portfolio',
 		'slug'				=> POST_TYPE_PORTFOLIO
 	), array('has_archive' => false, 'menu_position' => 5));
-	//$portfolio->register_taxonomy('type');
-	//$portfolio->register_taxonomy('post_tag');
 
 ?>

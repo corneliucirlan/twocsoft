@@ -1,0 +1,21 @@
+.single-website
+
+    .card-title
+        text-align: center
+        margin-bottom: $spacer
+
+    .single-website-previews
+        img
+            max-width: 100%
+            width: 100%
+            height: auto
+
+    .single-website-description
+        order: -1
+
+@include media-breakpoint-up(md)
+    .single-website .single-website-description
+        order: 1
+        align-self: flex-start
+        //position: sticky
+        //top: 80px

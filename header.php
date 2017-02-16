@@ -8,7 +8,7 @@
 <?php
 
 	// Get header image
-    if (is_singular(POST_TYPE_PORTFOLIO)):
+    if (is_singular(POST_TYPE_PORTFOLIO) && has_post_thumbnail()):
             $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id()).");
                 background-position: center top;";
         else:

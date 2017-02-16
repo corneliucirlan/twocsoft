@@ -30,8 +30,4 @@
 	// Blog page
 	define('PAGE_BLOG', 179);
 
-
-	// Hide ACF admin page
-	//define('ACF_LITE', true);
-
 ?>
