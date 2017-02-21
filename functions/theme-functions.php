@@ -77,7 +77,7 @@
 		<div class="card-wrapper col-xs-12 col-sm-6 col-md-2">
 			<div class="card card-flat card-borderless">
 				<h3><?php echo $skill->getSkillName() ?></h3>
-				<div class="item-stars text-xs-center">
+				<div class="item-stars text-center">
 					<?php for ($x = 1; $x <= 5; $x++): ?>
 						<?= $x <= $skill->getSkillLevel() ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>'; ?>
 					<?php endfor; ?>

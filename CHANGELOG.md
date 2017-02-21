@@ -1,6 +1,9 @@
 ## CHANGELOG
 
 ##### Version 3.10 (2016.02.16)
+- Centered skills
+
+##### Version 3.10 (2016.02.16)
 - Updated Bootstrap to latest version (v4.0.0 alpha 6)
 - Updated jQuery mdStrap to latest version (2.0.0)
 - Updated portfolio posts template
