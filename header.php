@@ -24,12 +24,16 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        min-height: 500px;
-        height: 500px;
-        height: 31.25rem;
         max-height: 500px
         padding: 0;
         margin: 0;";
+
+    $detect = new Mobile_Detect();
+    if ($detect->isMobile() && !$detect->isTablet()):
+            $headerStyles .= "height: 400px;";
+        else:
+            $headerStyles .= "height: 500px;";
+    endif;
 
     if (!is_singular('post')):
 
@@ -127,7 +131,7 @@
             <!-- Breadcrumbs -->
             <div class="breadcrumbs-container container-fluid">
                 <div class="row">
-                    <div class="<?= $isSingular ? 'col-xs-12' : 'col-xs-12 col-md-8' ?>">
+                    <div class="<?= $isSingular ? 'col' : 'col-xs-12 col-md-8' ?>">
                         <?php renderBreadcrumbs() ?>
                     </div>
                     <?php if (!$isSingular): ?>

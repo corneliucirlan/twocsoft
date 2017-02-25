@@ -1,6 +1,10 @@
 ## CHANGELOG
 
-##### Version 3.10 (2016.02.16)
+##### Version 3.10.2 (2016.02.16)
+- Fixed breadcrumbs padding
+- Different header image height if mobile device screen
+
+##### Version 3.10.1 (2016.02.16)
 - Centered skills
 
 ##### Version 3.10 (2016.02.16)
