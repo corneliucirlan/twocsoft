@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.10.3 (2017.06.22)
+- Removed query args from FontAwesome
+
 ##### Version 3.10.2 (2016.02.16)
 - Fixed breadcrumbs padding
 - Different header image height if mobile device screen
