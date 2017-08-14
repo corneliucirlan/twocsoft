@@ -6,7 +6,7 @@
  *	Author: Corneliu Cirlan
  *	Author URI: http://www.corneliucirlan.com
  *	GitHub Theme URI: https://github.com/corneliucirlan/cornelius
- *	Version: 3.10.3
+ *	Version: 3.11
  *	Tags: responsive, light, material design, bootstrap framework, framework, sass
  */
 /*!
@@ -10607,41 +10607,6 @@ header nav .container-fluid .navbar-toggler {
   height: auto;
 }
 
-.card .post-tags {
-  padding: 1.25rem;
-}
-
-.card .post-tags .fa-tag {
-  color: white;
-  background-color: #444333;
-  padding: 0.5rem;
-  margin: 0.25rem;
-  line-height: 1.5;
-  font-size: 1rem;
-  border: 1px solid #444333;
-}
-
-.card .post-tags .tags {
-  display: inline-block;
-  padding: 0;
-}
-
-.card .post-tags .tags .tag a {
-  padding: 0.5rem;
-  margin: 0.25rem;
-  font-size: 1rem;
-  border: 1px solid #444333;
-  color: #444333;
-  -webkit-transition: all 150ms ease-in-out;
-  -o-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
-}
-
-.card .post-tags .tags .tag a:hover {
-  color: white;
-  background: #444333;
-}
-
 @media (min-width: 768px) {
   .card .post-meta .meta-data {
     margin-bottom: 0;
@@ -10928,6 +10893,7 @@ a.follow-me .fa-linkedin:hover {
 .social-icons .share-button {
   width: 25%;
   text-align: center;
+  list-style: none;
 }
 
 .social-icons .share-button .fa, .social-icons .share-button a {
@@ -11098,6 +11064,45 @@ a.follow-me .fa-linkedin:hover {
 .form-group textarea.has-value + label {
   top: -0.5rem;
   font-size: 0.8rem;
+}
+
+.post-tags {
+  padding: 1.25rem;
+}
+
+.post-tags .fa-tag {
+  color: white;
+  background-color: #444333;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  border: 1px solid #444333;
+}
+
+.post-tags .tags {
+  display: inline-block;
+  padding: 0;
+}
+
+.post-tags .tags .tag {
+  display: inline-block;
+}
+
+.post-tags .tags .tag a {
+  padding: 0.5rem;
+  margin: 0.25rem;
+  font-size: 1rem;
+  border: 1px solid #444333;
+  color: #444333;
+  -webkit-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.post-tags .tags .tag a:hover {
+  color: white;
+  background: #444333;
 }
 
 .page-about .card h2, .page-about .card h3, .page-about .card h4 {

@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+##### Version 3.11 (2017.08.14)
+- Added Google AMP
+
 ##### Version 3.10.3 (2017.06.22)
 - Removed query args from FontAwesome
 

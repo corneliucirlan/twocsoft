@@ -31,6 +31,6 @@
     }
 
     // 4. Include ACF
-    include_once( get_stylesheet_directory() . '/functions/acf/acf.php' );
+    include_once(get_stylesheet_directory() . '/functions/acf/acf.php');
 
 ?>

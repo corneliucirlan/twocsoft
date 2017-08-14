@@ -61,4 +61,16 @@
 	}
 	add_filter('excerpt_length', 'secExcerptLength', 999);
 
+	/**
+	 * Load Google AMP template
+	 */
+	add_filter('amp_post_template_file', 'loadAMPTemplate', 10, 3);
+ 	function loadAMPTemplate($file, $type, $post)
+	{
+ 		if ('single' === $type)
+ 			$file = THEME_DIR.'templates/amp.php';
+
+ 		return $file;
+ 	}
+
 ?>
