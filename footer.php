@@ -1,5 +1,14 @@
 <?php
 
+    /**
+     * Footer template file
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package ccwp
+     */
+
+
     // Security check
     if (!defined('ABSPATH')) die;
 
@@ -14,12 +23,12 @@
                     <div class="col-xs-12 col-md-4">
                         <h2 class="footer-subtitle center-align">Links</h2>
                         <?php
-                            if (has_nav_menu('header-menu')):
+                            if (has_nav_menu('footer-menu')):
 
                                 // desktop menu
                                 $args = array(
-                                    'theme_location' => 'header-menu',
-                                    'menu' => 'header-menu',
+                                    'theme_location' => 'footer-menu',
+                                    'menu' => 'footer-menu',
                                     'container' => 'ul',
                                     'menu_class' => 'footer-menu',
                                     'echo' => true,
@@ -42,11 +51,11 @@
                     <div class="col-xs-12 col-md-4">
                         <h2 class="footer-subtitle center-align">On social media</h2>
                         <ul class="social-icons">
-                            <li><a class="social-link" target="_blank" href="<?= get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?php echo get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?php echo get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?php echo get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?php echo get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
+                            <li><a class="social-link" target="_blank" href="<?php echo get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
                         </ul>
                     </div>
             	</div>

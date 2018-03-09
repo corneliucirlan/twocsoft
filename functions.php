@@ -1,33 +1,83 @@
 <?php
 
-	// Global variables
-	include_once('functions/globals.php');
+    /**
+    * This theme uses PSR-4 and OOP logic instead of procedural coding
+    * Every function, hook and action is properly divided and organized inside related folders and files
+    * Use the file `config/custom/custom.php` to write your custom functions
+    *
+    * @package ccwp
+    */
 
-	// Register scripts
-	include_once('functions/register-scripts.php');
+    // Define theme version
+    if (!defined('THEME_VERSION')):
+        define('THEME_VERSION', '1.0.0');
+    endif;
 
-	// WP specific loaders
-	include_once('functions/enqueue.php');
+    // Define Portfolio post type
+    if (!defined('POST_TYPE_PORTFOLIO')):
+        define('POST_TYPE_PORTFOLIO', 'portfolio');
+    endif;
 
-	// Custom theme functions
-	include_once('functions/theme-functions.php');
+    // Portfolio website item
+    if (!defined('PORTFOLIO_WEBSITE')):
+        define('PORTFOLIO_WEBSITE', 'portfolio-website');
+    endif;
 
-	// Custom post types
-	include_once('functions/post-types.php');
+    // Portfolio plugin item
+    if (!defined('PORTFOLIO_PLUGIN')):
+        define('PORTFOLIO_PLUGIN', 'portfolio-plugin');
+    endif;
 
-	// Misc
-	include_once('functions/misc.php');
+    // Portfolio generic item
+    if (!defined('PORTFOLIO_GENERIC')):
+        define('PORTFOLIO_GENERIC', 'portfolio-generic');
+    endif;
 
-	// Custom fields
-	include_once('functions/custom-fields.php');
+    // Portfolio page
+    if (!defined('PAGE_PORTFOLIO')):
+        define('PAGE_PORTFOLIO', 24);
+    endif;
 
-	// Remove
-	include_once('functions/remove.php');
+    // About page
+    if (!defined('PAGE_ABOUT')):
+        define('PAGE_ABOUT', 44);
+    endif;
 
-	// Backend functions
-	include_once('functions/backend.php');
+    // Contact page
+    if (!defined('PAGE_CONTACT')):
+        define('PAGE_CONTACT', 46);
+    endif;
+
+    // Services page
+    if (!defined('PAGE_SERVICES')):
+        define('PAGE_SERVICES', 149);
+    endif;
+
+    // Blog page
+    if (!defined('PAGE_BLOG')):
+        define('PAGE_BLOG', 179);
+    endif;
+
+
+
+    // PSR-4 Autoload
+    if (file_exists(dirname(__FILE__).'/vendor/autoload.php')):
+        require_once dirname(__FILE__).'/vendor/autoload.php';
+    endif;
+
+    // Init class
+    if (class_exists('ccwp\\Init')):
+        new \ccwp\Init();
+    endif;
+
+?>
+
+
+
+
+<?php
 
 	// AJAX
-	include_once('functions/ajax.php');
+	// include_once('functions/ajax.php');
 
 ?>

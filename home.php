@@ -1,46 +1,38 @@
 <?php
 
+	/**
+	 * Home template file
+	 *
+	 * @link https://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package ccwp
+	 */
+
 	// Security check
-	if (!defined('ABSPATH')) die;
+	if (!defined('ABSPATH')) exit;
 
 ?>
 
 <?php get_header(); ?>
 
-<?php
 
-	$cardSettings = array(
-		'cardWrapper'			=> 'col-12 col-sm-6 col-lg-4 col-xl-3',
+<main class="site-main cards row" role="main">
+    <?php
 
-		'blogPost'				=> true,
-	);
+		// Check if posts available
+        if (have_posts()):
 
-	// Query blog posts
-	$args = array(
-		'post_type'			=> array('post'),
-		'post_status' 		=> 'publish',
-		'order'				=> 'DESC',
-		'posts_per_page'	=> get_option('posts_per_page'),
-	);
-	query_posts($args);
-
-	// Nuumber of published posts
-	$publishedPosts = wp_count_posts()->publish;
-
-	switch ($publishedPosts):
-		case 1: $cardSettings['cardWrapper'] = 'col-xs-12 col-sm-6 offset-sm-3 col-lg-4 offset-lg-4'; break;
-		case 2: $cardSettings['cardWrapper'] = 'col-xs-12 col-sm-6';
-		default: break;
-	endswitch;
-
-?>
-
-<main class="page-blog cards row">
-	<?php if (have_posts()): ?>
-		<?php while (have_posts()): the_post(); ?>
-			<?php renderCard($cardSettings); ?>
-		<?php endwhile; ?>
-	<?php endif; ?>
+                // Start the Loop
+                while (have_posts()):
+                    the_post();
+					?><div class="card-wrapper col-xs-12 col-md-4"><?php
+						get_template_part('templates/content', 'card');
+					?></div><?php
+                endwhile;
+            else:
+                get_template_part('templates/content', 'none');
+        endif;
+    ?>
 </main>
 
 <?php get_footer(); ?>

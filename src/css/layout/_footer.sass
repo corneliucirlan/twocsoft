@@ -1,0 +1,81 @@
+.footer
+	background-color: $dark
+	margin-top: $spacer * 2
+	padding: $spacer
+	color: $gray-100
+	text-align: center
+
+	a
+		color: $gray-100
+		font-weight: bold
+		transition: ease-in-out .1s
+
+		&:hover, &:active, &:focus
+			color: $gray-100
+			text-decoration: none
+
+	.container-fluid
+		width: 100%
+
+	.footer-subtitle
+		margin-top: $spacer
+
+	.footer-menu
+		list-style: none
+		overflow: hidden
+		margin-bottom: 0
+		padding: 0
+
+		li
+			width: 100%
+			text-align: center
+			padding: 0
+			line-height: $line-height-base * 1.4
+
+			a
+				font-size: 1rem
+
+	.footer-subtitle
+		color: $body-bg
+
+	.social-icons
+		list-style: none
+		overflow: hidden
+		margin-bottom: $spacer * 2
+
+		li
+			float: left
+			width: calc(100% / 5)
+			text-align: center
+
+			a
+				color: $gray-100
+
+				&:hover
+					@each $current in $social-links
+						$i: index($social-links, $current)
+						.fa-#{$current}
+							transition: $social-links-transition
+							color: nth($social-colors, $i)
+
+// small to medium screens
+@include media-breakpoint-up(sm)
+	.footer
+		.footer-menu li
+			width: calc(100%/3)
+			float: left
+			text-align: center
+
+		.social-icons
+			margin-bottom: 0
+
+// medium screens
+@include media-breakpoint-up(md)
+	.footer .footer-menu li
+		width: calc(100%/3)
+
+// large screens
+//@include media-breakpoint-up(lg)
+@media (min-width: 1700px)
+	.footer .footer-menu li
+		width: calc(100%/6)

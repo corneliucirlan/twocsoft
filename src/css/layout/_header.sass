@@ -1,0 +1,70 @@
+// Brand logo
+.custom-logo-link
+	max-height: $spacer * 2
+	margin-right: $spacer
+
+	.custom-logo
+		max-height: $spacer * 2
+		width: auto
+
+header
+	nav
+		.container-fluid
+			text-transform: uppercase
+			padding-top: $spacer / 2
+			padding-bottom: $spacer / 2
+
+			.navbar-nav
+				background-color: white
+
+				.nav-item a
+					font-size: $font-size-base
+
+			.header-icons
+				flex: 1
+
+@include media-breakpoint-up(sm)
+	header nav .container-fluid
+		// width: 100% !important
+
+		.navbar-nav,
+		.header-icons
+			flex: 0
+
+		.custom-logo-link
+			flex: 1
+
+
+@include media-breakpoint-up(md)
+	header nav .container-fluid
+		// width: 100% !important
+
+		.navbar-nav,
+		.header-icons
+			flex: 0
+
+		.custom-logo-link
+			flex: 1
+
+@include media-breakpoint-up(lg)
+	header nav.navbar .container-fluid
+		display: flex
+
+		.navbar-nav
+			background: transparent
+			flex: 1
+
+		.header-icons,
+		.custom-logo-link
+			flex: 0
+
+
+.mds-fixed-top
+	background-color: white
+
+.header-overlay
+	position: absolute
+	width: 100%
+	top: 0
+	left: 0
+	background-color: transparent

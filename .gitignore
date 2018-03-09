@@ -45,3 +45,6 @@ bower_components
 .bower-registry
 .bower-tmp
 *.config
+
+### NPM ###
+node_modules

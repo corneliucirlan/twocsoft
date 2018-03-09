@@ -1,0 +1,34 @@
+.form-group
+    position: relative
+    display: inline-block
+    width: 100%
+    margin-bottom: 1.5 * $spacer
+
+label
+    position: absolute
+    top: $spacer
+    left: 0
+    pointer-events: none
+    transform: translateY(-50%)
+    transition: all 300ms ease-in-out
+
+.form-control
+    display: inline-block
+    border: none
+    background: none
+    color: $gray-700
+    padding-left: 0
+    padding-right: 0
+    resize: none
+    box-shadow: none
+    border-bottom: 2 * $border-width solid theme-color("primary")
+
+    &:focus,
+    &:active
+        outline: 0
+        box-shadow: none
+
+    &:focus + label,
+    &.has-value + label
+        top: -($spacer / 2)
+        font-size: 0.8 * $font-size-base

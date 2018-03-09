@@ -1,20 +1,24 @@
 <?php
 
+    /**
+     * Template part for displaying Contact page
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package ccwp
+     */
+
     // Security check
     if (!defined('ABSPATH')) die;
-
-    the_post()
 
 ?>
 
 <?php
-
 	if (isset($_POST['submit'])):
 		$name = isset($_POST['name']) ? esc_attr($_POST['name']) : false;
 		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ? esc_attr($_POST['email']) : false;
 		$subject = esc_attr($_POST['subject']);
 		$message = isset($_POST['message']) ? esc_attr($_POST['message']) : false;
-
 		if ($name && $email && $subject && $message):
 
 				// get admin emails
@@ -39,7 +43,6 @@
 				$failReason = "All fields are required. Try again";
 		endif;
 	endif;
-
 ?>
 
 <main class="page-contact row">
@@ -57,7 +60,7 @@
 		</ul>
 
         <!-- Contact form -->
-        <div class="card card-block">
+        <div class="card card-body">
             <form id="contact-form" action="<?= basename(__FILE__) ?>" method="post">
                 <input type="hidden" name="action" id="action" value="submit-form" />
 
@@ -85,7 +88,7 @@
                     <label for="message">Message</label>
                 </div>
 
-                <button id="submit-form" type="submit" name="submit" class="btn btn-primary-outline"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
+                <button id="submit-form" type="submit" name="submit" class="btn btn-primary"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
             </form>
         </div>
 	</div>

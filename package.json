@@ -1,0 +1,27 @@
+{
+  "name": "ccwp",
+  "version": "1.0.0",
+  "description": "An Object Oriented WordPress starter framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corneliucirlan/ccwp.git"
+  },
+  "author": "Corneliu Cirlan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corneliucirlan/ccwp/issues"
+  },
+  "homepage": "https://github.com/corneliucirlan/ccwp#readme",
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.3.1",
+    "jquery-mdstrap": "^4.0.0",
+    "popper": "^1.0.1"
+  }
+}

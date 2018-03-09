@@ -1,43 +1,33 @@
 <?php
 
-    // Security check
-    if (!defined('ABSPATH')) die;
+	/**
+	 * Front page template file
+	 *
+	 * @link https://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package ccwp
+	 */
 
-    the_post();
+	// Security check
+	if (!defined('ABSPATH')) exit;
 
 ?>
 
-<?php get_header() ?>
+<?php get_header(); ?>
 
-<div class="page-frontpage card-deck-wrapper">
+
+<main class="page-frontpage card-deck-wrapper">
     <div class="card-deck">
-        <?php query_posts(array('post_type' => 'post', 'posts_per_page' => 1, 'post_status' => 'publish')); ?>
-        <?php if (have_posts()): the_post(); ?>
-            <div class="card-wrapper card latest-blog-post">
-                <div class="card-header">
-                    Latest blog entry
-                </div>
-                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail') ?></a>
-                <div class="card-block">
-                    <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-                    <?php the_excerpt() ?>
-                </div>
-            </div>
-        <?php endif; ?>
+        <?php
+			query_posts(array('post_type' => 'post', 'posts_per_page' => 1, 'post_status' => 'publish'));
+        	the_post();
+			get_template_part('templates/content', 'card');
 
-        <div class="card-wrapper card latest-project">
-            <?php query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => 1)); ?>
-            <?php the_post() ?>
-            <div class="card-header">
-                Latest project
-            </div>
-            <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail') ?></a>
-            <div class="card-block">
-                <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-                <?php the_excerpt() ?>
-            </div>
-        </div>
+			query_posts(array('post_type' => POST_TYPE_PORTFOLIO, 'posts_per_page' => 1));
+        	the_post();
+			get_template_part('templates/content', 'card');
+		?>
     </div>
-</div>
+</main>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>

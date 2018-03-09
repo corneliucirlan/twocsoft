@@ -1,0 +1,38 @@
+.card-wrapper, .card-deck-wrapper
+	margin-bottom: $spacer * 1.75
+
+.card
+	box-shadow: $card-shadow
+	// margin-bottom: $spacer * 1.75
+
+	.no-animation
+		animation: none !important
+
+	.card-header
+		background-color: $white
+
+	&.card-flat
+		box-shadow: none
+		margin-bottom: $spacer
+
+	&.card-borderless
+		border: 0
+
+	.card-header .card-title
+		margin: 0
+		text-transform: uppercase
+
+	.post-meta
+		margin-bottom: $spacer
+		text-align: left
+
+		.meta-data
+			color: lighten(map-get($theme-colors, "dark"), 60%)
+			margin-bottom: $spacer
+
+	.card-img
+		height: auto
+
+@include media-breakpoint-up(md)
+	.card .post-meta .meta-data
+		margin-bottom: 0
