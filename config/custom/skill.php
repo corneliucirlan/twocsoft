@@ -12,45 +12,58 @@
     class Skill
     {
         /**
-         * Skill name
-         *
-         * @var string
-         */
-        private $name;
-
-        /**
-         * Skill level
-         *
-         * @var int
-         */
-        private $level;
-
-        /**
          * Contrusct class to activate actions and hooks as soon as the class is initialized
          */
-        public function __construct($name, $level)
+        public function __construct()
         {
-            $this->name     = $name;
-            $this->level    = $level;
+            // Create WP table
+            $this->createTable();
+
+            // Add menu page
+            add_action('admin_menu', array($this, 'addMenuPage'));
         }
 
         /**
-         * Gt a skill's name
-         *
-         * @return string the name of the skill
+         * Create WP table
          */
-        public function getSkillName()
+        public function createTable()
         {
-            return $this->name;
+            // Access global $wpdb
+            global $wpdb;
+
+            // Set table name
+            $tableName = $wpdb->prefix.'skills';
+
+            // Set charset
+            $charsetCollate = $wpdb->get_charset_collate();
+
+            // Prepare sql query
+            $sql = " CREATE TABLE $tableName (
+                id mediumint(3) NOT NULL AUTO_INCREMENT,
+                name tinytext DEFAULT '' NOT NULL,
+                level int(2),
+                PRIMARY KEY (id)
+            ) $charsetCollate";
+
+            require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+            dbDelta($sql);
         }
 
         /**
-         * Get a skill's level
-         * @return int the level of the skill
+         * Add menu page
          */
-        public function getSkillLevel()
+        public function addMenuPage()
         {
-            return $this->level;
+            add_menu_page(__('Skills'), __('Skills'), 'manage_options', 'skills', array($this, 'renderSkillPage'), '', 15);
+        }
+
+        public function renderSkillPage()
+        {
+            ?>
+            <div class="wrap">
+                <h1><?php _e('Skills'); ?></h1>
+            </div>
+            <?php
         }
 
         public function renderSkill()
