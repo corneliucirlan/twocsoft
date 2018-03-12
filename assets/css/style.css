@@ -11427,13 +11427,15 @@ a.follow-me .fa-linkedin:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.75rem 0;
+  padding: 0;
   margin-bottom: 0;
   color: white;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
 }
 
 .social-icons .share-button {
-  width: 25%;
+  width: 100%;
   text-align: center;
   list-style: none;
 }
@@ -11486,6 +11488,38 @@ a.follow-me .fa-linkedin:hover {
 
 .social-icons .share-button .fa-linkedin:hover {
   background-color: #166791;
+}
+
+.social-icons .share-button .fa-pinterest {
+  background-color: #bd081c;
+}
+
+.social-icons .share-button .fa-pinterest:hover {
+  background-color: #8c0615;
+}
+
+.social-icons .share-button .fa-reddit {
+  background-color: #5f99cf;
+}
+
+.social-icons .share-button .fa-reddit:hover {
+  background-color: #3a80c1;
+}
+
+.social-icons .share-button .fa-github {
+  background-color: #333333;
+}
+
+.social-icons .share-button .fa-github:hover {
+  background-color: #1a1a1a;
+}
+
+.social-icons .share-button .fa-mail {
+  background-color: #444444;
+}
+
+.social-icons .share-button .fa-mail:hover {
+  background-color: #2b2b2b;
 }
 
 .social-icons .footer-share .fa, .social-icons .footer-share a {

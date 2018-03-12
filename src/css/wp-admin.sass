@@ -1,0 +1,19 @@
+// Variables
+@import "variables"
+
+// Font Awesome
+@import "../../node_modules/font-awesome/scss/font-awesome"
+
+input.widget-checkhox
+    display: none
+
+.fa
+    cursor: pointer
+    color: #ccc
+    text-align: center
+    width: 4rem
+
+    &.fa-active
+        @each $profile, $color in $socialProfiles
+            &.fa-#{$profile}
+                color: $color

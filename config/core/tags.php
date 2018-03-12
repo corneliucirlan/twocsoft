@@ -8,6 +8,8 @@
 
     namespace ccwp\core;
 
+    use ccwp\api\callback\socialMediaCallbacks;
+
     class Tags
     {
         /**
@@ -42,17 +44,23 @@
     	 */
     	public static function displayShareButtons($settings)
     	{
+            // Get all available share sites
+            $allSites = SocialMediaCallbacks::SOCIAL_MEDIA_SITES;
+
+            // Get share sites
+            $enabledSites = get_option("sms_profiles");
+
     		// Get url if page is category page
     		if (array_key_exists('isCategory', $settings) && $settings['isCategory']):
-    				$url = urlencode(get_category_link($settings['id']));
+    				$permalink = urlencode(get_category_link($settings['id']));
 
     			// Or if tag page
     			elseif (array_key_exists('isTag', $settings) && $settings['isTag']):
-    					$url = urlencode(get_tag_link($settings['id']));
+    					$permalink = urlencode(get_tag_link($settings['id']));
 
     				// Or if normal page
     				else:
-    					$url = urlencode(get_permalink($settings['id']));
+    					$permalink = urlencode(get_permalink($settings['id']));
     		endif;
 
     		// Get page title
@@ -65,23 +73,44 @@
     		$related = urlencode('corneliucirlan:Corneliu Cirlan');
 
     		// Get bitly short url
-    		$bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
+    		// $bitly = json_decode(file_get_contents('https://api-ssl.bitly.com/v3/shorten?access_token='.get_option('bitly_api_key').'&longUrl='.$url));
 
     		// Chekc if status code OK
-    		if (200 == $bitly->status_code)
+    		// if (200 == $bitly->status_code)
 
     			// Set url to bitly short url
-    			$url = $bitly->data->url;
+    			// $url = $bitly->data->url;
 
     		// Check if share on card footer
     		$cardFooter = array_key_exists('bottom', $settings) && $settings['bottom'] === true ? " footer-share" : "";
     		?>
 
     		<ul class="social-icons">
-    			<li class="share-button"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url ?>" title="Share on Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li class="share-button"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="https://twitter.com/intent/tweet?text=<?php echo $title ?>&amp;url=<?php echo $url ?>&amp;related=<?php echo $related ?>" title="Share on Twitter"><i class="fa fa-twitter"></i></a></li>
-                <li class="share-button"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="https://plus.google.com/share?url=<?php echo $url ?>" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-                <li class="share-button"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url ?>&amp;title=<?php echo $title ?>&amp;summary=<?php echo $excerpt ?>" title="Share on Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <?php
+                    foreach ($enabledSites as $site):
+
+                        // Start creating the url
+                        $url = $allSites[$site]['url'].'?';
+
+                        // Set all url parameters
+                        foreach ($allSites[$site]['urlParams'] as $param):
+
+                            // if URL param
+                            if ('u' === $param || 'url' === $param) $url = add_query_arg($param, $permalink, $url);
+
+                            // if title param
+                            if ('title' === $param) add_query_arg($param, $title, $url);
+
+                            // if description param
+                            if ('text' === $param || 'summary' === $param || 'description' === $param) $url = add_query_arg($param, $excerpt, $url);
+
+                            // if media param
+                            if ('media' === $param) $url = add_query_arg($param, get_the_post_thumbnail_url(get_the_ID(), 'large'), $url);
+                        endforeach;
+
+                        ?><li class="share-button"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="<?php echo urlencode($url); ?>" title="Share on <?php echo ucwords($site); ?>"><i class="fa fa-<?php echo $site; ?>"></i></a></li><?php
+                    endforeach;
+                ?>
             </ul>
     		<?php
     	}
@@ -90,11 +119,13 @@
         {
             // Hide category and tag text for pages.
             if ('post' === get_post_type()):
+
                 /* translators: used between list items, there is a space after the comma */
                 $categories_list = get_the_category_list(esc_html__(', ', 'ccwp'));
                 if ($categories_list && self::categorizedBlog()):
                     printf('<span class="cat-links">'.esc_html__('Posted in %1$s', 'ccwp').'</span>', $categories_list); // WPCS: XSS OK.
                 endif;
+
                 /* translators: used between list items, there is a space after the comma */
                 $tags_list = get_the_tag_list('', esc_html__(', ', 'ccwp'));
                 if ($tags_list):

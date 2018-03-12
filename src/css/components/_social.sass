@@ -1,11 +1,12 @@
 .social-icons
 	display: flex
-	padding: $breadcrumb-padding-y 0
+	padding: 0
 	margin-bottom: 0
 	color: white
+	justify-content: space-around
 
 	.share-button
-		width: 25%
+		width: 100%
 		text-align: center
 		list-style: none
 
@@ -16,13 +17,12 @@
 			line-height: $line-height-base
 			transition: $social-links-transition
 
-		@each $current in $social-links
-			$i: index($social-links, $current)
-			.fa-#{$current}
-				background-color: nth($social-colors, $i)
+		@each $profile, $color in $socialProfiles
+			.fa-#{$profile}
+				background-color: $color
 
 				&:hover
-					background-color: darken(nth($social-colors, $i), 10%)
+					background-color: darken($color, 10%)
 
 	.footer-share
 		.fa, a

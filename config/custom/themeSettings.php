@@ -10,6 +10,7 @@
 
     use ccwp\api\settings;
     use ccwp\api\callback\customFieldsCallbacks;
+    use ccwp\api\callback\socialMediaCallbacks;
 
     class ThemeSettings extends Settings
     {
@@ -19,18 +20,48 @@
         /**
          * Custom Fields Callbacks
          *
-         * Variable that holds all callback for the custom fields
+         * Variable that holds all callbacks for the custom fields
          *
          * @var [type]
          */
         private $customFieldsCallbacks;
 
         /**
+         * Social Media callbacks
+         *
+         * Variable that holds all callbacks for social media
+         *
+         * @var [type]
+         */
+        private $socialMediaCallbacks;
+
+        /**
+         * Social media settings constants
+         *
+         * @since 1.0
+         */
+        const SOCIAL_MEDIA_GROUP    = 'social-media-group';
+        const SOCIAL_MEDIA_SECTION  = 'social-media-section';
+        const SOCIAL_MEDIA_SLUG     = 'social-media-settings';
+        const SOCIAL_MEDIA_NAME     = 'social_media_profiles';
+        const SOCIAL_MEDIA_SHARE_SECTION = 'sms-section';
+        const SOCIAL_MEDIA_SHARE_NAME    = 'sms_profiles';
+
+
+        /**
          * Contrusct class to activate actions and hooks as soon as the class is initialized
          */
         public function __construct()
         {
+            // Init callbacks
             $this->customFieldsCallbacks = new CustomFieldsCallbacks();
+            $this->socialMediaCallbacks = new SocialMediaCallbacks();
+
+            // Admin enqueue
+            $this->enqueue();
+
+            // Register subpages
+            $this->registerSubPages();
 
             // Register settings
             $this->registerSettings();
@@ -43,6 +74,52 @@
 
             // Parent call
             parent::__construct();
+        }
+
+        /**
+         * Admin enqueue
+         */
+        private function enqueue()
+        {
+            $scripts = array(
+                'script' => array(
+                    'jquery',
+                //     'media_uplaoder',
+                    get_template_directory_uri() . '/assets/js/wp-admin.js'
+                ),
+                'style' => array(
+                    get_template_directory_uri() . '/assets/css/wp-admin.css',
+                )
+            );
+
+            // Pages array to where enqueue scripts
+            $pages = array('settings_page_'.self::SOCIAL_MEDIA_SLUG);
+
+            // Enqueue files in Admin area
+            parent::adminEnqueue($scripts, $pages);
+        }
+
+
+        /**
+         * Register subpages
+         */
+        public function registerSubPages()
+        {
+            // Init subpages
+            $adminSubPages = array();
+
+            // Social media shares
+            $adminSubPages[] = array(
+                'parent_slug'       => 'options-general.php',
+                'page_title'        => 'Social Media',
+                'menu_title'        => 'Social media',
+                'capability'        => 'manage_options',
+                'menu_slug'         => self::SOCIAL_MEDIA_SLUG,
+                'callback'          => array($this->socialMediaCallbacks, 'submenuSocialMediaPage')
+            );
+
+            // Parent call
+            parent::addAdminSubpages($adminSubPages);
         }
 
         /**
@@ -133,6 +210,20 @@
                 'callback'          => ''
             );
 
+            // Social media shares
+            $settings[] = array(
+                'option_group'  => self::SOCIAL_MEDIA_GROUP,
+                'option_name'   => self::SOCIAL_MEDIA_SHARE_NAME,
+                'callback'      => array($this->socialMediaCallbacks, 'validateSocialMediaShareSettings'),
+            );
+
+            // Social media profiles
+            // $settings[] = array(
+            //     'option_group'  => self::SOCIAL_MEDIA_GROUP,
+            //     'option_name'   => self::SOCIAL_MEDIA_NAME,
+            //     'callback'      => array($this->socialMediaCallbacks, 'validateSocialMediaSettings'),
+            // );
+
             // Parent call
             parent::addSettings($settings);
         }
@@ -160,6 +251,22 @@
                 'callback'  => '',
                 'page'      => 'general'
             );
+
+            // Social media shares
+            $sections[] = array(
+                'id'        => self::SOCIAL_MEDIA_SHARE_SECTION,
+                'title'     => __('Social Media Share Sites', 'ccwp'),
+                'callback'  => array($this->socialMediaCallbacks, 'socialMediaShare'),
+                'page'      => self::SOCIAL_MEDIA_SLUG
+            );
+
+            // Social Media Profiles settings
+            // $sections[] = array(
+            //     'id'        => self::SOCIAL_MEDIA_SECTION,
+            //     'title'     => __('Social Media Profiles', 'wordtravel'),
+            //     'callback'  => array($this->socialMediaCallbacks, 'socialMediaProfiles'),
+            //     'page'      => self::SOCIAL_MEDIA_SLUG
+            // );
 
             // Parent call
             parent::addSections($sections);
@@ -223,6 +330,40 @@
                     )
                 );
             endforeach;
+
+            // Social media shares
+            $fields[] = array(
+                'id'        => self::SOCIAL_MEDIA_SHARE_NAME,
+                'title'     => __('Enable sharing on', 'ccwp'),
+                'callback'  => array($this->socialMediaCallbacks, 'renderSocialMediaShare'),
+                'page'      => self::SOCIAL_MEDIA_SLUG,
+                'section'   => self::SOCIAL_MEDIA_SHARE_SECTION,
+                'args'      => array(
+                    'label_for' => self::SOCIAL_MEDIA_SHARE_NAME
+                )
+            );
+
+            // Social media profiles
+            // $socialMediaProfiles = $this->socialMediaCallbacks::SOCIAL_MEDIA_SITES;
+            // foreach ($socialMediaProfiles as $profile => $value):
+            //     $title = ucwords(str_replace('-', ' ', $profile));
+            //     $fields[] = array(
+            //         'id'        => 'wordtravel-smp-'.$profile,
+            //         'title'     => $title,
+            //         'callback'  => array($this->socialMediaCallbacks, 'renderSocialMefiaSite'),
+            //         'page'      => self::SOCIAL_MEDIA_SLUG,
+            //         'section'   => self::SOCIAL_MEDIA_SECTION,
+            //         'args'      => array(
+            //             'label_for' => 'wordtravel-smp-'.$profile,
+            //             'profile'   => array(
+            //                 'site'      => $profile,
+            //                 'enabled'   => isset($enabledSocialMediaProfiles[$profile]['enabled'])  ? 1 : 0,
+            //                 'title'     => isset($enabledSocialMediaProfiles[$profile]['title']) ? $enabledSocialMediaProfiles[$profile]['title'] : sprintf(__('Follow me on %s', 'wordtravel'), $title),
+            //                 'url'       => isset($enabledSocialMediaProfiles[$profile]['url']) ? $enabledSocialMediaProfiles[$profile]['url'] : '',
+            //             )
+            //         )
+            //     );
+            // endforeach;
 
             // Parent call
             parent::addFields($fields);
