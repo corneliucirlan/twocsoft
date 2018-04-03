@@ -25,12 +25,12 @@
         {
             ?>
             <div class="post-meta row text-muted">
-    			<div class="meta-data col-xs-12 col-md-8">
+    			<div class="meta-data col-xs-12 col-md-7">
     				<?php the_category(', ') ?>&nbsp;/&nbsp;
     				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;/&nbsp;
     				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter no-animation"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
     			</div>
-    			<div class="post-share col-xs-12 col-md-4">
+    			<div class="post-share col-xs-12 col-md-5">
     				<?php self::displayShareButtons(array('id' => get_the_id())) ?>
     			</div>
     		</div>
