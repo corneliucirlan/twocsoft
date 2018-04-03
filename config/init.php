@@ -20,7 +20,7 @@
     use ccwp\setup\login;
     use ccwp\custom\acfLoader;
     use ccwp\custom\themeSettings;
-    use ccwp\custom\skill;
+    use ccwp\custom\skills\skillsPage;
 
     class Init
     {
@@ -59,7 +59,8 @@
             new Login();
             new ACFLoader(true);
             new ThemeSettings();
-            new Skill();
+
+            new SkillsPage();
         }
 
         /**

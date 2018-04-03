@@ -5,8 +5,7 @@
     *
     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
     *
-	* @package wordtravel
-	* @since 1.0
+	* @package ccwp
     */
 
 ?>

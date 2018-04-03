@@ -11,6 +11,7 @@
     use ccwp\api\settings;
     use ccwp\api\callback\customFieldsCallbacks;
     use ccwp\api\callback\socialMediaCallbacks;
+    use ccwp\api\callback\skillsCallbacks;
 
     class ThemeSettings extends Settings
     {
@@ -18,7 +19,7 @@
         private $socialSites = array('facebook', 'instagram', 'twitter', 'google_plus', 'linkedin', 'github');
 
         /**
-         * Custom Fields Callbacks
+         * Custom Fields callbacks
          *
          * Variable that holds all callbacks for the custom fields
          *
@@ -60,6 +61,9 @@
             // Admin enqueue
             $this->enqueue();
 
+            // Register pages
+            // $this->registerPages();
+
             // Register subpages
             $this->registerSubPages();
 
@@ -99,6 +103,28 @@
             parent::adminEnqueue($scripts, $pages);
         }
 
+        /**
+         * Register pages
+         */
+        public function registerPages()
+        {
+            // Init pages
+            $pages = array();
+
+            // Skills page
+            $pages[] = array(
+                'page_title'    => __('Skills'),
+                'menu_title'    => __('Skills'),
+                'capability'    => 'manage_options',
+                'menu_slug'     => 'skills',
+                'callback'      => array($this->skillsCallbacks, 'renderSkillsPage'),
+                'icon_url'      => '',
+                'position'      => 15
+            );
+
+            // Parent call
+            parent::addAdminPages($pages);
+        }
 
         /**
          * Register subpages
@@ -255,7 +281,7 @@
             // Social media shares
             $sections[] = array(
                 'id'        => self::SOCIAL_MEDIA_SHARE_SECTION,
-                'title'     => __('Social Media Share Sites', 'ccwp'),
+                'title'     => __('Social Media Share Sites', 'cornelius'),
                 'callback'  => array($this->socialMediaCallbacks, 'socialMediaShare'),
                 'page'      => self::SOCIAL_MEDIA_SLUG
             );
@@ -306,12 +332,12 @@
 
             // Access tokens
             $apiKeys = array(
-                'bitly_api_key'             => __('Bitly API key'),
-                'github_client_id'          => __('Github client ID'),
-                'github_client_secret'      => __('Github client secret'),
-                'facebook_access_token'     => __('Facebook access token'),
-                'instagram_access_token'    => __('Instagram access token'),
-                'instagram_user_id'         => __('Instagram usesr ID'),
+                'bitly_api_key'                     => __('Bitly API key'),
+                'github_client_id'                  => __('Github client ID'),
+                'github_client_secret'              => __('Github client secret'),
+                'facebook_access_token'             => __('Facebook access token'),
+                'instagram_access_token'            => __('Instagram access token'),
+                'instagram_user_id'                 => __('Instagram usesr ID'),
                 'twitter_oauth_access_token'        => __('Twitter access token'),
                 'twitter_oauth_access_token_secret' => __('Twitter access token secret'),
                 'twitter_customer_key'              => __('Twitter customer key'),
@@ -334,7 +360,7 @@
             // Social media shares
             $fields[] = array(
                 'id'        => self::SOCIAL_MEDIA_SHARE_NAME,
-                'title'     => __('Enable sharing on', 'ccwp'),
+                'title'     => __('Enable sharing on', 'cornelius'),
                 'callback'  => array($this->socialMediaCallbacks, 'renderSocialMediaShare'),
                 'page'      => self::SOCIAL_MEDIA_SLUG,
                 'section'   => self::SOCIAL_MEDIA_SHARE_SECTION,
