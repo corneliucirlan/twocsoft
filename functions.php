@@ -58,8 +58,6 @@
         define('PAGE_BLOG', 179);
     endif;
 
-
-
     // PSR-4 Autoload
     if (file_exists(dirname(__FILE__).'/vendor/autoload.php')):
         require_once dirname(__FILE__).'/vendor/autoload.php';
@@ -69,15 +67,5 @@
     if (class_exists('ccwp\\Init')):
         new \ccwp\Init();
     endif;
-
-?>
-
-
-
-
-<?php
-
-	// AJAX
-	// include_once('functions/ajax.php');
 
 ?>
