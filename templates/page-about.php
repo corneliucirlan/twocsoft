@@ -19,12 +19,12 @@
 <main class="page-about row">
 
     <!-- About section -->
-    <div class="card-wrapper">
+    <!-- <div class="card-wrapper">
         <div class="card card-body">
             <h2 class="card-title"><?php the_title() ?></h2>
             <?php the_content() ?>
         </div>
-    </div>
+    </div> -->
 
     <!-- Experience section -->
     <div class="card-wrapper">
