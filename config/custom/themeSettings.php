@@ -9,23 +9,15 @@
     namespace ccwp\custom;
 
     use ccwp\api\settings;
-    use ccwp\api\callback\customFieldsCallbacks;
     use ccwp\api\callback\socialMediaCallbacks;
-    use ccwp\api\callback\skillsCallbacks;
 
     class ThemeSettings extends Settings
     {
         // Social media sites
-        private $socialSites = array('facebook', 'instagram', 'twitter', 'google_plus', 'linkedin', 'github');
+        private $socialSites;
 
-        /**
-         * Custom Fields callbacks
-         *
-         * Variable that holds all callbacks for the custom fields
-         *
-         * @var [type]
-         */
-        private $customFieldsCallbacks;
+        // Social media API
+        private $socialAPIs;
 
         /**
          * Social Media callbacks
@@ -55,14 +47,24 @@
         public function __construct()
         {
             // Init callbacks
-            $this->customFieldsCallbacks = new CustomFieldsCallbacks();
             $this->socialMediaCallbacks = new SocialMediaCallbacks();
+
+            $this->socialSites = array('facebook', 'instagram', 'twitter', 'google_plus', 'linkedin', 'github');
+            $this->socialAPIs = array(
+                'bitly_api_key'                     => __('Bitly API key'),
+                'github_client_id'                  => __('Github client ID'),
+                'github_client_secret'              => __('Github client secret'),
+                'facebook_access_token'             => __('Facebook access token'),
+                'instagram_access_token'            => __('Instagram access token'),
+                'instagram_user_id'                 => __('Instagram usesr ID'),
+                'twitter_oauth_access_token'        => __('Twitter access token'),
+                'twitter_oauth_access_token_secret' => __('Twitter access token secret'),
+                'twitter_customer_key'              => __('Twitter customer key'),
+                'twitter_customer_secret'           => __('Twitter customer secret'),
+            );
 
             // Admin enqueue
             $this->enqueue();
-
-            // Register pages
-            // $this->registerPages();
 
             // Register subpages
             $this->registerSubPages();
@@ -88,7 +90,6 @@
             $scripts = array(
                 'script' => array(
                     'jquery',
-                //     'media_uplaoder',
                     get_template_directory_uri() . '/assets/js/wp-admin.js'
                 ),
                 'style' => array(
@@ -104,29 +105,6 @@
         }
 
         /**
-         * Register pages
-         */
-        public function registerPages()
-        {
-            // Init pages
-            $pages = array();
-
-            // Skills page
-            $pages[] = array(
-                'page_title'    => __('Skills'),
-                'menu_title'    => __('Skills'),
-                'capability'    => 'manage_options',
-                'menu_slug'     => 'skills',
-                'callback'      => array($this->skillsCallbacks, 'renderSkillsPage'),
-                'icon_url'      => '',
-                'position'      => 15
-            );
-
-            // Parent call
-            parent::addAdminPages($pages);
-        }
-
-        /**
          * Register subpages
          */
         public function registerSubPages()
@@ -137,8 +115,8 @@
             // Social media shares
             $adminSubPages[] = array(
                 'parent_slug'       => 'options-general.php',
-                'page_title'        => 'Social Media',
-                'menu_title'        => 'Social media',
+                'page_title'        => __('Social Media', 'cornelius'),
+                'menu_title'        => __('Social Media', 'cornelius'),
                 'capability'        => 'manage_options',
                 'menu_slug'         => self::SOCIAL_MEDIA_SLUG,
                 'callback'          => array($this->socialMediaCallbacks, 'submenuSocialMediaPage')
@@ -163,92 +141,27 @@
                 'callback'          => '',
             );
 
-            // Social media links
+            // Links
             foreach ($this->socialSites as $site):
                 $settings[] = array(
-                    'option_group'      => 'general',
+                    'option_group'      => self::SOCIAL_MEDIA_GROUP,
                     'option_name'       => $site.'_link',
-                    'callback'          => ''
                 );
             endforeach;
 
-            // Bitly API Key
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'bitly_api_key',
-                'callback'          => ''
-            );
+            // API
+            foreach ($this->socialAPIs as $key => $value):
+                $settings[] = array(
+                    'option_group'       => self::SOCIAL_MEDIA_GROUP,
+                    'option_name'      => $key,
+                );
+            endforeach;
 
-            // Github client ID
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'github_client_id',
-                'callback'          => ''
-            );
-
-            // Github client secret
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'github_client_secret',
-                'callback'          => ''
-            );
-
-            // Facebook API
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'facebook_access_token',
-                'callback'          => ''
-            );
-
-            // Instagram API
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'instagram_access_token',
-                'callback'          => ''
-            );
-
-            // Instagram user ID
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'instagram_user_id',
-                'callback'          => ''
-            );
-
-            // Twitter API
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'twitter_oauth_access_token',
-                'callback'          => ''
-            );
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'twitter_oauth_access_token_secret',
-                'callback'          => ''
-            );
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'twitter_customer_key',
-                'callback'          => ''
-            );
-            $settings[] = array(
-                'option_name'       => 'general',
-                'option_group'      => 'twitter_customer_secret',
-                'callback'          => ''
-            );
-
-            // Social media shares
+            // Shares
             $settings[] = array(
                 'option_group'  => self::SOCIAL_MEDIA_GROUP,
                 'option_name'   => self::SOCIAL_MEDIA_SHARE_NAME,
-                'callback'      => array($this->socialMediaCallbacks, 'validateSocialMediaShareSettings'),
             );
-
-            // Social media profiles
-            // $settings[] = array(
-            //     'option_group'  => self::SOCIAL_MEDIA_GROUP,
-            //     'option_name'   => self::SOCIAL_MEDIA_NAME,
-            //     'callback'      => array($this->socialMediaCallbacks, 'validateSocialMediaSettings'),
-            // );
 
             // Parent call
             parent::addSettings($settings);
@@ -265,34 +178,26 @@
             // Social media links
             $sections[] = array(
                 'id'        => 'social_media_links',
-                'title'     => __('Social media links'),
-                'callback'  => '',
-                'page'      => 'general'
+                'title'     => __('Links', 'cornelius'),
+                'callback'  => array($this->socialMediaCallbacks, 'socialMediaLinksSection'),
+                'page'      => self::SOCIAL_MEDIA_SLUG
             );
 
             // API KEYs
             $sections[] = array(
                 'id'        => 'api_keys',
                 'title'     => __('API KEYs'),
-                'callback'  => '',
-                'page'      => 'general'
+                'callback'  => array($this->socialMediaCallbacks, 'socialAPISection'),
+                'page'      => self::SOCIAL_MEDIA_SLUG
             );
 
             // Social media shares
             $sections[] = array(
                 'id'        => self::SOCIAL_MEDIA_SHARE_SECTION,
-                'title'     => __('Social Media Share Sites', 'cornelius'),
-                'callback'  => array($this->socialMediaCallbacks, 'socialMediaShare'),
+                'title'     => __('Share', 'cornelius'),
+                'callback'  => array($this->socialMediaCallbacks, 'socialMediaShareSection'),
                 'page'      => self::SOCIAL_MEDIA_SLUG
             );
-
-            // Social Media Profiles settings
-            // $sections[] = array(
-            //     'id'        => self::SOCIAL_MEDIA_SECTION,
-            //     'title'     => __('Social Media Profiles', 'wordtravel'),
-            //     'callback'  => array($this->socialMediaCallbacks, 'socialMediaProfiles'),
-            //     'page'      => self::SOCIAL_MEDIA_SLUG
-            // );
 
             // Parent call
             parent::addSections($sections);
@@ -309,8 +214,8 @@
             // Footer center text
             $fields[] = array(
                 'id'        => 'footer_center_text',
-                'title'     => __('Footer center text'),
-                'callback'  => array($this->customFieldsCallbacks, 'displayFooterCenterText'),
+                'title'     => __('Footer center text', 'cornelius'),
+                'callback'  => function() { wp_editor(get_option('footer_center_text') ? get_option('footer_center_text') : '', 'footer_center_text'); },
                 'page'      => 'reading',
                 'section'   => 'default',
                 'args'      => array(),
@@ -321,38 +226,26 @@
                 $fields[] = array(
                     'id'        => $site.'_link',
                     'title'     => ucwords(str_replace("_", " ", $site)),
-                    'callback'  => array($this->customFieldsCallbacks, 'displayCustomFieldInput'),
-                    'page'      => 'general',
+                    'callback'  => array($this->socialMediaCallbacks, 'displayCustomFieldInput'),
+                    'page'      => self::SOCIAL_MEDIA_SLUG,
                     'section'   => 'social_media_links',
                     'args'      => array(
-                        'link'  => $site.'_link',
+                        'link'      => $site.'_link',
+                        'label_for' => $site.'_link',
                     )
                 );
             endforeach;
 
-            // Access tokens
-            $apiKeys = array(
-                'bitly_api_key'                     => __('Bitly API key'),
-                'github_client_id'                  => __('Github client ID'),
-                'github_client_secret'              => __('Github client secret'),
-                'facebook_access_token'             => __('Facebook access token'),
-                'instagram_access_token'            => __('Instagram access token'),
-                'instagram_user_id'                 => __('Instagram usesr ID'),
-                'twitter_oauth_access_token'        => __('Twitter access token'),
-                'twitter_oauth_access_token_secret' => __('Twitter access token secret'),
-                'twitter_customer_key'              => __('Twitter customer key'),
-                'twitter_customer_secret'           => __('Twitter customer secret'),
-            );
-
-            foreach ($apiKeys as $key => $value):
+            foreach ($this->socialAPIs as $key => $value):
                 $fields[] = array(
                     'id'        => $key,
                     'title'     => $value,
-                    'callback'  => array($this->customFieldsCallbacks, 'displayCustomFieldInput'),
-                    'page'      => 'general',
+                    'callback'  => array($this->socialMediaCallbacks, 'displayCustomFieldInput'),
+                    'page'      => self::SOCIAL_MEDIA_SLUG,
                     'section'   => 'api_keys',
                     'args'      => array(
-                        'link'  => $key
+                        'link'      => $key,
+                        'label_for' => $key,
                     )
                 );
             endforeach;
@@ -368,28 +261,6 @@
                     'label_for' => self::SOCIAL_MEDIA_SHARE_NAME
                 )
             );
-
-            // Social media profiles
-            // $socialMediaProfiles = $this->socialMediaCallbacks::SOCIAL_MEDIA_SITES;
-            // foreach ($socialMediaProfiles as $profile => $value):
-            //     $title = ucwords(str_replace('-', ' ', $profile));
-            //     $fields[] = array(
-            //         'id'        => 'wordtravel-smp-'.$profile,
-            //         'title'     => $title,
-            //         'callback'  => array($this->socialMediaCallbacks, 'renderSocialMefiaSite'),
-            //         'page'      => self::SOCIAL_MEDIA_SLUG,
-            //         'section'   => self::SOCIAL_MEDIA_SECTION,
-            //         'args'      => array(
-            //             'label_for' => 'wordtravel-smp-'.$profile,
-            //             'profile'   => array(
-            //                 'site'      => $profile,
-            //                 'enabled'   => isset($enabledSocialMediaProfiles[$profile]['enabled'])  ? 1 : 0,
-            //                 'title'     => isset($enabledSocialMediaProfiles[$profile]['title']) ? $enabledSocialMediaProfiles[$profile]['title'] : sprintf(__('Follow me on %s', 'wordtravel'), $title),
-            //                 'url'       => isset($enabledSocialMediaProfiles[$profile]['url']) ? $enabledSocialMediaProfiles[$profile]['url'] : '',
-            //             )
-            //         )
-            //     );
-            // endforeach;
 
             // Parent call
             parent::addFields($fields);

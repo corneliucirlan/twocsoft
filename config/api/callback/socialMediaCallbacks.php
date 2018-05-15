@@ -57,15 +57,31 @@
          */
         public function socialMediaProfiles()
         {
-            _e('Enable your social media profiles', 'ccwp');
+            _e('Enable your social media profiles', 'cornelius');
+        }
+
+        /**
+         * Social media links section
+         */
+        public function socialMediaLinksSection()
+        {
+            _e('Add your social media profile links', 'cornelius');
+        }
+
+        /**
+         * Social media API section
+         */
+        public function socialAPISection()
+        {
+            _e('Add access tokens for all social media sites', 'cornelius');
         }
 
         /**
          * Social media share section
          */
-        public function socialMediaShare()
+        public function socialMediaShareSection()
         {
-            _e('Enable social sites whare you want to share your content', 'ccwp');
+            _e('Enable social sites whare you want to share your content', 'cornelius');
         }
 
         /**
@@ -86,14 +102,15 @@
         }
 
         /**
-         * Validate Social Media Share settings
+         * Display custom fields
          *
-         * @param  [type] $input raw input
-         * @return [type]        sanitized input
+         * Generic function to render an input box
          */
-        public function validateSocialMediaShareSettings($input)
+        public function displayCustomFieldInput($args)
         {
-            return apply_filters('sanitize_text_field', $_POST[ThemeSettings::SOCIAL_MEDIA_SHARE_NAME]);
+            ?>
+            <input class="regular-text" type="text" name="<?php echo $args['link'] ?>" id="<?php echo $args['link'] ?>" value="<?= get_option($args['link']) ? get_option($args['link']) : '' ?>" />
+            <?php
         }
     }
 
