@@ -58,7 +58,6 @@
                 id mediumint(3) NOT NULL AUTO_INCREMENT,
                 name tinytext DEFAULT '' NOT NULL,
                 level int(2),
-                status int(1) DEFAULT 1,
                 status tinyint(1) DEFAULT 1,
                 PRIMARY KEY (id)
             ) $charsetCollate";
