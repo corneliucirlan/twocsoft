@@ -38,7 +38,7 @@
 	);
 
 	// Facebook
-	$url = "https://graph.facebook.com/v2.8/226215330901146/?".http_build_query($query);
+	$url = "https://graph.facebook.com/v3.0/226215330901146/?".http_build_query($query);
 	$facebook = ccwp\core\Tags::getCurlData($url);
 	$facebookLikes = $facebook->fan_count;
 ?>
