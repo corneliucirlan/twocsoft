@@ -11,7 +11,7 @@
 ?>
 
 <div class="wrap">
-	<h1><?php _e('Social Media Settings', 'ccwp') ?></h1>
+	<h1><?php _e('Social Media', 'cornelius') ?></h1>
 	<?php //settings_errors(); ?>
 
 	<form method="post" action="options.php">
