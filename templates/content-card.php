@@ -21,7 +21,7 @@
     <div class="card-body">
 
         <!-- Card title -->
-        <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <h2 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
         <!-- Excerpt -->
         <?php the_excerpt(); ?>
