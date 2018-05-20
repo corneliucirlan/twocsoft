@@ -51,12 +51,12 @@
 			a
 				color: $gray-100
 
-				&:hover
-					@each $current in $social-links
-						$i: index($social-links, $current)
-						.fa-#{$current}
-							transition: $social-links-transition
-							color: nth($social-colors, $i)
+				// &:hover
+				// 	@each $current in $social-links
+				// 		$i: index($social-links, $current)
+				// 		.fa-#{$current}
+				// 			transition: $social-links-transition
+				// 			color: nth($social-colors, $i)
 
 // small to medium screens
 @include media-breakpoint-up(sm)

@@ -23,19 +23,19 @@
 //
 // $grays: () !default
 // $grays: map-merge((
-//   "100": $gray-100,
-//   "200": $gray-200,
-//   "300": $gray-300,
-//   "400": $gray-400,
-//   "500": $gray-500,
-//   "600": $gray-600,
-//   "700": $gray-700,
-//   "800": $gray-800,
-//   "900": $gray-900
+//   '100': $gray-100,
+//   '200': $gray-200,
+//   '300': $gray-300,
+//   '400': $gray-400,
+//   '500': $gray-500,
+//   '600': $gray-600,
+//   '700': $gray-700,
+//   '800': $gray-800,
+//   '900': $gray-900
 // ), $grays)
 //
 // $blue:    rgba(61, 150, 203, 1)
-$blue:    #1E88AE
+$blue:    #1e88ae
 // $indigo:  #6610f2 !default
 // $purple:  #6f42c1 !default
 // $pink:    #e83e8c !default
@@ -48,19 +48,19 @@ $blue:    #1E88AE
 //
 // $colors: () !default
 // $colors: map-merge((
-//   "blue":       $blue,
-//   "indigo":     $indigo,
-//   "purple":     $purple,
-//   "pink":       $pink,
-//   "red":        $red,
-//   "orange":     $orange,
-//   "yellow":     $yellow,
-//   "green":      $green,
-//   "teal":       $teal,
-//   "cyan":       $cyan,
-//   "white":      $white,
-//   "gray":       $gray-600,
-//   "gray-dark":  $gray-800
+//   'blue':       $blue,
+//   'indigo':     $indigo,
+//   'purple':     $purple,
+//   'pink':       $pink,
+//   'red':        $red,
+//   'orange':     $orange,
+//   'yellow':     $yellow,
+//   'green':      $green,
+//   'teal':       $teal,
+//   'cyan':       $cyan,
+//   'white':      $white,
+//   'gray':       $gray-600,
+//   'gray-dark':  $gray-800
 // ), $colors)
 //
 // $primary:       $blue !default
@@ -74,21 +74,21 @@ $blue:    #1E88AE
 //
 // $theme-colors: () !default
 // $theme-colors: map-merge((
-//   "primary":    $primary,
-//   "secondary":  $secondary,
-//   "success":    $success,
-//   "info":       $info,
-//   "warning":    $warning,
-//   "danger":     $danger,
-//   "light":      $light,
-//   "dark":       $dark
+//   'primary':    $primary,
+//   'secondary':  $secondary,
+//   'success':    $success,
+//   'info':       $info,
+//   'warning':    $warning,
+//   'danger':     $danger,
+//   'light':      $light,
+//   'dark':       $dark
 // ), $theme-colors)
 // // stylelint-enable
 //
 // // Set a specific jump point for requesting color jumps
 // $theme-color-interval:      8% !default
 //
-// // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+// // The yiq lightness value that determines when the lightness of color changes from 'dark' to 'light'. Acceptable values are between 0 and 255.
 // $yiq-contrasted-threshold: 150 !default
 //
 // // Customize the light and dark text colors for use in our YIQ color contrast function.
@@ -148,7 +148,7 @@ $body-color:                #292b2c
 // //
 // // Style anchor elements.
 //
-// $link-color:                theme-color("primary") !default
+// $link-color:                theme-color('primary') !default
 // $link-decoration:           none !default
 // $link-hover-color:          darken($link-color, 15%) !default
 // $link-hover-decoration:     underline !default
@@ -173,7 +173,7 @@ $body-color:                #292b2c
 //   xl: 1200px
 // ) !default
 //
-// @include _assert-ascending($grid-breakpoints, "$grid-breakpoints")
+// @include _assert-ascending($grid-breakpoints, '$grid-breakpoints')
 // @include _assert-starts-at-zero($grid-breakpoints)
 //
 //
@@ -188,7 +188,7 @@ $body-color:                #292b2c
 //   xl: 1140px
 // ) !default
 //
-// @include _assert-ascending($container-max-widths, "$container-max-widths")
+// @include _assert-ascending($container-max-widths, '$container-max-widths')
 //
 //
 // // Grid columns
@@ -213,7 +213,7 @@ $body-color:                #292b2c
 // $border-radius-sm:            .2rem !default
 //
 // $component-active-color:      $white !default
-// $component-active-bg:         theme-color("primary") !default
+// $component-active-bg:         theme-color('primary') !default
 //
 // $caret-width:                 .3em !default
 //
@@ -227,12 +227,12 @@ $body-color:                #292b2c
 // // Font, line-height, and color for body text, headings, and more.
 //
 // // stylelint-disable value-keyword-case
-// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default
-// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default
+// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default
+// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default
 // $font-family-base:            $font-family-sans-serif !default
 // // stylelint-enable value-keyword-case
 //
-// $font-size-base:              1rem !default // Assumes the browser default, typically `16px`
+// $font-size-base:              1rem !default
 // $font-size-lg:                ($font-size-base * 1.25) !default
 // $font-size-sm:                ($font-size-base * .875) !default
 //
@@ -243,9 +243,9 @@ $body-color:                #292b2c
 // $font-weight-base:            $font-weight-normal !default
 // $line-height-base:            1.5 !default
 //
-// $h1-font-size:                $font-size-base * 2.5 !default
-// $h2-font-size:                $font-size-base * 2 !default
-// $h3-font-size:                $font-size-base * 1.75 !default
+$h1-font-size:                $font-size-base * 2
+$h2-font-size:                $font-size-base * 1.5
+$h3-font-size:                $font-size-base * 1.25
 // $h4-font-size:                $font-size-base * 1.5 !default
 // $h5-font-size:                $font-size-base * 1.25 !default
 // $h6-font-size:                $font-size-base !default
@@ -361,7 +361,7 @@ $input-btn-border-width:      0
 // $btn-border-width:            $input-btn-border-width !default
 //
 // $btn-font-weight:             $font-weight-normal !default
-$btn-box-shadow:              0px 15px 10px -10px rgba(black, 0.2)
+$btn-box-shadow:              0 15px 10px -10px rgba($black, .2)
 // $btn-focus-width:             $input-btn-focus-width !default
 // $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default
 // $btn-disabled-opacity:        .65 !default
@@ -376,7 +376,7 @@ $btn-box-shadow:              0px 15px 10px -10px rgba(black, 0.2)
 // $btn-border-radius-lg:        $border-radius-lg !default
 // $btn-border-radius-sm:        $border-radius-sm !default
 //
-$btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
+$btn-transition:              all 200ms cubic-bezier(.25, .39, .39, 2.01)
 //
 //
 // // Forms
@@ -454,7 +454,7 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 //
 // $custom-control-indicator-checked-color:        $component-active-color !default
 // $custom-control-indicator-checked-bg:           $component-active-bg !default
-// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default
+// $custom-control-indicator-checked-disabled-bg:  rgba(theme-color('primary'), .5) !default
 // $custom-control-indicator-checked-box-shadow:   none !default
 //
 // $custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow !default
@@ -464,15 +464,15 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 // $custom-control-indicator-active-box-shadow:    none !default
 //
 // $custom-checkbox-indicator-border-radius:       $border-radius !default
-// $custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default
+// $custom-checkbox-indicator-icon-checked:        str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E'), '#', '%23') !default
 //
 // $custom-checkbox-indicator-indeterminate-bg:    $component-active-bg !default
 // $custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color !default
-// $custom-checkbox-indicator-icon-indeterminate:  str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23") !default
+// $custom-checkbox-indicator-icon-indeterminate:  str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E'), '#', '%23') !default
 // $custom-checkbox-indicator-indeterminate-box-shadow: none !default
 //
 // $custom-radio-indicator-border-radius:          50% !default
-// $custom-radio-indicator-icon-checked:           str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23") !default
+// $custom-radio-indicator-icon-checked:           str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E'), '#', '%23') !default
 //
 // $custom-select-padding-y:           .375rem !default
 // $custom-select-padding-x:          .75rem !default
@@ -485,7 +485,7 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 // $custom-select-disabled-bg:         $gray-200 !default
 // $custom-select-bg-size:             8px 10px !default // In pixels because image dimensions
 // $custom-select-indicator-color:     $gray-800 !default
-// $custom-select-indicator:           str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default
+// $custom-select-indicator:           str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E'), '#', '%23') !default
 // $custom-select-border-width:        $input-btn-border-width !default
 // $custom-select-border-color:        $input-border-color !default
 // $custom-select-border-radius:       $border-radius !default
@@ -515,15 +515,15 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 // $custom-file-button-color:          $custom-file-color !default
 // $custom-file-button-bg:             $input-group-addon-bg !default
 // $custom-file-text: (
-//   en: "Browse"
+//   en: 'Browse'
 // ) !default
 //
 //
 // // Form validation
 // $form-feedback-margin-top:          $form-text-margin-top !default
 // $form-feedback-font-size:           $small-font-size !default
-// $form-feedback-valid-color:         theme-color("success") !default
-// $form-feedback-invalid-color:       theme-color("danger") !default
+// $form-feedback-valid-color:         theme-color('success') !default
+// $form-feedback-invalid-color:       theme-color('danger') !default
 //
 //
 // // Dropdowns
@@ -608,14 +608,14 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 // $navbar-dark-hover-color:           rgba($white, .75) !default
 // $navbar-dark-active-color:          $white !default
 // $navbar-dark-disabled-color:        rgba($white, .25) !default
-// $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default
+// $navbar-dark-toggler-icon-bg:       str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E'), '#', '%23') !default
 // $navbar-dark-toggler-border-color:  rgba($white, .1) !default
 //
 // $navbar-light-color:                rgba($black, .5) !default
 // $navbar-light-hover-color:          rgba($black, .7) !default
 // $navbar-light-active-color:         rgba($black, .9) !default
 // $navbar-light-disabled-color:       rgba($black, .3) !default
-// $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default
+// $navbar-light-toggler-icon-bg:      str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E'), '#', '%23') !default
 // $navbar-light-toggler-border-color: rgba($black, .1) !default
 //
 // // Pagination
@@ -662,7 +662,7 @@ $btn-transition:              all 200ms cubic-bezier(0.25, 0.39, 0.39, 2.01)
 // $card-border-radius:                $border-radius !default
 // $card-border-color:                 rgba($black, .125) !default
 // $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default
-$card-cap-bg:                       white
+$card-cap-bg:                       $white
 // $card-bg:                           $white !default
 //
 // $card-img-overlay-padding:          1.25rem !default
@@ -787,7 +787,7 @@ $card-cap-bg:                       white
 // $progress-border-radius:            $border-radius !default
 // $progress-box-shadow:               inset 0 .1rem .1rem rgba($black, .1) !default
 // $progress-bar-color:                $white !default
-// $progress-bar-bg:                   theme-color("primary") !default
+// $progress-bar-bg:                   theme-color('primary') !default
 // $progress-bar-animation-timing:     1s linear infinite !default
 // $progress-bar-transition:           width .6s ease !default
 //
@@ -843,7 +843,7 @@ $card-cap-bg:                       white
 // $breadcrumb-bg:                     $gray-200 !default
 // $breadcrumb-divider-color:          $gray-600 !default
 // $breadcrumb-active-color:           $gray-600 !default
-// $breadcrumb-divider:                "/" !default
+// $breadcrumb-divider:                '/' !default
 //
 //
 // // Carousel
@@ -862,8 +862,8 @@ $card-cap-bg:                       white
 //
 // $carousel-control-icon-width:       20px !default
 //
-// $carousel-control-prev-icon-bg:     str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23") !default
-// $carousel-control-next-icon-bg:     str-replace(url("data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default
+// $carousel-control-prev-icon-bg:     str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E'), '#', '%23') !default
+// $carousel-control-next-icon-bg:     str-replace(url('data:image/svg+xmlcharset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E'), '#', '%23') !default
 //
 // $carousel-transition:               transform .6s ease !default
 //
@@ -892,19 +892,19 @@ $card-cap-bg:                       white
 //
 // // Printing
 // $print-page-size:                   a3 !default
-// $print-body-min-width:              map-get($grid-breakpoints, "lg") !default
+// $print-body-min-width:              map-get($grid-breakpoints, 'lg') !default
 //
 //
 // // Custom
 
 // Content max width
-$content-max-width: 1500px
+$content-max-width: 1530px
 
 // Input
-$label-top: calc(50% - 0.5rem)
+$label-top: calc(50% - .5rem)
 
 // Card
-$card-shadow: 0px 20px 50px -20px rgba(0, 0, 0, 0.3)
+$card-shadow: 0 20px 50px -20px rgba(0, 0, 0, .3)
 
 // Facebook
 $facebook: rgba(62, 91, 153, 1)
@@ -934,7 +934,7 @@ $reddit: rgba(95, 153, 207, 1)
 $mail: rgba(68, 68, 68, 1)
 
 // Profiles array
-$socialProfiles: ("facebook": $facebook, "instagram": $instagram, "twitter": $twitter, "google-plus": $google-plus, "linkedin": $linkedin, "pinterest": $pinterest, "reddit": $reddit, "github": $github, "mail": $mail)
+$social-profiles: ('facebook': $facebook, 'instagram': $instagram, 'twitter': $twitter, 'google-plus': $google-plus, 'linkedin': $linkedin, 'pinterest': $pinterest, 'reddit': $reddit, 'github': $github, 'mail': $mail)
 
 // Social media
 $social-links: facebook, instagram, twitter, google-plus, linkedin
