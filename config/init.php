@@ -21,6 +21,7 @@
     use ccwp\custom\acfLoader;
     use ccwp\custom\themeSettings;
     use ccwp\custom\skills\skillsPage;
+    use ccwp\custom\amp;
 
     class Init
     {
@@ -60,6 +61,10 @@
             new ACFLoader(true);
             new ThemeSettings();
 
+            // AMP pages
+            new AMP();
+
+            // Skills
             new SkillsPage();
         }
 
