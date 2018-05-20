@@ -50,13 +50,7 @@
                     <!-- Social icons -->
                     <div class="col-xs-12 col-md-4">
                         <h2 class="footer-subtitle center-align">On social media</h2>
-                        <ul class="social-icons">
-                            <li><a class="social-link" target="_blank" href="<?php echo get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?php echo get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?php echo get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?php echo get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?php echo get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
-                        </ul>
+                        <?php ccwp\core\Tags::renderSocialProfiles('social-icons-footer', 'fa-2x'); ?>
                     </div>
             	</div>
             </div>
