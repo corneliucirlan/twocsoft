@@ -1,0 +1,48 @@
+// Social icons
+.social-icons
+    display: flex
+    justify-content: space-around
+    list-style: none
+    margin-bottom: 0
+    padding: 0
+
+    .social-icon
+        min-width: 3rem
+        text-align: center
+        width: 100%
+
+// Header & footer social icons
+.social-icons-header,
+.social-icons-footer
+    .social-icon
+        transition: $social-links-transition
+
+        @each $profile, $color in $social-profiles
+            &.social-icon-#{$profile}
+                &:hover
+                    color: $color
+
+        .social-link
+            color: inherit
+
+// Footer social icons
+.social-icons-footer
+    padding: $spacer/2 0
+
+// Socail icons share
+.social-icons-share
+    .social-icon
+        color: $white
+        transition: $social-links-transition
+
+        @each $profile, $color in $social-profiles
+            &.social-icon-#{$profile}
+                .social-link
+                    background-color: $color
+
+                    &:hover
+                        background-color: darken($color, 10%)
+
+        .social-link
+            color: inherit
+            display: block
