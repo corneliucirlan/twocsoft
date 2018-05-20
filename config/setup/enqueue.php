@@ -62,7 +62,7 @@
             // wp_deregister_script('jquery');
 
             // CSS
-            wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.css', array(), THEME_VERSION, 'all');
+            wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.min.css', array(), THEME_VERSION, 'all');
 
             // JS
             wp_enqueue_script('main', get_template_directory_uri().'/assets/js/main.min.js', array(), THEME_VERSION, true);
