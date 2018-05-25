@@ -1,5 +1,5 @@
 {
-  "name": "ccwp",
+  "name": "cornelius",
   "version": "1.0.0",
   "description": "An Object Oriented WordPress starter framework.",
   "main": "index.js",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/corneliucirlan/ccwp#readme",
   "devDependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.3.1",
