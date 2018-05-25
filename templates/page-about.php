@@ -19,23 +19,23 @@
 <main class="page-about row">
 
     <!-- About section -->
-    <!-- <div class="card-wrapper">
+    <!-- <section class="col-12">
         <div class="card card-body">
             <h2 class="card-title"><?php the_title() ?></h2>
             <?php the_content() ?>
         </div>
-    </div> -->
+    </section> -->
 
     <!-- Experience section -->
-    <div class="card-wrapper">
+    <section class="col-12">
         <div class="card card-body">
             <h2 class="card-title">Experience</h2>
             <?php the_field('experience') ?>
         </div>
-    </div>
+    </section>
 
     <!-- Skills section -->
-    <!-- <div class="card-wrapper"> -->
+    <section class="col-12">
         <div class="card card-body">
             <h2 class="card-title">Skills</h2>
             <div class="cards">
@@ -50,21 +50,21 @@
 
                     // Loop over all skills
                     foreach ($skills as $key => $skill):
-                		?>
-                		<div class="card-wrapper col-xs-12 col-sm-6 col-md-2">
-                			<div class="card card-flat card-borderless">
-                				<h3><?php echo $skill['name'] ?></h3>
-                				<div class="item-stars text-center">
-                					<?php for ($x = 1; $x <= 5; $x++): ?>
-                						<?php echo $x <= $skill['level'] ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>'; ?>
-                					<?php endfor; ?>
-                				</div>
-                			</div>
-                		</div>
-                		<?php
+                        ?>
+                        <div class="card-wrapper col-xs-12 col-sm-6 col-md-2">
+                            <div class="card card-flat card-borderless">
+                                <h3><?php echo $skill['name'] ?></h3>
+                                <div class="item-stars text-center">
+                                    <?php for ($x = 1; $x <= 5; $x++): ?>
+                                        <?php echo $x <= $skill['level'] ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>'; ?>
+                                    <?php endfor; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
                     endforeach;
                 ?>
             </div>
         </div>
-    <!-- </div> -->
+    </section>
 </main>
