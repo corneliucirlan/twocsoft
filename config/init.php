@@ -22,6 +22,7 @@
     use ccwp\custom\themeSettings;
     use ccwp\custom\skills\skillsPage;
     use ccwp\custom\amp;
+    use ccwp\custom\contact;
 
     class Init
     {
@@ -66,6 +67,9 @@
 
             // Skills
             new SkillsPage();
+
+            // Contact
+            new Contact();
         }
 
         /**

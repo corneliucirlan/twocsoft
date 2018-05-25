@@ -46,3 +46,17 @@
         .social-link
             color: inherit
             display: block
+
+// Contact social icons
+.social-icons-contact
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+    .social-icon
+        margin: $spacer
+        width: auto
+
+        @each $link, $color in $contact-links
+            .fa-#{$link}
+                color: $color

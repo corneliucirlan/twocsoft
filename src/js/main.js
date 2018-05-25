@@ -1,4 +1,4 @@
-// jQuery
+﻿// jQuery
 //@prepros-prepend "../../node_modules/jquery/dist/jquery.js"
 
 // Mobile menu
@@ -18,8 +18,8 @@
 
 jQuery(document).ready(function($) {
 
-	// Parallax
-	parallax();
+    // Parallax
+    parallax();
 
 	// Card effects
 	cardEffects();
@@ -107,7 +107,8 @@ jQuery(document).ready(function($) {
 		$('#contact-form').on('submit', function(event) {
 			event.preventDefault();
 
-			var $formParent = $('.page-contact-form');
+			var $formParent = $('.page-contact-form'),
+				spinner		= '<i class="fa fa-spinner fa-pulse"></i>';
 
 			var data = $(this).serialize();
 
@@ -118,22 +119,36 @@ jQuery(document).ready(function($) {
 				data: data,
 				beforeSend: function()
 				{
-					// Email sent
-					$formParent.addClass('is-sent');
-					$('#contact-form')[0].reset();
-					setTimeout(function() {
-						$formParent.removeClass('is-sent');
-					}, 1800);
+					// Disable all fields
+					$('button, input, textarea').prop('disabled', true);
+
+					// Update button's content
+					$('#submit-form').html(spinner);
+
+                    // Blur form
+                    $(this).addClass('blurred');
 				}
 			})
 			.done(function(data, textStatus, jqXHR) {
 				console.log(data);
+                console.log(textStatus);
+
+                $('#contact-form').append('<div class="alert alert-success">Message sent</div>');
 			})
 			.fail(function(jqXHR, textStatus, errorThrown) {
-				console.log(jqXHR.responseText);
+				console.log(jqXHR);
+				console.log(textStatus);
+				console.log(errorThrown);
+                $('#contact-form').append('<div class="alert alert-warning">Message not sent</div>');
 			})
 			.always(function(data, textStatus, jqXHR) {
-				$('form input,textarea').prop('disabled', false);
+
+                // Reset inputs
+                if ('success' === textStatus)
+                    $('#contact-form')[0].reset();
+
+				$('button, input, textarea').prop('disabled', false);
+				$('#submit-form').html('Send message');
 			});
 		});
 	}

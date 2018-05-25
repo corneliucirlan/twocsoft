@@ -3874,7 +3874,7 @@ input[type="button"].btn-block {
 }
 
 .card-deck .card {
-  margin-bottom: 15px;
+  margin-bottom: 1.875rem;
 }
 
 @media (min-width: 576px) {
@@ -3883,8 +3883,8 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -1.875rem;
+    margin-left: -1.875rem;
   }
   .card-deck .card {
     display: -webkit-box;
@@ -3897,9 +3897,9 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-right: 15px;
+    margin-right: 1.875rem;
     margin-bottom: 0;
-    margin-left: 15px;
+    margin-left: 1.875rem;
   }
 }
 
@@ -3914,7 +3914,7 @@ input[type="button"].btn-block {
 }
 
 .card-group > .card {
-  margin-bottom: 15px;
+  margin-bottom: 1.875rem;
 }
 
 @media (min-width: 576px) {
@@ -4008,6 +4008,145 @@ input[type="button"].btn-block {
 
 .breadcrumb-item.active {
   color: #6c757d;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert-link {
+  font-weight: 700;
+}
+
+.alert-dismissible {
+  padding-right: 4rem;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.alert-primary {
+  color: #10475a;
+  background-color: #d2e7ef;
+  border-color: #c0dee8;
+}
+
+.alert-primary hr {
+  border-top-color: #add4e1;
+}
+
+.alert-primary .alert-link {
+  color: #08252f;
+}
+
+.alert-secondary {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
+}
+
+.alert-secondary hr {
+  border-top-color: #c8cbcf;
+}
+
+.alert-secondary .alert-link {
+  color: #202326;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-success hr {
+  border-top-color: #b1dfbb;
+}
+
+.alert-success .alert-link {
+  color: #0b2e13;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.alert-info hr {
+  border-top-color: #abdde5;
+}
+
+.alert-info .alert-link {
+  color: #062c33;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-warning hr {
+  border-top-color: #ffe8a1;
+}
+
+.alert-warning .alert-link {
+  color: #533f03;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+  border-top-color: #f1b0b7;
+}
+
+.alert-danger .alert-link {
+  color: #491217;
+}
+
+.alert-light {
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+}
+
+.alert-light hr {
+  border-top-color: #ececf6;
+}
+
+.alert-light .alert-link {
+  color: #686868;
+}
+
+.alert-dark {
+  color: #1b1e21;
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
+}
+
+.alert-dark hr {
+  border-top-color: #b9bbbe;
+}
+
+.alert-dark .alert-link {
+  color: #040505;
 }
 
 .list-group {
@@ -11321,29 +11460,15 @@ header nav .container-fluid .header-icons {
   }
 }
 
-.card-wrapper,
-.card-deck-wrapper {
-  margin-bottom: 1.75rem;
-}
-
 .card {
-  -webkit-box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.3);
-}
-
-.card .no-animation {
-  -webkit-animation: none !important;
-  animation: none !important;
-}
-
-.card .card-header {
-  background-color: #fff;
+  -webkit-box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3), 0 -5px 30px -15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3), 0 -5px 30px -15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.875rem;
 }
 
 .card.card-flat {
   -webkit-box-shadow: none;
   box-shadow: none;
-  margin-bottom: 1rem;
 }
 
 .card.card-borderless {
@@ -11355,6 +11480,10 @@ header nav .container-fluid .header-icons {
   text-transform: uppercase;
 }
 
+.card .card-img {
+  height: auto;
+}
+
 .card .post-meta {
   margin-bottom: 1rem;
   text-align: left;
@@ -11363,10 +11492,6 @@ header nav .container-fluid .header-icons {
 .card .post-meta .meta-data {
   color: #ced3d8;
   margin-bottom: 1rem;
-}
-
-.card .card-img {
-  height: auto;
 }
 
 @media (min-width: 768px) {
@@ -11572,6 +11697,18 @@ a.follow-me {
   color: #292b2c;
 }
 
+a.follow-me .fa-envelope-o {
+  display: block;
+  color: #444444;
+  -webkit-transition: all ease-in-out 150ms;
+  -o-transition: all ease-in-out 150ms;
+  transition: all ease-in-out 150ms;
+}
+
+a.follow-me .fa-envelope-o:hover {
+  color: #2b2b2b;
+}
+
 a.follow-me .fa-facebook {
   display: block;
   color: #3e5b99;
@@ -11632,12 +11769,20 @@ a.follow-me .fa-linkedin:hover {
   color: #166791;
 }
 
-.breadcrumbs-container {
-  margin: 1rem auto;
+a.follow-me .fa-github {
+  display: block;
+  color: #333333;
+  -webkit-transition: all ease-in-out 150ms;
+  -o-transition: all ease-in-out 150ms;
+  transition: all ease-in-out 150ms;
 }
 
-.breadcrumbs-container .breadcrumb {
-  margin-bottom: 0;
+a.follow-me .fa-github:hover {
+  color: #1a1a1a;
+}
+
+.breadcrumbs-container {
+  margin: 2rem auto;
 }
 
 .social-icons {
@@ -11802,6 +11947,49 @@ a.follow-me .fa-linkedin:hover {
   display: block;
 }
 
+.social-icons-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.social-icons-contact .social-icon {
+  margin: 1rem;
+  width: auto;
+}
+
+.social-icons-contact .social-icon .fa-envelope-o {
+  color: #444444;
+}
+
+.social-icons-contact .social-icon .fa-facebook {
+  color: #3e5b99;
+}
+
+.social-icons-contact .social-icon .fa-instagram {
+  color: #bc2a8d;
+}
+
+.social-icons-contact .social-icon .fa-twitter {
+  color: #1da1f2;
+}
+
+.social-icons-contact .social-icon .fa-google-plus {
+  color: #db4437;
+}
+
+.social-icons-contact .social-icon .fa-linkedin {
+  color: #1d87bd;
+}
+
+.social-icons-contact .social-icon .fa-github {
+  color: #333333;
+}
+
 .btn {
   border-radius: 0;
   -webkit-transition: all ease-in-out 150ms;
@@ -11907,94 +12095,19 @@ label {
   background: #1e88ae;
 }
 
-.page-about .card h2, .page-about .card h3, .page-about .card h4 {
+.page-about .card h2,
+.page-about .card h3,
+.page-about .card h4 {
   text-align: center;
   text-transform: uppercase;
 }
 
-.page-contact .page-contact-social .social-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.page-contact .page-contact-social .social-icons li {
-  text-align: center;
-  padding: 1rem;
-}
-
-.page-contact .page-contact-social .social-icons .fa {
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-envelope-o {
-  color: #444444;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-envelope-o:hover {
-  color: #2b2b2b;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-facebook {
-  color: #3e5b99;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-facebook:hover {
-  color: #2f4575;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-instagram {
-  color: #bc2a8d;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-instagram:hover {
-  color: #92216e;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-twitter {
-  color: #1da1f2;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-twitter:hover {
-  color: #0c85d0;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-google-plus {
-  color: #db4437;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-google-plus:hover {
-  color: #bd2e22;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-linkedin {
-  color: #1d87bd;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-linkedin:hover {
-  color: #166791;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-github {
-  color: #333333;
-}
-
-.page-contact .page-contact-social .social-icons .fa.fa-github:hover {
-  color: #1a1a1a;
-}
-
-.page-contact .page-contact-social .card {
-  margin-top: 1rem;
-}
-
-.page-contact .page-contact-social .btn {
+#submit-form {
   width: 100%;
+}
+
+.card-contact {
+  margin-top: 1rem;
 }
 
 .page-single .social-icons {

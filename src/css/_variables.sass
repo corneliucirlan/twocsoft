@@ -116,7 +116,7 @@ $enable-shadows:            true
 // // You can add more entries to the $spacers map, should you need more variation.
 //
 // // stylelint-disable
-// $spacer: 1rem !default
+$spacer: 1rem
 // $spacers: () !default
 // $spacers: map-merge((
 //   0: 0,
@@ -667,7 +667,7 @@ $card-cap-bg:                       $white
 //
 // $card-img-overlay-padding:          1.25rem !default
 //
-// $card-group-margin:                 ($grid-gutter-width / 2) !default
+$card-group-margin:                 1.875 * $spacer
 // $card-deck-margin:                  $card-group-margin !default
 //
 // $card-columns-count:                3 !default
@@ -904,7 +904,8 @@ $content-max-width: 1530px
 $label-top: calc(50% - .5rem)
 
 // Card
-$card-shadow: 0 20px 50px -20px rgba(0, 0, 0, .3)
+// $card-shadow: 0 20px 50px -20px rgba(0, 0, 0, .3)
+$card-shadow: 0 20px 40px -15px rgba(0, 0, 0, .3), 0 -5px 30px -15px rgba(0, 0, 0, .3)
 
 // Facebook
 $facebook: rgba(62, 91, 153, 1)
@@ -936,13 +937,8 @@ $mail: rgba(68, 68, 68, 1)
 // Profiles array
 $social-profiles: ('facebook': $facebook, 'instagram': $instagram, 'twitter': $twitter, 'google-plus': $google-plus, 'linkedin': $linkedin, 'pinterest': $pinterest, 'reddit': $reddit, 'github': $github, 'mail': $mail)
 
-// Social media
-$social-links: facebook, instagram, twitter, google-plus, linkedin
-$social-colors: $facebook, $instagram, $twitter, $google-plus, $linkedin
-
 // Contact links
-$contact-links: envelope-o, facebook, instagram, twitter, google-plus, linkedin, github
-$contact-colors: $mail, $facebook, $instagram, $twitter, $google-plus, $linkedin, $github
+$contact-links: ('envelope-o': $mail, 'facebook': $facebook, 'instagram': $instagram, 'twitter': $twitter, 'google-plus': $google-plus, 'linkedin': $linkedin, 'github': $github)
 
 // Social icons transition
 $social-links-transition: all ease-in-out 150ms

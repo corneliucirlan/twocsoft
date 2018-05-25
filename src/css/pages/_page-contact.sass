@@ -1,28 +1,23 @@
-.page-contact
-	.page-contact-social
+#submit-form
+    width: 100%
 
-		.social-icons
-			display: flex
-			justify-content: space-around
-			flex-wrap: wrap
+.card-contact
+    margin-top: $spacer
 
-			li
-				text-align: center
-				padding: $spacer
 
-			.fa
-				transition: $social-links-transition
 
-				@each $current in $contact-links
-					$i: index($contact-links, $current)
-					&.fa-#{$current}
-						color: nth($contact-colors, $i)
-
-						&:hover
-							color: darken(nth($contact-colors, $i), 10%)
-
-		.card
-			margin-top: $spacer
-
-		.btn
-			width: 100%
+// .card-contact
+//     animation: send 2s
+//
+// @keyframes send
+//     0%
+//         transform: translateY(0) scale(1)
+//
+//     50%
+//         transform: translateY(-200%) scale(.5)
+//
+//     51%
+//         transform: translateY(0) scale(.1)
+//
+//     100%
+//         transform: scale(1)
