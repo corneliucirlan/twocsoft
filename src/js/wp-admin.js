@@ -1,5 +1,5 @@
 // Opening jQuery
-//@codekit-prepend 'admin/header.js'
+//@codekit-prepend "jquery-header.js"
 
 // Media handeling pages
 //@codekit-prepend 'admin/media.js'
@@ -11,4 +11,4 @@
 //@codekit-prepend 'admin/widget-follow.js'
 
 // Closing jQuery
-//@codekit-prepend 'admin/footer.js'
+//@codekit-prepend "jquery-footer.js"
