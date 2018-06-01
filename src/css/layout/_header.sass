@@ -1,73 +1,64 @@
-// Brand logo
+// Logo
 .custom-logo-link
-	max-height: $spacer * 3
-	margin-right: $spacer
+    margin-right: 50%
+    transform: translateX(50%)
 
-	.custom-logo
-		max-height: $spacer * 3
-		width: auto
+    .custom-logo
+        max-height: 4 * $font-size-base
+        width: auto
 
+// Header
 header
-	nav
-		.container-fluid
-			text-transform: uppercase
-			padding-top: $spacer / 2
-			padding-bottom: $spacer / 2
+    .navbar
+        .container-fluid
+            padding: $spacer / 2 0
+            text-transform: uppercase
 
-			.navbar-nav
-				background-color: white
+            .navbar-toggler
+                margin: 0 $spacer
 
-				.nav-link
-					font-size: $font-size-base
+            .navbar-nav
+                background-color: $white
 
-			.header-icons
-				flex: 1
-
-.navbar.navbar-toggleable-md .navbar-nav.navbar-nav-left.mds-active
-	background: white
-
-@include media-breakpoint-up(sm)
-	header nav .container-fluid
-		// width: 100% !important
-
-		.navbar-nav,
-		.header-icons
-			flex: 0
-
-		.custom-logo-link
-			flex: 1
-
-
-@include media-breakpoint-up(md)
-	header nav .container-fluid
-		// width: 100% !important
-
-		.navbar-nav,
-		.header-icons
-			flex: 0
-
-		.custom-logo-link
-			flex: 1
-
-@include media-breakpoint-up(lg)
-	header nav.navbar .container-fluid
-		display: flex
-
-		.navbar-nav
-			background: transparent
-			flex: 1
-
-		.header-icons,
-		.custom-logo-link
-			flex: 0
-
+                .nav-link
+                    color: $body-color
+                    font-size: $font-size-base
 
 .mds-fixed-top
-	background-color: white
+    background-color: $white
 
-.header-overlay
-	position: absolute
-	width: 100%
-	top: 0
-	left: 0
-	background-color: transparent
+@include media-breakpoint-up(md)
+    header
+        .navbar
+            .container-fluid
+                .navbar-nav
+                    background-color: transparent
+
+                .social-icons-header
+                    flex: 1
+
+                .navbar-nav,
+                .custom-logo-link
+                    flex: 0
+
+                .custom-logo-link
+                    margin-right: 2 * $spacer
+                    transform: none
+
+
+@include media-breakpoint-up(xl)
+    header
+        .navbar
+            .container-fluid
+                display: flex
+
+                .navbar-nav
+                    flex: 1
+
+                .custom-logo-link,
+                .social-icons-header
+                    flex: 0
+
+                .custom-logo-link
+                    margin-right: 2 * $spacer
+                    transform: none

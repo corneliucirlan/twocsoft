@@ -12,18 +12,36 @@
         width: 100%
 
 // Header & footer social icons
+
+.social-icons-header
+    .social-icon
+        font-size: 1.5 * $font-size-base
+
+.social-icons-footer
+    margin-top: $spacer
+
 .social-icons-header,
 .social-icons-footer
+    width: 100%
+
     .social-icon
         transition: $social-links-transition
 
         @each $profile, $color in $social-profiles
             &.social-icon-#{$profile}
+
                 &:hover
                     color: $color
 
         .social-link
             color: inherit
+
+@include media-breakpoint-up(md)
+    .social-icons-header
+        width: auto
+
+        .social-icon
+            font-size: $font-size-base
 
 // Footer social icons
 .social-icons-footer
