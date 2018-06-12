@@ -188,25 +188,35 @@
 
         /**
         * Get social media data via cURL
+        *
         * @param  string $url URL to get data from
         * @return object      Rretreived data in JSON format
         */
         public static function getCurlData($url)
         {
             $ch = curl_init();
+
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
+
             if($response === false) echo 'Curl error: ' . curl_error($ch);
-            else $response = $response;
+                else $response = $response;
             curl_close($ch);
+
             return json_decode($response);
         }
 
+        /**
+         * Render social media profiles section
+         *
+         * @param  string $location CSS class to determine section location
+         * @param  string $iconSize FontAwesome CSS class to determine icons' size
+         */
         public static function renderSocialProfiles($location = '', $iconSize = '')
         {
-            $sites = array('facebook', 'instagram', 'twitter', 'google_plus', 'linkedin');
+            $sites = array('facebook', 'instagram', 'twitter', 'behance', 'linkedin');
 
             ?>
             <ul class="social-icons <?php echo $location ?>">
@@ -217,6 +227,5 @@
             <?php
         }
     }
-
 
 ?>

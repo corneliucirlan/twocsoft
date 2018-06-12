@@ -11948,6 +11948,11 @@ a.follow-me .fa-github:hover {
   color: #db4437;
 }
 
+.social-icons-header .social-icon.social-icon-behance:hover,
+.social-icons-footer .social-icon.social-icon-behance:hover {
+  color: #1769ff;
+}
+
 .social-icons-header .social-icon.social-icon-linkedin:hover,
 .social-icons-footer .social-icon.social-icon-linkedin:hover {
   color: #1d87bd;
@@ -12028,6 +12033,14 @@ a.follow-me .fa-github:hover {
 
 .social-icons-share .social-icon.social-icon-google-plus .social-link:hover {
   background-color: #bd2e22;
+}
+
+.social-icons-share .social-icon.social-icon-behance .social-link {
+  background-color: #1769ff;
+}
+
+.social-icons-share .social-icon.social-icon-behance .social-link:hover {
+  background-color: #0050e3;
 }
 
 .social-icons-share .social-icon.social-icon-linkedin .social-link {
