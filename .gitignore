@@ -35,17 +35,11 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 # GitHub.sublime-settings
 
-# Prepros files
-*.config
-*.cfg
-prepros-6.config
-
 ### Bower ###
 bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
-*.config
 
 ### NPM ###
 node_modules
