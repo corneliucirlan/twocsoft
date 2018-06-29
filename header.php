@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Header template file
+     *
+     * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+     *
+     * @package ccwp
+     */
+
     // Security check
     if (!defined('ABSPATH')) die;
 
@@ -12,8 +20,8 @@
             $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id()).");
                 background-position: center top;";
         else:
-            $headerStyles = "background: url(".get_header_image().");
-                background-position: top top";
+            $headerStyles = "background-image: url(".get_header_image().");
+                background-position: top;";
     endif;
 
     // Set header image style
@@ -26,14 +34,16 @@
         background-size: cover;
         max-height: 500px
         padding: 0;
+        box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, 0.2);
         margin: 0;";
 
     $detect = new Mobile_Detect();
     if ($detect->isMobile() && !$detect->isTablet()):
-            $headerStyles .= "height: 400px;";
+            $headerHeight = "400px;";
         else:
-            $headerStyles .= "height: 500px;";
+            $headerHeight = "500px;";
     endif;
+    $headerStyles .= "height: ".$headerHeight;
 
     if (!is_singular('post')):
 
@@ -77,16 +87,15 @@
 	<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><?php wp_title() ?></title>
 
         <?php wp_head() ?>
     </head>
 
-    <body class="<?php echo join(' ', get_body_class()) ?>">
+    <body <?php body_class() ?>>
 
 		<!-- Header -->
         <header>
-            <nav class="navbar fixed-top navbar-full navbar-light">
+            <nav class="navbar fixed-top navbar-toggleable-md navbar-full navbar-light">
 
                 <div class="container-fluid">
 
@@ -96,7 +105,7 @@
                     </button>
 
                     <!-- Logo -->
-                    <a href="<?php bloginfo('url') ?>"><img class="logo" src="<?= THEME_URI ?>img/logo.png" width="100" height="29" alt="<?php bloginfo() ?>" /></a>
+                    <?php echo function_exists('has_custom_logo') && has_custom_logo() ? get_custom_logo() : '<a class="navbar-brand custom-logo-link" href="'.esc_url(home_url()).'">'.get_bloginfo().'</a>'; ?>
 
                     <?php
                         // Render header menu
@@ -113,30 +122,26 @@
                             );
                             wp_nav_menu($args);
                         endif;
+
+                        // Social media profiles
+                        ccwp\core\Tags::renderSocialProfiles('social-icons-header');
                     ?>
-                	<ul class="social-icons header-icons">
-                        <li><a class="social-link" target="_blank" href="<?= get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="social-link" target="_blank" href="<?= get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></li>
-                        <li><a class="social-link" target="_blank" href="<?= get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="social-link" target="_blank" href="<?= get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a class="social-link" target="_blank" href="<?= get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
 
                 </div>
             </nav>
 
             <!-- Header image -->
-            <div class="header-image row" style="<?= $headerStyles ?>"><div class="header-overlay"></div></div>
+            <div class="header-image row" style="<?= $headerStyles ?>"><div class="header-overlay" style="height: <?php echo $headerHeight; ?>"></div></div>
 
             <!-- Breadcrumbs -->
             <div class="breadcrumbs-container container-fluid">
                 <div class="row">
-                    <div class="<?= $isSingular ? 'col' : 'col-xs-12 col-md-8' ?>">
-                        <?php renderBreadcrumbs() ?>
+                    <div class="<?php echo $isSingular ? 'col' : 'col-xs-12 col-md-8' ?>">
+                        <?php //renderBreadcrumbs() ?>
                     </div>
                     <?php if (!$isSingular): ?>
                         <div class="col-xs-12 col-md-4">
-                            <?php displayShareButtons($pageSettings) ?>
+                            <?php ccwp\core\Tags::displayShareButtons($pageSettings) ?>
                         </div>
                     <?php endif; ?>
                 </div>

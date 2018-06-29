@@ -1,0 +1,29 @@
+.post-tags
+    padding: $spacer 0
+
+    .fa-tag
+        background-color: theme-color('primary')
+        border: 1px solid theme-color('primary')
+        color: $white
+        font-size: $font-size-base
+        line-height: $line-height-base
+        padding: $spacer / 2
+
+    .tags
+        display: inline-block
+        padding: 0
+
+        .tag
+            display: inline-block
+
+            a
+                @include transition
+                border: 1px solid theme-color('primary')
+                color: theme-color('primary')
+                font-size: $font-size-base
+                margin: $spacer / 4
+                padding: $spacer / 2
+
+            &:hover
+                background: theme-color('primary')
+                color: $white

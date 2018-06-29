@@ -1,5 +1,14 @@
 <?php
 
+    /**
+     * Footer template file
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package ccwp
+     */
+
+
     // Security check
     if (!defined('ABSPATH')) die;
 
@@ -11,15 +20,14 @@
                 <div class="row">
 
                     <!-- Footer menu -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">Links</h2>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">Links</h2>
                         <?php
-                            if (has_nav_menu('header-menu')):
-
-                                // desktop menu
+                            // Footer menu
+                            if (has_nav_menu('footer-menu')):
                                 $args = array(
-                                    'theme_location' => 'header-menu',
-                                    'menu' => 'header-menu',
+                                    'theme_location' => 'footer-menu',
+                                    'menu' => 'footer-menu',
                                     'container' => 'ul',
                                     'menu_class' => 'footer-menu',
                                     'echo' => true,
@@ -33,27 +41,21 @@
                     </div>
 
                     <!-- Contact -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">Let's work together</h2>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">Let's work together</h2>
                         <p><?php echo get_option('footer_center_text') ?></p>
                     </div>
 
                     <!-- Social icons -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">On social media</h2>
-                        <ul class="social-icons">
-                            <li><a class="social-link" target="_blank" href="<?= get_option('facebook_link') ?>" title="Follow me on Facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('instagram_link') ?>" title="Follow me on Instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('twitter_link') ?>" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('google_plus_link') ?>" title="Follow me on Google+"><i class="fa fa-google-plus fa-2x"></i></a></li>
-                            <li><a class="social-link" target="_blank" href="<?= get_option('linkedin_link') ?>" title="Follow me on Linkedin"><i class="fa fa-linkedin fa-2x"></i></a></li>
-                        </ul>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">On social media</h2>
+                        <?php ccwp\core\Tags::renderSocialProfiles('social-icons-footer', 'fa-2x'); ?>
                     </div>
             	</div>
             </div>
 
             <!-- Copyright -->
-            <div class="footer-copyright col-xs-12">
+            <div class="footer-copyright col-12">
             	<div class="container center-align">
             		Copyright &copy; <?php echo date('Y') ?> <?php bloginfo() ?>. All rights reserved.
             	</div>

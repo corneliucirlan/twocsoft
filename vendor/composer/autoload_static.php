@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitf997b9f772caf6cd660a44e3dc61cce1
 {
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'ccwp\\' => 5,
+        ),
         'A' => 
         array (
             'Abraham\\TwitterOAuth\\' => 21,
@@ -14,6 +18,10 @@ class ComposerStaticInitf997b9f772caf6cd660a44e3dc61cce1
     );
 
     public static $prefixDirsPsr4 = array (
+        'ccwp\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
+        ),
         'Abraham\\TwitterOAuth\\' => 
         array (
             0 => __DIR__ . '/..' . '/abraham/twitteroauth/src',
@@ -31,7 +39,37 @@ class ComposerStaticInitf997b9f772caf6cd660a44e3dc61cce1
     );
 
     public static $classMap = array (
+        'Abraham\\TwitterOAuth\\Config' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Config.php',
+        'Abraham\\TwitterOAuth\\Consumer' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Consumer.php',
+        'Abraham\\TwitterOAuth\\HmacSha1' => __DIR__ . '/..' . '/abraham/twitteroauth/src/HmacSha1.php',
+        'Abraham\\TwitterOAuth\\Request' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Request.php',
+        'Abraham\\TwitterOAuth\\Response' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Response.php',
+        'Abraham\\TwitterOAuth\\SignatureMethod' => __DIR__ . '/..' . '/abraham/twitteroauth/src/SignatureMethod.php',
+        'Abraham\\TwitterOAuth\\Token' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Token.php',
+        'Abraham\\TwitterOAuth\\TwitterOAuth' => __DIR__ . '/..' . '/abraham/twitteroauth/src/TwitterOAuth.php',
+        'Abraham\\TwitterOAuth\\TwitterOAuthException' => __DIR__ . '/..' . '/abraham/twitteroauth/src/TwitterOAuthException.php',
+        'Abraham\\TwitterOAuth\\Util' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Util.php',
+        'Abraham\\TwitterOAuth\\Util\\JsonDecoder' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Util/JsonDecoder.php',
+        'Detection\\MobileDetect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced/Detection/MobileDetect.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
+        'ccwp\\Init' => __DIR__ . '/../..' . '/config/init.php',
+        'ccwp\\api\\Customizer' => __DIR__ . '/../..' . '/config/api/customizer.php',
+        'ccwp\\api\\Settings' => __DIR__ . '/../..' . '/config/api/settings.php',
+        'ccwp\\api\\callback\\SocialMediaCallbacks' => __DIR__ . '/../..' . '/config/api/callback/socialMediaCallbacks.php',
+        'ccwp\\core\\CPT' => __DIR__ . '/../..' . '/config/core/cpt.php',
+        'ccwp\\core\\Tags' => __DIR__ . '/../..' . '/config/core/tags.php',
+        'ccwp\\core\\Widgets' => __DIR__ . '/../..' . '/config/core/widgets.php',
+        'ccwp\\custom\\ACFLoader' => __DIR__ . '/../..' . '/config/custom/acfLoader.php',
+        'ccwp\\custom\\AMP' => __DIR__ . '/../..' . '/config/custom/amp.php',
+        'ccwp\\custom\\Contact' => __DIR__ . '/../..' . '/config/custom/contact.php',
+        'ccwp\\custom\\ThemeSettings' => __DIR__ . '/../..' . '/config/custom/themeSettings.php',
+        'ccwp\\custom\\skills\\Skills' => __DIR__ . '/../..' . '/config/custom/skills/skills.php',
+        'ccwp\\custom\\skills\\SkillsPage' => __DIR__ . '/../..' . '/config/custom/skills/skillsPage.php',
+        'ccwp\\setup\\Enqueue' => __DIR__ . '/../..' . '/config/setup/enqueue.php',
+        'ccwp\\setup\\Login' => __DIR__ . '/../..' . '/config/setup/login.php',
+        'ccwp\\setup\\Menus' => __DIR__ . '/../..' . '/config/setup/menus.php',
+        'ccwp\\setup\\Remove' => __DIR__ . '/../..' . '/config/setup/remove.php',
+        'ccwp\\setup\\Setup' => __DIR__ . '/../..' . '/config/setup/setup.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

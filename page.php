@@ -1,7 +1,15 @@
 <?php
 
+	/**
+	 * Default page template file
+	 *
+	 * @link https://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package ccwp
+	 */
+
 	// Security check
-	if (!defined('ABSPATH')) die;
+	if (!defined('ABSPATH')) exit;
 
 ?>
 
@@ -9,34 +17,21 @@
 
 <?php
 	switch (get_the_id()):
-					
-		/**
-		 * PROJECTS PAGE
-		 */
-		case PAGE_PORTFOLIO: get_template_part('templates/page-portfolio'); break;
 
-		/**
-		 * ABOUT US PAGE
-		 */
-		case PAGE_ABOUT: get_template_part('templates/page-about'); break;
+		// Projects page
+		case PAGE_PORTFOLIO: get_template_part('templates/page', 'portfolio'); break;
 
-		/**
-		 * CONTACT PAGE
-		 */
-		case PAGE_CONTACT: get_template_part('templates/page-contact'); break;
+		// About page
+		case PAGE_ABOUT: get_template_part('templates/page', 'about'); break;
 
-		/**
-		 * SERVICES PAGE
-		 */
-		case PAGE_SERVICES: get_template_part('templates/page-services'); break;
+		// Contact page
+		case PAGE_CONTACT: get_template_part('templates/page', 'contact'); break;
 
-		/**
-		 * DEFAULT CASE
-		 */
-		default: 
-			the_post();
-			the_content();
-			break;
+		// Services page
+		case PAGE_SERVICES: get_template_part('templates/page', 'services'); break;
+
+		// Default page
+		default: get_template_part('templates/content', 'generic'); break;
 	endswitch;
 ?>
 

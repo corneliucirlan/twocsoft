@@ -1,0 +1,23 @@
+// Variables
+@import 'variables'
+
+@import '../../node_modules/bootstrap/scss/functions'
+@import '../../node_modules/bootstrap/scss/variables'
+
+// Font Awesome
+@import '../../node_modules/font-awesome/scss/font-awesome'
+
+
+.widget-checkhox
+    display: none
+
+.fa
+    color: $gray-200
+    cursor: pointer
+    text-align: center
+    width: 4rem
+
+    &.fa-active
+        @each $profile, $color in $social-profiles
+            &.fa-#{$profile}
+                color: $color

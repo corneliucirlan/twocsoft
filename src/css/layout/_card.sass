@@ -1,0 +1,32 @@
+.card
+    box-shadow: $card-shadow
+    margin-bottom: 1.875 * $spacer
+
+    &.card-flat
+        box-shadow: none
+        // margin-bottom: $spacer
+
+    &.card-borderless
+        border: 0
+
+    .card-header
+        .card-title
+            margin: 0
+            text-transform: uppercase
+
+    .card-img
+        height: auto
+
+    .post-meta
+        margin-bottom: $spacer
+        text-align: left
+
+        .meta-data
+            color: lighten(theme-color('dark'), 60%)
+            margin-bottom: $spacer
+
+@include media-breakpoint-up(md)
+    .card
+        .post-meta
+            .meta-data
+                margin-bottom: 0

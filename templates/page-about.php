@@ -1,57 +1,70 @@
 <?php
 
+    /**
+     * Template part for displaying About page
+     *
+     * @link https://codex.wordpress.org/Template_Hierarchy
+     *
+     * @package ccwp
+     */
+
+
     // Security check
     if (!defined('ABSPATH')) die;
 
     the_post();
-?>
-
-<?php
-
-	// SKILLS
-	$skills = array();
-	$skills[] = new SKILL('PHP', 4);
-	$skills[] = new SKILL('HTML5',5);
-	$skills[] = new SKILL('CSS3', 4);
-	$skills[] = new SKILL('JavaScript', 3);
-	$skills[] = new SKILL('Git', 2);
-	$skills[] = new SKILL('AJAX', 5);
-	$skills[] = new SKILL('WordPress', 4);
-	$skills[] = new SKILL('MySQL', 3);
-	$skills[] = new SKILL('Java', 2);
-	$skills[] = new SKILL('Python', 2);
-	$skills[] = new SKILL('Microsoft Office', 4);
-	$skills[] = new SKILL('Eclipse IDE', 3);
-	$skills[] = new SKILL('XML', 3);
-	$skills[] = new SKILL('jQuery', 4);
-	$skills[] = new SKILL('Web Development', 5);
-	$skills[] = new SKILL('Plugins', 5);
-	$skills[] = new SKILL('OOP', 4);
-    $skills[] = new SKILL('SASS', 3);
-
-	shuffle($skills);
 
 ?>
 
 <main class="page-about row">
 
     <!-- About section -->
-    <!-- <div class="card card-block"> -->
-        <!-- <h2 class="card-title"><?php the_title() ?></h2> -->
-        <!-- <?php the_content() ?> -->
-    <!-- </div> -->
+    <!-- <section class="col-12">
+        <div class="card card-body">
+            <h2 class="card-title"><?php the_title() ?></h2>
+            <?php the_content() ?>
+        </div>
+    </section> -->
 
     <!-- Experience section -->
-    <div class="card card-flat card-block">
-        <h2 class="card-title">Experience</h2>
-        <?php the_field('experience') ?>
-    </div>
+    <section class="col-12">
+        <div class="card card-body">
+            <h2 class="card-title">Experience</h2>
+            <?php the_field('experience') ?>
+        </div>
+    </section>
 
     <!-- Skills section -->
-    <div class="card card-flat card-block">
-        <h2 class="card-title">Skills</h2>
-        <div class="cards">
-            <?php for ($i = 1; $i < sizeof($skills); $i++) printSkill($skills[$i]); ?>
+    <section class="col-12">
+        <div class="card card-body">
+            <h2 class="card-title">Skills</h2>
+            <div class="cards">
+                <?php
+                    global $wpdb;
+
+                    // Get all skills
+                    $skills = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."skills WHERE status=1", ARRAY_A);
+
+                    // Shuffle skills
+                    shuffle($skills);
+
+                    // Loop over all skills
+                    foreach ($skills as $key => $skill):
+                        ?>
+                        <div class="card-wrapper col-xs-12 col-sm-6 col-md-2">
+                            <div class="card card-flat card-borderless">
+                                <h3><?php echo $skill['name'] ?></h3>
+                                <div class="item-stars text-center">
+                                    <?php for ($x = 1; $x <= 5; $x++): ?>
+                                        <?php echo $x <= $skill['level'] ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>'; ?>
+                                    <?php endfor; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    endforeach;
+                ?>
+            </div>
         </div>
-    </div>
+    </section>
 </main>

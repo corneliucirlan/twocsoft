@@ -1,0 +1,39 @@
+.footer
+    background-color: $body-color
+    color: $body-bg
+    margin-top: 2 * $spacer
+    padding: $spacer
+    text-align: center
+
+    a
+        @include transition
+        color: inherit
+        font-weight: 700
+
+        &:hover,
+        &:active,
+        &:focus
+            color: $gray-600
+            text-decoration: none
+
+.footer-menu
+    padding: 0
+
+    .nav-item
+        width: 100%
+
+.footer-copyright
+    margin-top: 2 * $spacer
+
+@include media-breakpoint-up(sm)
+    .footer-menu
+        .nav-item
+            width: calc(100% / 4)
+
+@include media-breakpoint-up(md)
+    .footer-menu
+        display: flex
+        justify-content: space-around
+
+        .nav-item
+            width: auto
