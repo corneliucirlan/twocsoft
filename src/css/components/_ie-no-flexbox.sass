@@ -1,20 +1,25 @@
-html, body
+html,
+body
     height: 100%
 
 .main-container
     min-height: 100%
 
     &::after
-        content: ""
+        content: ''
         display: block
         height: 180px
 
-header nav .container-fluid
-    position: relative
-    display: block
-    margin: 0 auto
+header
+    nav
+        .container-fluid
+            display: block
+            margin: 0 auto
+            position: relative
 
-    .header-icons, .logo, .navbar-nav
+    .header-icons,
+    .logo,
+    .navbar-nav
         display: inline-block
         float: left
 

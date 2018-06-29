@@ -20,12 +20,11 @@
                 <div class="row">
 
                     <!-- Footer menu -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">Links</h2>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">Links</h2>
                         <?php
+                            // Footer menu
                             if (has_nav_menu('footer-menu')):
-
-                                // desktop menu
                                 $args = array(
                                     'theme_location' => 'footer-menu',
                                     'menu' => 'footer-menu',
@@ -42,21 +41,21 @@
                     </div>
 
                     <!-- Contact -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">Let's work together</h2>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">Let's work together</h2>
                         <p><?php echo get_option('footer_center_text') ?></p>
                     </div>
 
                     <!-- Social icons -->
-                    <div class="col-xs-12 col-md-4">
-                        <h2 class="footer-subtitle center-align">On social media</h2>
+                    <div class="col-xs-12 col-lg-4">
+                        <h2 class="footer-title center-align">On social media</h2>
                         <?php ccwp\core\Tags::renderSocialProfiles('social-icons-footer', 'fa-2x'); ?>
                     </div>
             	</div>
             </div>
 
             <!-- Copyright -->
-            <div class="footer-copyright col-xs-12">
+            <div class="footer-copyright col-12">
             	<div class="container center-align">
             		Copyright &copy; <?php echo date('Y') ?> <?php bloginfo() ?>. All rights reserved.
             	</div>

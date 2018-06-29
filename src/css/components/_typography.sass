@@ -1,37 +1,40 @@
-h1, h2, h3, h4, h5, h6
-	font:
-		family: "Roboto", "Helvetica", "Arial", "sans-serif"
-		weight: normal
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font:
+        family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif'
+        weight: 400
 
-h2
-	font-size: 1.5 * $font-size-base
 
-// Card title
 .card-title
-	text-align: left
+    text-align: left
 
-// Anchors
+
 a
-	color: brand-color("primary")
-	text-decoration: none
-	transition: all .2s ease-in-out
-	font-size: inherit
+    @include transition
+    color: $blue
+    font-size: inherit
 
-	&:hover, &:focus, &:active
-		text-decoration: none
-		color: darken($blue, 20%)
+    &:hover,
+    &:active,
+    &:focus
+        color: darken($blue, 20%)
+        text-decoration: none
 
-	&.social-link
-		color: $body-color
+    &.social-link
+        color: $body-color
 
-	&.follow-me
-		color: $body-color
+    &.follow-me
+        color: $body-color
 
-		@each $link, $color in $contact-links
-			.fa-#{$link}
-				display: block
-				color: $color
-				transition: $social-links-transition
+        @each $link, $color in $contact-links
+            .fa-#{$link}
+                @include transition
+                color: $color
+                display: block
 
-				&:hover
-					color: darken($color, 10%)
+                &:hover
+                    color: darken($color, 10%)

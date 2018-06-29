@@ -4538,27 +4538,27 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 0 !important;
 }
 
 .rounded-top {
-  border-top-left-radius: 0.25rem !important;
-  border-top-right-radius: 0.25rem !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
 .rounded-right {
-  border-top-right-radius: 0.25rem !important;
-  border-bottom-right-radius: 0.25rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .rounded-bottom {
-  border-bottom-right-radius: 0.25rem !important;
-  border-bottom-left-radius: 0.25rem !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .rounded-left {
-  border-top-left-radius: 0.25rem !important;
-  border-bottom-left-radius: 0.25rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .rounded-circle {
@@ -11478,91 +11478,61 @@ header .navbar .container-fluid .navbar-nav .nav-link {
 
 .footer {
   background-color: #292b2c;
+  color: #f5f5f5;
   margin-top: 2rem;
   padding: 1rem;
-  color: #adb5bd;
   text-align: center;
 }
 
 .footer a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: inherit;
-  font-weight: bold;
-  -webkit-transition: ease-in-out .1s;
-  -o-transition: ease-in-out .1s;
-  transition: ease-in-out .1s;
+  font-weight: 700;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .footer a {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 .footer a:hover, .footer a:active, .footer a:focus {
-  color: #dee2e6;
+  color: #6c757d;
   text-decoration: none;
 }
 
-.footer .container-fluid {
-  width: 100%;
-}
-
-.footer .footer-subtitle {
-  margin-top: 1rem;
-}
-
-.footer .footer-menu {
-  list-style: none;
-  overflow: hidden;
-  margin-bottom: 0;
+.footer-menu {
   padding: 0;
 }
 
-.footer .footer-menu li {
+.footer-menu .nav-item {
   width: 100%;
-  text-align: center;
-  padding: 0;
-  line-height: 2.1;
 }
 
-.footer .footer-menu li a {
-  font-size: 1rem;
-}
-
-.footer .footer-subtitle {
-  color: #f5f5f5;
-}
-
-.footer .social-icons {
-  list-style: none;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.footer .social-icons li {
-  float: left;
-  width: calc(100% / 5);
-  text-align: center;
-}
-
-.footer .social-icons li a {
-  color: #f8f9fa;
+.footer-copyright {
+  margin-top: 2rem;
 }
 
 @media (min-width: 576px) {
-  .footer .footer-menu li {
-    width: calc(100%/3);
-    float: left;
-    text-align: center;
-  }
-  .footer .social-icons {
-    margin-bottom: 0;
+  .footer-menu .nav-item {
+    width: calc(100% / 4);
   }
 }
 
 @media (min-width: 768px) {
-  .footer .footer-menu li {
-    width: calc(100%/3);
+  .footer-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
   }
-}
-
-@media (min-width: 1700px) {
-  .footer .footer-menu li {
-    width: calc(100%/6);
+  .footer-menu .nav-item {
+    width: auto;
   }
 }
 
@@ -11768,13 +11738,14 @@ header .navbar .container-fluid .navbar-nav .nav-link {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 1.5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
 }
 
 .card-title {
@@ -11782,17 +11753,24 @@ h2 {
 }
 
 a {
-  color: brand-color("primary");
-  text-decoration: none;
-  -webkit-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #1e88ae;
   font-size: inherit;
 }
 
-a:hover, a:focus, a:active {
-  text-decoration: none;
+@media screen and (prefers-reduced-motion: reduce) {
+  a {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+a:hover, a:active, a:focus {
   color: #0f4457;
+  text-decoration: none;
 }
 
 a.social-link {
@@ -11804,11 +11782,19 @@ a.follow-me {
 }
 
 a.follow-me .fa-envelope-o {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #444444;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-envelope-o {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-envelope-o:hover {
@@ -11816,11 +11802,19 @@ a.follow-me .fa-envelope-o:hover {
 }
 
 a.follow-me .fa-facebook {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #3e5b99;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-facebook {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-facebook:hover {
@@ -11828,11 +11822,19 @@ a.follow-me .fa-facebook:hover {
 }
 
 a.follow-me .fa-instagram {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #bc2a8d;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-instagram {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-instagram:hover {
@@ -11840,11 +11842,19 @@ a.follow-me .fa-instagram:hover {
 }
 
 a.follow-me .fa-twitter {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #1da1f2;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-twitter {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-twitter:hover {
@@ -11852,11 +11862,19 @@ a.follow-me .fa-twitter:hover {
 }
 
 a.follow-me .fa-google-plus {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #db4437;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-google-plus {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-google-plus:hover {
@@ -11864,11 +11882,19 @@ a.follow-me .fa-google-plus:hover {
 }
 
 a.follow-me .fa-linkedin {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #1d87bd;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-linkedin {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-linkedin:hover {
@@ -11876,11 +11902,19 @@ a.follow-me .fa-linkedin:hover {
 }
 
 a.follow-me .fa-github {
-  display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #333333;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
+  display: block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  a.follow-me .fa-github {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 a.follow-me .fa-github:hover {
@@ -12132,39 +12166,25 @@ a.follow-me .fa-github:hover {
 }
 
 .btn {
-  border-radius: 0;
-  -webkit-transition: all ease-in-out 150ms;
-  -o-transition: all ease-in-out 150ms;
-  transition: all ease-in-out 150ms;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 
-.btn-primary-outline {
-  border: 1px solid brand-color("primary");
-  color: brand-color("primary");
-  background-color: transparent;
-}
-
-.btn-primary-outline:hover {
-  background-color: brand-color("primary");
-  color: white;
-  -webkit-box-shadow: inset 0px 0px 2px white;
-  box-shadow: inset 0px 0px 2px white;
+.btn-primary:hover {
+  background-color: #176683;
 }
 
 .form-group {
-  position: relative;
   display: inline-block;
-  width: 100%;
   margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
 }
 
 label {
-  position: absolute;
-  top: 1rem;
   left: 0;
   pointer-events: none;
+  position: absolute;
+  top: 1rem;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -12174,28 +12194,28 @@ label {
 }
 
 .form-control {
-  display: inline-block;
-  border: none;
   background: none;
+  border: 0;
+  border-bottom: 2px solid #1e88ae;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   color: #495057;
+  display: inline-block;
   padding-left: 0;
   padding-right: 0;
   resize: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-bottom: 2px solid #1e88ae;
 }
 
 .form-control:focus, .form-control:active {
-  outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+  outline: 0;
 }
 
 .form-control:focus + label,
 .form-control.has-value + label {
-  top: -0.5rem;
   font-size: 0.8rem;
+  top: -0.5rem;
 }
 
 .post-tags {

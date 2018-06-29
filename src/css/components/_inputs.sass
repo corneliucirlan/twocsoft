@@ -1,34 +1,34 @@
 .form-group
-    position: relative
     display: inline-block
-    width: 100%
     margin-bottom: 1.5 * $spacer
+    position: relative
+    width: 100%
 
 label
-    position: absolute
-    top: $spacer
     left: 0
     pointer-events: none
+    position: absolute
+    top: $spacer
     transform: translateY(-50%)
     transition: all 300ms ease-in-out
 
 .form-control
-    display: inline-block
-    border: none
     background: none
+    border: 0
+    border-bottom: 2 * $border-width solid theme-color('primary')
+    box-shadow: none
     color: $gray-700
+    display: inline-block
     padding-left: 0
     padding-right: 0
     resize: none
-    box-shadow: none
-    border-bottom: 2 * $border-width solid theme-color("primary")
 
     &:focus,
     &:active
-        outline: 0
         box-shadow: none
+        outline: 0
 
     &:focus + label,
     &.has-value + label
+        font-size: .8 * $font-size-base
         top: -($spacer / 2)
-        font-size: 0.8 * $font-size-base
