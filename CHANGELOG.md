@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+##### Version 3.5 (2018.06.29)
+- Updated Bootstrap to v4
+- Switched entire code to OOP logic from procedural coding
+- Updated UI
+
 ##### Version 3.11 (2017.08.14)
 - Added Google AMP
 
