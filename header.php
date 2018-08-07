@@ -131,7 +131,7 @@
             </nav>
 
             <!-- Header image -->
-            <div class="header-image row" style="<?= $headerStyles ?>"><div class="header-overlay" style="height: <?php echo $headerHeight; ?>"></div></div>
+            <div class="header-image row" style="<?= $headerStyles ?>"><div class="header-overlay" style="width: 100%; height: <?php echo $headerHeight; ?>"></div></div>
 
             <!-- Breadcrumbs -->
             <div class="breadcrumbs-container container-fluid">
