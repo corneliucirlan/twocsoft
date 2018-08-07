@@ -12,17 +12,15 @@ body
 	width: 100%
 	margin: 0 auto
 
-img
-	transition: all 300ms ease-in-out
-
-	&.hover
-		filter: opacity(0.9)
-
 ul
 	list-style: none
 
 	li
 		display: inline-block
+
+.wp-block-image
+	img
+		max-width: 100%
 
 // small to medium screens
 @include media-breakpoint-up(sm)
