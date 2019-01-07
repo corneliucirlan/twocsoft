@@ -1,1 +1,0 @@
-$('.navbar-nav-left').mdStrap();

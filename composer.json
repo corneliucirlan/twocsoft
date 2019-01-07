@@ -1,7 +1,5 @@
 {
     "require": {
-        "mobiledetect/mobiledetectlib": "^2.8",
-        "abraham/twitteroauth": "^0.6.6"
     },
     "autoload": {
         "psr-4":

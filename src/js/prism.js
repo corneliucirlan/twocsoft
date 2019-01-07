@@ -1,1 +1,0 @@
-$('pre').addClass('language-php');

@@ -10,7 +10,7 @@
 
     // Define theme version
     if (!defined('THEME_VERSION')):
-        define('THEME_VERSION', '3.5.0');
+        define('THEME_VERSION', '5.0');
     endif;
 
     // Define Portfolio post type

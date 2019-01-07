@@ -17,12 +17,8 @@
   },
   "homepage": "https://github.com/corneliucirlan/ccwp#readme",
   "devDependencies": {
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.2.1",
     "font-awesome": "^4.7.0",
-    "imagesloaded": "^4.1.4",
-    "jquery": "^3.3.1",
-    "jquery-mdstrap": "^4.0.1",
-    "masonry-layout": "^4.2.1",
-    "prismjs": "^1.14.0"
+    "jquery": "^3.3.1"
   }
 }
