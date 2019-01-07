@@ -108,7 +108,7 @@
                             if ('media' === $param) $url = add_query_arg($param, get_the_post_thumbnail_url(get_the_ID(), 'large'), $url);
                         endforeach;
 
-                        ?><li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link<?php echo $cardFooter ?>" target="_blank" href="<?php echo urlencode($url); ?>" title="Share on <?php echo ucwords($site); ?>"><i class="fa fa-<?php echo $site; ?>"></i></a></li><?php
+                        ?><li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link<?php echo $cardFooter ?>" target="_blank" rel="noreferrer" href="<?php echo urlencode($url); ?>" title="Share on <?php echo ucwords($site); ?>"><i class="fa fa-<?php echo $site; ?>"></i></a></li><?php
                     endforeach;
                 ?>
             </ul>
@@ -221,7 +221,7 @@
             ?>
             <ul class="social-icons <?php echo $location ?>">
                 <?php foreach ($sites as $site): ?>
-                    <li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link" target="_blank" href="<?= get_option($site.'_link') ?>" title="Follow me on <?php echo ucwords(str_replace('_', ' ', $site)) ?>"><i class="fa fa-<?php echo str_replace('_', '-', $site) ?> <?php echo $iconSize ?>"></i></a></li>
+                    <li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link" target="_blank" rel="noreferrer" href="<?= get_option($site.'_link') ?>" title="Follow me on <?php echo ucwords(str_replace('_', ' ', $site)) ?>"><i class="fa fa-<?php echo str_replace('_', '-', $site) ?> <?php echo $iconSize ?>"></i></a></li>
                 <?php endforeach; ?>
             </ul>
             <?php
