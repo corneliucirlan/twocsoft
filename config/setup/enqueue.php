@@ -16,7 +16,7 @@
         public function __construct()
         {
             // Load custom css into wp_head
-            add_action('wp_head', array($this, 'loadWPHead'));
+            // add_action('wp_head', array($this, 'loadWPHead'));
 
             // Enqueue into wp_footer
             add_action('wp_footer', array($this, 'loadWPFooter'));
