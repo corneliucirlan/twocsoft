@@ -52,6 +52,9 @@
             remove_action('admin_print_scripts', 'print_emoji_detection_script');
             remove_action('admin_print_styles', 'print_emoji_styles');
 
+            // Remove #wp-custom-css
+            remove_action( 'wp_head', 'wp_custom_css_cb', 11);
+            remove_action( 'wp_head', 'wp_custom_css_cb', 101);
         }
 
         /**
