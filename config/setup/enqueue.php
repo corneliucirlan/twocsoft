@@ -59,13 +59,16 @@
         public function enqueueScripts()
         {
             // Deregister the built-in version of jQuery from WordPress
-            // wp_deregister_script('jquery');
+            wp_deregister_script('jquery');
+
+            // Register latest version of jQuery
+            wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), false, true);
 
             // CSS
             wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.min.css', array(), THEME_VERSION, 'all');
 
             // JS
-            wp_enqueue_script('main', get_template_directory_uri().'/assets/js/javascript.min.js', array(), THEME_VERSION, true);
+            wp_enqueue_script('main', get_template_directory_uri().'/assets/js/javascript.min.js', array('jquery'), THEME_VERSION, true);
 
             // jQuery Migrate
             wp_deregister_script('jquery-migrate');
