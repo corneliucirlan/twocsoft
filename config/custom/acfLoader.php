@@ -32,7 +32,7 @@
         /**
          * Update ACF path
          */
-        private function updatePath($path)
+        public function updatePath($path)
         {
             // Set path
             $path = get_stylesheet_directory() . '/config/acf/';
@@ -44,7 +44,7 @@
         /**
          * Update ACF dir
          */
-        private function updateDir($dir)
+        public function updateDir($dir)
         {
             // Set dir
             $dir = get_stylesheet_directory_uri() . '/config/acf/';

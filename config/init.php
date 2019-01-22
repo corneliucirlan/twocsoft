@@ -59,7 +59,7 @@
             new Menus();
             new Remove();
             new Login();
-            new ACFLoader(true);
+            new ACFLoader();
             new ThemeSettings();
 
             // AMP pages
