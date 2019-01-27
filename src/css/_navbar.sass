@@ -1,0 +1,211 @@
+.navbar
+    margin: 0
+    padding: 0
+
+// Menu mobile toggler
+.navbar-toggler
+    border: 0
+    height: 18px
+    left: 30px
+    opacity: .7
+    position: fixed
+    top: 30px
+    transition: opacity 500ms ease-in-out
+    width: 24px
+
+    .menu-item-1,
+    .menu-item-2,
+    .menu-item-3
+        background: $black
+        display: block
+        height: 3px
+        left: 0
+        opacity: 1
+        position: absolute
+        top: 50%
+        transform: rotate(0deg)
+        transition: .25s ease-in-out
+        width: 100%
+
+    .menu-item-1
+        top: 0
+
+    .menu-item-2
+        top: calc(50% - 1px)
+
+    .menu-item-3
+        top: calc(100% - 2px)
+        width: 70%
+
+    &:focus
+        outline: 0
+
+    &:hover
+        opacity: 1
+
+        .menu-item-1
+            animation: menu-animation 600ms ease-in-out
+
+        .menu-item-2
+            animation: menu-animation 600ms 100ms ease-in-out
+
+        .menu-item-3
+            animation: menu-animation-short 600ms 200ms ease-in-out
+
+    &.active
+        background-color: $blue
+        box-shadow: $box-shadow
+        height: 40px
+        opacity: 1
+        width: 40px
+        z-index: 1000
+
+        .menu-item-1,
+        .menu-item-2,
+        .menu-item-3
+            background-color: $white
+            top: calc(50% - 1px)
+
+        .menu-item-1
+            transform: rotate(45deg)
+
+        .menu-item-2
+            display: none
+
+        .menu-item-3
+            transform: rotate(-45deg)
+            width: 100%
+
+        &:hover
+            .menu-item-1,
+            .menu-item-2,
+            .menu-item-3
+                animation: none
+
+// Navigation
+.navbar-nav
+    display: inline
+    margin: 0
+    padding: 0
+    text-align: center
+    text-transform: uppercase
+
+    .nav-item
+        display: inline-block
+        margin: 0
+        padding: 0
+
+        .nav-link
+            @include transition
+            font-size: 1.125 * $font-size-base
+            font-weight: 400
+            margin: 0
+            padding: $spacer 1.5 * $spacer
+
+// Header navbar
+.navbar-light
+    display: flex
+    justify-content: center
+    left: 50%
+    margin-top: $spacer
+    position: absolute
+    transform: translateX(-50%)
+    width: 100%
+    z-index: 100
+
+    .navbar-nav
+        // .nav-item
+        //     &.active
+        //         .nav-link
+        //             border-bottom: 1px solid $black
+
+        .active > .nav-link
+            color: $black
+
+        .nav-link
+            color: $black
+
+            .active,
+            .show
+                color: $black
+
+        .show > .nav-link
+            color: $black
+
+.navbar-nav-header
+    background-color: $white
+    box-shadow: $vox-shadow
+    left: 50%
+    position: absolute
+    top: 50px
+    transform: translateX(-50%)
+    width: 70%
+
+    &.active
+        display: block !important
+
+    .nav-item
+        border-bottom: 1px solid $gray-200
+        display: block
+        width: 100%
+
+        &:last-child
+            border-bottom: 0
+
+        &.active
+            .nav-link
+                background: $gray-200
+
+@include media-breakpoint-up(md)
+    .navbar-nav-header
+        background-color: transparent
+        box-shadow: none
+        display: inline
+        position: relative
+        top: 0
+        width: 100%
+
+        .nav-item
+            border-bottom: 0
+            display: inline-block
+            width: auto
+
+            &.active
+                .nav-link
+                    background-color: transparent
+                    border-bottom: 1px solid $black
+
+
+// Footer navbar
+.navbar-dark
+    display: flex
+    justify-content: center
+    margin-top: 2 * $spacer
+
+    .navbar-nav
+        opacity: .7
+        display: block
+
+        .nav-item
+            width: 100%
+
+        .active > .nav-link
+            color: $white
+
+        .nav-link
+            color: $white
+
+            .active,
+            .show
+                color: $white
+
+        .show > .nav-link
+            color: $white
+
+@include media-breakpoint-up(md)
+    .navbar-dark
+        .navbar-nav
+            display: inline
+
+            .nav-item
+                width: auto

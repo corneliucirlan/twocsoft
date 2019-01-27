@@ -1,0 +1,42 @@
+.social-icons
+    list-style: none
+    margin: 0
+    padding: 0
+
+    .social-icon
+        display: inline-block
+        margin: 1.5 * $spacer
+
+// Header social icons
+// .social-icons-header
+//     border: solid orangered
+//
+//     .social-icon
+//         .social-link
+//             color: $black
+//
+//             .fa-2x
+//                 font-size: 1.125 * $font-size-base
+
+// Footer social icons
+.social-icons-footer
+    margin-top: 2 * $spacer
+
+    .social-icon
+        &:first-child
+            margin-left: 0
+
+        &:last-child
+            margin-right: 0
+
+    .social-link
+        color: $white
+
+        [class*=' fa-']
+            @include transition
+
+        @each $profile, $color in $social-profiles
+            &:hover
+                .fa-#{$profile}
+                    color: $color
+                    opacity: 1

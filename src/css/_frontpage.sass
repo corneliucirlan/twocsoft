@@ -1,0 +1,47 @@
+.home-services
+    display: flex
+    justify-content: center
+    margin-top: -1.5 * $spacer
+
+.home-service
+    flex-basis: 100%
+    flex-grow: 0
+    margin: 1.5 * $spacer
+    padding: 1 * $spacer
+    text-align: center
+
+    .service-icon
+        @include transition($transition-fade)
+        opacity: .3
+
+    .service-title
+        font-size: $h4-font-size
+        margin: 0
+        padding-bottom: 2 * $spacer
+        padding-top: 2 * $spacer
+
+    .service-text
+        font-size: 1.125 * $font-size-base
+        margin: 0
+        text-align: justify
+
+    &:hover
+        .service-icon
+            opacity: .7
+
+.latest-post
+    .wp-post-image
+        height: auto
+        max-width: 100%
+
+    .latest-date
+        font-size: 1.125 * $font-size-base
+        opacity: .5
+
+@include media-breakpoint-up(md)
+    .home-service
+        flex-basis: 40%
+
+@include media-breakpoint-up(lg)
+    .home-service
+        flex-basis: 30%

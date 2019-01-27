@@ -1,0 +1,70 @@
+body
+    color: $black
+    font-family: 'Roboto', sans-serif
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    color: $black
+    font-weight: 400
+
+h1
+    font-size: $h1-font-size
+
+h2
+    font-size: $h2-font-size
+
+h3
+    font-size: $h3-font-size
+
+h4
+    font-size: $h4-font-size
+
+h5
+    font-size: $h5-font-size
+
+h6
+    font-size: $h6-font-size
+
+// Header title
+.header-title
+    color: $black
+    font-size: $h1-font-size
+    font-weight: 400
+
+// Latest blog entries
+.home-blog
+    margin: 4 * $spacer auto
+    text-align: center
+    text-transform: uppercase
+
+// Latest posts title
+.latest-title
+    margin: 1.5 * $spacer 0 .75 * $spacer
+
+// Footer titles
+.footer-title
+    color: inherit
+
+// Links
+a
+    @include transition
+    color: $blue
+    font-weight: 700
+    text-decoration: none
+
+    &:hover
+        color: lighter($blue, 10%)
+        opacity: 1
+        text-decoration: none
+
+.footer-link
+    color: $white
+    font-weight: 700
+
+    &:hover
+        color: $white
+        opacity: 1
