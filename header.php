@@ -11,14 +11,20 @@
     // Security check
     if (!defined('ABSPATH')) die;
 
-    // Get header image
-    if (has_post_thumbnail()):
-            $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id()).");
-                background-position: center;";
-        else:
-            $headerStyles = "background-image: url(".get_header_image().");
-                background-position: top;";
-    endif;
+    // Set header image
+    $headerStyles = "background: url(".get_header_image()."); background-position: bottom";
+
+    // Set header image as featured image
+    if (has_post_thumbnail())
+        $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: center;";
+
+    // Set header image for Front Page and Blog Page
+    if (is_front_page() || is_home())
+        $headerStyles = "background: url(".get_header_image()."); background-position: bottom";
+
+    // Set header image for blog articles
+    if (is_singular('post') && has_post_thumbnail())
+        $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: top;";
 
     // Set header image style
     $headerStyles .= "background-repeat: no-repeat;
@@ -31,6 +37,7 @@
         max-height: 500px
         padding: 0;
         margin: 0;";
+
     // $detect = new Mobile_Detect();
     // if ($detect->isMobile() && !$detect->isTablet()):
     //         $headerHeight = "400px;";
@@ -43,7 +50,6 @@
     $custom_logo_id = get_theme_mod('custom_logo');
     $logo = wp_get_attachment_image_src($custom_logo_id , 'thumbnail');
     $logo = $logo[0];
-
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +93,12 @@
         <div class="header-container row" style="<?= $headerStyles ?>">
             <div class="header-overlay" style="width: 100%; height: <?php echo $headerHeight; ?>">
                 <img class="custom-logo d-none d-md-block" src="<?php echo $logo ?>" alt="<?php bloginfo('title') ?>" />
-                <h1 class="header-title"><?php is_front_page() ? bloginfo('title') : the_title() ?></h1>
+                <?php if (!is_singular('post')): ?>
+                    <h1 class="header-title"><?php is_front_page() ? bloginfo('title') : single_post_title() ?></h1>
+                    <?php if (is_front_page()): ?>
+                        <h4><?php bloginfo('description') ?></h4>
+                    <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
 

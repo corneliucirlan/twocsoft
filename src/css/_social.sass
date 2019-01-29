@@ -1,22 +1,13 @@
 .social-icons
+    display: flex
+    justify-content: space-around
     list-style: none
     margin: 0
     padding: 0
 
     .social-icon
-        display: inline-block
-        margin: 1.5 * $spacer
-
-// Header social icons
-// .social-icons-header
-//     border: solid orangered
-//
-//     .social-icon
-//         .social-link
-//             color: $black
-//
-//             .fa-2x
-//                 font-size: 1.125 * $font-size-base
+        text-align: center
+        width: 100%
 
 // Footer social icons
 .social-icons-footer
@@ -34,9 +25,34 @@
 
         [class*=' fa-']
             @include transition
+            font-weight: 400 !important
 
         @each $profile, $color in $social-profiles
             &:hover
                 .fa-#{$profile}
                     color: $color
                     opacity: 1
+
+// Socail icons share
+.social-icons-share
+    margin: $spacer 0
+
+    &.fixed-bottom
+        margin: 0
+
+    .social-icon
+        @include transition
+        color: $white
+
+        @each $profile, $color in $social-profiles
+            &.social-icon-#{$profile}
+                .social-link
+                    background-color: $color
+                    padding: $spacer / 4
+
+                    &:hover
+                        background-color: darken($color, 10%)
+
+        .social-link
+            color: inherit
+            display: block

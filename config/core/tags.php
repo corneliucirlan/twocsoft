@@ -25,13 +25,10 @@
         {
             ?>
             <div class="post-meta row text-muted">
-    			<div class="meta-data col-xs-12 col-md-7">
+    			<div class="meta-data col-12">
     				<?php the_category(', ') ?>&nbsp;/&nbsp;
     				<a href="<?php the_permalink() ?>"><?php echo get_the_date() ?></a>&nbsp;/&nbsp;
-    				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fa fa-twitter no-animation"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
-    			</div>
-    			<div class="post-share col-xs-12 col-md-5">
-    				<?php self::displayShareButtons(array('id' => get_the_id())) ?>
+    				<a rel="author" href="https://twitter.com/<?php the_author_meta('twitter') ?>" target="_blank"><i class="fab fa-twitter no-animation"></i><?php echo str_replace(' ', '', get_the_author()) ?></a>
     			</div>
     		</div>
             <?php
@@ -81,11 +78,9 @@
     			// Set url to bitly short url
     			// $url = $bitly->data->url;
 
-    		// Check if share on card footer
-    		$cardFooter = array_key_exists('bottom', $settings) && $settings['bottom'] === true ? " footer-share" : "";
     		?>
 
-    		<ul class="social-icons social-icons-share">
+    		<ul class="social-icons social-icons-share <?php echo $settings['classes'] ?>">
                 <?php
                     foreach ($enabledSites as $site):
 
@@ -108,7 +103,7 @@
                             if ('media' === $param) $url = add_query_arg($param, get_the_post_thumbnail_url(get_the_ID(), 'large'), $url);
                         endforeach;
 
-                        ?><li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link<?php echo $cardFooter ?>" target="_blank" rel="noreferrer" href="<?php echo urlencode($url); ?>" title="Share on <?php echo ucwords($site); ?>"><i class="fa fa-<?php echo $site; ?>"></i></a></li><?php
+                        ?><li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link" target="_blank" rel="noreferrer" href="<?php echo urlencode($url); ?>" title="Share on <?php echo ucwords($site); ?>"><i class="fab fa-<?php echo $site; ?>"></i></a></li><?php
                     endforeach;
                 ?>
             </ul>

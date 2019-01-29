@@ -1,0 +1,35 @@
+.post-tags
+    padding: $spacer 0
+
+    .fa-tags
+        color: theme-color('primary')
+        margin-right: $spacer / 2
+        vertical-align: middle
+
+    .tags
+        display: inline-block
+        padding: 0
+
+        .tag
+            display: inline-block
+
+            a
+                @include transition
+                border: 1px solid theme-color('primary')
+                color: theme-color('primary')
+                font-size: $font-size-base
+                margin: 0 $spacer / 2
+                padding: $spacer / 2
+
+                &:hover
+                    background: theme-color('primary')
+                    color: $white
+
+.post-meta
+    margin-bottom: $spacer
+    margin-top: $spacer
+
+@include media-breakpoint-up(md)
+    .post-meta
+        margin-bottom: 0
+        margin-top: 0

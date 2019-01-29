@@ -1,0 +1,21 @@
+.card-container
+    margin-bottom: 4 * $spacer
+
+    &:last-child
+        margin-bottom: 0
+
+.card-img-top
+    height: auto
+    margin-bottom: 1.5 * $spacer
+    object-fit: contain
+    transition: all 200ms ease-in-out
+    width: 100%
+
+    &:hover
+        transform: scale(1.02)
+
+@include media-breakpoint-up(md)
+    .card-img-top
+        height: 300px
+        object-fit: cover
+        object-position: top
