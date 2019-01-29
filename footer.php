@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="brand col-12 col-md-6 col-lg-4">
                         <img class="footer-logo" src="<?php echo get_template_directory_uri() ?>/assets/img/footer-logo.png" alt="<?php bloginfo('title') ?>" />
-                        <h5 class="footer-title">Freelance Web Developer | UX/UI Designer</h5>
+                        <h5 class="footer-title"><?php bloginfo('description') ?></h5>
                     </div>
 
                     <div class="contact col-12 col-md-6 col-lg-4">
