@@ -1,0 +1,107 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+    -webkit-box-shadow: 0 0 0 1000px $white inset
+
+.form-group
+    margin-bottom: 1.5 * $spacer
+    position: relative
+    width: 100%
+
+label
+    @include transition(all .1s linear)
+    background-color: $white
+    color: $black
+    left: $spacer
+    pointer-events: none
+    position: absolute
+    top: $spacer
+    transform: translateY(calc(-50% + 4px))
+
+.form-control
+    @include transition
+    background-color: $white
+    border: 1 * $border-width solid theme-color('primary')
+    box-shadow: none
+    color: $gray-700
+    display: inline-block
+    padding: $spacer / 2 $spacer
+    resize: none
+
+    &:focus,
+    &:active
+        border: 2 * $border-width solid theme-color('primary')
+        box-shadow: none
+        outline: 0
+
+    &:focus + label,
+    &.has-value + label
+        font-size: .8 * $font-size-base
+        top: -4px
+
+        &:before,
+        &:after
+            content: '\00a0 '
+
+.button-container
+    margin-bottom: 4 * $spacer
+    position: relative
+    width: 100%
+
+@include media-breakpoint-up(md)
+    .button-container
+        width: 50%
+
+.btn-outline-primary
+    @include different-states($white, $blue, $blue, $box-shadow, $blue)
+    @include transition
+    animation: processing-end .2s linear
+    border: 2 * $border-width solid theme-color('primary')
+    bottom: 0
+    box-shadow: $box-shadow-lg
+    font-size: 1.125 * $spacer
+    height: 50px
+    left: 0
+    outline: 0
+    padding: $spacer / 2
+    position: absolute
+    right: 0
+    top: 0
+    width: 100%
+
+.btn-click
+    @include different-states($white, $gray-200, $green, none, $green)
+    animation: processing-start .2s linear, rotation 2s .25s linear infinite
+    background-color: $white
+    border-color: $gray-200
+    border-left-color: $green
+    border-radius: 50%
+    bottom: 10px
+    box-shadow: none
+    font-size: 0
+    height: 30px
+    left: calc(50% - 15px)
+    position: absolute
+    right: calc(50% - 15px)
+    top: 10px
+    width: 30px
+
+
+.btn-success
+    @include different-states($green, $green, $green, $box-shadow, $white)
+    background-color: $green
+    border-color: $green
+    color: $white
+
+
+.btn-error
+    @include different-states($red, $red, $red, $box-shadow, $white)
+    background-color: $red
+    border-color: $red
+    color: $white

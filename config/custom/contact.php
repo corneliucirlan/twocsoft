@@ -106,11 +106,8 @@
          */
         private function getEmailAddresses()
         {
-            // Get admins email
-            $admins = get_users(array('role' => 'administrator', 'fields' => array('user_email')));
-
             // Return email address
-            return $admins[0]->user_email;
+            return get_bloginfo('admin_email');
         }
 
         /**
