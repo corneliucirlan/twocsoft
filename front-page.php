@@ -35,9 +35,8 @@
 		<?php while ($latestBlogEntries->have_posts()): $latestBlogEntries->the_post(); ?>
 
 			<div class="latest-post col-xs-12 col-md-6 col-lg-3">
-				<?php the_post_thumbnail('thumbnail') ?>
+				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail') ?></a>
 				<a href="<?php the_permalink() ?>"><h4 class="latest-title"><?php the_title() ?></h4></a>
-				<!-- <span class="latest-date"><?php echo the_date() ?></span> -->
 			</div>
 
 		<?php endwhile; ?>

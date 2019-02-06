@@ -8,6 +8,9 @@
 
     namespace ccwp\setup;
 
+    // WP_Customize_Image_Control class
+    use WP_Customize_Image_Control;
+
     class Setup
     {
         /**
@@ -19,6 +22,9 @@
 
             // Define content width
             add_action('after_setup_theme', array($this, 'contentWidth'), 0);
+
+            // Add custom logos
+            add_action('customize_register', array($this, 'addCustomLogos'));
         }
 
         public function setup()
@@ -62,6 +68,29 @@
         public function contentWidth()
         {
             $GLOBALS['content_width'] = apply_filters('content_width', 1500);
+        }
+
+        public function addCustomLogos($wp_customize)
+        {
+            // add a setting
+            $wp_customize->add_setting('mobile-custom-logo');
+            $wp_customize->add_setting('footer-custom-logo');
+
+            // Add a control to upload the mobile logo
+            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mobile-custom-logo', array(
+                'label' => 'Mobile Logo',
+                'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+                'settings' => 'mobile-custom-logo',
+                'priority' => 8 // show it just below the custom-logo
+            )));
+
+            // Add a control to upload the footer logo
+            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer-custom-logo', array(
+                'label' => 'Footer Logo',
+                'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+                'settings' => 'footer-custom-logo',
+                'priority' => 8 // show it just below the custom-logo
+            )));
         }
     }
 

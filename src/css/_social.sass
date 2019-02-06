@@ -6,32 +6,29 @@
     padding: 0
 
     .social-icon
+        color: inherit
         text-align: center
         width: 100%
 
 // Footer social icons
 .social-icons-footer
-    margin-top: 2 * $spacer
+    flex-wrap: wrap
 
     .social-icon
-        &:first-child
-            margin-left: 0
+        @include transition
+        flex-basis: 30%
+        margin-top: 2 * $spacer
+        opacity: .7
 
-        &:last-child
-            margin-right: 0
+    &:hover
+        & > .social-icon
+            &:not(:hover)
+                opacity: .3
 
-    .social-link
-        color: $white
-
-        [class*=' fa-']
-            @include transition
-            font-weight: 400 !important
-
-        @each $profile, $color in $social-profiles
-            &:hover
-                .fa-#{$profile}
-                    color: $color
-                    opacity: 1
+@include media-breakpoint-up(md)
+    .social-icons-footer
+        .social-icon
+            flex-basis: 10%
 
 // Socail icons share
 .social-icons-share
@@ -54,5 +51,4 @@
                         background-color: darken($color, 10%)
 
         .social-link
-            color: inherit
             display: block

@@ -12,6 +12,8 @@
     // Security check
     if (!defined('ABSPATH')) die;
 
+    $footerLogo = get_theme_mod('footer-custom-logo') ? get_theme_mod('footer-custom-logo') : null;
+
 ?>
 
         </div>
@@ -20,7 +22,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="brand col-12 col-md-6 col-lg-4">
-                        <img class="footer-logo" src="<?php echo get_template_directory_uri() ?>/assets/img/footer-logo.png" alt="<?php bloginfo('title') ?>" />
+                        <?php if ($footerLogo): ?>
+                            <img class="custom-logo" src="<?php echo $footerLogo ?>" alt="<?php bloginfo('title') ?>" />
+                        <?php endif; ?>
                         <h5 class="footer-title"><?php bloginfo('description') ?></h5>
                     </div>
 

@@ -58,8 +58,8 @@ label
     .button-container
         width: 50%
 
-.btn-outline-primary
-    @include different-states($white, $blue, $blue, $box-shadow, $blue)
+.btn-primary
+    @include different-states($blue, $blue, $blue, $box-shadow, $white)
     @include transition
     animation: processing-end .2s linear
     border: 2 * $border-width solid theme-color('primary')
@@ -92,13 +92,11 @@ label
     top: 10px
     width: 30px
 
-
 .btn-success
     @include different-states($green, $green, $green, $box-shadow, $white)
     background-color: $green
     border-color: $green
     color: $white
-
 
 .btn-error
     @include different-states($red, $red, $red, $box-shadow, $white)

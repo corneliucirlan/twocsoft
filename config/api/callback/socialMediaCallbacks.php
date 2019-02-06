@@ -18,7 +18,7 @@
          * Social media sites parameters
          */
         const SOCIAL_MEDIA_SITES = array(
-            'facebook'      => array(
+            'facebook-f'      => array(
                 'url'       => 'https://www.facebook.com/sharer/sharer.php',
                 'urlParams' => array('u'),
             ),
@@ -30,7 +30,7 @@
                 'url'       => 'https://plus.google.com/share',
                 'urlParams' => array('url'),
             ),
-            'linkedin'      => array(
+            'linkedin-in'      => array(
                 'url'       => 'https://www.linkedin.com/shareArticle',
                 'urlParams' => array('mini', 'url', 'title', 'summary'),
             ),
@@ -38,7 +38,7 @@
                 'url'       => 'http://pinterest.com/pin/create/button/',
                 'urlParams' => array('url', 'media', 'description'),
             ),
-            'reddit'        => array(
+            'reddit-alien'        => array(
                 'url'       => 'http://www.reddit.com/submit',
                 'urlParams' => array('url', 'title'),
             ),
@@ -96,7 +96,7 @@
                 $checked = is_array($settings) && in_array($profile, $settings);
                 ?>
                 <input type="checkbox" class="widget-checkhox" id="profile-<?php echo $profile ?>" name="<?php echo $args['label_for'] ?>[]" value="<?php echo $profile ?>" <?php checked($checked, 1) ?> />
-                <i data-id="profile-<?php echo $profile ?>" class="fa fa-social fa-3x <?php echo $checked ? 'fa-active ' : '' ?>fa-<?php echo $profile ?>"></i>
+                <i data-id="profile-<?php echo $profile ?>" class="fab fa-social fa-3x <?php echo $checked ? 'fa-active ' : '' ?>fa-<?php echo $profile ?>"></i>
                 <?php
             endforeach;
         }

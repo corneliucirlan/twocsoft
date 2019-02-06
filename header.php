@@ -50,6 +50,8 @@
     $custom_logo_id = get_theme_mod('custom_logo');
     $logo = wp_get_attachment_image_src($custom_logo_id , 'thumbnail');
     $logo = $logo[0];
+
+    $mobileLogo = get_theme_mod('mobile-custom-logo') ? get_theme_mod('mobile-custom-logo') : null;
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +72,11 @@
                 <span class="menu-item-2"></span>
                 <span class="menu-item-3"></span>
             </button>
-            <img class="custom-logo d-md-none" src="<?php echo $logo ?>" alt="<?php bloginfo('title') ?>" />
+            <?php if ($mobileLogo): ?>
+                    <img class="custom-logo d-md-none" src="<?php echo $mobileLogo ?>" alt="<?php bloginfo('title') ?>" />
+                <?php elseif (has_custom_logo()): ?>
+                    <img class="custom-logo d-md-none" src="<?php echo $logo ?>" alt="<?php bloginfo('title') ?>" />
+            <?php endif; ?>
 
             <?php
                 // Render header menu
@@ -96,7 +102,7 @@
                 <?php if (!is_singular('post')): ?>
                     <h1 class="header-title"><?php is_front_page() ? bloginfo('title') : single_post_title() ?></h1>
                     <?php if (is_front_page()): ?>
-                        <h4><?php bloginfo('description') ?></h4>
+                        <h4 class="header-subtitle"><?php bloginfo('description') ?></h4>
                     <?php endif; ?>
                 <?php endif; ?>
             </div>

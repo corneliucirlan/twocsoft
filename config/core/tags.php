@@ -211,12 +211,12 @@
          */
         public static function renderSocialProfiles($location = '', $iconSize = '')
         {
-            $sites = array('facebook', 'instagram', 'twitter', 'behance', 'linkedin');
+            $sites = array('facebook-f', 'instagram', 'twitter', 'linkedin-in', 'behance', 'github');
 
             ?>
             <ul class="social-icons <?php echo $location ?>">
                 <?php foreach ($sites as $site): ?>
-                    <li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-link" target="_blank" rel="noreferrer" href="<?= get_option($site.'_link') ?>" title="Follow me on <?php echo ucwords(str_replace('_', ' ', $site)) ?>"><i class="fab fa-<?php echo str_replace('_', '-', $site) ?> <?php echo $iconSize ?>"></i></a></li>
+                    <li class="social-icon social-icon-<?php echo str_replace('_', '-', $site) ?>"><a class="social-profile" target="_blank" rel="noreferrer" href="<?= get_option($site.'_link') ?>" title="Follow me on <?php echo ucwords(str_replace('_', ' ', $site)) ?>"><i class="fab fa-<?php echo str_replace('_', '-', $site) ?> <?php echo $iconSize ?>"></i></a></li>
                 <?php endforeach; ?>
             </ul>
             <?php

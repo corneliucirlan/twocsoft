@@ -19,7 +19,7 @@
         <ul class="contact-links">
             <li class="contact-link"><i class="far fa-envelope"></i><a class="link" target="_blank" href="mailto:corneliu@corneliucirlan.com">corneliu@corneliucirlan.com</a></li>
             <li class="contact-link"><i class="fab fa-skype"></i><a class="link" target="_blank" href="skype:corneliucirlan?chat">corneliucirlan</a></li>
-            <li class="contact-link"><i class="fab fa-facebook"></i><a class="link" target="_blank" href="https://www.facebook.com/corneliucirlan">facebook.com/corneliucirlan</a></li>
+            <li class="contact-link"><i class="fab fa-facebook-f"></i><a class="link" target="_blank" href="https://www.facebook.com/corneliucirlan">facebook.com/corneliucirlan</a></li>
             <li class="contact-link"><i class="fab fa-twitter"></i><a class="link" target="_blank" href="https://www.twitter.com/corneliucirlan">twitter.com/corneliucirlan</a></li>
             <li class="contact-link"><i class="fab fa-linkedin-in"></i><a class="link" target="_blank" href="https://www.linkedin.com/in/corneliucirlan">linkedin.com/in/corneliucirlan</a></li>
         </ul>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="button-container">
-                <button id="submit-form" type="submit" name="submit" class="btn btn-outline-primary"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
+                <button id="submit-form" type="submit" name="submit" class="btn btn-primary"><?php if ($_POST) echo $emailResponse ? "Message sent" : $failReason; else echo "Send message"; ?></button>
             </div>
         </form>
     </div>

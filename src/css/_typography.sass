@@ -1,3 +1,4 @@
+
 body
     color: $black
     font-family: 'Roboto', sans-serif
@@ -31,9 +32,11 @@ h6
 
 // Header title
 .header-title
-    color: $black
-    font-size: $h1-font-size
     font-weight: 400
+
+// Header subtitle
+.header-subtitle
+    text-align: center
 
 // Latest blog entries
 .home-blog
@@ -61,6 +64,14 @@ a
         color: lighter($blue, 10%)
         opacity: 1
         text-decoration: none
+
+    &.social-link,
+    &.social-profile
+        color: inherit
+
+        [class*=' fa-']
+            font-weight: 400 !important
+
 
 .footer-link
     color: $white
