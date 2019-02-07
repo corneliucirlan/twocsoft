@@ -36,21 +36,13 @@
         background-size: cover;
         max-height: 500px
         padding: 0;
-        margin: 0;";
-
-    // $detect = new Mobile_Detect();
-    // if ($detect->isMobile() && !$detect->isTablet()):
-    //         $headerHeight = "400px;";
-    //     else:
-            $headerHeight = "500px;";
-    // endif;
-    $headerStyles .= "height: ".$headerHeight;
+        margin: 0;
+        height: 450px";
 
     // Get Logo
-    $custom_logo_id = get_theme_mod('custom_logo');
-    $logo = wp_get_attachment_image_src($custom_logo_id , 'thumbnail');
-    $logo = $logo[0];
+    $siteLogo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'thumbnail')[0];
 
+    // Mobile logo
     $mobileLogo = get_theme_mod('mobile-custom-logo') ? get_theme_mod('mobile-custom-logo') : null;
 ?>
 
@@ -75,7 +67,7 @@
             <?php if ($mobileLogo): ?>
                     <img class="custom-logo d-md-none" src="<?php echo $mobileLogo ?>" alt="<?php bloginfo('title') ?>" />
                 <?php elseif (has_custom_logo()): ?>
-                    <img class="custom-logo d-md-none" src="<?php echo $logo ?>" alt="<?php bloginfo('title') ?>" />
+                    <img class="custom-logo d-md-none" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" />
             <?php endif; ?>
 
             <?php
@@ -97,8 +89,8 @@
         </nav>
 
         <div class="header-container row" style="<?= $headerStyles ?>">
-            <div class="header-overlay" style="width: 100%; height: <?php echo $headerHeight; ?>">
-                <img class="custom-logo d-none d-md-block" src="<?php echo $logo ?>" alt="<?php bloginfo('title') ?>" />
+            <div class="header-overlay">
+                <img class="custom-logo d-none d-md-block" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" />
                 <?php if (!is_singular('post')): ?>
                     <h1 class="header-title"><?php is_front_page() ? bloginfo('title') : single_post_title() ?></h1>
                     <?php if (is_front_page()): ?>

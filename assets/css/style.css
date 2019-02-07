@@ -13189,13 +13189,21 @@ a.social-link [class*=' fa-'], a.social-profile [class*=' fa-'] {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding-top: 100px;
   position: relative;
+  width: 100%;
 }
 
 .custom-logo {
   height: 100px;
   margin-bottom: 2rem;
   width: auto;
+}
+
+@media (min-width: 768px) {
+  .header-overlay {
+    padding-top: 0;
+  }
 }
 
 .footer {
