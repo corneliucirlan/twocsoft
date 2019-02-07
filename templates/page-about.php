@@ -13,7 +13,7 @@
     the_post();
 ?>
 
-<main class="page-portfolio cards row">
+<main class="page-about row">
 
     <div class="col-12 col-md-8 offset-md-2">
         <?php the_content() ?>
