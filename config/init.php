@@ -8,7 +8,7 @@
 
     namespace ccwp;
 
-    use ccwp\core\tags;
+    use ccwp\core\post;
     use ccwp\core\widgets;
     use ccwp\core\cpt;
     use ccwp\api\settings;
@@ -50,7 +50,7 @@
             self::$loaded = true;
 
             // Call classes
-            new Tags();
+            new Post();
             new Widgets();
             new Settings();
             new Customizer();

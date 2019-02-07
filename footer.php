@@ -31,13 +31,13 @@
                     <div class="contact col-12 col-md-6 col-lg-4">
                         <h2 class="footer-title">GET IN TOUCH</h2>
                         <div class="contact-info">
-                            <a class="footer-link" href="mailto:corneliu@corneliucirlan.com" target="_blank">corneliu@corneliucirlan.com</a>
+                            <a class="footer-link" href="mailto:<?php bloginfo('admin_email') ?>" target="_blank"><?php bloginfo('admin_email') ?></a>
                         </div>
                     </div>
 
                     <div class="social col-12 col-lg-4">
                         <h2 class="footer-title">FOLLOW US</h2>
-                        <?php ccwp\core\Tags::renderSocialProfiles('social-icons-footer', 'fa-2x'); ?>
+                        <?php ccwp\core\Post::socialProfiles('social-icons-footer', 'fa-2x'); ?>
                     </div>
                 </div>
             </div>
