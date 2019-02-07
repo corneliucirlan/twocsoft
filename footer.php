@@ -43,7 +43,7 @@
             </div>
 
             <!-- Header navigation -->
-            <nav class="navbar navbar-dark">
+            <nav class="navbar navbar-footer navbar-dark">
                 <?php
                     // Render footer menu
                     if (has_nav_menu('footer-menu')):
@@ -51,7 +51,7 @@
                             'theme_location' => 'footer-menu',
                             'menu' => 'footer-menu',
                             'container' => 'ul',
-                            'menu_class' => 'navbar-nav',
+                            'menu_class' => 'navbar-nav navbar-nav-footer',
                             'echo' => true,
                             'fallback_cb' => 'wp_page_menu',
                             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',

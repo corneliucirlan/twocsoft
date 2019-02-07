@@ -58,7 +58,7 @@
     <body <?php body_class() ?>>
 
         <!-- Header navigation -->
-        <nav class="navbar navbar-toggleable-md navbar-light">
+        <nav class="navbar navbar-header navbar-toggleable-md navbar-light">
             <button class="navbar-toggler d-md-none" type="button">
                 <span class="menu-item-1"></span>
                 <span class="menu-item-2"></span>

@@ -102,7 +102,7 @@
             padding: $spacer 1.5 * $spacer
 
 // Header navbar
-.navbar-light
+.navbar-header
     display: flex
     justify-content: center
     left: 50%
@@ -112,7 +112,7 @@
     width: 100%
     z-index: 100
 
-    .navbar-nav
+    .navbar-nav-header
         .active > .nav-link
             color: $black
 
@@ -171,37 +171,21 @@
                     background-color: transparent
                     border-bottom: 1px solid $black
 
-
 // Footer navbar
-.navbar-dark
+.navbar-footer
     display: flex
     justify-content: center
-    margin-top: 2 * $spacer
 
-    .navbar-nav
-        display: block
-        opacity: .7
+.navbar-nav-footer
+    display: block
+    opacity: .7
 
-        .nav-item
-            width: 100%
-
-        .active > .nav-link
-            color: $white
-
-        .nav-link
-            color: $white
-
-            .active,
-            .show
-                color: $white
-
-        .show > .nav-link
-            color: $white
+    .nav-item
+        width: 100%
 
 @include media-breakpoint-up(md)
-    .navbar-dark
-        .navbar-nav
-            display: inline
+    .navbar-nav-footer
+        display: inline
 
-            .nav-item
-                width: auto
+        .nav-item
+            width: auto
