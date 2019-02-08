@@ -6991,8 +6991,8 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/fa-solid-900.eot");
-  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+  src: url("../fonts/FontAwesome/fa-solid-900.eot");
+  src: url("../fonts/FontAwesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/FontAwesome/fa-solid-900.woff2") format("woff2"), url("../fonts/FontAwesome/fa-solid-900.woff") format("woff"), url("../fonts/FontAwesome/fa-solid-900.ttf") format("truetype"), url("../fonts/FontAwesome/fa-solid-900.svg#fontawesome") format("svg");
 }
 
 .fa,
@@ -7009,8 +7009,8 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/fa-brands-400.eot");
-  src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
+  src: url("../fonts/FontAwesome/fa-brands-400.eot");
+  src: url("../fonts/FontAwesome/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/FontAwesome/fa-brands-400.woff2") format("woff2"), url("../fonts/FontAwesome/fa-brands-400.woff") format("woff"), url("../fonts/FontAwesome/fa-brands-400.ttf") format("truetype"), url("../fonts/FontAwesome/fa-brands-400.svg#fontawesome") format("svg");
 }
 
 .fab {
@@ -7025,8 +7025,8 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/fa-regular-400.eot");
-  src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
+  src: url("../fonts/FontAwesome/fa-regular-400.eot");
+  src: url("../fonts/FontAwesome/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/FontAwesome/fa-regular-400.woff2") format("woff2"), url("../fonts/FontAwesome/fa-regular-400.woff") format("woff"), url("../fonts/FontAwesome/fa-regular-400.ttf") format("truetype"), url("../fonts/FontAwesome/fa-regular-400.svg#fontawesome") format("svg");
 }
 
 .far {
@@ -12424,6 +12424,22 @@ readers do not read off random characters that represent icons */
   content: "\f63f";
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Consola';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Consola"), local("Consola"), url("../fonts/Consola/Consola.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 body {
   color: #292b2c;
   font-family: 'Roboto', sans-serif;
@@ -13831,6 +13847,10 @@ label {
   margin-left: 1rem;
 }
 
+.error404 {
+  background-color: #f8f9fa;
+}
+
 .content-404 {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -13842,7 +13862,7 @@ label {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: 'Consolas';
+  font-family: 'Consola', monospace;
   height: 100vh;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
