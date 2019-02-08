@@ -44,6 +44,30 @@
 
     // Mobile logo
     $mobileLogo = get_theme_mod('mobile-custom-logo') ? get_theme_mod('mobile-custom-logo') : null;
+
+    // Set page title
+    $pageTitle = get_the_title();
+
+    // Frontpage title
+    if (is_front_page()):
+        $pageTitle = get_bloginfo('title');
+    endif;
+
+    // Single post title
+    if (is_home()):
+        $pageTitle = single_post_title(null, false);
+    endif;
+
+    // Single category title
+    if (is_category()):
+        $pageTitle = single_cat_title(null, false);
+    endif;
+
+    // Single tag title
+    if (is_tag()):
+        $pageTitle = single_tag_title(null, false);
+    endif;
+
 ?>
 
 <!DOCTYPE html>
@@ -92,10 +116,10 @@
             <div class="header-overlay">
                 <img class="custom-logo d-none d-md-block" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" />
                 <?php if (!is_singular('post')): ?>
-                    <h1 class="header-title"><?php is_front_page() ? bloginfo('title') : single_post_title() ?></h1>
-                    <?php if (is_front_page()): ?>
-                        <h4 class="header-subtitle"><?php bloginfo('description') ?></h4>
-                    <?php endif; ?>
+                    <h1 class="header-title"><?php echo $pageTitle ?></h1>
+                <?php endif; ?>
+                <?php if (is_front_page()): ?>
+                    <h4 class="header-subtitle"><?php bloginfo('description') ?></h4>
                 <?php endif; ?>
             </div>
         </div>
