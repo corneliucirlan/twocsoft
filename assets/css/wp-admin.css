@@ -5454,44 +5454,16 @@ readers do not read off random characters that represent icons */
   color: #3e5b99;
 }
 
-[class*=' fa-'].fa-active.fa-instagram {
-  color: #bc2a8d;
-}
-
 [class*=' fa-'].fa-active.fa-twitter {
   color: #1da1f2;
-}
-
-[class*=' fa-'].fa-active.fa-google-plus {
-  color: #db4437;
-}
-
-[class*=' fa-'].fa-active.fa-behance {
-  color: #1769ff;
 }
 
 [class*=' fa-'].fa-active.fa-linkedin-in {
   color: #1d87bd;
 }
 
-[class*=' fa-'].fa-active.fa-pinterest {
-  color: #bd081c;
-}
-
 [class*=' fa-'].fa-active.fa-reddit-alien {
   color: #5f99cf;
-}
-
-[class*=' fa-'].fa-active.fa-github {
-  color: #333333;
-}
-
-[class*=' fa-'].fa-active.fa-mail {
-  color: #444444;
-}
-
-[class*=' fa-'].fa-active.fa-whatsapp {
-  color: #009688;
 }
 
 /*# sourceMappingURL=wp-admin.css.map */

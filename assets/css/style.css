@@ -12428,7 +12428,7 @@ readers do not read off random characters that represent icons */
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local("Roboto"), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/Roboto/Roboto-Regular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -13078,15 +13078,6 @@ a.social-link [class*=' fa-'], a.social-profile [class*=' fa-'] {
   background-color: #2f4575;
 }
 
-.social-icons-share .social-icon.social-icon-instagram .social-link {
-  background-color: #bc2a8d;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-instagram .social-link:hover {
-  background-color: #92216e;
-}
-
 .social-icons-share .social-icon.social-icon-twitter .social-link {
   background-color: #1da1f2;
   padding: 0.25rem;
@@ -13094,24 +13085,6 @@ a.social-link [class*=' fa-'], a.social-profile [class*=' fa-'] {
 
 .social-icons-share .social-icon.social-icon-twitter .social-link:hover {
   background-color: #0c85d0;
-}
-
-.social-icons-share .social-icon.social-icon-google-plus .social-link {
-  background-color: #db4437;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-google-plus .social-link:hover {
-  background-color: #bd2e22;
-}
-
-.social-icons-share .social-icon.social-icon-behance .social-link {
-  background-color: #1769ff;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-behance .social-link:hover {
-  background-color: #0050e3;
 }
 
 .social-icons-share .social-icon.social-icon-linkedin-in .social-link {
@@ -13123,15 +13096,6 @@ a.social-link [class*=' fa-'], a.social-profile [class*=' fa-'] {
   background-color: #166791;
 }
 
-.social-icons-share .social-icon.social-icon-pinterest .social-link {
-  background-color: #bd081c;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-pinterest .social-link:hover {
-  background-color: #8c0615;
-}
-
 .social-icons-share .social-icon.social-icon-reddit-alien .social-link {
   background-color: #5f99cf;
   padding: 0.25rem;
@@ -13139,33 +13103,6 @@ a.social-link [class*=' fa-'], a.social-profile [class*=' fa-'] {
 
 .social-icons-share .social-icon.social-icon-reddit-alien .social-link:hover {
   background-color: #3a80c1;
-}
-
-.social-icons-share .social-icon.social-icon-github .social-link {
-  background-color: #333333;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-github .social-link:hover {
-  background-color: #1a1a1a;
-}
-
-.social-icons-share .social-icon.social-icon-mail .social-link {
-  background-color: #444444;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-mail .social-link:hover {
-  background-color: #2b2b2b;
-}
-
-.social-icons-share .social-icon.social-icon-whatsapp .social-link {
-  background-color: #009688;
-  padding: 0.25rem;
-}
-
-.social-icons-share .social-icon.social-icon-whatsapp .social-link:hover {
-  background-color: #00635a;
 }
 
 .social-icons-share .social-icon .social-link {
