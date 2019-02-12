@@ -26,17 +26,9 @@
                 'url'       => 'https://twitter.com/intent/tweet',
                 'urlParams' => array('text', 'url'),
             ),
-            'google-plus'   => array(
-                'url'       => 'https://plus.google.com/share',
-                'urlParams' => array('url'),
-            ),
             'linkedin-in'      => array(
                 'url'       => 'https://www.linkedin.com/shareArticle',
                 'urlParams' => array('mini', 'url', 'title', 'summary'),
-            ),
-            'pinterest'     => array(
-                'url'       => 'http://pinterest.com/pin/create/button/',
-                'urlParams' => array('url', 'media', 'description'),
             ),
             'reddit-alien'        => array(
                 'url'       => 'http://www.reddit.com/submit',
