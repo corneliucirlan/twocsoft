@@ -236,6 +236,7 @@
                 );
             endforeach;
 
+            // Social media API keys
             foreach ($this->socialAPIs as $key => $value):
                 $fields[] = array(
                     'id'        => $key,
