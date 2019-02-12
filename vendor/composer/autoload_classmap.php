@@ -6,4 +6,22 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'cornelius\\Init' => $baseDir . '/config/init.php',
+    'cornelius\\api\\Customizer' => $baseDir . '/config/api/customizer.php',
+    'cornelius\\api\\Settings' => $baseDir . '/config/api/settings.php',
+    'cornelius\\api\\callback\\SocialMediaCallbacks' => $baseDir . '/config/api/callback/socialMediaCallbacks.php',
+    'cornelius\\core\\CPT' => $baseDir . '/config/core/cpt.php',
+    'cornelius\\core\\Post' => $baseDir . '/config/core/post.php',
+    'cornelius\\core\\Widgets' => $baseDir . '/config/core/widgets.php',
+    'cornelius\\custom\\ACFLoader' => $baseDir . '/config/custom/acfLoader.php',
+    'cornelius\\custom\\AMP' => $baseDir . '/config/custom/amp.php',
+    'cornelius\\custom\\Contact' => $baseDir . '/config/custom/contact.php',
+    'cornelius\\custom\\ThemeSettings' => $baseDir . '/config/custom/themeSettings.php',
+    'cornelius\\custom\\skills\\Skills' => $baseDir . '/config/custom/skills/skills.php',
+    'cornelius\\custom\\skills\\SkillsPage' => $baseDir . '/config/custom/skills/skillsPage.php',
+    'cornelius\\setup\\Enqueue' => $baseDir . '/config/setup/enqueue.php',
+    'cornelius\\setup\\Login' => $baseDir . '/config/setup/login.php',
+    'cornelius\\setup\\Menus' => $baseDir . '/config/setup/menus.php',
+    'cornelius\\setup\\Remove' => $baseDir . '/config/setup/remove.php',
+    'cornelius\\setup\\Setup' => $baseDir . '/config/setup/setup.php',
 );

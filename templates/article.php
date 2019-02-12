@@ -5,7 +5,7 @@
      *
      * @link https://codex.wordpress.org/Template_Hierarchy
      *
-     * @package ccwp
+     * @package cornelius
      */
 	// Security check
     if (!defined('ABSPATH')) exit;
@@ -20,19 +20,19 @@
     <h1><?php the_title(); ?></h1>
 
     <!-- Post meta -->
-    <?php ccwp\core\Post::postMeta(); ?>
+    <?php cornelius\core\Post::postMeta(); ?>
 
     <!-- Share -->
-    <?php ccwp\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'd-none d-md-flex')); ?>
+    <?php cornelius\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'd-none d-md-flex')); ?>
 
     <!-- Content -->
     <?php the_content(); ?>
 
     <!-- Share -->
-    <?php ccwp\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'd-none d-md-flex')); ?>
-    <?php ccwp\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'fixed-bottom d-md-none')); ?>
+    <?php cornelius\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'd-none d-md-flex')); ?>
+    <?php cornelius\core\Post::shareButtons(array('id' => get_the_id(), 'classes' => 'fixed-bottom d-md-none')); ?>
 
     <!-- Tags -->
-    <?php ccwp\core\Post::postTags() ?>
+    <?php cornelius\core\Post::postTags() ?>
 
 </article>

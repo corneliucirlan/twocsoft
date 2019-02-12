@@ -3,12 +3,12 @@
     /**
      * Post class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\core;
+    namespace cornelius\core;
 
-    use ccwp\api\callback\socialMediaCallbacks;
+    use cornelius\api\callback\socialMediaCallbacks;
 
     class Post
     {

@@ -3,10 +3,10 @@
     /**
      * Widgets class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\core;
+    namespace cornelius\core;
 
     class Widgets
     {
@@ -24,9 +24,9 @@
         public function initWidgets()
         {
             register_sidebar(array(
-                'name'          => esc_html__('Sidebar', 'ccwp'),
-                'id'            => 'ccwp-sidebar',
-                'description'   => esc_html__('Default sidebar to add all your widgets.', 'ccwp'),
+                'name'          => esc_html__('Sidebar', 'cornelius'),
+                'id'            => 'cornelius-sidebar',
+                'description'   => esc_html__('Default sidebar to add all your widgets.', 'cornelius'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h2 class="widget-title">',

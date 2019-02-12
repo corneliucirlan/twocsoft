@@ -5,7 +5,7 @@
      *
      * @link https://codex.wordpress.org/Template_Hierarchy
      *
-     * @package ccwp
+     * @package cornelius
      */
     // Security check
     if (!defined('ABSPATH')) die;
@@ -27,8 +27,8 @@
 
     <div class="col-12 col-md-5">
         <form id="contact-form" action="" method="post">
-            <input type="hidden" name="action" id="action" value="<?php echo ccwp\custom\Contact::CONTACT_ACTION ?>" />
-            <input type="hidden" name="_wpnonce" id="_wpnonce" value="<?php echo wp_create_nonce(ccwp\custom\Contact::CONTACT_ACTION) ?>">
+            <input type="hidden" name="action" id="action" value="<?php echo cornelius\custom\Contact::CONTACT_ACTION ?>" />
+            <input type="hidden" name="_wpnonce" id="_wpnonce" value="<?php echo wp_create_nonce(cornelius\custom\Contact::CONTACT_ACTION) ?>">
 
             <!-- Full name -->
             <div class="form-group">

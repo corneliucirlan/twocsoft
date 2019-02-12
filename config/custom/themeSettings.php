@@ -3,13 +3,13 @@
     /**
      * Custom Fields class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\custom;
+    namespace cornelius\custom;
 
-    use ccwp\api\settings;
-    use ccwp\api\callback\socialMediaCallbacks;
+    use cornelius\api\settings;
+    use cornelius\api\callback\socialMediaCallbacks;
 
     class ThemeSettings extends Settings
     {

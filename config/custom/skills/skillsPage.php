@@ -3,13 +3,13 @@
     /**
      * Callbacks for Skills
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\custom\skills;
+    namespace cornelius\custom\skills;
 
     // Load dependencies
-    use ccwp\custom\skills\skills;
+    use cornelius\custom\skills\skills;
 
     // Define class
     class SkillsPage

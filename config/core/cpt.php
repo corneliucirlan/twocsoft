@@ -3,10 +3,10 @@
     /**
      * Custom Post Type class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\core;
+    namespace cornelius\core;
 
     class CPT
     {
@@ -105,7 +105,7 @@
 	     *
 	     * @var string $textdomain Used for internationalising. Defaults to "cpt" without quotes.
 	     */
-	    public $textdomain = 'ccwp';
+	    public $textdomain = 'cornelius';
 
 	    /**
 	     * Constructor
@@ -115,7 +115,7 @@
 	     * @param mixed $postTypeNames The name(s) of the post type, accepts (post type name, slug, plural, singular).
 	     * @param array $options User submitted options.
 	     */
-	    public function __construct($postTypeNames = 'ccwp', $options = array())
+	    public function __construct($postTypeNames = 'cornelius', $options = array())
 	    {
 			// Check if post type names is a string or an array.
 	        if (is_array($postTypeNames)):

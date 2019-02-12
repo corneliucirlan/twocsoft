@@ -3,13 +3,13 @@
     /**
      * Callbacks for Social Media Settings class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\api\callback;
+    namespace cornelius\api\callback;
 
     // Load dependencies
-    use ccwp\custom\themeSettings;
+    use cornelius\custom\themeSettings;
 
     // Define class
     class SocialMediaCallbacks

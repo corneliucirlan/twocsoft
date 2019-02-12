@@ -5,7 +5,7 @@
      *
      * @link https://codex.wordpress.org/Template_Hierarchy
      *
-     * @package ccwp
+     * @package cornelius
      */
 
 
@@ -37,7 +37,7 @@
 
                     <div class="social col-12 col-lg-4">
                         <h2 class="footer-title">FOLLOW US</h2>
-                        <?php ccwp\core\Post::socialProfiles('social-icons-footer', 'fa-2x'); ?>
+                        <?php cornelius\core\Post::socialProfiles('social-icons-footer', 'fa-2x'); ?>
                     </div>
                 </div>
             </div>

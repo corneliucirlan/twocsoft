@@ -3,10 +3,10 @@
     /**
      * Menus class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\setup;
+    namespace cornelius\setup;
 
     class Menus
     {
@@ -32,10 +32,10 @@
         {
             register_nav_menus(array(
                 // Hdaer menu
-                'header-menu' => esc_html__('Header menu', 'ccwp'),
+                'header-menu' => esc_html__('Header menu', 'cornelius'),
 
                 // Footer menu
-                'footer-menu' => esc_html__('Footer menu', 'ccwp'),
+                'footer-menu' => esc_html__('Footer menu', 'cornelius'),
             ));
         }
 

@@ -3,10 +3,10 @@
     /**
      * Remove class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\setup;
+    namespace cornelius\setup;
 
     class Remove
     {

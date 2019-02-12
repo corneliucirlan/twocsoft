@@ -3,10 +3,10 @@
     /**
      * ACF Loader class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\custom;
+    namespace cornelius\custom;
 
     class ACFLoader
     {

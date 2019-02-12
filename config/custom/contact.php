@@ -1,12 +1,12 @@
 <?php
 
     /**
-     * ACF Loader class
+     * Contact class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\custom;
+    namespace cornelius\custom;
 
     class Contact
     {

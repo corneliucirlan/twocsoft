@@ -3,10 +3,10 @@
     /**
      * Setup class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\setup;
+    namespace cornelius\setup;
 
     // WP_Customize_Image_Control class
     use WP_Customize_Image_Control;
@@ -30,7 +30,7 @@
         public function setup()
         {
             // Activate this if building a multilingual theme
-            // load_theme_textdomain('ccwp', get_template_directory() . '/languages' );
+            // load_theme_textdomain('cornelius', get_template_directory() . '/languages' );
 
             // Default Theme Support options better have
             add_theme_support('automatic-feed-links');

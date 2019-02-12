@@ -3,10 +3,10 @@
     /**
      * Custom class
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\custom\skills;
+    namespace cornelius\custom\skills;
 
     // Pre-requirements
 	if (!class_exists('WP_List_Table')):

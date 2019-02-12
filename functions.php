@@ -5,7 +5,7 @@
     * Every function, hook and action is properly divided and organized inside related folders and files
     * Use the file `config/custom/custom.php` to write your custom functions
     *
-    * @package ccwp
+    * @package cornelius
     */
 
     // Define theme version
@@ -64,8 +64,8 @@
     endif;
 
     // Init class
-    if (class_exists('ccwp\\Init')):
-        new \ccwp\Init();
+    if (class_exists('cornelius\\Init')):
+        new \cornelius\Init();
     endif;
 
 ?>

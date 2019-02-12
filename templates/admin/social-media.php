@@ -4,7 +4,7 @@
     *
     * @link https://developer.wordpress.org/reference/functions/add_menu_page/
     *
-	* @package ccwp
+	* @package cornelius
     */
 ?>
 

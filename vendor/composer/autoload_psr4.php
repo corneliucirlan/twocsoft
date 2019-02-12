@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'ccwp\\' => array($baseDir . '/config'),
+    'cornelius\\' => array($baseDir . '/config'),
 );

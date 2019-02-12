@@ -3,10 +3,10 @@
     /**
      * Settings API
      *
-     * @package ccwp
+     * @package cornelius
      */
 
-    namespace ccwp\api;
+    namespace cornelius\api;
 
     class Settings
     {

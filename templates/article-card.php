@@ -4,7 +4,7 @@
      *
      * @link https://codex.wordpress.org/Template_Hierarchy
      *
-     * @package ccwp
+     * @package cornelius
      */
 	// Security check
     if (!defined('ABSPATH')) exit;
