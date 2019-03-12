@@ -56,7 +56,7 @@
         // Hide ACF from menu
         public function hideFromMenu()
         {
-            remove_menu_page('edit.php?post_type=acf');
+            remove_menu_page('edit.php?post_type=acf-field-group');
         }
     }
 
