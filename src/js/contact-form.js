@@ -1,6 +1,6 @@
 $('.form-group input, textarea').focusout(function() {
 
-    var textValue = $(this).val();
+    let textValue = $(this).val();
 
     if (textValue === '') {
         $(this).removeClass('has-value');
@@ -9,40 +9,48 @@ $('.form-group input, textarea').focusout(function() {
     }
 });
 
-$('#contact-form').on('submit', function(event) {
+$('#contact-form').on('submit', (event) => {
     event.preventDefault();
 
-    var $formParent = $('.page-contact-form');
-    var $submitButton = $('#submit-form');
+    let $formParent     = $('.page-contact-form'),
+        $submitButton   = $('#submit-form'),
+        sendMessage     = 'Send message',
+        loadingSpinner  = '<span class="loading-spinner"></span>',
+        mailFail        = '<i class="fas fa-times"></i>',
+        mailSuccess     = '<i class="fas fa-check"></i>',
+        hasValue        = 'has-value',
+        btnError        = 'btn-error',
+        btnSuccess      = 'btn-success',
+        btnProcessing   = 'btn-processing';
 
     // Get form data
-    var data = $(this).serialize();
+    let data = $(this).serialize();
 
     $.ajax({
         url: ajaxurl,
         type: 'POST',
         dataType: 'json',
         data: data,
-        beforeSend: function() {
+        beforeSend: () => {
 
             // Disable all fields
-            $('button, input, textarea').prop('disabled', true);
+            $('input, textarea').prop('disabled', true);
 
             // Update button's content
-            $submitButton.addClass('btn-click');
+            $submitButton.html(loadingSpinner);
         }
     })
-    .done(function(data, textStatus, jqXHR) {
+    .done((data, textStatus, jqXHR) => {
         if (data.emailSent) {
-            $submitButton.removeClass('btn-error btn-click').addClass('btn-success').html('<i class="fas fa-check"></i>');
+            $submitButton.removeClass('btn-error btn-processing').addClass('btn-success').html(mailSuccess);
         } else {
-            $submitButton.removeClass('btn-click btn-success').addClass('btn-error').html('<i class="fas fa-times"></i>');
+            $submitButton.removeClass('btn-processing btn-success').addClass('btn-error').html(mailFail);
         }
     })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-        $submitButton.removeClass('btn-click btn-success').addClass('btn-error').html('<i class="fas fa-times"></i>');
+    .fail((jqXHR, textStatus, errorThrown) => {
+        $submitButton.removeClass('btn-processing btn-success').addClass('btn-error').html(mailFail);
     })
-    .always(function(data, textStatus) {
+    .always((data, textStatus) => {
 
         // Reset inputs
         if ('success' === textStatus) {
@@ -50,8 +58,8 @@ $('#contact-form').on('submit', function(event) {
         }
 
         $('button, input, textarea').prop('disabled', false).removeClass('has-value');
-        setTimeout(function() {
-            $submitButton.html('Send message').removeClass('btn-error btn-success btn-click');
+        setTimeout(() => {
+            $submitButton.html(sendMessage).removeClass('btn-error btn-success');
         }, 4000);
     });
 });

@@ -1,8 +1,8 @@
-var $menuToggler    = $('.navbar-toggler');
-var $headerMenu     = $('.navbar-nav-header');
-var activateClass   = 'active';
+let $menuToggler    = $('.navbar-toggler'),
+    $headerMenu     = $('.navbar-nav-header'),
+    activateClass   = 'active';
 
-$menuToggler.on('click', function() {
+$menuToggler.on('click', () => {
 
     $headerMenu.toggleClass(activateClass);
     $menuToggler.toggleClass(activateClass);
