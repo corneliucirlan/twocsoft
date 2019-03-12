@@ -1,36 +1,36 @@
-@mixin set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+@mixin set-properties($bg-color, $border-color, $border-left-color, $color)
     background-color: $bg-color
     border-color: $border-color
     border-left-color: $border-left-color
-    box-shadow: $box-shadow
+    box-shadow: none
     color: $color
     outline: none
 
-@mixin different-states($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+@mixin different-states($bg-color, $border-color, $border-left-color, $color)
     &:not(:disabled)
         &:not(.disabled)
             &.active
                 &:focus
-                    @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+                    @include set-properties($bg-color, $border-color, $border-left-color, $color)
 
             &:active
-                @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+                @include set-properties($bg-color, $border-color, $border-left-color, $color)
 
                 &:focus
-                    @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+                    @include set-properties($bg-color, $border-color, $border-left-color, $color)
 
     &.active,
     &.active
         &:focus
-            @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+            @include set-properties($bg-color, $border-color, $border-left-color, $color)
 
     &:active,
     &:active
         &:focus
-            @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+            @include set-properties($bg-color, $border-color, $border-left-color, $color)
 
     &:hover,
     &:active,
     &:focus,
     &:hover
-        @include set-properties($bg-color, $border-color, $border-left-color, $box-shadow, $color)
+        @include set-properties($bg-color, $border-color, $border-left-color, $color)

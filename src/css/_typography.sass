@@ -9,7 +9,8 @@ h3,
 h4,
 h5,
 h6
-    color: $black
+    color: theme-color('primary')
+    font-family: 'Oswald'
     font-weight: 400
 
 h1
@@ -46,7 +47,23 @@ h6
 
 // Latest posts title
 .latest-title
+    @include transition
     margin: 1.5 * $spacer 0 .75 * $spacer
+
+    &:hover
+        color: inherit
+
+// Card title
+.card-title
+    @include transition
+    margin-bottom: 0
+
+    &:hover
+        color: inherit
+
+// Contact title
+.contact-title
+    margin-bottom: 1.5 * $spacer
 
 // Footer titles
 .footer-title
@@ -56,22 +73,26 @@ h6
 a
     @include transition
     color: $blue
-    font-family: 'Roboto', 'sans-serif'
     font-weight: 700
     text-decoration: none
 
     &:hover
-        color: lighter($blue, 10%)
+        color: $blue-hover
         opacity: 1
         text-decoration: none
 
-    &.social-link,
+    &.soccial-link,
     &.social-profile
         color: inherit
 
         [class*=' fa-']
             font-weight: 400 !important
 
+    &.link
+        font:
+            size: 1.125 * $font-size-base
+            weight: 400
+        margin-left: $spacer
 
 .footer-link
     color: $white
@@ -81,6 +102,13 @@ a
         color: $white
         opacity: 1
 
-// Card title
-.card-title
-    margin-bottom: 0
+.tagline
+    color: $gray-500
+    display: block
+    font:
+        size: 1.25 * $font-size-base
+        style: italic
+
+
+    &.tagline-footer
+        color: $white

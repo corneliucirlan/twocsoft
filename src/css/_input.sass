@@ -49,57 +49,51 @@ label
         &:after
             content: '\00a0 '
 
-.button-container
-    margin-bottom: 4 * $spacer
-    position: relative
-    width: 100%
-
-@include media-breakpoint-up(md)
-    .button-container
-        width: 50%
-
 .btn-primary
-    @include different-states($blue, $blue, $blue, $box-shadow, $white)
+    @include different-states($blue-hover, $blue-hover, $blue-hover, $white)
     @include transition
-    animation: processing-end .2s linear
-    border: 2 * $border-width solid theme-color('primary')
-    bottom: 0
-    box-shadow: $box-shadow-lg
-    font-size: 1.125 * $spacer
-    height: 50px
-    left: 0
-    outline: 0
-    padding: $spacer / 2
-    position: absolute
-    right: 0
-    top: 0
-    width: 100%
-
-.btn-click
-    @include different-states($white, $gray-200, $green, none, $green)
-    animation: processing-start .2s linear, rotation 2s .25s linear infinite
-    background-color: $white
-    border-color: $gray-200
-    border-left-color: $green
-    border-radius: 50%
-    bottom: 10px
+    border: 2 * $border-width solid $blue
     box-shadow: none
-    font-size: 0
-    height: 30px
-    left: calc(50% - 15px)
-    position: absolute
-    right: calc(50% - 15px)
-    top: 10px
-    width: 30px
+    font:
+        family: 'Oswald', 'Roboto', sans-serif
+        size: 1.125 * $spacer
+    outline: 0
+    padding: $spacer / 2 2 * $spacer
+    text-transform: uppercase
+
+    & [class*=' fa-']
+        padding-right: $spacer / 2
+
+.loading-spinner
+    animation: rotation $loading-spinner-speed infinite linear
+    border: $loading-spinner-stroke-width $loading-spinner-stroke-style $white
+    border-left-color: $transparent
+    border-radius: 50%
+    border-top-color: $transparent
+    height: $loading-spinner-diameter - ($loading-spinner-stroke-width * 2)
+    opacity: $loading-spinner-opacity
+    width: $loading-spinner-diameter - ($loading-spinner-stroke-width * 2)
+
+.btn-animation
+    height: 47px
+    position: relative
+    width: $send-mail-width
+
+    .loading-spinner
+        left: calc(50% - 14px)
+        position: absolute
+        top: 10px
 
 .btn-success
-    @include different-states($green, $green, $green, $box-shadow, $white)
+    @include different-states($green, $green, $green, $white)
     background-color: $green
     border-color: $green
     color: $white
+    width: $send-mail-width
 
 .btn-error
-    @include different-states($red, $red, $red, $box-shadow, $white)
+    @include different-states($red, $red, $red, $white)
     background-color: $red
     border-color: $red
     color: $white
+    width: $send-mail-width

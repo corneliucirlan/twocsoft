@@ -1,4 +1,5 @@
 <?php
+
     /**
     * Template part for displaying a custom Admin area
     *
@@ -6,6 +7,9 @@
     *
 	* @package cornelius
     */
+
+	use cornelius\custom\themeSettings;
+
 ?>
 
 <div class="wrap">
@@ -13,8 +17,8 @@
 	<?php //settings_errors(); ?>
 
 	<form method="post" action="options.php">
-		<?php settings_fields('social-media-group'); ?>
-		<?php do_settings_sections('social-media-settings'); ?>
+		<?php settings_fields(ThemeSettings::SOCIAL_MEDIA_GROUP); ?>
+		<?php do_settings_sections(ThemeSettings::SOCIAL_MEDIA_SLUG); ?>
 		<?php submit_button(); ?>
 	</form>
 </div>

@@ -8,7 +8,7 @@
 
     namespace cornelius\core;
 
-    use cornelius\api\callback\socialMediaCallbacks;
+    use cornelius\api\callback\themeSettingsCallbacks;
 
     class Post
     {
@@ -40,7 +40,7 @@
     	public static function shareButtons($settings)
     	{
             // Get all available share sites
-            $allSites = SocialMediaCallbacks::SOCIAL_MEDIA_SITES;
+            $allSites = ThemeSettingsCallbacks::SOCIAL_MEDIA_SITES;
 
             // Get share sites
             $enabledSites = get_option("sms_profiles");
