@@ -9,7 +9,7 @@
     namespace cornelius\custom;
 
     use cornelius\api\settings;
-    use cornelius\api\callback\socialMediaCallbacks;
+    use cornelius\api\callback\themeSettingsCallbacks;
 
     class ThemeSettings extends Settings
     {
@@ -26,20 +26,19 @@
          *
          * @var [type]
          */
-        private $socialMediaCallbacks;
+        private $themeSettingsCallbacks;
 
         /**
          * Social media settings constants
          *
          * @since 1.0
          */
-        const SOCIAL_MEDIA_GROUP    = 'social-media-group';
-        const SOCIAL_MEDIA_SECTION  = 'social-media-section';
-        const SOCIAL_MEDIA_SLUG     = 'social-media-settings';
-        const SOCIAL_MEDIA_NAME     = 'social_media_profiles';
-        const SOCIAL_MEDIA_SHARE_SECTION = 'sms-section';
-        const SOCIAL_MEDIA_SHARE_NAME    = 'sms_profiles';
-
+        const SOCIAL_MEDIA_GROUP            = 'social-media-group';
+        const SOCIAL_MEDIA_SECTION          = 'social-media-section';
+        const SOCIAL_MEDIA_SLUG             = 'social-media';
+        // const SOCIAL_MEDIA_NAME             = 'social_media_profiles';
+        const SOCIAL_MEDIA_SHARE_SECTION    = 'sms-section';
+        const SOCIAL_MEDIA_SHARE_NAME       = 'sms_profiles';
 
         /**
          * Contrusct class to activate actions and hooks as soon as the class is initialized
@@ -47,7 +46,7 @@
         public function __construct()
         {
             // Init callbacks
-            $this->socialMediaCallbacks = new SocialMediaCallbacks();
+            $this->themeSettingsCallbacks = new ThemeSettingsCallbacks();
 
             $this->socialSites = array('facebook-f', 'instagram', 'twitter', 'behance', 'linkedin-in', 'github');
             $this->socialAPIs = array(
@@ -112,14 +111,14 @@
             // Init subpages
             $adminSubPages = array();
 
-            // Social media shares
+            // Social media page
             $adminSubPages[] = array(
                 'parent_slug'       => 'options-general.php',
                 'page_title'        => __('Social Media', 'cornelius'),
                 'menu_title'        => __('Social Media', 'cornelius'),
                 'capability'        => 'manage_options',
                 'menu_slug'         => self::SOCIAL_MEDIA_SLUG,
-                'callback'          => array($this->socialMediaCallbacks, 'submenuSocialMediaPage')
+                'callback'          => array($this->themeSettingsCallbacks, 'submenuSocialMediaPage')
             );
 
             // Parent call
@@ -179,7 +178,7 @@
             $sections[] = array(
                 'id'        => 'social_media_links',
                 'title'     => __('Links', 'cornelius'),
-                'callback'  => array($this->socialMediaCallbacks, 'socialMediaLinksSection'),
+                'callback'  => array($this->themeSettingsCallbacks, 'socialMediaLinksSection'),
                 'page'      => self::SOCIAL_MEDIA_SLUG
             );
 
@@ -187,7 +186,7 @@
             $sections[] = array(
                 'id'        => 'api_keys',
                 'title'     => __('API KEYs'),
-                'callback'  => array($this->socialMediaCallbacks, 'socialAPISection'),
+                'callback'  => array($this->themeSettingsCallbacks, 'socialAPISection'),
                 'page'      => self::SOCIAL_MEDIA_SLUG
             );
 
@@ -195,7 +194,7 @@
             $sections[] = array(
                 'id'        => self::SOCIAL_MEDIA_SHARE_SECTION,
                 'title'     => __('Share', 'cornelius'),
-                'callback'  => array($this->socialMediaCallbacks, 'socialMediaShareSection'),
+                'callback'  => array($this->themeSettingsCallbacks, 'socialMediaShareSection'),
                 'page'      => self::SOCIAL_MEDIA_SLUG
             );
 
@@ -226,7 +225,7 @@
                 $fields[] = array(
                     'id'        => $site.'_link',
                     'title'     => ucwords(str_replace("_", " ", $site)),
-                    'callback'  => array($this->socialMediaCallbacks, 'displayCustomFieldInput'),
+                    'callback'  => array($this->themeSettingsCallbacks, 'displayCustomFieldInput'),
                     'page'      => self::SOCIAL_MEDIA_SLUG,
                     'section'   => 'social_media_links',
                     'args'      => array(
@@ -241,7 +240,7 @@
                 $fields[] = array(
                     'id'        => $key,
                     'title'     => $value,
-                    'callback'  => array($this->socialMediaCallbacks, 'displayCustomFieldInput'),
+                    'callback'  => array($this->themeSettingsCallbacks, 'displayCustomFieldInput'),
                     'page'      => self::SOCIAL_MEDIA_SLUG,
                     'section'   => 'api_keys',
                     'args'      => array(
@@ -255,7 +254,7 @@
             $fields[] = array(
                 'id'        => self::SOCIAL_MEDIA_SHARE_NAME,
                 'title'     => __('Enable sharing on', 'cornelius'),
-                'callback'  => array($this->socialMediaCallbacks, 'renderSocialMediaShare'),
+                'callback'  => array($this->themeSettingsCallbacks, 'renderSocialMediaShare'),
                 'page'      => self::SOCIAL_MEDIA_SLUG,
                 'section'   => self::SOCIAL_MEDIA_SHARE_SECTION,
                 'args'      => array(

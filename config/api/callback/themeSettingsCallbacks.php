@@ -12,7 +12,7 @@
     use cornelius\custom\themeSettings;
 
     // Define class
-    class SocialMediaCallbacks
+    class ThemeSettingsCallbacks
     {
         /**
          * Social media sites parameters
@@ -45,6 +45,14 @@
         }
 
         /**
+         * Load Contact Links page template
+         */
+        public function submenuContactLinksPage()
+        {
+            return require_once get_template_directory().'/templates/admin/contact-links.php';
+        }
+
+        /**
          * Social media profiles section
          */
         public function socialMediaProfiles()
@@ -66,6 +74,11 @@
         public function socialAPISection()
         {
             _e('Add access tokens for all social media sites', 'cornelius');
+        }
+
+        public function contactLinksSection()
+        {
+            _e('Add all ways you can be contacted.', 'corneliu');
         }
 
         /**
