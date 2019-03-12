@@ -9,7 +9,7 @@ $('.form-group input, textarea').focusout(function() {
     }
 });
 
-$('#contact-form').on('submit', (event) => {
+$('#contact-form').on('submit', function(event) {
     event.preventDefault();
 
     let $formParent     = $('.page-contact-form'),
@@ -25,6 +25,7 @@ $('#contact-form').on('submit', (event) => {
 
     // Get form data
     let data = $(this).serialize();
+    console.log(data);
 
     $.ajax({
         url: ajaxurl,

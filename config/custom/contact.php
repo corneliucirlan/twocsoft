@@ -13,7 +13,7 @@
         /**
          * Contact form action
          */
-        const CONTACT_ACTION = 'contact-email';
+        const CONTACT_ACTION = 'send-ajax-message';
 
         /**
          * Construct class to activate actions and hooks as soon as the class is initialized
@@ -77,6 +77,10 @@
          */
         public function sendMessageAJAX()
         {
+            // if (!wp_verify_nonce($_REQUEST['_wpnonce'], self::CONTACT_ACTION)):
+            //     die('Security breach.');
+            // endif;
+
             // create ajax response
             $ajaxResponse = self::validateContactForm($_POST);
 
