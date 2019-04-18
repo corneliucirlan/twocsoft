@@ -21,19 +21,19 @@
         $hasHeaderImage = !$hasHeaderImage;
 
         // Set header image
-        $headerStyles = "background: url(".get_header_image()."); background-position: bottom";
+        $headerStyles = "background: url(".get_header_image()."); background-position: top;";
 
-        // Set header image as featured image
-        if (has_post_thumbnail())
-            $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: center;";
-
-        // Set header image for Front Page and Blog Page
-        if (is_front_page() || is_home())
-            $headerStyles = "background: url(".get_header_image()."); background-position: bottom";
-
-        // Set header image for blog articles
-        if (is_singular('post') && has_post_thumbnail())
-            $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: top;";
+        // // Set header image as featured image
+        // if (has_post_thumbnail())
+        //     $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: center;";
+        //
+        // // Set header image for Front Page and Blog Page
+        // if (is_front_page() || is_home())
+        //     $headerStyles = "background: url(".get_header_image()."); background-position: center;";
+        //
+        // // Set header image for blog articles
+        // if (is_singular('post') && has_post_thumbnail())
+        //     $headerStyles = "background: url(".wp_get_attachment_url(get_post_thumbnail_id())."); background-position: top;";
 
         // Set header image style
         $headerStyles .= "background-repeat: no-repeat;
@@ -43,10 +43,10 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        max-height: 500px
+        max-height: 400px
         padding: 0;
         margin: 0;
-        height: 450px";
+        height: 400px";
     endif;
 
 
@@ -94,42 +94,43 @@
 
         <!-- Header navigation -->
         <nav class="navbar navbar-header navbar-toggleable-md navbar-light">
-            <button class="navbar-toggler d-md-none" type="button">
-                <span class="menu-item-1"></span>
-                <span class="menu-item-2"></span>
-                <span class="menu-item-3"></span>
-            </button>
-            <?php if ($mobileLogo): ?>
-                    <img class="custom-logo d-md-none" src="<?php echo $mobileLogo ?>" alt="<?php bloginfo('title') ?>" />
-                <?php elseif (has_custom_logo()): ?>
-                    <img class="custom-logo d-md-none" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" />
-            <?php endif; ?>
+            <div class="container-fluid">
+                <button class="navbar-toggler d-md-none" type="button">
+                    <span class="menu-item-1"></span>
+                    <span class="menu-item-2"></span>
+                    <span class="menu-item-3"></span>
+                </button>
 
-            <?php
-                // Render header menu
-                if (has_nav_menu('header-menu')):
-                    $args = array(
-                        'theme_location' => 'header-menu',
-                        'menu' => 'header-menu',
-                        'container' => 'ul',
-                        'menu_class' => 'navbar-nav navbar-nav-header d-none d-md-block',
-                        'echo' => true,
-                        'fallback_cb' => 'wp_page_menu',
-                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth' => 0,
-                    );
-                    wp_nav_menu($args);
-                endif;
-            ?>
+                <?php if ($mobileLogo): ?>
+                    <a class="navbar-brand d-md-none" href="<?php bloginfo('url') ?>"><img class="custom-logo" src="<?php echo $mobileLogo ?>" alt="<?php bloginfo('title') ?>" /></a>
+                <?php endif; ?>
+                <a class="navbar-brand <?php echo $mobileLogo ? 'd-none d-md-block' : '' ?>" href="<?php bloginfo('url') ?>"><img class="custom-logo" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" /></a>
+
+                <?php
+                    // Render header menu
+                    if (has_nav_menu('header-menu')):
+                        $args = array(
+                            'theme_location' => 'header-menu',
+                            'menu' => 'header-menu',
+                            'container' => 'ul',
+                            'menu_class' => 'navbar-nav navbar-nav-header d-none d-md-block',
+                            'echo' => true,
+                            'fallback_cb' => 'wp_page_menu',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'depth' => 0,
+                        );
+                        wp_nav_menu($args);
+                    endif;
+                ?>
+            </div>
         </nav>
 
-        <div class="header" style="<?php echo $hasHeaderImage ? $headerStyles : '' ?>">
-            <img class="custom-logo d-none d-md-block" src="<?php echo $siteLogo ?>" alt="<?php bloginfo('title') ?>" />
+        <div class="wp-custom-header" style="<?php echo $hasHeaderImage ? $headerStyles : '' ?>">
             <?php if (!is_singular('post')): ?>
                 <h1 class="header-title"><?php echo $pageTitle ?></h1>
             <?php endif; ?>
             <?php if (is_front_page()): ?>
-                <hspan class="tagline tagline-header"><?php bloginfo('description') ?></span>
+                <span class="tagline tagline-header"><?php bloginfo('description') ?></span>
             <?php endif; ?>
         </div>
 

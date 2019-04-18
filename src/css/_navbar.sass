@@ -8,7 +8,7 @@
     height: 40px
     left: 30px
     opacity: .7
-    position: fixed
+    position: absolute
     top: 30px
     transition: opacity 500ms ease-in-out, background-color 300ms ease-in-out
     width: 40px
@@ -55,7 +55,7 @@
 
     &.active
         background-color: $white
-        box-shadow: $box-shadow-lg
+        box-shadow: $box-shadow
         opacity: 1
         z-index: 1000
 
@@ -81,6 +81,15 @@
             .menu-item-3
                 animation: none
 
+.navbar-brand
+    margin: 0
+    padding: 0
+
+// Brand logo
+.custom-logo
+    height: 100px
+    width: auto
+
 // Navigation
 .navbar-nav
     display: inline
@@ -105,33 +114,36 @@
 
 // Header navbar
 .navbar-header
-    display: flex
-    justify-content: center
-    left: 50%
-    margin-top: $spacer
-    position: absolute
-    transform: translateX(-50%)
-    width: 100%
-    z-index: 100
 
-    .navbar-nav-header
-        .active > .nav-link
-            color: $black
+    .container-fluid
+        display: flex
+        justify-content: center
+        // left: 50%
+        // margin-top: $spacer
+        position: relative
+        // transform: translateX(-50%)
+        top: 0
+        width: 100%
+        z-index: 100
 
-        .nav-link
-            color: $black
-
-            .active,
-            .show
+        .navbar-nav-header
+            .active > .nav-link
                 color: $black
 
-        .show > .nav-link
-            color: $black
+            .nav-link
+                color: $black
+
+                .active,
+                .show
+                    color: $black
+
+            .show > .nav-link
+                color: $black
 
 .navbar-nav-header
     animation: menu-animation 600ms ease-in-out
     background-color: $white
-    box-shadow: $box-shadow-lg
+    box-shadow: $box-shadow
     left: 50%
     position: absolute
     top: 50px
@@ -154,14 +166,23 @@
                 background: $gray-200
 
 @include media-breakpoint-up(md)
+    .navbar-header
+        .container-fluid
+            justify-content: space-between
+
+    .navbar-brand
+        display: inline
+
     .navbar-nav-header
         animation: none
-        background-color: transparent
+        background-color: $white
         box-shadow: none
         display: inline
+        left: 0
         position: relative
         top: 0
-        width: 100%
+        transform: translateX(0)
+        width: auto
 
         .nav-item
             border-bottom: 0
@@ -171,7 +192,7 @@
             &.active
                 .nav-link
                     background-color: transparent
-                    border-bottom: 1px solid $black
+                    // border-bottom: 1px solid $black
 
 // Footer navbar
 .navbar-footer

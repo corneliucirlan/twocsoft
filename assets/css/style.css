@@ -12425,6 +12425,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-display: auto;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -12433,6 +12434,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-display: auto;
   font-family: 'Roboto Light';
   font-style: normal;
   font-weight: 300;
@@ -12441,6 +12443,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-display: auto;
   font-family: 'Consola';
   font-style: normal;
   font-weight: 400;
@@ -12449,6 +12452,7 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
+  font-display: auto;
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
@@ -12673,14 +12677,13 @@ a.link {
   0% {
     -webkit-box-shadow: none;
     box-shadow: none;
+    opacity: 0;
     top: -500px;
-  }
-  80% {
-    top: 100px;
   }
   100% {
     -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
     box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+    opacity: 1;
     top: 50px;
   }
 }
@@ -12689,14 +12692,13 @@ a.link {
   0% {
     -webkit-box-shadow: none;
     box-shadow: none;
+    opacity: 0;
     top: -500px;
-  }
-  80% {
-    top: 100px;
   }
   100% {
     -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
     box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+    opacity: 1;
     top: 50px;
   }
 }
@@ -12797,7 +12799,7 @@ a.link {
 }
 
 .main-container {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .navbar {
@@ -12810,7 +12812,7 @@ a.link {
   height: 40px;
   left: 30px;
   opacity: .7;
-  position: fixed;
+  position: absolute;
   top: 30px;
   -webkit-transition: opacity 500ms ease-in-out, background-color 300ms ease-in-out;
   -o-transition: opacity 500ms ease-in-out, background-color 300ms ease-in-out;
@@ -12876,8 +12878,8 @@ a.link {
 
 .navbar-toggler.active {
   background-color: #fff;
-  -webkit-box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
-  box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
   opacity: 1;
   z-index: 1000;
 }
@@ -12913,6 +12915,16 @@ a.link {
   animation: none;
 }
 
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-logo {
+  height: 100px;
+  width: auto;
+}
+
 .navbar-nav {
   display: inline;
   margin: 0;
@@ -12946,37 +12958,33 @@ a.link {
   }
 }
 
-.navbar-header {
+.navbar-header .container-fluid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  left: 50%;
-  margin-top: 1rem;
-  position: absolute;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  position: relative;
+  top: 0;
   width: 100%;
   z-index: 100;
 }
 
-.navbar-header .navbar-nav-header .active > .nav-link {
+.navbar-header .container-fluid .navbar-nav-header .active > .nav-link {
   color: #292b2c;
 }
 
-.navbar-header .navbar-nav-header .nav-link {
+.navbar-header .container-fluid .navbar-nav-header .nav-link {
   color: #292b2c;
 }
 
-.navbar-header .navbar-nav-header .nav-link .active,
-.navbar-header .navbar-nav-header .nav-link .show {
+.navbar-header .container-fluid .navbar-nav-header .nav-link .active,
+.navbar-header .container-fluid .navbar-nav-header .nav-link .show {
   color: #292b2c;
 }
 
-.navbar-header .navbar-nav-header .show > .nav-link {
+.navbar-header .container-fluid .navbar-nav-header .show > .nav-link {
   color: #292b2c;
 }
 
@@ -12984,8 +12992,8 @@ a.link {
   -webkit-animation: menu-animation 600ms ease-in-out;
   animation: menu-animation 600ms ease-in-out;
   background-color: #fff;
-  -webkit-box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
-  box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
   left: 50%;
   position: absolute;
   top: 50px;
@@ -13014,16 +13022,28 @@ a.link {
 }
 
 @media (min-width: 768px) {
+  .navbar-header .container-fluid {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .navbar-brand {
+    display: inline;
+  }
   .navbar-nav-header {
     -webkit-animation: none;
     animation: none;
-    background-color: transparent;
+    background-color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
     display: inline;
+    left: 0;
     position: relative;
     top: 0;
-    width: 100%;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    width: auto;
   }
   .navbar-nav-header .nav-item {
     border-bottom: 0;
@@ -13032,7 +13052,6 @@ a.link {
   }
   .navbar-nav-header .nav-item.active .nav-link {
     background-color: transparent;
-    border-bottom: 1px solid #292b2c;
   }
 }
 
@@ -13178,7 +13197,7 @@ a.link {
   display: block;
 }
 
-.header {
+.wp-custom-header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -13193,20 +13212,7 @@ a.link {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-top: 50px;
   text-align: center;
-}
-
-.custom-logo {
-  height: 100px;
-  margin-bottom: 2rem;
-  width: auto;
-}
-
-@media (min-width: 768px) {
-  .header-overlay {
-    padding-top: 0;
-  }
 }
 
 .footer {
@@ -13700,7 +13706,7 @@ label {
   -ms-flex-positive: 0;
   flex-grow: 0;
   margin: 1.5rem;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -13751,6 +13757,7 @@ label {
   .home-service {
     -ms-flex-preferred-size: 40%;
     flex-basis: 40%;
+    padding: 1rem;
   }
 }
 

@@ -1,3 +1,4 @@
+// Mobile menu toggler
 @keyframes toggler-animation
     0%
         width: 70%
@@ -24,16 +25,16 @@
     100%
         width: 50%
 
+// Mobile menu animation
 @keyframes menu-animation
     0%
         box-shadow: none
+        opacity: 0
         top: -500px
-
-    80%
-        top: 100px
 
     100%
         box-shadow: $box-shadow
+        opacity: 1
         top: 50px
 
 @keyframes rotation

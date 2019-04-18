@@ -62,7 +62,7 @@
             wp_deregister_script('jquery');
 
             // Register latest version of jQuery
-            wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), false, true);
+            wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), false, true);
 
             // CSS
             wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.min.css', array(), THEME_VERSION, 'all');
