@@ -95,11 +95,34 @@
         <!-- Header navigation -->
         <nav class="navbar navbar-header navbar-toggleable-md navbar-light">
             <div class="container-fluid">
-                <button class="navbar-toggler d-md-none" type="button">
+                <!-- <button class="navbar-toggler d-md-none" type="button">
                     <span class="menu-item-1"></span>
                     <span class="menu-item-2"></span>
                     <span class="menu-item-3"></span>
-                </button>
+                </button> -->
+
+                <div class="icon-menu navbar-toggler"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                  <!-- <defs>
+                    <style>
+                      .cls-1 {
+                        fill: rgba(0,0,0,0.87);
+                      }
+
+                      .cls-2 {
+                        fill: none;
+                      }
+                    </style>
+                  </defs> -->
+                  <g>
+                    <rect class="cls-1 menu-bar-1" width="30" height="4" transform="translate(0 6)"></rect>
+                    <rect class="cls-1 menu-bar-2" width="30" height="4" transform="translate(0 18)"></rect>
+                    <rect class="cls-1 menu-bar-2" width="30" height="4" transform="translate(0 18)"></rect>
+                    <rect class="cls-1 menu-bar-3" width="24" height="4" transform="translate(0 30)"></rect>
+                    <!-- <rect class="cls-2" width="24" height="24"></rect> -->
+                  </g>
+                </svg>
+
+                      </div>
 
                 <?php if ($mobileLogo): ?>
                     <a class="navbar-brand d-md-none" href="<?php bloginfo('url') ?>"><img class="custom-logo" src="<?php echo $mobileLogo ?>" alt="<?php bloginfo('title') ?>" /></a>
