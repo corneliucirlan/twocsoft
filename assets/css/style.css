@@ -12678,11 +12678,11 @@ a.link {
     -webkit-box-shadow: none;
     box-shadow: none;
     opacity: 0;
-    top: -500px;
+    top: 0;
   }
   100% {
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
-    box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+    -webkit-box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
+    box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
     opacity: 1;
     top: 50px;
   }
@@ -12693,11 +12693,11 @@ a.link {
     -webkit-box-shadow: none;
     box-shadow: none;
     opacity: 0;
-    top: -500px;
+    top: 0;
   }
   100% {
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
-    box-shadow: 0 0.5rem 1rem rgba(41, 43, 44, 0.15);
+    -webkit-box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
+    box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
     opacity: 1;
     top: 50px;
   }
@@ -12808,9 +12808,9 @@ a.link {
 }
 
 .mobile-menu-overlay {
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
   background-color: rgba(41, 43, 44, 0.2);
   height: 100vh;
   opacity: 0;
@@ -12980,9 +12980,11 @@ a.link {
   background-color: #fff;
   -webkit-box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
   box-shadow: 0 1rem 3rem rgba(41, 43, 44, 0.175);
+  display: none;
   left: 50%;
+  opacity: 0;
   position: absolute;
-  top: 50px;
+  top: 0;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -12990,7 +12992,9 @@ a.link {
 }
 
 .navbar-nav-header.active {
-  display: block !important;
+  display: block;
+  opacity: 1;
+  top: 50px;
 }
 
 .navbar-nav-header .nav-item {
@@ -13024,6 +13028,7 @@ a.link {
     box-shadow: none;
     display: inline;
     left: 0;
+    opacity: 1;
     position: relative;
     top: 0;
     -webkit-transform: translateX(0);

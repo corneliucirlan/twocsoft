@@ -122,7 +122,7 @@
                             'theme_location' => 'header-menu',
                             'menu' => 'header-menu',
                             'container' => 'ul',
-                            'menu_class' => 'navbar-nav navbar-nav-header d-none d-md-block',
+                            'menu_class' => 'navbar-nav navbar-nav-header d-md-block',
                             'echo' => true,
                             'fallback_cb' => 'wp_page_menu',
                             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
