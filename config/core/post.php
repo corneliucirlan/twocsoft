@@ -129,7 +129,7 @@
          */
         public static function socialProfiles($location = '', $iconSize = '')
         {
-            $sites = array('facebook-f', 'instagram', 'twitter', 'linkedin-in', 'behance', 'github');
+            $sites = array('facebook-f', 'instagram', 'twitter', 'linkedin-in', 'behance', 'dribbble', 'github');
 
             ?>
             <ul class="social-icons <?php echo $location ?>">

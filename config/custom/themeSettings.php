@@ -48,7 +48,7 @@
             // Init callbacks
             $this->themeSettingsCallbacks = new ThemeSettingsCallbacks();
 
-            $this->socialSites = array('facebook-f', 'instagram', 'twitter', 'behance', 'linkedin-in', 'github');
+            $this->socialSites = array('facebook-f', 'instagram', 'twitter', 'behance', 'dribbble', 'linkedin-in', 'github');
             $this->socialAPIs = array(
                 'bitly_api_key'                     => __('Bitly API key'),
                 'github_client_id'                  => __('Github client ID'),
