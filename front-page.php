@@ -11,16 +11,20 @@
 	// Security check
 	if (!defined('ABSPATH')) exit;
 
+	// Get all custom fields
+	$services = get_fields();
+
 ?>
 
 <?php get_header(); ?>
 
+
 <section class="home-services row">
 	<?php for ($counter = 1; $counter <= 5; $counter++): ?>
 		<article class="home-service col">
-			<i class="service-icon fa-4x fa-<?php echo get_field('home_service_icon_'.$counter) ?>"></i>
-			<h4 class="service-title"><?php echo get_field('home_service_title_'.$counter) ?></h4>
-			<p class="service-text"><?php echo get_field('home_service_text_'.$counter) ?></p>
+			<i class="service-icon fa-4x fa-<?php echo $services['home_service_icon_'.$counter] ?>"></i>
+			<h4 class="service-title"><?php echo $services['home_service_title_'.$counter] ?></h4>
+			<p class="service-text"><?php echo $services['home_service_text_'.$counter] ?></p>
 		</article>
 	<?php endfor; ?>
 </section>
