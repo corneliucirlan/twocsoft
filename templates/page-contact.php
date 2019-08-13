@@ -29,10 +29,6 @@
 
             <h5 class="contact-title">CHAT / VIDEO</h5>
             <li class="contact-link"><i class="fab fa-skype"></i><a class="link" target="_blank" href="skype:corneliucirlan?chat">corneliucirlan</a></li>
-
-            <h5 class="contact-title">NEED TO MAKE A PAYMENT?</h5>
-            <p class="paypal-instructions text-muted">Please submit your deposit or pay an invoice via PayPal following the link below. Thank you.</p>
-            <a target="_blank" href="https://www.paypal.me/corneliucirlan" class="btn btn-primary btn-paypal"><i class="fab fa-paypal"></i>Submit payment</a>
         </ul>
     </div>
 
