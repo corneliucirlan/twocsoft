@@ -41,13 +41,13 @@
                 </nav>
 
                 <div class="social-profiles row">
-                    <div class="col-12 col-md-4 offset-md-4">
+                    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                         <?php cornelius\core\Post::socialProfiles('social-icons-footer'); ?>
                     </div>
                 </div>
 
                 <div class="brand-footer row">
-                    <div class="col-12 col-md-4 offset-md-4">
+                    <div class="col-12 col-md-8 offset-md-2">
                         <?php if ($footerLogo): ?>
                             <img class="footer-logo custom-logo" src="<?php echo $footerLogo ?>" alt="<?php bloginfo('title') ?>" />
                         <?php endif; ?>
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="copyright row">
-                    <div class="col-12 col-md-4 offset-md-4">
-                        <p class="copyright-text">Copyright &copy; <?php echo date('Y') . ' ' . get_bloginfo('name') ?>. All rights resserved.</p>
+                    <div class="col-12 col-md-8 offset-md-2">
+                        <p class="copyright-text">Copyright &copy; <?php echo date('Y') . ' ' . get_bloginfo('name') ?>. All rights reserved.</p>
                     </div>
                 </div>
             </div>

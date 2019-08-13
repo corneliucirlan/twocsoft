@@ -13156,9 +13156,14 @@ a.link {
 }
 
 @media (min-width: 768px) {
+  .social-icons-footer {
+    margin-top: 2rem;
+    width: 100%;
+  }
   .social-icons-footer .social-icon {
     -ms-flex-preferred-size: 10%;
     flex-basis: 10%;
+    margin-top: 0;
   }
 }
 
