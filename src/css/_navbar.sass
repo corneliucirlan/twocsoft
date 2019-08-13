@@ -103,13 +103,19 @@
         .navbar-nav-header
             .active > .nav-link
                 color: $black
+                opacity: 1
 
             .nav-link
                 color: $black
+                opacity: .5
 
                 .active,
                 .show
                     color: $black
+                    opacity: 1
+
+                &:hover
+                    opacity: 1
 
             .show > .nav-link
                 color: $black
@@ -171,7 +177,6 @@
             &.active
                 .nav-link
                     background-color: transparent
-                    // border-bottom: 1px solid $black
 
 // Footer navbar
 .navbar-footer
